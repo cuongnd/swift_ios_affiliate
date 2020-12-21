@@ -645,14 +645,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYh-bM-iwB" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="69" width="375" height="268"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <rect key="frame" x="0.0" y="388" width="375" height="268"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="268" id="fvC-77-6JT"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-2Y-NdI" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="268"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="268" id="0qk-x5-Tjl"/>
+                                        </constraints>
+                                    </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-QS-kPe" userLabel="Collectioview sản phẩm yêu thích">
-                                        <rect key="frame" x="0.0" y="837" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="802" width="375" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="bUc-ht-p3U"/>
@@ -676,7 +683,7 @@
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gba-cX-HHi" userLabel="Home Header Danh mục sản phẩm">
-                                        <rect key="frame" x="0.0" y="1037" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="1002" width="375" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh mục sản phẩm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN0-gf-OrB">
                                                 <rect key="frame" x="8" y="17" width="166" height="21"/>
@@ -703,7 +710,7 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fr0-eM-Lbv" userLabel="Collectioview Danh mục sản phẩm">
-                                        <rect key="frame" x="0.0" y="1092" width="375" height="304"/>
+                                        <rect key="frame" x="0.0" y="1057" width="375" height="304"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="304" id="P4f-o9-Kga"/>
@@ -804,7 +811,7 @@
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFY-JE-uaN" userLabel="View header sản phẩm giảm giá">
-                                        <rect key="frame" x="0.0" y="1396" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="1361" width="375" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm giảm giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zG-tY-gLl">
                                                 <rect key="frame" x="8" y="17" width="154" height="21"/>
@@ -831,7 +838,7 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VPt-0s-s8r" userLabel="Collectioview Sản phẩm giảm giá">
-                                        <rect key="frame" x="0.0" y="1451" width="375" height="250"/>
+                                        <rect key="frame" x="0.0" y="1416" width="375" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="V2x-KW-GKl"/>
                                         </constraints>
@@ -861,7 +868,7 @@
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OME-Oe-ONq" userLabel="View header sản phẩm hot">
-                                        <rect key="frame" x="0.0" y="1701" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="1666" width="375" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm hot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDc-dL-bRZ">
                                                 <rect key="frame" x="7.9999999999999929" y="17" width="112.33333333333331" height="21"/>
@@ -888,7 +895,7 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" restorationIdentifier="Collection Home Hot Product" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Iug-ic-rWk" userLabel="Collection sản phẩm hot">
-                                        <rect key="frame" x="0.0" y="1756" width="375" height="250"/>
+                                        <rect key="frame" x="0.0" y="1721" width="375" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="EPU-RH-bVV"/>
                                         </constraints>
@@ -918,7 +925,7 @@
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saT-qQ-dgf" userLabel="View header danh mục hot">
-                                        <rect key="frame" x="0.0" y="2006" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="1971" width="375" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh mục hot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsS-Hr-Fn0">
                                                 <rect key="frame" x="7.9999999999999929" y="17" width="113.33333333333331" height="21"/>
@@ -945,7 +952,7 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" restorationIdentifier="Collection Home Hot Category" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tmh-ep-hw0" userLabel="Collection danh mục hot">
-                                        <rect key="frame" x="0.0" y="2061" width="375" height="304"/>
+                                        <rect key="frame" x="0.0" y="2026" width="375" height="304"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="304" id="KZz-vH-LTJ"/>
                                         </constraints>
@@ -1007,7 +1014,7 @@
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWW-Ph-LvC" userLabel="View header sản phẩm mới">
-                                        <rect key="frame" x="0.0" y="2365" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="2330" width="375" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm mới" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUZ-un-QdW">
                                                 <rect key="frame" x="8" y="17" width="116" height="21"/>
@@ -1034,7 +1041,7 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kl0-T6-3PL">
-                                        <rect key="frame" x="0.0" y="2420" width="375" height="250"/>
+                                        <rect key="frame" x="0.0" y="2385" width="375" height="250"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="e88-Vf-8R5"/>
@@ -1066,11 +1073,21 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-2Y-NdI" customClass="BarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="409" width="375" height="268"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-9f-K6J" userLabel="View header sản phẩm yêu thích">
+                                        <rect key="frame" x="0.0" y="330" width="375" height="55"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm yêu thích" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh3-j6-QMj">
+                                                <rect key="frame" x="8" y="17" width="160.66666666666666" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.30738114010000001" blue="0.20628872240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="268" id="0qk-x5-Tjl"/>
+                                            <constraint firstItem="yh3-j6-QMj" firstAttribute="top" secondItem="GvT-9f-K6J" secondAttribute="top" constant="17" id="LRO-ee-olH"/>
+                                            <constraint firstAttribute="height" constant="55" id="iyg-L2-df0"/>
+                                            <constraint firstItem="yh3-j6-QMj" firstAttribute="leading" secondItem="GvT-9f-K6J" secondAttribute="leading" constant="8" id="xAs-L0-zQm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1084,6 +1101,7 @@
                                     <constraint firstItem="saT-qQ-dgf" firstAttribute="top" secondItem="Iug-ic-rWk" secondAttribute="bottom" id="5C9-IX-FMe"/>
                                     <constraint firstItem="saT-qQ-dgf" firstAttribute="leading" secondItem="Rps-k1-o4g" secondAttribute="leading" id="5qp-b7-hTq"/>
                                     <constraint firstAttribute="trailing" secondItem="VPt-0s-s8r" secondAttribute="trailing" id="6i0-wv-t3E"/>
+                                    <constraint firstItem="HYh-bM-iwB" firstAttribute="top" secondItem="GvT-9f-K6J" secondAttribute="bottom" constant="3" id="8GQ-Qm-Yv2"/>
                                     <constraint firstItem="Evc-K3-STm" firstAttribute="top" secondItem="Rps-k1-o4g" secondAttribute="top" id="9E2-80-SzQ"/>
                                     <constraint firstItem="Kl0-T6-3PL" firstAttribute="leading" secondItem="Rps-k1-o4g" secondAttribute="leading" id="B4e-01-9Kq"/>
                                     <constraint firstItem="VPt-0s-s8r" firstAttribute="top" secondItem="QFY-JE-uaN" secondAttribute="bottom" id="DuE-vH-5tz"/>
@@ -1099,22 +1117,22 @@
                                     <constraint firstAttribute="trailing" secondItem="tmh-ep-hw0" secondAttribute="trailing" id="PKT-M9-Xme"/>
                                     <constraint firstItem="saT-qQ-dgf" firstAttribute="width" secondItem="Rps-k1-o4g" secondAttribute="width" id="Pbs-po-2ma"/>
                                     <constraint firstAttribute="trailing" secondItem="Iug-ic-rWk" secondAttribute="trailing" id="PyO-UK-qub"/>
-                                    <constraint firstItem="Gjq-QS-kPe" firstAttribute="top" secondItem="mNa-2Y-NdI" secondAttribute="bottom" constant="160" id="Rum-vy-OtY"/>
+                                    <constraint firstItem="GvT-9f-K6J" firstAttribute="top" secondItem="mNa-2Y-NdI" secondAttribute="bottom" constant="2" id="QKg-ok-r0I"/>
                                     <constraint firstItem="tmh-ep-hw0" firstAttribute="leading" secondItem="Rps-k1-o4g" secondAttribute="leading" id="SV5-ax-Mdp"/>
                                     <constraint firstAttribute="trailing" secondItem="fr0-eM-Lbv" secondAttribute="trailing" id="SdG-US-25F"/>
                                     <constraint firstAttribute="trailing" secondItem="Evc-K3-STm" secondAttribute="trailing" id="Siy-lo-kvy"/>
                                     <constraint firstItem="Evc-K3-STm" firstAttribute="width" secondItem="Rps-k1-o4g" secondAttribute="width" id="T6T-W1-aS2"/>
-                                    <constraint firstItem="mNa-2Y-NdI" firstAttribute="top" secondItem="HYh-bM-iwB" secondAttribute="bottom" constant="72" id="TfA-L2-SR3"/>
                                     <constraint firstItem="QFY-JE-uaN" firstAttribute="top" secondItem="fr0-eM-Lbv" secondAttribute="bottom" id="Tre-17-MoM"/>
                                     <constraint firstItem="HYh-bM-iwB" firstAttribute="leading" secondItem="Rps-k1-o4g" secondAttribute="leading" id="Vk8-SU-Zuy"/>
                                     <constraint firstItem="Evc-K3-STm" firstAttribute="leading" secondItem="Rps-k1-o4g" secondAttribute="leading" id="XfJ-tb-zgn"/>
                                     <constraint firstAttribute="trailing" secondItem="QFY-JE-uaN" secondAttribute="trailing" id="XpG-jY-vnl"/>
-                                    <constraint firstItem="HYh-bM-iwB" firstAttribute="top" secondItem="Evc-K3-STm" secondAttribute="bottom" constant="14" id="Y9B-JL-bqc"/>
+                                    <constraint firstItem="mNa-2Y-NdI" firstAttribute="top" secondItem="Evc-K3-STm" secondAttribute="bottom" constant="5" id="aE6-q9-f14"/>
                                     <constraint firstAttribute="trailing" secondItem="saT-qQ-dgf" secondAttribute="trailing" id="bcl-Cq-Ifg"/>
                                     <constraint firstAttribute="trailing" secondItem="aWW-Ph-LvC" secondAttribute="trailing" id="cNE-mo-znG"/>
                                     <constraint firstItem="gba-cX-HHi" firstAttribute="leading" secondItem="Rps-k1-o4g" secondAttribute="leading" id="dJv-80-Fy0"/>
                                     <constraint firstAttribute="trailing" secondItem="HYh-bM-iwB" secondAttribute="trailing" id="djL-Jh-KT8"/>
                                     <constraint firstItem="tmh-ep-hw0" firstAttribute="width" secondItem="Rps-k1-o4g" secondAttribute="width" id="fVk-Pa-av7"/>
+                                    <constraint firstItem="Gjq-QS-kPe" firstAttribute="top" secondItem="HYh-bM-iwB" secondAttribute="bottom" constant="146" id="fek-Dc-gnw"/>
                                     <constraint firstAttribute="trailing" secondItem="OME-Oe-ONq" secondAttribute="trailing" id="fjT-W7-p8r"/>
                                     <constraint firstItem="Kl0-T6-3PL" firstAttribute="top" secondItem="aWW-Ph-LvC" secondAttribute="bottom" id="g9o-bb-zFo"/>
                                     <constraint firstItem="OME-Oe-ONq" firstAttribute="width" secondItem="Rps-k1-o4g" secondAttribute="width" id="gfu-u9-fHI"/>
@@ -1127,8 +1145,10 @@
                                     <constraint firstItem="aWW-Ph-LvC" firstAttribute="leading" secondItem="Rps-k1-o4g" secondAttribute="leading" id="oeE-KT-wWI"/>
                                     <constraint firstItem="fr0-eM-Lbv" firstAttribute="width" secondItem="Rps-k1-o4g" secondAttribute="width" id="pnP-eP-l64"/>
                                     <constraint firstItem="QFY-JE-uaN" firstAttribute="width" secondItem="Rps-k1-o4g" secondAttribute="width" id="rYS-7S-8tW"/>
+                                    <constraint firstItem="GvT-9f-K6J" firstAttribute="leading" secondItem="mNa-2Y-NdI" secondAttribute="leading" id="sO3-kf-L7x"/>
                                     <constraint firstItem="VPt-0s-s8r" firstAttribute="width" secondItem="Rps-k1-o4g" secondAttribute="width" id="tWy-p0-tpJ"/>
                                     <constraint firstItem="Gjq-QS-kPe" firstAttribute="leading" secondItem="Rps-k1-o4g" secondAttribute="leading" id="uyO-le-xVN"/>
+                                    <constraint firstAttribute="trailing" secondItem="GvT-9f-K6J" secondAttribute="trailing" id="vHw-BT-E3m"/>
                                     <constraint firstItem="Iug-ic-rWk" firstAttribute="leading" secondItem="Rps-k1-o4g" secondAttribute="leading" id="vTv-9k-dgK"/>
                                 </constraints>
                             </scrollView>

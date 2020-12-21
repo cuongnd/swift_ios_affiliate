@@ -117,10 +117,10 @@ class HomeVC: UIViewController {
            // Color
            dataSet.colors = ChartColorTemplates.joyful()
            //dataSet.valueColors = [UIColor.black]
-           pieChart.backgroundColor = UIColor.black
+           pieChart.backgroundColor = UIColor.white
            pieChart.holeColor = UIColor.clear
-           pieChart.chartDescription?.textColor = UIColor.white
-           pieChart.legend.textColor = UIColor.white
+           pieChart.chartDescription?.textColor = UIColor.black
+           pieChart.legend.textColor = UIColor.black
            
            // Text
            pieChart.legend.font = UIFont(name: "Futura", size: 10)!
