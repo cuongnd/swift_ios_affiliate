@@ -39,7 +39,7 @@ class SideMenuVC: UIViewController {
         {
             if UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "en" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "N/A"
             {
-                menuArray = ["Trang chủ","Lịch sử đơn hàng","Sản phẩm yêu thích","Đánh giá","Cài đặt"]
+                menuArray = ["Trang chủ","Rút tiền","Chia sẻ sản phẩm","sfs","Cài đặt"]
                 menuImgeArray = ["ic_Home","ic_OrderHistory","ic_heart","ic_rate","ic_settings"]
             }
             else{
@@ -53,7 +53,7 @@ class SideMenuVC: UIViewController {
             
             if UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "en" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "N/A"
             {
-                menuArray = ["Trang chủ","Lịch sử đơn hàng","Sản phẩm yêu thích","Đánh giá","Cài đặt","Đăng xuất"]
+                menuArray = ["Trang chủ","Rút tiền","Chia sẻ sản phẩm","Hướng dẫn","Thông tin tài khoản","Đăng xuất"]
                 menuImgeArray = ["ic_Home","ic_OrderHistory","ic_heart","ic_rate","ic_settings","ic_logout"]
             }
             else{
