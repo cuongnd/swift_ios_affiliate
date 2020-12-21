@@ -12,7 +12,7 @@ import LanguageManager_iOS
 import SlideMenuControllerSwift
 import CoreLocation
 import MapKit
-
+import Charts
 
 
 class HomeCategoryCell: UICollectionViewCell {
@@ -56,10 +56,16 @@ class HomeVC: UIViewController {
     @IBOutlet weak var HomeTtitleNewProducts: HomeTitle!
     @IBOutlet weak var homeHeader: HomeHeader!
     
+    
+    @IBOutlet weak var pieChart: PieChartView!
+    @IBOutlet weak var barChart: BarChartView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
+       barChartUpdate()
+              pieChartUpdate()
         
         let nibCell = UINib(nibName: "HomeFeatureProductCell", bundle: nil)
         Collectioview_HomeFeatureProductList.register(nibCell, forCellWithReuseIdentifier: "HomeFeatureProductCell")
@@ -71,12 +77,62 @@ class HomeVC: UIViewController {
         Collectioview_HomeDiscountProductList.register(UINib(nibName: "HomeDiscountProductCell", bundle: nil), forCellWithReuseIdentifier: "HomeDiscountProductCell")
        
         let urlStringGetMainShopInfo = API_URL + "/api/ios/get_shop_info"
-        self.Webservice_getMainShopInfo(url: urlStringGetMainShopInfo, params: [:])
+        //self.Webservice_getMainShopInfo(url: urlStringGetMainShopInfo, params: [:])
         
        
         
 
    }
+    func barChartUpdate () {
+           
+           // Basic set up of plan chart
+           
+           let entry1 = BarChartDataEntry(x: 1.0, y: Double(10))
+           let entry2 = BarChartDataEntry(x: 2.0, y: Double(40))
+           let entry3 = BarChartDataEntry(x: 3.0, y: Double(30))
+        let dataSet = BarChartDataSet(entries: [entry1, entry2, entry3], label: "Widgets Type")
+           let data = BarChartData(dataSets: [dataSet])
+           barChart.data = data
+           barChart.chartDescription?.text = "Number of Widgets by Type"
+
+           // Color
+           dataSet.colors = ChartColorTemplates.vordiplom()
+
+           // Refresh chart with new data
+           barChart.notifyDataSetChanged()
+       }
+       
+       func pieChartUpdate () {
+           
+           // Basic set up of plan chart
+           
+           let entry1 = PieChartDataEntry(value: Double(24), label: "#1")
+           let entry2 = PieChartDataEntry(value: Double(49), label: "#2")
+           let entry3 = PieChartDataEntry(value: Double(32), label: "#3")
+        let dataSet = PieChartDataSet(entries: [entry1, entry2, entry3], label: "Widget Types")
+           let data = PieChartData(dataSet: dataSet)
+           pieChart.data = data
+           pieChart.chartDescription?.text = "Share of Widgets by Type"
+
+           // Color
+           dataSet.colors = ChartColorTemplates.joyful()
+           //dataSet.valueColors = [UIColor.black]
+           pieChart.backgroundColor = UIColor.black
+           pieChart.holeColor = UIColor.clear
+           pieChart.chartDescription?.textColor = UIColor.white
+           pieChart.legend.textColor = UIColor.white
+           
+           // Text
+           pieChart.legend.font = UIFont(name: "Futura", size: 10)!
+           pieChart.chartDescription?.font = UIFont(name: "Futura", size: 12)!
+           pieChart.chartDescription?.xOffset = pieChart.frame.width
+           pieChart.chartDescription?.yOffset = pieChart.frame.height * (2/3)
+           pieChart.chartDescription?.textAlign = NSTextAlignment.left
+
+           // Refresh chart with new data
+           pieChart.notifyDataSetChanged()
+       }
+    
     
     @IBAction func GoToSearch(_ sender: UIButton) {
         let searchVC = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(identifier: "SearchVC") as! SearchVC
