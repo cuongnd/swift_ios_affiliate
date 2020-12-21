@@ -98,41 +98,44 @@ class HomeVC: UIViewController {
 extension HomeVC
 {
     func Webservice_getDoanhThuTheoThang(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
                 showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
             }
             else {
                 print(jsonResponse!)
-                let responseCode = jsonResponse!["result"].stringValue
-                if responseCode == "success" {
-                    let doanh_theo_thang = jsonResponse!["data"].dictionaryValue
-                    let list_doanh_theo_thang=JSON(doanh_theo_thang);
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getDoanhThuTheoThangResponseModel = try jsonDecoder.decode(GetDoanhThuTheoThangResponseModel.self, from: jsonResponse!)
+                    let list_doanhthu:[DoanhThuThangModel]=getDoanhThuTheoThangResponseModel.list_doanhthu
                     var listBarChartDataEntry = [BarChartDataEntry]()
-                    for index in 0...list_doanh_theo_thang.count-1 {
-                        let doanh_thu=list_doanh_theo_thang[index]
-                        let entry1 = BarChartDataEntry(x: doanh_thu["month"].doubleValue, y: doanh_thu["total"].doubleValue)
-                        listBarChartDataEntry.append(entry1)
+                    for doanh_thu in list_doanhthu {
+                        let entry = BarChartDataEntry(x: Double(doanh_thu.month), y: doanh_thu.total)
+                        listBarChartDataEntry.append(entry)
                     }
                     let dataSet = BarChartDataSet(entries: listBarChartDataEntry, label: "")
                     let data = BarChartData(dataSets: [dataSet])
                     self.barChart.data = data
                     self.barChart.chartDescription?.text = ""
-                    
                     // Color
                     dataSet.colors = ChartColorTemplates.vordiplom()
                     
                     // Refresh chart with new data
                     self.barChart.notifyDataSetChanged()
                     
-                    
-                    
+                } catch let error as NSError  {
+                    print("error: \(error)")
                 }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
+                
+                
+                //print("userModel:\(userModel)")
+                
             }
         }
+        
+        
+        
+        
     }
     
     func Webservice_getHieuQuaDonHang(url:String, params:NSDictionary) -> Void {

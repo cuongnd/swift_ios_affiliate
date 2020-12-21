@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0443F6A82590D834005D5637 /* HomeVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6A72590D834005D5637 /* HomeVC2.swift */; };
+		0443F6AA2590F30A005D5637 /* GetDoanhThuTheoThangResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6A92590F309005D5637 /* GetDoanhThuTheoThangResponseModel.swift */; };
+		0443F6AC2590F370005D5637 /* DoanhThuThangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -156,6 +158,8 @@
 /* Begin PBXFileReference section */
 		01E2E19DB1CA0A2FA3792ED6 /* Pods-FoodAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FoodAppUITests/Pods-FoodAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0443F6A72590D834005D5637 /* HomeVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC2.swift; sourceTree = "<group>"; };
+		0443F6A92590F309005D5637 /* GetDoanhThuTheoThangResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDoanhThuTheoThangResponseModel.swift; sourceTree = "<group>"; };
+		0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoanhThuThangModel.swift; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -454,9 +458,11 @@
 				0C8A565A2583186E00CAD7F1 /* GetPaymentResponseModel.swift */,
 				0C8A56502581DD4E00CAD7F1 /* GetUserResponseModel.swift */,
 				0C8A566625846C4300CAD7F1 /* GetOrderResponseModel.swift */,
+				0443F6A92590F309005D5637 /* GetDoanhThuTheoThangResponseModel.swift */,
 				0C8A564C2581C5C900CAD7F1 /* UserModel.swift */,
 				0C8A567A25874F8700CAD7F1 /* OrderUserModel.swift */,
 				0C8A566825846C6500CAD7F1 /* OrderModel.swift */,
+				0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */,
 				0C8A565C25831AEC00CAD7F1 /* PaymentModel.swift */,
 				0C8A566A2584754F00CAD7F1 /* OrderProductModel.swift */,
 				0C8A565E25831BA900CAD7F1 /* ImageModel.swift */,
@@ -1234,9 +1240,11 @@
 				0C42DC07257BD6BD007009E4 /* ADRTable.swift in Sources */,
 				0C8A564D2581C5C900CAD7F1 /* UserModel.swift in Sources */,
 				0C8A56712584802600CAD7F1 /* OrderCustomerModel.swift in Sources */,
+				0443F6AA2590F30A005D5637 /* GetDoanhThuTheoThangResponseModel.swift in Sources */,
 				0C42DC25257BDD27007009E4 /* ADRIndex.swift in Sources */,
 				0C42DC12257BD7A4007009E4 /* ADRFrontEndController.swift in Sources */,
 				880BDE9224D55F870085FC1D /* NoteVC.swift in Sources */,
+				0443F6AC2590F370005D5637 /* DoanhThuThangModel.swift in Sources */,
 				C8F07A2B248F879700665143 /* OrderHistoryDetailsVC.swift in Sources */,
 				0443F6A82590D834005D5637 /* HomeVC2.swift in Sources */,
 				0C42DC2A257C6A6F007009E4 /* ObjectMapperFrontendCart.swift in Sources */,

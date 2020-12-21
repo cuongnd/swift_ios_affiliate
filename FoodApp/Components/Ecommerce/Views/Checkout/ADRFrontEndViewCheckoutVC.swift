@@ -204,20 +204,7 @@ class ADRFrontEndViewCheckoutVC: UIViewController,UITextViewDelegate {
             "billing_address_2": UITextViewBillingAddress2.text!,
             
         ]
-        ADRTableUser.shared.updateShippingAndBilldingInfo(
-            user_id:user_id,
-            shipping_fullname: UITextFieldShippingFullName.text!,
-            shipping_email: UITextFieldShippingEmail.text!,
-            shipping_phone: UITextFieldShippingPhonenumber.text!,
-            shipping_address_1: UITextViewShippingAddress1.text!,
-            shipping_address_2: UITextViewShippingAddress2.text!,
-            
-            billing_fullname: UITextFieldBillingFullName.text!,
-            billing_email: UITextFieldBillingEmail.text!,
-            billing_phone: UITextFieldBillingPhone.text!,
-            billing_address_1: UITextViewBillingAddress1.text!,
-            billing_address_2: UITextViewBillingAddress2.text!
-        )
+       
         let urlStringPostUpdateUser = API_URL + "/api_task/users.update_user_info?user_id=\(user_id)"
         self.Webservice_getUpdateUser(url: urlStringPostUpdateUser, params: params)
         
