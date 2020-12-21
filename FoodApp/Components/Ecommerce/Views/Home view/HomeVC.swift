@@ -18,15 +18,15 @@ import Charts
 class HomeCategoryCell: UICollectionViewCell {
     @IBOutlet weak var img_category: UIImageView!
     @IBOutlet weak var lbl_CategoryName: UILabel!
-  
-
+    
+    
 }
 
 class HomeVC: UIViewController {
-   
     
     
- 
+    
+    
     @IBOutlet weak var btnMenu: UIButton!
     @IBOutlet weak var btnSearch: UIButton!
     var lastProductArray = [JSON]()
@@ -42,7 +42,7 @@ class HomeVC: UIViewController {
     var latitued = String()
     var longitude = String()
     
-
+    
     
     
     @IBOutlet weak var pieChart: PieChartView!
@@ -53,23 +53,22 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-       
-       
-        let urlStringDoanhThuTheoThang = API_URL + "/api/affiliates/get_doanh_thu_theo_thang"
+        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId)
+        let urlStringDoanhThuTheoThang = API_URL + "/api/affiliates/get_doanh_thu_theo_thang?user_id=\(user_id)"
         self.Webservice_getDoanhThuTheoThang(url: urlStringDoanhThuTheoThang, params: [:])
         let urlStringHieuQuaDonHang = API_URL + "//api/affiliates/get_hieu_qua_don_hang"
         self.Webservice_getHieuQuaDonHang(url: urlStringHieuQuaDonHang, params: [:])
         
-       
         
-
-   }
+        
+        
+    }
     
-       
+    
     
     @IBAction func GoToSearch(_ sender: UIButton) {
         let searchVC = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(identifier: "SearchVC") as! SearchVC
-       self.navigationController?.pushViewController(searchVC, animated: true)
+        self.navigationController?.pushViewController(searchVC, animated: true)
     }
     @IBAction func ShowMenu(_ sender: UIButton) {
         print("hello ShowMenu")
@@ -107,22 +106,25 @@ extension HomeVC
                 print(jsonResponse!)
                 let responseCode = jsonResponse!["result"].stringValue
                 if responseCode == "success" {
-                     let doanh_theo_thang = jsonResponse!["data"].dictionaryValue
-                     
-                    let entry1 = BarChartDataEntry(x: 1.0, y: Double(10))
-                              let entry2 = BarChartDataEntry(x: 2.0, y: Double(40))
-                              let entry3 = BarChartDataEntry(x: 3.0, y: Double(30))
-                           let dataSet = BarChartDataSet(entries: [entry1, entry2, entry3], label: "Widgets Type")
-                              let data = BarChartData(dataSets: [dataSet])
-                              self.barChart.data = data
-                              self.barChart.chartDescription?.text = ""
-
-                              // Color
-                              dataSet.colors = ChartColorTemplates.vordiplom()
-
-                              // Refresh chart with new data
-                              self.barChart.notifyDataSetChanged()
-                     
+                    let doanh_theo_thang = jsonResponse!["data"].dictionaryValue
+                    let list_doanh_theo_thang=JSON(doanh_theo_thang);
+                    var listBarChartDataEntry = [BarChartDataEntry]()
+                    for index in 0...list_doanh_theo_thang.count-1 {
+                        let doanh_thu=list_doanh_theo_thang[index]
+                        let entry1 = BarChartDataEntry(x: doanh_thu["month"].doubleValue, y: doanh_thu["total"].doubleValue)
+                        listBarChartDataEntry.append(entry1)
+                    }
+                    let dataSet = BarChartDataSet(entries: listBarChartDataEntry, label: "")
+                    let data = BarChartData(dataSets: [dataSet])
+                    self.barChart.data = data
+                    self.barChart.chartDescription?.text = ""
+                    
+                    // Color
+                    dataSet.colors = ChartColorTemplates.vordiplom()
+                    
+                    // Refresh chart with new data
+                    self.barChart.notifyDataSetChanged()
+                    
                     
                     
                 }
@@ -142,33 +144,33 @@ extension HomeVC
                 print(jsonResponse!)
                 let responseCode = jsonResponse!["result"].stringValue
                 if responseCode == "success" {
-                     let hieu_qua_don_hang = jsonResponse!["data"].dictionaryValue
-                     
+                    let hieu_qua_don_hang = jsonResponse!["data"].dictionaryValue
+                    
                     let entry1 = PieChartDataEntry(value: Double(24), label: "#1")
-                              let entry2 = PieChartDataEntry(value: Double(49), label: "#2")
-                              let entry3 = PieChartDataEntry(value: Double(32), label: "#3")
-                           let dataSet = PieChartDataSet(entries: [entry1, entry2, entry3], label: "Widget Types")
-                              let data = PieChartData(dataSet: dataSet)
+                    let entry2 = PieChartDataEntry(value: Double(49), label: "#2")
+                    let entry3 = PieChartDataEntry(value: Double(32), label: "#3")
+                    let dataSet = PieChartDataSet(entries: [entry1, entry2, entry3], label: "Widget Types")
+                    let data = PieChartData(dataSet: dataSet)
                     self.pieChart.data = data
-                              self.pieChart.chartDescription?.text = "Share of Widgets by Type"
-
-                              // Color
-                              dataSet.colors = ChartColorTemplates.joyful()
-                              //dataSet.valueColors = [UIColor.black]
-                              self.pieChart.backgroundColor = UIColor.white
-                              self.pieChart.holeColor = UIColor.clear
-                              self.pieChart.chartDescription?.textColor = UIColor.black
-                              self.pieChart.legend.textColor = UIColor.black
-                              
-                              // Text
-                              self.pieChart.legend.font = UIFont(name: "Futura", size: 10)!
-                              self.pieChart.chartDescription?.font = UIFont(name: "Futura", size: 12)!
-                              self.pieChart.chartDescription?.xOffset = self.pieChart.frame.width
-                              self.pieChart.chartDescription?.yOffset = self.pieChart.frame.height * (2/3)
-                              self.pieChart.chartDescription?.textAlign = NSTextAlignment.left
-
-                              // Refresh chart with new data
-                              self.pieChart.notifyDataSetChanged()
+                    self.pieChart.chartDescription?.text = "Share of Widgets by Type"
+                    
+                    // Color
+                    dataSet.colors = ChartColorTemplates.joyful()
+                    //dataSet.valueColors = [UIColor.black]
+                    self.pieChart.backgroundColor = UIColor.white
+                    self.pieChart.holeColor = UIColor.clear
+                    self.pieChart.chartDescription?.textColor = UIColor.black
+                    self.pieChart.legend.textColor = UIColor.black
+                    
+                    // Text
+                    self.pieChart.legend.font = UIFont(name: "Futura", size: 10)!
+                    self.pieChart.chartDescription?.font = UIFont(name: "Futura", size: 12)!
+                    self.pieChart.chartDescription?.xOffset = self.pieChart.frame.width
+                    self.pieChart.chartDescription?.yOffset = self.pieChart.frame.height * (2/3)
+                    self.pieChart.chartDescription?.textAlign = NSTextAlignment.left
+                    
+                    // Refresh chart with new data
+                    self.pieChart.notifyDataSetChanged()
                     
                     
                 }
