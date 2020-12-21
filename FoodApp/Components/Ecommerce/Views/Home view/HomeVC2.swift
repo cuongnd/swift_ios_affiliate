@@ -15,14 +15,14 @@ import MapKit
 
 
 
-class HomeCategoryCell: UICollectionViewCell {
+class HomeCategoryCell2: UICollectionViewCell {
     @IBOutlet weak var img_category: UIImageView!
     @IBOutlet weak var lbl_CategoryName: UILabel!
   
 
 }
 
-class HomeVC: UIViewController {
+class HomeVC2: UIViewController {
    
     
     
@@ -105,7 +105,7 @@ class HomeVC: UIViewController {
     
     
 }
-extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+extension HomeVC2: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.Collectioview_lastProductList{
             return lastProductArray.count
@@ -177,7 +177,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
           
             return cell
         }else if collectionView == self.Collectioview_HomeCategoryList{
-            let cell = self.Collectioview_HomeCategoryList.dequeueReusableCell(withReuseIdentifier: "HomeCategoryCell", for: indexPath) as! HomeCategoryCell
+            let cell = self.Collectioview_HomeCategoryList.dequeueReusableCell(withReuseIdentifier: "HomeCategoryCell2", for: indexPath) as! HomeCategoryCell2
             //cornerRadius(viewName: cell.img_categories, radius: 6.0)
             let data = self.homeCategoryArray[indexPath.item]
             cell.lbl_CategoryName.text = data["name"].stringValue
@@ -308,7 +308,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
     
 }
 
-extension HomeVC
+extension HomeVC2
 {
     func Webservice_getMainShopInfo(url:String, params:NSDictionary) -> Void {
         WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
@@ -484,4 +484,13 @@ extension HomeVC
     }
     
 }
-
+extension String {
+    func strikeThrough() -> NSAttributedString {
+        let attributeString =  NSMutableAttributedString(string: self)
+        attributeString.addAttribute(
+            NSAttributedString.Key.strikethroughStyle,
+               value: NSUnderlineStyle.single.rawValue,
+                   range:NSMakeRange(0,attributeString.length))
+        return attributeString
+    }
+}

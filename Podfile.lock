@@ -1,5 +1,8 @@
 PODS:
-  - Alamofire (5.4.0)
+  - Alamofire (5.4.1)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - ETBinding (3.0)
   - Firebase/Core (7.3.0):
     - Firebase/CoreOnly
@@ -108,6 +111,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
+  - Charts
   - ETBinding
   - Firebase/Core
   - Firebase/Messaging
@@ -131,6 +135,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Charts
     - ETBinding
     - Firebase
     - FirebaseAnalytics
@@ -163,7 +168,8 @@ SPEC REPOS:
     - TagListView
 
 SPEC CHECKSUMS:
-  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   ETBinding: 27be01c2b38dbc88b63189a0ca05187cd24be2ec
   Firebase: 26223c695fe322633274198cb19dca8cb7e54416
   FirebaseAnalytics: 2580c2d62535ae7b644143d48941fcc239ea897a
@@ -195,6 +201,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
 
-PODFILE CHECKSUM: 0ddc2f5c68345c5eb3c73b25486770e5ad64c3d3
+PODFILE CHECKSUM: fd544dfb789a3d7b3d5b7c6abada36cd1ad26761
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0
