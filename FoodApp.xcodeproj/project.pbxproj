@@ -12,7 +12,8 @@
 		0443F6AC2590F370005D5637 /* DoanhThuThangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */; };
 		0443F6AE2590F785005D5637 /* GetHieuQuaDonHangResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AD2590F784005D5637 /* GetHieuQuaDonHangResponseModel.swift */; };
 		0443F6B02590F7D1005D5637 /* HieuQuaDonHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AF2590F7D1005D5637 /* HieuQuaDonHangModel.swift */; };
-		0443F6B3259101BD005D5637 /* WithdrawalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6B2259101BD005D5637 /* WithdrawalList.swift */; };
+		0443F6B3259101BD005D5637 /* WithdrawalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6B2259101BD005D5637 /* WithdrawalListVC.swift */; };
+		0443F6B525910238005D5637 /* Withdrawal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0443F6B425910238005D5637 /* Withdrawal.storyboard */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -165,7 +166,8 @@
 		0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoanhThuThangModel.swift; sourceTree = "<group>"; };
 		0443F6AD2590F784005D5637 /* GetHieuQuaDonHangResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHieuQuaDonHangResponseModel.swift; sourceTree = "<group>"; };
 		0443F6AF2590F7D1005D5637 /* HieuQuaDonHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HieuQuaDonHangModel.swift; sourceTree = "<group>"; };
-		0443F6B2259101BD005D5637 /* WithdrawalList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalList.swift; sourceTree = "<group>"; };
+		0443F6B2259101BD005D5637 /* WithdrawalListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalListVC.swift; sourceTree = "<group>"; };
+		0443F6B425910238005D5637 /* Withdrawal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Withdrawal.storyboard; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 		0443F6B12591019C005D5637 /* withdrawal */ = {
 			isa = PBXGroup;
 			children = (
+				0443F6B2259101BD005D5637 /* WithdrawalListVC.swift */,
 			);
 			path = withdrawal;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				0C5171042565707B00C4EA7F /* Setting.storyboard */,
 				0C172C5E256F49A6005DA537 /* homepage.storyboard */,
 				0C8A567C258763E700CAD7F1 /* Order.storyboard */,
+				0443F6B425910238005D5637 /* Withdrawal.storyboard */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -778,9 +782,8 @@
 		885D104024D9302700342F93 /* Order History View */ = {
 			isa = PBXGroup;
 			children = (
-				C8F882D1248CB79F0064D74F /* OrderHistoryVC.swift */,
-				0443F6B2259101BD005D5637 /* WithdrawalList.swift */,
 				C8F07A2A248F879700665143 /* OrderHistoryDetailsVC.swift */,
+				C8F882D1248CB79F0064D74F /* OrderHistoryVC.swift */,
 			);
 			path = "Order History View";
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				C8C99DCD2488D77E00B5C187 /* Main.storyboard in Resources */,
 				0C5171052565707B00C4EA7F /* Setting.storyboard in Resources */,
 				0CDCD68525807B8C000B7F44 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				0443F6B525910238005D5637 /* Withdrawal.storyboard in Resources */,
 				0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */,
 				0C5170FF2565538D00C4EA7F /* Products.storyboard in Resources */,
 				0C172C5D256ED44C005DA537 /* test2.xib in Resources */,
@@ -1230,7 +1234,7 @@
 				0C8A56792586323100CAD7F1 /* ViewOrderControllerViewModel2.swift in Sources */,
 				0C8A56462581352700CAD7F1 /* APISession.swift in Sources */,
 				C8C99E032488D93C00B5C187 /* commonFunction.swift in Sources */,
-				0443F6B3259101BD005D5637 /* WithdrawalList.swift in Sources */,
+				0443F6B3259101BD005D5637 /* WithdrawalListVC.swift in Sources */,
 				0CD77A5F257A2E530083BC09 /* ADRTemp.swift in Sources */,
 				0C3C2E5D256B3A22000B21C5 /* LoginView.swift in Sources */,
 				C8349E3824979C59009EEF8D /* RatingsVC.swift in Sources */,

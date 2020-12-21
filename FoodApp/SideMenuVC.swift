@@ -70,8 +70,9 @@ class SideMenuVC: UIViewController {
         let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
         self.homeViewController = UINavigationController(rootViewController: homeVC)
         self.homeViewController.setNavigationBarHidden(true, animated: true)
-        let historyVC = UIStoryboard(name: "Order", bundle: nil).instantiateViewController(withIdentifier: "OrderHistoryVC") as! OrderHistoryVC
-        self.historyViewController = UINavigationController(rootViewController: historyVC)
+        
+        let withdrawalListVC = UIStoryboard(name: "Withdrawal", bundle: nil).instantiateViewController(withIdentifier: "WithdrawalListVC") as! WithdrawalListVC
+        self.historyViewController = UINavigationController(rootViewController: withdrawalListVC)
         self.historyViewController.setNavigationBarHidden(true, animated: true)
         
         let LoginsVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC

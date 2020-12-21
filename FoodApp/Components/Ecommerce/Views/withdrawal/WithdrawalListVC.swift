@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class OrderHistoryCell: UITableViewCell {
+class Withdrawal: UITableViewCell {
     
     @IBOutlet weak var lbl_OrderNoLabel: UILabel!
     @IBOutlet weak var lbl_QtyLabel: UILabel!
@@ -24,7 +24,7 @@ class OrderHistoryCell: UITableViewCell {
 }
 
 
-class OrderHistoryVC: UIViewController {
+class WithdrawalListVC: UIViewController {
     @IBOutlet weak var Tableview_OrderHistory: UITableView!
     @IBOutlet weak var lbl_titleLabel: UILabel!
     var refreshControl = UIRefreshControl()
@@ -58,7 +58,7 @@ class OrderHistoryVC: UIViewController {
         }
     }
 }
-extension OrderHistoryVC: UITableViewDelegate,UITableViewDataSource {
+extension WithdrawalListVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.Tableview_OrderHistory.bounds.size.width, height: self.Tableview_OrderHistory.bounds.size.height))
         let messageLabel = UILabel(frame: rect)
@@ -88,7 +88,7 @@ extension OrderHistoryVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = self.Tableview_OrderHistory.dequeueReusableCell(withIdentifier: "OrderHistoryCell") as! OrderHistoryCell
+        let cell = self.Tableview_OrderHistory.dequeueReusableCell(withIdentifier: "Withdrawal") as! Withdrawal
         let data = self.OrderHistoryData[indexPath.row]
         cell.lbl_QtyLabel.text = "QTY :".localiz()
         cell.lbl_OrderNoLabel.text = "ORDER ID :".localiz()
@@ -115,8 +115,8 @@ extension OrderHistoryVC: UITableViewDelegate,UITableViewDataSource {
     }
     
 }
-//MARK: Webservices
-extension OrderHistoryVC {
+//MARK: WithdrawalList
+extension WithdrawalListVC {
     func Webservice_GetHistory(url:String, params:NSDictionary) -> Void {
         
         WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
