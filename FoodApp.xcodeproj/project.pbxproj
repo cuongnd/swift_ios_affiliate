@@ -12,6 +12,7 @@
 		0443F6AC2590F370005D5637 /* DoanhThuThangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */; };
 		0443F6AE2590F785005D5637 /* GetHieuQuaDonHangResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AD2590F784005D5637 /* GetHieuQuaDonHangResponseModel.swift */; };
 		0443F6B02590F7D1005D5637 /* HieuQuaDonHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AF2590F7D1005D5637 /* HieuQuaDonHangModel.swift */; };
+		0443F6B3259101BD005D5637 /* WithdrawalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6B2259101BD005D5637 /* WithdrawalList.swift */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -164,6 +165,7 @@
 		0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoanhThuThangModel.swift; sourceTree = "<group>"; };
 		0443F6AD2590F784005D5637 /* GetHieuQuaDonHangResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHieuQuaDonHangResponseModel.swift; sourceTree = "<group>"; };
 		0443F6AF2590F7D1005D5637 /* HieuQuaDonHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HieuQuaDonHangModel.swift; sourceTree = "<group>"; };
+		0443F6B2259101BD005D5637 /* WithdrawalList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalList.swift; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -336,6 +338,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0443F6B12591019C005D5637 /* withdrawal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = withdrawal;
+			sourceTree = "<group>";
+		};
 		0C172C43256DF5F1005DA537 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +500,7 @@
 		0C42DC02257BD649007009E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0443F6B12591019C005D5637 /* withdrawal */,
 				0C42DC41257FB233007009E4 /* Setting */,
 				885D104424D9306500342F93 /* Review Rating View */,
 				885D104324D9305B00342F93 /* Favorites View */,
@@ -769,6 +779,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F882D1248CB79F0064D74F /* OrderHistoryVC.swift */,
+				0443F6B2259101BD005D5637 /* WithdrawalList.swift */,
 				C8F07A2A248F879700665143 /* OrderHistoryDetailsVC.swift */,
 			);
 			path = "Order History View";
@@ -1219,6 +1230,7 @@
 				0C8A56792586323100CAD7F1 /* ViewOrderControllerViewModel2.swift in Sources */,
 				0C8A56462581352700CAD7F1 /* APISession.swift in Sources */,
 				C8C99E032488D93C00B5C187 /* commonFunction.swift in Sources */,
+				0443F6B3259101BD005D5637 /* WithdrawalList.swift in Sources */,
 				0CD77A5F257A2E530083BC09 /* ADRTemp.swift in Sources */,
 				0C3C2E5D256B3A22000B21C5 /* LoginView.swift in Sources */,
 				C8349E3824979C59009EEF8D /* RatingsVC.swift in Sources */,

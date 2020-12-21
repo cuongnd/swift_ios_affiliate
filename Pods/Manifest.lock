@@ -106,6 +106,7 @@ PODS:
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
+  - SwiftDataTables (0.8.2)
   - SwiftyJSON (5.0.0)
   - TagListView (1.4.1)
 
@@ -129,6 +130,7 @@ DEPENDENCIES:
   - SDWebImage
   - SlideMenuControllerSwift
   - SQLite.swift (~> 0.12.0)
+  - SwiftDataTables
   - SwiftyJSON
   - TagListView (~> 1.0)
 
@@ -164,6 +166,7 @@ SPEC REPOS:
     - SDWebImage
     - SlideMenuControllerSwift
     - SQLite.swift
+    - SwiftDataTables
     - SwiftyJSON
     - TagListView
 
@@ -198,9 +201,10 @@ SPEC CHECKSUMS:
   SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  SwiftDataTables: 1c6bd4d477b44b07df86ca22c5ae67c85fe894ff
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
 
-PODFILE CHECKSUM: fd544dfb789a3d7b3d5b7c6abada36cd1ad26761
+PODFILE CHECKSUM: bfe6ef9859c6a027191db7bc8c66e5e47806dc3b
 
 COCOAPODS: 1.10.0
