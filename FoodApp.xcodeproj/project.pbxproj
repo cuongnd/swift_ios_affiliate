@@ -10,6 +10,8 @@
 		0443F6A82590D834005D5637 /* HomeVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6A72590D834005D5637 /* HomeVC2.swift */; };
 		0443F6AA2590F30A005D5637 /* GetDoanhThuTheoThangResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6A92590F309005D5637 /* GetDoanhThuTheoThangResponseModel.swift */; };
 		0443F6AC2590F370005D5637 /* DoanhThuThangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */; };
+		0443F6AE2590F785005D5637 /* GetHieuQuaDonHangResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AD2590F784005D5637 /* GetHieuQuaDonHangResponseModel.swift */; };
+		0443F6B02590F7D1005D5637 /* HieuQuaDonHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F6AF2590F7D1005D5637 /* HieuQuaDonHangModel.swift */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -160,6 +162,8 @@
 		0443F6A72590D834005D5637 /* HomeVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC2.swift; sourceTree = "<group>"; };
 		0443F6A92590F309005D5637 /* GetDoanhThuTheoThangResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDoanhThuTheoThangResponseModel.swift; sourceTree = "<group>"; };
 		0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoanhThuThangModel.swift; sourceTree = "<group>"; };
+		0443F6AD2590F784005D5637 /* GetHieuQuaDonHangResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHieuQuaDonHangResponseModel.swift; sourceTree = "<group>"; };
+		0443F6AF2590F7D1005D5637 /* HieuQuaDonHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HieuQuaDonHangModel.swift; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -459,10 +463,12 @@
 				0C8A56502581DD4E00CAD7F1 /* GetUserResponseModel.swift */,
 				0C8A566625846C4300CAD7F1 /* GetOrderResponseModel.swift */,
 				0443F6A92590F309005D5637 /* GetDoanhThuTheoThangResponseModel.swift */,
+				0443F6AD2590F784005D5637 /* GetHieuQuaDonHangResponseModel.swift */,
 				0C8A564C2581C5C900CAD7F1 /* UserModel.swift */,
 				0C8A567A25874F8700CAD7F1 /* OrderUserModel.swift */,
 				0C8A566825846C6500CAD7F1 /* OrderModel.swift */,
 				0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */,
+				0443F6AF2590F7D1005D5637 /* HieuQuaDonHangModel.swift */,
 				0C8A565C25831AEC00CAD7F1 /* PaymentModel.swift */,
 				0C8A566A2584754F00CAD7F1 /* OrderProductModel.swift */,
 				0C8A565E25831BA900CAD7F1 /* ImageModel.swift */,
@@ -1183,6 +1189,7 @@
 				C8C99DD02488D77E00B5C187 /* FoodApp.xcdatamodeld in Sources */,
 				0C172C5B256ED43D005DA537 /* test2.swift in Sources */,
 				C8C99E022488D93C00B5C187 /* Reachability.swift in Sources */,
+				0443F6AE2590F785005D5637 /* GetHieuQuaDonHangResponseModel.swift in Sources */,
 				0CD77A5B257A283A0083BC09 /* ADRModel.swift in Sources */,
 				880BDE9024D5524F0085FC1D /* AddonceListVC.swift in Sources */,
 				0C8A56512581DD4E00CAD7F1 /* GetUserResponseModel.swift in Sources */,
@@ -1223,6 +1230,7 @@
 				0C8A566525845D6F00CAD7F1 /* ADRFrontEndViewCheckoutThankyouVC.swift in Sources */,
 				C8BAC0622488F3FC00ECE181 /* SDWebImageSource.swift in Sources */,
 				88F7445124A5C2D300800568 /* FavoriteListVC.swift in Sources */,
+				0443F6B02590F7D1005D5637 /* HieuQuaDonHangModel.swift in Sources */,
 				C8C99E062488D93C00B5C187 /* UserDefaults.swift in Sources */,
 				C83E16C7248BB0170067AD34 /* PaymentVC.swift in Sources */,
 				0C8A566D2584767400CAD7F1 /* OrderAttributeModel.swift in Sources */,

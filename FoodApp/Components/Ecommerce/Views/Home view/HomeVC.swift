@@ -56,7 +56,7 @@ class HomeVC: UIViewController {
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId)
         let urlStringDoanhThuTheoThang = API_URL + "/api/affiliates/get_doanh_thu_theo_thang?user_id=\(user_id)"
         self.Webservice_getDoanhThuTheoThang(url: urlStringDoanhThuTheoThang, params: [:])
-        let urlStringHieuQuaDonHang = API_URL + "//api/affiliates/get_hieu_qua_don_hang"
+        let urlStringHieuQuaDonHang = API_URL + "//api/affiliates/get_hieu_qua_don_hang?user_id=\(user_id)"
         self.Webservice_getHieuQuaDonHang(url: urlStringHieuQuaDonHang, params: [:])
         
         
@@ -119,7 +119,7 @@ extension HomeVC
                     self.barChart.chartDescription?.text = ""
                     // Color
                     dataSet.colors = ChartColorTemplates.vordiplom()
-                    
+                    self.barChart.doubleTapToZoomEnabled=false
                     // Refresh chart with new data
                     self.barChart.notifyDataSetChanged()
                     
@@ -139,23 +139,25 @@ extension HomeVC
     }
     
     func Webservice_getHieuQuaDonHang(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
                 showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
             }
             else {
                 print(jsonResponse!)
-                let responseCode = jsonResponse!["result"].stringValue
-                if responseCode == "success" {
-                    let hieu_qua_don_hang = jsonResponse!["data"].dictionaryValue
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getHieuQuaDonHangResponseModel = try jsonDecoder.decode(GetHieuQuaDonHangResponseModel.self, from: jsonResponse!)
+                    let hieuQuaDonHangModel:HieuQuaDonHangModel=getHieuQuaDonHangResponseModel.hieuQuaDonHangModel
                     
-                    let entry1 = PieChartDataEntry(value: Double(24), label: "#1")
-                    let entry2 = PieChartDataEntry(value: Double(49), label: "#2")
-                    let entry3 = PieChartDataEntry(value: Double(32), label: "#3")
-                    let dataSet = PieChartDataSet(entries: [entry1, entry2, entry3], label: "Widget Types")
+                    let cancel_percent = PieChartDataEntry(value: Double(hieuQuaDonHangModel.cancel_percent), label: "Đơn hàng hủy")
+                    let completed_percent = PieChartDataEntry(value: Double(hieuQuaDonHangModel.completed_percent), label: "Đơn hàng hoàn thành")
+                    let in_process_percent = PieChartDataEntry(value: Double(hieuQuaDonHangModel.in_process_percent), label: "Đơn hàng đang sử lý")
+                    let pending_percent = PieChartDataEntry(value: Double(hieuQuaDonHangModel.pending_percent), label: "Đơn hàng đang chờ sử lý")
+                    let dataSet = PieChartDataSet(entries: [cancel_percent, completed_percent, in_process_percent,pending_percent], label: "")
                     let data = PieChartData(dataSet: dataSet)
                     self.pieChart.data = data
-                    self.pieChart.chartDescription?.text = "Share of Widgets by Type"
+                    self.pieChart.chartDescription?.text = ""
                     
                     // Color
                     dataSet.colors = ChartColorTemplates.joyful()
@@ -176,12 +178,19 @@ extension HomeVC
                     self.pieChart.notifyDataSetChanged()
                     
                     
+                } catch let error as NSError  {
+                    print("error: \(error)")
                 }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
+                
+                
+                //print("userModel:\(userModel)")
+                
             }
         }
+        
+        
+        
+       
     }
     
     
