@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="rPS-wr-Doj" customClass="LoginView" customModule="adayroi_online" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKt-2m-BYK" userLabel="View2">
+                    <rect key="frame" x="20" y="316.5" width="240" height="99.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vh-7w-Ah7" userLabel="View1">
+                    <rect key="frame" x="20" y="134" width="240" height="88.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="SjW-Dc-MbI" firstAttribute="trailing" secondItem="0vh-7w-Ah7" secondAttribute="trailing" constant="154" id="94h-ve-P9M"/>
+                <constraint firstItem="0vh-7w-Ah7" firstAttribute="top" secondItem="SjW-Dc-MbI" secondAttribute="top" constant="90" id="DH9-Pa-MLT"/>
+                <constraint firstItem="0vh-7w-Ah7" firstAttribute="leading" secondItem="SjW-Dc-MbI" secondAttribute="leading" constant="20" id="Fe8-nO-Tf2"/>
+                <constraint firstItem="PKt-2m-BYK" firstAttribute="leading" secondItem="SjW-Dc-MbI" secondAttribute="leading" constant="20" id="Few-hF-Ab0"/>
+                <constraint firstItem="SjW-Dc-MbI" firstAttribute="trailing" secondItem="PKt-2m-BYK" secondAttribute="trailing" constant="154" id="Ud4-Kn-fRg"/>
+                <constraint firstItem="PKt-2m-BYK" firstAttribute="top" secondItem="rPS-wr-Doj" secondAttribute="top" constant="316.5" id="XZs-5g-r1p"/>
+                <constraint firstItem="PKt-2m-BYK" firstAttribute="top" secondItem="0vh-7w-Ah7" secondAttribute="bottom" constant="94" id="sHO-Kj-puI"/>
+                <constraint firstItem="SjW-Dc-MbI" firstAttribute="bottom" secondItem="PKt-2m-BYK" secondAttribute="bottom" constant="446" id="uDI-yB-9Ux"/>
+                <constraint firstItem="0vh-7w-Ah7" firstAttribute="top" secondItem="rPS-wr-Doj" secondAttribute="top" constant="134" id="vuN-kO-SiY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SjW-Dc-MbI"/>
+            <point key="canvasLocation" x="137.68115942028987" y="154.01785714285714"/>
+        </view>
+    </objects>
+</document>

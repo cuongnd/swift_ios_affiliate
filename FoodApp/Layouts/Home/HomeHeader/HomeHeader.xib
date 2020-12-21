@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeHeader" customModule="adayroi_online" customModuleProvider="target">
+            <connections>
+                <outlet property="btnMenu" destination="DdN-Ik-5uA" id="itq-rT-3qv"/>
+                <outlet property="btnSearch" destination="psZ-G8-eOQ" id="PEU-G5-oBr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleAspectFit" interfaceStyle="light" id="tua-Nm-nRW" userLabel="HomeHeader">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdN-Ik-5uA" userLabel="Menu">
+                    <rect key="frame" x="10" y="55" width="39" height="23"/>
+                    <color key="tintColor" red="0.99606674910000004" green="0.44583719970000002" blue="0.2983221412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="line.horizontal.3.decrease" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25" weight="semibold"/>
+                    </state>
+                    <connections>
+                        <action selector="touchUpOutSide:" destination="-1" eventType="touchUpInside" id="Le7-zr-PiL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACe-xq-9Ho" userLabel="Cart">
+                    <rect key="frame" x="374" y="58" width="30" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="7uy-M3-uI3"/>
+                    </constraints>
+                    <color key="tintColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="cart.fill" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="semibold"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkA-N9-JVW" userLabel="Cart count">
+                    <rect key="frame" x="390" y="51" width="14" height="12"/>
+                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="14" id="YLu-1X-Fi0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGQ-K6-nK5" userLabel="Location">
+                    <rect key="frame" x="339" y="56" width="27" height="28"/>
+                    <color key="tintColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="mappin.and.ellipse" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="semibold"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psZ-G8-eOQ" userLabel="Search">
+                    <rect key="frame" x="302" y="51" width="29" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="29" id="ewY-vC-gak"/>
+                    </constraints>
+                    <color key="tintColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="magnifyingglass" catalog="system">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="semibold"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adayroi online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHw-ey-XZX">
+                    <rect key="frame" x="57" y="56" width="113.33333333333334" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="t6y-r1-lni" firstAttribute="trailing" secondItem="ACe-xq-9Ho" secondAttribute="trailing" constant="10" id="C85-6w-oJr"/>
+                <constraint firstAttribute="trailing" secondItem="psZ-G8-eOQ" secondAttribute="trailing" constant="83" id="Dw4-6o-Y6R"/>
+                <constraint firstItem="gHw-ey-XZX" firstAttribute="leading" secondItem="DdN-Ik-5uA" secondAttribute="trailing" constant="8" id="ElU-up-5pU"/>
+                <constraint firstItem="psZ-G8-eOQ" firstAttribute="top" secondItem="t6y-r1-lni" secondAttribute="top" constant="7" id="Gmi-aR-u3i"/>
+                <constraint firstItem="RkA-N9-JVW" firstAttribute="top" secondItem="psZ-G8-eOQ" secondAttribute="top" id="Lty-R1-Uxd"/>
+                <constraint firstItem="TGQ-K6-nK5" firstAttribute="leading" secondItem="psZ-G8-eOQ" secondAttribute="trailing" constant="8" id="Myb-ob-QTm"/>
+                <constraint firstItem="psZ-G8-eOQ" firstAttribute="leading" secondItem="gHw-ey-XZX" secondAttribute="trailing" constant="131.66666666666666" id="OV1-lK-3h6"/>
+                <constraint firstItem="ACe-xq-9Ho" firstAttribute="leading" secondItem="TGQ-K6-nK5" secondAttribute="trailing" constant="8" id="SFk-xt-6N2"/>
+                <constraint firstItem="ACe-xq-9Ho" firstAttribute="centerY" secondItem="TGQ-K6-nK5" secondAttribute="centerY" id="T5g-gM-ch1"/>
+                <constraint firstItem="RkA-N9-JVW" firstAttribute="leading" secondItem="TGQ-K6-nK5" secondAttribute="trailing" constant="24" id="UjA-og-GSv"/>
+                <constraint firstItem="TGQ-K6-nK5" firstAttribute="centerY" secondItem="psZ-G8-eOQ" secondAttribute="centerY" constant="3" id="bbf-5T-Wfl"/>
+                <constraint firstItem="t6y-r1-lni" firstAttribute="bottom" secondItem="psZ-G8-eOQ" secondAttribute="bottom" constant="779" id="cvZ-2R-2fb"/>
+                <constraint firstItem="ACe-xq-9Ho" firstAttribute="bottom" secondItem="gHw-ey-XZX" secondAttribute="bottom" constant="6" id="lA4-qB-r1Y"/>
+                <constraint firstItem="t6y-r1-lni" firstAttribute="top" secondItem="DdN-Ik-5uA" secondAttribute="top" constant="-11" id="ovr-lo-rlH"/>
+                <constraint firstItem="TGQ-K6-nK5" firstAttribute="top" secondItem="t6y-r1-lni" secondAttribute="top" constant="12" id="sTa-Fh-jfn"/>
+                <constraint firstItem="gHw-ey-XZX" firstAttribute="bottom" secondItem="DdN-Ik-5uA" secondAttribute="bottom" constant="-1" id="thk-5e-ZIW"/>
+                <constraint firstItem="DdN-Ik-5uA" firstAttribute="leading" secondItem="t6y-r1-lni" secondAttribute="leading" constant="10" id="ydu-ER-PB6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="t6y-r1-lni"/>
+            <point key="canvasLocation" x="-160.86956521739131" y="-677.00892857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+    </resources>
+</document>

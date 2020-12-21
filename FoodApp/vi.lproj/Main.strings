@@ -1,0 +1,921 @@
+
+/* Class = "UILabel"; text = "Giảm giá"; ObjectID = "0AI-7Y-yjo"; */
+"0AI-7Y-yjo.text" = "Giảm giá";
+
+/* Class = "UILabel"; text = "1900000 VNĐ"; ObjectID = "0Bh-Mc-4Om"; */
+"0Bh-Mc-4Om.text" = "1900000 VNĐ";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "0HQ-p4-cty"; */
+"0HQ-p4-cty.text" = "00";
+
+/* Class = "UILabel"; text = "Địa chỉ thanh toán"; ObjectID = "0Qs-OZ-Sym"; */
+"0Qs-OZ-Sym.text" = "Địa chỉ thanh toán";
+
+/* Class = "UIButton"; normalTitle = "Checkout"; ObjectID = "0xm-YO-zfX"; */
+"0xm-YO-zfX.normalTitle" = "Checkout";
+
+/* Class = "UILabel"; text = "2100000 VNĐ"; ObjectID = "1Jb-75-2WJ"; */
+"1Jb-75-2WJ.text" = "2100000 VNĐ";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "1NI-Dc-sXH"; */
+"1NI-Dc-sXH.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Edit Profile"; ObjectID = "1QD-0V-4A6"; */
+"1QD-0V-4A6.normalTitle" = "Edit Profile";
+
+/* Class = "UILabel"; text = "QTY : "; ObjectID = "1W2-Ra-GsR"; */
+"1W2-Ra-GsR.text" = "QTY : ";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "1c7-iY-grD"; */
+"1c7-iY-grD.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "100000 VNĐ"; ObjectID = "1qo-UC-DdP"; */
+"1qo-UC-DdP.text" = "100000 VNĐ";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "1xi-ek-fUI"; */
+"1xi-ek-fUI.text" = "Login";
+
+/* Class = "UILabel"; text = "1233"; ObjectID = "280-sK-Dvy"; */
+"280-sK-Dvy.text" = "1233";
+
+/* Class = "UILabel"; text = "Delivery Charge"; ObjectID = "28l-KW-bjw"; */
+"28l-KW-bjw.text" = "Delivery Charge";
+
+/* Class = "UILabel"; text = "$0.00"; ObjectID = "2BD-ne-RIa"; */
+"2BD-ne-RIa.text" = "$0.00";
+
+/* Class = "UILabel"; text = "Tổng số sản phẩm"; ObjectID = "2JL-wx-bRH"; */
+"2JL-wx-bRH.text" = "Tổng số sản phẩm";
+
+/* Class = "UILabel"; text = "Order ready"; ObjectID = "32u-zx-Bi5"; */
+"32u-zx-Bi5.text" = "Order ready";
+
+/* Class = "UITextView"; text = "Note"; ObjectID = "3Gg-Rg-jzt"; */
+"3Gg-Rg-jzt.text" = "Note";
+
+/* Class = "UILabel"; text = "Giảm giá"; ObjectID = "3Gv-6F-HSN"; */
+"3Gv-6F-HSN.text" = "Giảm giá";
+
+/* Class = "UILabel"; text = "Tổng tiền"; ObjectID = "3dJ-rF-53s"; */
+"3dJ-rF-53s.text" = "Tổng tiền";
+
+/* Class = "UILabel"; text = "Pay By Cash"; ObjectID = "3l5-AC-4Di"; */
+"3l5-AC-4Di.text" = "Pay By Cash";
+
+/* Class = "UILabel"; text = "Delivery Address"; ObjectID = "40c-Pe-9xC"; */
+"40c-Pe-9xC.text" = "Delivery Address";
+
+/* Class = "UILabel"; text = "10000 VNĐ"; ObjectID = "43M-3p-ahV"; */
+"43M-3p-ahV.text" = "10000 VNĐ";
+
+/* Class = "UILabel"; text = "Số điện thoại"; ObjectID = "44h-U7-cF7"; */
+"44h-U7-cF7.text" = "Số điện thoại";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "4Ar-I8-6bB"; */
+"4Ar-I8-6bB.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "QTY : "; ObjectID = "4Mr-uj-n6k"; */
+"4Mr-uj-n6k.text" = "QTY : ";
+
+/* Class = "UILabel"; text = "Payment Summary"; ObjectID = "4dU-F7-eD0"; */
+"4dU-F7-eD0.text" = "Payment Summary";
+
+/* Class = "UIButton"; normalTitle = "Addons"; ObjectID = "4eU-v4-9iC"; */
+"4eU-v4-9iC.normalTitle" = "Addons";
+
+/* Class = "UILabel"; text = ""; ObjectID = "51N-Pa-Tcj"; */
+"51N-Pa-Tcj.text" = "";
+
+/* Class = "UITextField"; placeholder = "Mobile"; ObjectID = "52F-bS-hvQ"; */
+"52F-bS-hvQ.placeholder" = "Mobile";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "55s-2z-wgf"; */
+"55s-2z-wgf.text" = "Label";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "67a-r8-Zhu"; */
+"67a-r8-Zhu.text" = "Email";
+
+/* Class = "UITextField"; placeholder = "Họ và tên"; ObjectID = "6Fx-Bm-6dp"; */
+"6Fx-Bm-6dp.placeholder" = "Họ và tên";
+
+/* Class = "UILabel"; text = "Xóm Minh Khai, Xã La Phù, Huyện Hoài Đức, Thành phố Hà Nội "; ObjectID = "6Tb-Ea-03P"; */
+"6Tb-Ea-03P.text" = "Xóm Minh Khai, Xã La Phù, Huyện Hoài Đức, Thành phố Hà Nội ";
+
+/* Class = "UILabel"; text = "Delivery"; ObjectID = "6jB-Aa-piQ"; */
+"6jB-Aa-piQ.text" = "Delivery";
+
+/* Class = "UIButton"; normalTitle = "SKIP"; ObjectID = "6pN-CA-1qU"; */
+"6pN-CA-1qU.normalTitle" = "SKIP";
+
+/* Class = "UILabel"; text = "2000000 VNĐ"; ObjectID = "6v7-d5-q5v"; */
+"6v7-d5-q5v.text" = "2000000 VNĐ";
+
+/* Class = "UILabel"; text = "Phí giao hàng"; ObjectID = "7M3-tM-30L"; */
+"7M3-tM-30L.text" = "Phí giao hàng";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "7SL-a8-oV5"; */
+"7SL-a8-oV5.text" = "10";
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "7cD-8M-k6M"; */
+"7cD-8M-k6M.placeholder" = "Search";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7qR-Mu-Acm"; */
+"7qR-Mu-Acm.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "2000000 VNĐ"; ObjectID = "885-Ym-JfH"; */
+"885-Ym-JfH.text" = "2000000 VNĐ";
+
+/* Class = "UILabel"; text = "Order delivered"; ObjectID = "88d-DU-dhv"; */
+"88d-DU-dhv.text" = "Order delivered";
+
+/* Class = "UIButton"; normalTitle = "Bước tiếp theo"; ObjectID = "8TZ-6h-EGz"; */
+"8TZ-6h-EGz.normalTitle" = "Bước tiếp theo";
+
+/* Class = "UILabel"; text = "Tổng tiền"; ObjectID = "8aO-Sd-wlw"; */
+"8aO-Sd-wlw.text" = "Tổng tiền";
+
+/* Class = "UILabel"; text = "Notes"; ObjectID = "8rU-Rw-vdH"; */
+"8rU-Rw-vdH.text" = "Notes";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "917-m9-4be"; */
+"917-m9-4be.text" = "00";
+
+/* Class = "UILabel"; text = "100000 VNĐ"; ObjectID = "9V9-9c-dGE"; */
+"9V9-9c-dGE.text" = "100000 VNĐ";
+
+/* Class = "UILabel"; text = "1233"; ObjectID = "9ad-Ly-iqL"; */
+"9ad-Ly-iqL.text" = "1233";
+
+/* Class = "UILabel"; text = "Lorem Ipsum is simply dummy text of the printing and "; ObjectID = "9bL-aI-KRf"; */
+"9bL-aI-KRf.text" = "Lorem Ipsum is simply dummy text of the printing and ";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "9dL-pc-ZZ7"; */
+"9dL-pc-ZZ7.text" = "Name";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "9g7-ac-AW2"; */
+"9g7-ac-AW2.text" = "Change Password";
+
+/* Class = "UILabel"; text = "Lưu ý"; ObjectID = "9gT-Gg-Eh7"; */
+"9gT-Gg-Eh7.text" = "Lưu ý";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "9hq-pA-B6Y"; */
+"9hq-pA-B6Y.text" = "Name";
+
+/* Class = "UITextField"; placeholder = "Old Password"; ObjectID = "9wP-sh-LIP"; */
+"9wP-sh-LIP.placeholder" = "Old Password";
+
+/* Class = "UILabel"; text = "09123456789"; ObjectID = "AWK-ha-OUr"; */
+"AWK-ha-OUr.text" = "09123456789";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Afk-Xv-ufl"; */
+"Afk-Xv-ufl.text" = "Name";
+
+/* Class = "UILabel"; text = "10000 VNĐ"; ObjectID = "Axb-jM-8Dz"; */
+"Axb-jM-8Dz.text" = "10000 VNĐ";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "B3U-PJ-6af"; */
+"B3U-PJ-6af.placeholder" = "Full Name";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "BDS-MZ-Aw4"; */
+"BDS-MZ-Aw4.text" = "00";
+
+/* Class = "UILabel"; text = "Họ và tên"; ObjectID = "BjS-cf-XCO"; */
+"BjS-cf-XCO.text" = "Họ và tên";
+
+/* Class = "UIButton"; normalTitle = "Privacy policy"; ObjectID = "C0X-e5-EEH"; */
+"C0X-e5-EEH.normalTitle" = "Privacy policy";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "CNS-a9-NOq"; */
+"CNS-a9-NOq.text" = "Settings";
+
+/* Class = "UILabel"; text = "Trạng thái đơn hàng"; ObjectID = "Cos-8J-UnS"; */
+"Cos-8J-UnS.text" = "Trạng thái đơn hàng";
+
+/* Class = "UILabel"; text = ""; ObjectID = "DRB-8d-RjG"; */
+"DRB-8d-RjG.text" = "";
+
+/* Class = "UILabel"; text = "Số điện thoại"; ObjectID = "E81-vo-uPj"; */
+"E81-vo-uPj.text" = "Số điện thoại";
+
+/* Class = "UILabel"; text = "Sign up"; ObjectID = "EIR-J5-8g5"; */
+"EIR-J5-8g5.text" = "Sign up";
+
+/* Class = "UILabel"; text = "Order Total"; ObjectID = "EJU-KZ-hlf"; */
+"EJU-KZ-hlf.text" = "Order Total";
+
+/* Class = "UILabel"; text = "Đặt hàng thành công"; ObjectID = "EOj-Id-O7Y"; */
+"EOj-Id-O7Y.text" = "Đặt hàng thành công";
+
+/* Class = "UILabel"; text = "Địa chỉ thanh toán"; ObjectID = "ERX-bK-Pyv"; */
+"ERX-bK-Pyv.text" = "Địa chỉ thanh toán";
+
+/* Class = "UIButton"; normalTitle = "Note"; ObjectID = "FD9-PW-1Pu"; */
+"FD9-PW-1Pu.normalTitle" = "Note";
+
+/* Class = "UILabel"; text = ""; ObjectID = "FKf-mw-otj"; */
+"FKf-mw-otj.text" = "";
+
+/* Class = "UILabel"; text = "10000 VNĐ"; ObjectID = "FXy-Qx-TFv"; */
+"FXy-Qx-TFv.text" = "10000 VNĐ";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "Fiq-Wm-0AK"; */
+"Fiq-Wm-0AK.text" = "Email";
+
+/* Class = "UILabel"; text = "Giá"; ObjectID = "FoI-1r-Pj8"; */
+"FoI-1r-Pj8.text" = "Giá";
+
+/* Class = "UILabel"; text = ""; ObjectID = "Fs0-pC-7tz"; */
+"Fs0-pC-7tz.text" = "";
+
+/* Class = "UILabel"; text = ""; ObjectID = "GLI-zM-j0J"; */
+"GLI-zM-j0J.text" = "";
+
+/* Class = "UILabel"; text = "Điềm mã giảm giá"; ObjectID = "GQ2-7g-irO"; */
+"GQ2-7g-irO.text" = "Điềm mã giảm giá";
+
+/* Class = "UILabel"; text = "100000 VNĐ"; ObjectID = "GRJ-eZ-fmw"; */
+"GRJ-eZ-fmw.text" = "100000 VNĐ";
+
+/* Class = "UILabel"; text = "1900000 VNĐ"; ObjectID = "Gae-GP-odZ"; */
+"Gae-GP-odZ.text" = "1900000 VNĐ";
+
+/* Class = "UILabel"; text = "10000 VNĐ"; ObjectID = "GdA-kN-qa4"; */
+"GdA-kN-qa4.text" = "10000 VNĐ";
+
+/* Class = "UIButton"; normalTitle = "Quay lại"; ObjectID = "GdJ-V9-AYZ"; */
+"GdJ-V9-AYZ.normalTitle" = "Quay lại";
+
+/* Class = "UIButton"; normalTitle = "Signup"; ObjectID = "GdL-o7-uXC"; */
+"GdL-o7-uXC.normalTitle" = "Signup";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "Gtg-y3-Yhv"; */
+"Gtg-y3-Yhv.text" = "Date";
+
+/* Class = "UILabel"; text = "Thuế giao hàng (2%)"; ObjectID = "Gxe-Kz-97e"; */
+"Gxe-Kz-97e.text" = "Thuế giao hàng (2%)";
+
+/* Class = "UILabel"; text = "Tổng tiền thanh toán"; ObjectID = "Gzo-hb-54y"; */
+"Gzo-hb-54y.text" = "Tổng tiền thanh toán";
+
+/* Class = "UILabel"; text = "Total Amount"; ObjectID = "H7F-ve-tHw"; */
+"H7F-ve-tHw.text" = "Total Amount";
+
+/* Class = "UILabel"; text = "Địa chỉ giao hàng"; ObjectID = "HZT-3T-5dz"; */
+"HZT-3T-5dz.text" = "Địa chỉ giao hàng";
+
+/* Class = "UILabel"; text = "Order on the way"; ObjectID = "HbC-7v-Abv"; */
+"HbC-7v-Abv.text" = "Order on the way";
+
+/* Class = "UILabel"; text = ""; ObjectID = "IL5-et-PDz"; */
+"IL5-et-PDz.text" = "";
+
+/* Class = "UILabel"; text = "2100000 VNĐ"; ObjectID = "Ilr-BL-4hO"; */
+"Ilr-BL-4hO.text" = "2100000 VNĐ";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "J5b-eX-leM"; */
+"J5b-eX-leM.text" = "10";
+
+/* Class = "UILabel"; text = "Địa chỉ thanh toán"; ObjectID = "JCt-Iq-bcN"; */
+"JCt-Iq-bcN.text" = "Địa chỉ thanh toán";
+
+/* Class = "UILabel"; text = "Thuế"; ObjectID = "JZI-T9-ITi"; */
+"JZI-T9-ITi.text" = "Thuế";
+
+/* Class = "UILabel"; text = "Note"; ObjectID = "Jko-BI-alw"; */
+"Jko-BI-alw.text" = "Note";
+
+/* Class = "UILabel"; text = ""; ObjectID = "Jlj-hG-bsa"; */
+"Jlj-hG-bsa.text" = "";
+
+/* Class = "UILabel"; text = "02"; ObjectID = "Jxt-te-U3V"; */
+"Jxt-te-U3V.text" = "02";
+
+/* Class = "UILabel"; text = "Selected Add-Ons List"; ObjectID = "K71-Wq-paO"; */
+"K71-Wq-paO.text" = "Selected Add-Ons List";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "KJh-8D-zwg"; */
+"KJh-8D-zwg.text" = "Status";
+
+/* Class = "UILabel"; text = "Set Your Delivery Address"; ObjectID = "KQj-y3-Qyu"; */
+"KQj-y3-Qyu.text" = "Set Your Delivery Address";
+
+/* Class = "UIButton"; normalTitle = "Select Promocode"; ObjectID = "KYu-Kb-L9M"; */
+"KYu-Kb-L9M.normalTitle" = "Select Promocode";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "Ked-Ro-J2M"; */
+"Ked-Ro-J2M.normalTitle" = "Sign up";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "KoI-ac-yC1"; */
+"KoI-ac-yC1.text" = "00";
+
+/* Class = "UILabel"; text = "Điềm mã giảm giá"; ObjectID = "Kts-Lt-HCh"; */
+"Kts-Lt-HCh.text" = "Điềm mã giảm giá";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "LSp-Bu-cQp"; */
+"LSp-Bu-cQp.text" = "00";
+
+/* Class = "UILabel"; text = "300000 VNĐ"; ObjectID = "LtK-ai-JYM"; */
+"LtK-ai-JYM.text" = "300000 VNĐ";
+
+/* Class = "UILabel"; text = "hoàn thành thanh toán"; ObjectID = "Lxb-NZ-9mk"; */
+"Lxb-NZ-9mk.text" = "hoàn thành thanh toán";
+
+/* Class = "UILabel"; text = ""; ObjectID = "MCa-Ta-5OX"; */
+"MCa-Ta-5OX.text" = "";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "MDp-Fa-q4s"; */
+"MDp-Fa-q4s.text" = "Email";
+
+/* Class = "UILabel"; text = "Tổng tiền trước thuế"; ObjectID = "MNh-Vm-cJ4"; */
+"MNh-Vm-cJ4.text" = "Tổng tiền trước thuế";
+
+/* Class = "UILabel"; text = "ORD3552232"; ObjectID = "MYc-bi-Z32"; */
+"MYc-bi-Z32.text" = "ORD3552232";
+
+/* Class = "UILabel"; text = "2000000 VNĐ"; ObjectID = "Mkg-IZ-YBi"; */
+"Mkg-IZ-YBi.text" = "2000000 VNĐ";
+
+/* Class = "UILabel"; text = "1900000 VNĐ"; ObjectID = "Mm9-kw-uHH"; */
+"Mm9-kw-uHH.text" = "1900000 VNĐ";
+
+/* Class = "UILabel"; text = "QTY : "; ObjectID = "Mml-PK-GnL"; */
+"Mml-PK-GnL.text" = "QTY : ";
+
+/* Class = "UILabel"; text = "Thuế"; ObjectID = "Mpg-Hd-2LG"; */
+"Mpg-Hd-2LG.text" = "Thuế";
+
+/* Class = "UILabel"; text = "Mã giảm giá"; ObjectID = "NnM-a1-t03"; */
+"NnM-a1-t03.text" = "Mã giảm giá";
+
+/* Class = "UILabel"; text = "nguyenvana@gmail.com"; ObjectID = "Nu9-Ec-EaT"; */
+"Nu9-Ec-EaT.text" = "nguyenvana@gmail.com";
+
+/* Class = "UILabel"; text = "Thông tin đơn hàng"; ObjectID = "O85-JP-0Yd"; */
+"O85-JP-0Yd.text" = "Thông tin đơn hàng";
+
+/* Class = "UILabel"; text = "Tổng tiền còn lại"; ObjectID = "OwL-FS-8g3"; */
+"OwL-FS-8g3.text" = "Tổng tiền còn lại";
+
+/* Class = "UILabel"; text = "Delivery Address"; ObjectID = "PKV-fo-Y25"; */
+"PKV-fo-Y25.text" = "Delivery Address";
+
+/* Class = "UILabel"; text = "Order Total"; ObjectID = "PdN-Y3-XzH"; */
+"PdN-Y3-XzH.text" = "Order Total";
+
+/* Class = "UILabel"; text = "Payment Summary"; ObjectID = "PmO-ZI-NS4"; */
+"PmO-ZI-NS4.text" = "Payment Summary";
+
+/* Class = "UILabel"; text = "Tổng tiền"; ObjectID = "QJI-pg-Zr8"; */
+"QJI-pg-Zr8.text" = "Tổng tiền";
+
+/* Class = "UIButton"; normalTitle = "Quay lại"; ObjectID = "QT0-qH-6Xk"; */
+"QT0-qH-6Xk.normalTitle" = "Quay lại";
+
+/* Class = "UILabel"; text = "Số điện thoại"; ObjectID = "Qm7-PV-Hvt"; */
+"Qm7-PV-Hvt.text" = "Số điện thoại";
+
+/* Class = "UILabel"; text = "Tổng tiền trước thuế"; ObjectID = "QuU-Qw-BPI"; */
+"QuU-Qw-BPI.text" = "Tổng tiền trước thuế";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "REL-Ag-gmf"; */
+"REL-Ag-gmf.placeholder" = "New Password";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "RFh-3n-88V"; */
+"RFh-3n-88V.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = ""; ObjectID = "S4S-B2-Hih"; */
+"S4S-B2-Hih.text" = "";
+
+/* Class = "UILabel"; text = "Notes"; ObjectID = "S63-Rz-bdj"; */
+"S63-Rz-bdj.text" = "Notes";
+
+/* Class = "UIButton"; normalTitle = "COPY"; ObjectID = "S6H-l4-0Zu"; */
+"S6H-l4-0Zu.normalTitle" = "COPY";
+
+/* Class = "UIButton"; normalTitle = "Thanh toán"; ObjectID = "SHo-2c-mXg"; */
+"SHo-2c-mXg.normalTitle" = "Thanh toán";
+
+/* Class = "UILabel"; text = "Địa chỉ 2"; ObjectID = "ShF-XG-eaA"; */
+"ShF-XG-eaA.text" = "Địa chỉ 2";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Sm1-un-9zv"; */
+"Sm1-un-9zv.text" = "Name";
+
+/* Class = "UILabel"; text = "Thuế (3%):"; ObjectID = "Ssa-mK-aSA"; */
+"Ssa-mK-aSA.text" = "Thuế (3%):";
+
+/* Class = "UILabel"; text = "STATUS"; ObjectID = "Sz8-IL-4Tw"; */
+"Sz8-IL-4Tw.text" = "STATUS";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "T7u-aW-4oa"; */
+"T7u-aW-4oa.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Đang chờ sử lý"; ObjectID = "TCc-O7-GVh"; */
+"TCc-O7-GVh.text" = "Đang chờ sử lý";
+
+/* Class = "UILabel"; text = "Tổng tiền"; ObjectID = "Teb-jt-KKM"; */
+"Teb-jt-KKM.text" = "Tổng tiền";
+
+/* Class = "UIButton"; normalTitle = "Okay"; ObjectID = "ToS-pd-u8Q"; */
+"ToS-pd-u8Q.normalTitle" = "Okay";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "Tyz-uR-tDv"; */
+"Tyz-uR-tDv.text" = "Address";
+
+/* Class = "UILabel"; text = "Razorpay"; ObjectID = "U0H-kD-68N"; */
+"U0H-kD-68N.text" = "Razorpay";
+
+/* Class = "UILabel"; text = "1900000 VNĐ"; ObjectID = "U6Z-2u-jlJ"; */
+"U6Z-2u-jlJ.text" = "1900000 VNĐ";
+
+/* Class = "UILabel"; text = "10000 VNĐ"; ObjectID = "UGD-vm-Khy"; */
+"UGD-vm-Khy.text" = "10000 VNĐ";
+
+/* Class = "UITextField"; placeholder = "Số điện thoại"; ObjectID = "UQ4-Jo-I44"; */
+"UQ4-Jo-I44.placeholder" = "Số điện thoại";
+
+/* Class = "UILabel"; text = "10000 VNĐ"; ObjectID = "UhC-BA-CjF"; */
+"UhC-BA-CjF.text" = "10000 VNĐ";
+
+/* Class = "UILabel"; text = "02"; ObjectID = "Uim-HB-15A"; */
+"Uim-HB-15A.text" = "02";
+
+/* Class = "UILabel"; text = "Discount Offer"; ObjectID = "UpH-ar-dSO"; */
+"UpH-ar-dSO.text" = "Discount Offer";
+
+/* Class = "UILabel"; text = "Thanh toán khi giao hàng"; ObjectID = "UsH-ih-ls3"; */
+"UsH-ih-ls3.text" = "Thanh toán khi giao hàng";
+
+/* Class = "UILabel"; text = "1900000 VNĐ"; ObjectID = "V4l-6W-Lyu"; */
+"V4l-6W-Lyu.text" = "1900000 VNĐ";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "V7G-8Q-y7b"; */
+"V7G-8Q-y7b.text" = "Status";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "VK2-t6-nk9"; */
+"VK2-t6-nk9.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "VgA-cE-gTx"; */
+"VgA-cE-gTx.normalTitle" = "Change Password";
+
+/* Class = "UILabel"; text = "Order Summary"; ObjectID = "Vzk-qN-sQH"; */
+"Vzk-qN-sQH.text" = "Order Summary";
+
+/* Class = "UILabel"; text = "Driver Infromation"; ObjectID = "W0V-HO-AsN"; */
+"W0V-HO-AsN.text" = "Driver Infromation";
+
+/* Class = "UILabel"; text = "Tổng số sản phẩm"; ObjectID = "W56-Sz-8BD"; */
+"W56-Sz-8BD.text" = "Tổng số sản phẩm";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "WXb-yO-XkW"; */
+"WXb-yO-XkW.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Tax"; ObjectID = "Wy1-Bi-mRt"; */
+"Wy1-Bi-mRt.text" = "Tax";
+
+/* Class = "UILabel"; text = "ORDER ID : "; ObjectID = "X7o-qu-6gM"; */
+"X7o-qu-6gM.text" = "ORDER ID : ";
+
+/* Class = "UILabel"; text = "Forgot Password"; ObjectID = "X8B-xm-zDE"; */
+"X8B-xm-zDE.text" = "Forgot Password";
+
+/* Class = "UILabel"; text = "Total Amount"; ObjectID = "XIx-Yo-aLX"; */
+"XIx-Yo-aLX.text" = "Total Amount";
+
+/* Class = "UIButton"; normalTitle = "SKIP"; ObjectID = "Xoo-sM-dh9"; */
+"Xoo-sM-dh9.normalTitle" = "SKIP";
+
+/* Class = "UILabel"; text = "Payment"; ObjectID = "XrQ-QC-xbr"; */
+"XrQ-QC-xbr.text" = "Payment";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Xtf-36-nLW"; */
+"Xtf-36-nLW.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Là địa chỉ giao hàng"; ObjectID = "YTi-Wr-SkM"; */
+"YTi-Wr-SkM.text" = "Là địa chỉ giao hàng";
+
+/* Class = "UITextField"; placeholder = "Have a Promocode?"; ObjectID = "YgI-ni-nzJ"; */
+"YgI-ni-nzJ.placeholder" = "Have a Promocode?";
+
+/* Class = "UIButton"; normalTitle = "Signup"; ObjectID = "Yle-zI-XtX"; */
+"Yle-zI-XtX.normalTitle" = "Signup";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "Yqc-I3-jFh"; */
+"Yqc-I3-jFh.placeholder" = "Full Name";
+
+/* Class = "UILabel"; text = "Xóm Minh Khai, Xã La Phù, Huyện Hoài Đức, Thành phố Hà Nội "; ObjectID = "ZM9-cT-XUX"; */
+"ZM9-cT-XUX.text" = "Xóm Minh Khai, Xã La Phù, Huyện Hoài Đức, Thành phố Hà Nội ";
+
+/* Class = "UITextField"; placeholder = "Nhập mã ở đây"; ObjectID = "ZcJ-LG-7xt"; */
+"ZcJ-LG-7xt.placeholder" = "Nhập mã ở đây";
+
+/* Class = "UILabel"; text = ""; ObjectID = "ZfN-85-ko7"; */
+"ZfN-85-ko7.text" = "";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "Zjd-wG-wt6"; */
+"Zjd-wG-wt6.placeholder" = "Confirm Password";
+
+/* Class = "UILabel"; text = "Địa chỉ 1"; ObjectID = "ZqL-5q-8zj"; */
+"ZqL-5q-8zj.text" = "Địa chỉ 1";
+
+/* Class = "UILabel"; text = "Số đơn hàng"; ObjectID = "a0s-Vt-4by"; */
+"a0s-Vt-4by.text" = "Số đơn hàng";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "aIK-3y-73U"; */
+"aIK-3y-73U.text" = "Status";
+
+/* Class = "UITextField"; placeholder = "Số điện thoại"; ObjectID = "aKj-v9-5f1"; */
+"aKj-v9-5f1.placeholder" = "Số điện thoại";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "aea-oh-ehL"; */
+"aea-oh-ehL.text" = "00";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "ajn-86-Bre"; */
+"ajn-86-Bre.text" = "00";
+
+/* Class = "UILabel"; text = "Thanh toán"; ObjectID = "aok-c8-ux3"; */
+"aok-c8-ux3.text" = "Thanh toán";
+
+/* Class = "UILabel"; text = "Edit Profile"; ObjectID = "b2Y-u3-dNi"; */
+"b2Y-u3-dNi.text" = "Edit Profile";
+
+/* Class = "UIButton"; normalTitle = "Tiếp tục mua hàng"; ObjectID = "b6k-Il-LuQ"; */
+"b6k-Il-LuQ.normalTitle" = "Tiếp tục mua hàng";
+
+/* Class = "UILabel"; text = ""; ObjectID = "bHF-to-HQv"; */
+"bHF-to-HQv.text" = "";
+
+/* Class = "UILabel"; text = "Order Summary"; ObjectID = "bTJ-kE-JRM"; */
+"bTJ-kE-JRM.text" = "Order Summary";
+
+/* Class = "UILabel"; text = "Thuế giao hàng"; ObjectID = "bdO-zH-czj"; */
+"bdO-zH-czj.text" = "Thuế giao hàng";
+
+/* Class = "UILabel"; text = "STATUS"; ObjectID = "bkK-Zh-dhO"; */
+"bkK-Zh-dhO.text" = "STATUS";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bmi-12-Vlt"; */
+"bmi-12-Vlt.text" = "Label";
+
+/* Class = "UILabel"; text = "02"; ObjectID = "brA-qu-Z6u"; */
+"brA-qu-Z6u.text" = "02";
+
+/* Class = "UILabel"; text = "Order delivered"; ObjectID = "bzb-pc-eeG"; */
+"bzb-pc-eeG.text" = "Order delivered";
+
+/* Class = "UILabel"; text = "Thuế giao hàng"; ObjectID = "c2x-eK-Vaj"; */
+"c2x-eK-Vaj.text" = "Thuế giao hàng";
+
+/* Class = "UILabel"; text = "Ratings"; ObjectID = "c4m-LV-A24"; */
+"c4m-LV-A24.text" = "Ratings";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "cCA-xA-XAy"; */
+"cCA-xA-XAy.text" = "Name";
+
+/* Class = "UILabel"; text = "Thông tin đơn hàng"; ObjectID = "ceH-Js-6Kl"; */
+"ceH-Js-6Kl.text" = "Thông tin đơn hàng";
+
+/* Class = "UILabel"; text = "Payment Method"; ObjectID = "cfg-2s-30X"; */
+"cfg-2s-30X.text" = "Payment Method";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "cjk-Ub-AQc"; */
+"cjk-Ub-AQc.normalTitle" = "Reset";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "czq-9J-8D3"; */
+"czq-9J-8D3.text" = "00";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "d16-nk-OfZ"; */
+"d16-nk-OfZ.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "dGd-Q6-XMC"; */
+"dGd-Q6-XMC.text" = "00";
+
+/* Class = "UILabel"; text = "Thanh toán"; ObjectID = "dLf-uV-6YY"; */
+"dLf-uV-6YY.text" = "Thanh toán";
+
+/* Class = "UILabel"; text = "Thanh toán"; ObjectID = "dgh-4k-pf3"; */
+"dgh-4k-pf3.text" = "Thanh toán";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "diH-C1-cfk"; */
+"diH-C1-cfk.text" = "00";
+
+/* Class = "UILabel"; text = "Địa chỉ 2"; ObjectID = "dis-sF-4sq"; */
+"dis-sF-4sq.text" = "Địa chỉ 2";
+
+/* Class = "UILabel"; text = "Tổng tiền trước thuế"; ObjectID = "dj8-kL-fkc"; */
+"dj8-kL-fkc.text" = "Tổng tiền trước thuế";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dxb-n1-dWr"; */
+"dxb-n1-dWr.text" = "Label";
+
+/* Class = "UILabel"; text = "Search"; ObjectID = "eKQ-Dc-p5f"; */
+"eKQ-Dc-p5f.text" = "Search";
+
+/* Class = "UILabel"; text = "Already have an account?"; ObjectID = "eVD-XZ-3HD"; */
+"eVD-XZ-3HD.text" = "Already have an account?";
+
+/* Class = "UILabel"; text = "1900000 VNĐ"; ObjectID = "egN-8w-x2s"; */
+"egN-8w-x2s.text" = "1900000 VNĐ";
+
+/* Class = "UITextView"; text = "Enter your review"; ObjectID = "f0F-ET-ZJZ"; */
+"f0F-ET-ZJZ.text" = "Enter your review";
+
+/* Class = "UIButton"; normalTitle = "Apply"; ObjectID = "f5W-Ha-aui"; */
+"f5W-Ha-aui.normalTitle" = "Apply";
+
+/* Class = "UILabel"; text = "Order Summary"; ObjectID = "fbV-Ek-wfu"; */
+"fbV-Ek-wfu.text" = "Order Summary";
+
+/* Class = "UIButton"; normalTitle = "Proceed to Payment"; ObjectID = "fdy-Kx-FyI"; */
+"fdy-Kx-FyI.normalTitle" = "Proceed to Payment";
+
+/* Class = "UILabel"; text = "Tổng tiền thanh toán"; ObjectID = "fe8-1Q-PEa"; */
+"fe8-1Q-PEa.text" = "Tổng tiền thanh toán";
+
+/* Class = "UILabel"; text = "ORDER ID : "; ObjectID = "flS-dH-dyr"; */
+"flS-dH-dyr.text" = "ORDER ID : ";
+
+/* Class = "UILabel"; text = "10000 VNĐ"; ObjectID = "g1X-hu-GJp"; */
+"g1X-hu-GJp.text" = "10000 VNĐ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "g7k-W1-o1m"; */
+"g7k-W1-o1m.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Địa chỉ 1"; ObjectID = "gCD-fK-evC"; */
+"gCD-fK-evC.text" = "Địa chỉ 1";
+
+/* Class = "UILabel"; text = "1233"; ObjectID = "gGU-lA-mEL"; */
+"gGU-lA-mEL.text" = "1233";
+
+/* Class = "UILabel"; text = "STATUS :"; ObjectID = "gP0-yu-1Be"; */
+"gP0-yu-1Be.text" = "STATUS :";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "gU6-64-5Fx"; */
+"gU6-64-5Fx.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "gWZ-LZ-XP9"; */
+"gWZ-LZ-XP9.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "09123456789"; ObjectID = "gX1-Sl-5oy"; */
+"gX1-Sl-5oy.text" = "09123456789";
+
+/* Class = "UILabel"; text = "2 cái"; ObjectID = "gYC-gN-OfV"; */
+"gYC-gN-OfV.text" = "2 cái";
+
+/* Class = "UILabel"; text = "Chọn phương thức thanh toán"; ObjectID = "ggM-ty-ESe"; */
+"ggM-ty-ESe.text" = "Chọn phương thức thanh toán";
+
+/* Class = "UILabel"; text = "Order ready"; ObjectID = "gty-wE-doh"; */
+"gty-wE-doh.text" = "Order ready";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "gz3-tV-Qhx"; */
+"gz3-tV-Qhx.normalTitle" = "Done";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "hD4-rY-9y3"; */
+"hD4-rY-9y3.normalTitle" = "Forgot Password?";
+
+/* Class = "UILabel"; text = "10000 VNĐ"; ObjectID = "hI6-dv-pj8"; */
+"hI6-dv-pj8.text" = "10000 VNĐ";
+
+/* Class = "UIButton"; normalTitle = "Addons"; ObjectID = "hNy-24-RJM"; */
+"hNy-24-RJM.normalTitle" = "Addons";
+
+/* Class = "UILabel"; text = "Địa chỉ 1"; ObjectID = "hcT-Om-ykh"; */
+"hcT-Om-ykh.text" = "Địa chỉ 1";
+
+/* Class = "UILabel"; text = "Phí giao hàng"; ObjectID = "hd7-T5-CFy"; */
+"hd7-T5-CFy.text" = "Phí giao hàng";
+
+/* Class = "UILabel"; text = "hoàn thành thanh toán"; ObjectID = "iOK-gb-OJZ"; */
+"iOK-gb-OJZ.text" = "hoàn thành thanh toán";
+
+/* Class = "UILabel"; text = "nguyenvana@gmail.com"; ObjectID = "iQk-SM-qSb"; */
+"iQk-SM-qSb.text" = "nguyenvana@gmail.com";
+
+/* Class = "UILabel"; text = "600000 VNĐ"; ObjectID = "iRR-ym-3r3"; */
+"iRR-ym-3r3.text" = "600000 VNĐ";
+
+/* Class = "UILabel"; text = "hoàn thành thanh toán"; ObjectID = "iUi-3G-Pbr"; */
+"iUi-3G-Pbr.text" = "hoàn thành thanh toán";
+
+/* Class = "UILabel"; text = "Tổng tiền còn lại"; ObjectID = "iWX-lb-44m"; */
+"iWX-lb-44m.text" = "Tổng tiền còn lại";
+
+/* Class = "UILabel"; text = "000"; ObjectID = "ida-Wl-PaJ"; */
+"ida-Wl-PaJ.text" = "000";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ilu-7K-zIQ"; */
+"ilu-7K-zIQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Tổng tiền còn lại"; ObjectID = "jNd-Rz-4dv"; */
+"jNd-Rz-4dv.text" = "Tổng tiền còn lại";
+
+/* Class = "UILabel"; text = "ORDER ID : "; ObjectID = "jhN-RV-gh2"; */
+"jhN-RV-gh2.text" = "ORDER ID : ";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "jjh-SA-MQD"; */
+"jjh-SA-MQD.text" = "Date";
+
+/* Class = "UILabel"; text = "QTY :"; ObjectID = "jqQ-qv-fUS"; */
+"jqQ-qv-fUS.text" = "QTY :";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "jvq-Ov-vck"; */
+"jvq-Ov-vck.text" = "00";
+
+/* Class = "UILabel"; text = "Địa chỉ thanh toán"; ObjectID = "jyD-4M-tBB"; */
+"jyD-4M-tBB.text" = "Địa chỉ thanh toán";
+
+/* Class = "UILabel"; text = "Discount Offer"; ObjectID = "jzY-Cn-bkQ"; */
+"jzY-Cn-bkQ.text" = "Discount Offer";
+
+/* Class = "UILabel"; text = "Số lượng"; ObjectID = "kFD-Lh-QCN"; */
+"kFD-Lh-QCN.text" = "Số lượng";
+
+/* Class = "UILabel"; text = "Add-Ons"; ObjectID = "ko0-md-u1d"; */
+"ko0-md-u1d.text" = "Add-Ons";
+
+/* Class = "UILabel"; text = "Couponcode"; ObjectID = "kpF-T7-8ku"; */
+"kpF-T7-8ku.text" = "Couponcode";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ksj-2q-r8f"; */
+"ksj-2q-r8f.normalTitle" = "Submit";
+
+/* Class = "UIButton"; normalTitle = "Note"; ObjectID = "l72-s8-wde"; */
+"l72-s8-wde.normalTitle" = "Note";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "lJy-88-QHO"; */
+"lJy-88-QHO.text" = "00";
+
+/* Class = "UILabel"; text = "Tổng số sản phẩm"; ObjectID = "lLM-Y8-Z02"; */
+"lLM-Y8-Z02.text" = "Tổng số sản phẩm";
+
+/* Class = "UITextField"; placeholder = "Họ và tên"; ObjectID = "lQL-lh-if6"; */
+"lQL-lh-if6.placeholder" = "Họ và tên";
+
+/* Class = "UILabel"; text = "QTY : "; ObjectID = "lT4-n9-4au"; */
+"lT4-n9-4au.text" = "QTY : ";
+
+/* Class = "UILabel"; text = "Số điện thoại"; ObjectID = "lXa-2r-ZA6"; */
+"lXa-2r-ZA6.text" = "Số điện thoại";
+
+/* Class = "UIButton"; normalTitle = "Change Layout"; ObjectID = "lY4-GJ-cuY"; */
+"lY4-GJ-cuY.normalTitle" = "Change Layout";
+
+/* Class = "UILabel"; text = ""; ObjectID = "lbl-OG-K2p"; */
+"lbl-OG-K2p.text" = "";
+
+/* Class = "UILabel"; text = "10000 VNĐ"; ObjectID = "lpS-gE-yex"; */
+"lpS-gE-yex.text" = "10000 VNĐ";
+
+/* Class = "UILabel"; text = "Giảm giá"; ObjectID = "mnH-D0-zvK"; */
+"mnH-D0-zvK.text" = "Giảm giá";
+
+/* Class = "UILabel"; text = "2100000 VNĐ"; ObjectID = "mwO-Dm-Lwk"; */
+"mwO-Dm-Lwk.text" = "2100000 VNĐ";
+
+/* Class = "UILabel"; text = "Order placed"; ObjectID = "myJ-zD-ylE"; */
+"myJ-zD-ylE.text" = "Order placed";
+
+/* Class = "UILabel"; text = "Xóm Minh Khai, Xã La Phù, Huyện Hoài Đức, Thành phố Hà Nội "; ObjectID = "mzd-xY-J0f"; */
+"mzd-xY-J0f.text" = "Xóm Minh Khai, Xã La Phù, Huyện Hoài Đức, Thành phố Hà Nội ";
+
+/* Class = "UIButton"; normalTitle = "Addons"; ObjectID = "nFc-kV-TvE"; */
+"nFc-kV-TvE.normalTitle" = "Addons";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "nSd-Ud-5Fk"; */
+"nSd-Ud-5Fk.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Thông tin đơn hàng"; ObjectID = "nf6-mp-dhr"; */
+"nf6-mp-dhr.text" = "Thông tin đơn hàng";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "niO-8r-GDx"; */
+"niO-8r-GDx.text" = "Email";
+
+/* Class = "UILabel"; text = "Địa chỉ 1"; ObjectID = "o2S-jv-Kbi"; */
+"o2S-jv-Kbi.text" = "Địa chỉ 1";
+
+/* Class = "UILabel"; text = "Order placed"; ObjectID = "oOA-tb-eVo"; */
+"oOA-tb-eVo.text" = "Order placed";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "od2-Dv-UnC"; */
+"od2-Dv-UnC.text" = "00";
+
+/* Class = "UILabel"; text = "Xóm Minh Khai, Xã La Phù, Huyện Hoài Đức, Thành phố Hà Nội "; ObjectID = "pDn-AK-Y3X"; */
+"pDn-AK-Y3X.text" = "Xóm Minh Khai, Xã La Phù, Huyện Hoài Đức, Thành phố Hà Nội ";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "pTU-er-FNI"; */
+"pTU-er-FNI.text" = "10";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "phC-BL-1Ho"; */
+"phC-BL-1Ho.text" = "Name";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "pj0-ah-S5K"; */
+"pj0-ah-S5K.text" = "Name";
+
+/* Class = "UILabel"; text = "Đầm hè nữ, thiết kế thời trang"; ObjectID = "q2b-uS-rL7"; */
+"q2b-uS-rL7.text" = "Đầm hè nữ, thiết kế thời trang";
+
+/* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "q9E-fD-Drb"; */
+"q9E-fD-Drb.text" = "Don't have an account?";
+
+/* Class = "UILabel"; text = "Cám ơn bạn. Nguyễn Văn A"; ObjectID = "qry-j0-d8d"; */
+"qry-j0-d8d.text" = "Cám ơn bạn. Nguyễn Văn A";
+
+/* Class = "UILabel"; text = "Địa chỉ thanh toán"; ObjectID = "qwh-0m-G3D"; */
+"qwh-0m-G3D.text" = "Địa chỉ thanh toán";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "rA2-qz-BUi"; */
+"rA2-qz-BUi.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Share App"; ObjectID = "rS1-F5-Btz"; */
+"rS1-F5-Btz.normalTitle" = "Share App";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "rmF-4D-mge"; */
+"rmF-4D-mge.text" = "00";
+
+/* Class = "UILabel"; text = ""; ObjectID = "sCl-1l-AUt"; */
+"sCl-1l-AUt.text" = "";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "sgA-Ae-rU6"; */
+"sgA-Ae-rU6.text" = "00";
+
+/* Class = "UILabel"; text = "Order Details"; ObjectID = "sgg-Jr-Nnx"; */
+"sgg-Jr-Nnx.text" = "Order Details";
+
+/* Class = "UILabel"; text = "Danh sách sản phẩm"; ObjectID = "src-zZ-1MV"; */
+"src-zZ-1MV.text" = "Danh sách sản phẩm";
+
+/* Class = "UILabel"; text = "Họ và tên"; ObjectID = "t0I-KJ-ILk"; */
+"t0I-KJ-ILk.text" = "Họ và tên";
+
+/* Class = "UILabel"; text = "Tax"; ObjectID = "typ-mA-eqr"; */
+"typ-mA-eqr.text" = "Tax";
+
+/* Class = "UILabel"; text = "Delivery Charge"; ObjectID = "uAC-Mh-Gbd"; */
+"uAC-Mh-Gbd.text" = "Delivery Charge";
+
+/* Class = "UILabel"; text = ""; ObjectID = "uCx-zi-AW7"; */
+"uCx-zi-AW7.text" = "";
+
+/* Class = "UILabel"; text = ""; ObjectID = "upo-fM-iM9"; */
+"upo-fM-iM9.text" = "";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "uti-Vd-7KK"; */
+"uti-Vd-7KK.text" = "Date";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "vdt-5Q-29K"; */
+"vdt-5Q-29K.text" = "00";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "vhF-v9-SAQ"; */
+"vhF-v9-SAQ.text" = "00";
+
+/* Class = "UIButton"; normalTitle = "Note"; ObjectID = "w0j-iA-Zaq"; */
+"w0j-iA-Zaq.normalTitle" = "Note";
+
+/* Class = "UIButton"; normalTitle = "Order Now"; ObjectID = "w8K-9X-O2I"; */
+"w8K-9X-O2I.normalTitle" = "Order Now";
+
+/* Class = "UILabel"; text = "Order History"; ObjectID = "wMW-mE-TYE"; */
+"wMW-mE-TYE.text" = "Order History";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "wZ2-bx-l2X"; */
+"wZ2-bx-l2X.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Pickup"; ObjectID = "wZh-1i-fbc"; */
+"wZh-1i-fbc.text" = "Pickup";
+
+/* Class = "UILabel"; text = "My Cart"; ObjectID = "waB-Wp-LLt"; */
+"waB-Wp-LLt.text" = "My Cart";
+
+/* Class = "UILabel"; text = "Điềm mã giảm giá"; ObjectID = "wbw-KV-7hL"; */
+"wbw-KV-7hL.text" = "Điềm mã giảm giá";
+
+/* Class = "UIButton"; normalTitle = "Kiểm tra"; ObjectID = "x1g-I6-XkR"; */
+"x1g-I6-XkR.normalTitle" = "Kiểm tra";
+
+/* Class = "UILabel"; text = "Địa chỉ 1"; ObjectID = "x7P-vd-Pd6"; */
+"x7P-vd-Pd6.text" = "Địa chỉ 1";
+
+/* Class = "UILabel"; text = "Phí giao hàng"; ObjectID = "xMu-bc-4aw"; */
+"xMu-bc-4aw.text" = "Phí giao hàng";
+
+/* Class = "UILabel"; text = "Tổng tiền thanh toán"; ObjectID = "xOS-19-KiK"; */
+"xOS-19-KiK.text" = "Tổng tiền thanh toán";
+
+/* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "xV4-bH-oL6"; */
+"xV4-bH-oL6.text" = "Don't have an account?";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "yHC-zQ-CdH"; */
+"yHC-zQ-CdH.text" = "00";
+
+/* Class = "UIButton"; normalTitle = "Bước tiếp theo"; ObjectID = "yhM-hO-zOQ"; */
+"yhM-hO-zOQ.normalTitle" = "Bước tiếp theo";
+
+/* Class = "UILabel"; text = "Địa chỉ giao hàng"; ObjectID = "zGr-6T-TOl"; */
+"zGr-6T-TOl.text" = "Địa chỉ giao hàng";
+
+/* Class = "UITextField"; placeholder = "Mobile"; ObjectID = "zgS-RV-nJg"; */
+"zgS-RV-nJg.placeholder" = "Mobile";
+
+/* Class = "UIButton"; normalTitle = "Quay lại"; ObjectID = "znU-fg-g4A"; */
+"znU-fg-g4A.normalTitle" = "Quay lại";
