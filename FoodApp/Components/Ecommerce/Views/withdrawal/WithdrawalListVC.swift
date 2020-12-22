@@ -18,7 +18,7 @@ class WithdrawalListVC: UIViewController {
     lazy var dataTable = makeDataTable()
     var dataSource: DataTableContent = []
     @IBOutlet weak var UIViewLichSuRutTien: UIView!
-    let headerTitles = ["Name", "Fav Beverage", "Fav language", "Short term goals", "Height"]
+    let headerTitles = ["STT", "Amout", "Date", "Status", "Action"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selected = ""
@@ -31,13 +31,13 @@ class WithdrawalListVC: UIViewController {
     }
     @objc private func refreshData(_ sender: Any) {
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-        let urlString = API_URL + "/api/orders/my_list_order/limit/30/start/0?user_id=\(user_id)"
-        self.Webservice_GetHistory(url: urlString, params:[:])
+        let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
+        self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
     }
     override func viewWillAppear(_ animated: Bool) {
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-        let urlString = API_URL + "/api/orders/my_list_order/limit/30/start/0?user_id=\(user_id)"
-        self.Webservice_GetHistory(url: urlString, params:[:])
+        let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
+        self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
     }
     @IBAction func btnTap_Menu(_ sender: UIButton) {
         if UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "en" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "N/A"
@@ -53,34 +53,9 @@ class WithdrawalListVC: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         title = "Streaming fans"
         self.UIViewLichSuRutTien.backgroundColor = UIColor.white
-        dataSource = [
-            [
-                DataTableValueType.string("Pavan"),
-                DataTableValueType.string("Juice"),
-                DataTableValueType.string("Swift and Php"),
-                DataTableValueType.string("Be a game publisher"),
-                DataTableValueType.float(175.25)
-            ],
-            [
-                DataTableValueType.string("NoelDavies"),
-                DataTableValueType.string("Water"),
-                DataTableValueType.string("Php and Javascript"),
-                DataTableValueType.string("'Be a fucking paratrooper machine'"),
-                DataTableValueType.float(185.80)
-            ],
-            [
-                DataTableValueType.string("Redsaint"),
-                DataTableValueType.string("Cheerwine and Dr.Pepper"),
-                DataTableValueType.string("Java"),
-                DataTableValueType.string("'Creating an awesome RPG Game game'"),
-                DataTableValueType.float(185.42)
-            ],
-        ]
-        dataTable.reload()
-        
         self.UIViewLichSuRutTien.addSubview(dataTable)
     }
-
+    
     func setupConstraints() {
         NSLayoutConstraint.activate([
             dataTable.topAnchor.constraint(equalTo: self.UIViewLichSuRutTien.layoutMarginsGuide.topAnchor),
@@ -89,38 +64,61 @@ class WithdrawalListVC: UIViewController {
             dataTable.trailingAnchor.constraint(equalTo: self.UIViewLichSuRutTien.trailingAnchor),
         ])
     }
-
+    
     public func addDataSourceAfter(){
         
         
     }
-
+    
 }
 
 
 
 //MARK: WithdrawalList
 extension WithdrawalListVC {
-    func Webservice_GetHistory(url:String, params:NSDictionary) -> Void {
-        
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
+    func Webservice_GetLichSuRutTien(url:String, params:NSDictionary) -> Void {
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: "", messageStr: strErrorMessage)
+                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
             }
             else {
                 print(jsonResponse!)
-                let responseCode = jsonResponse!["result"].stringValue
-                if responseCode == "success" {
-                    let responseData = jsonResponse!["list_order"].arrayValue
-                    self.OrderHistoryData = responseData
-                    self.selected = ""
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetLichSuRutTienResponseModel.self, from: jsonResponse!)
+                    let rutTienList:[RutTienModel]=getLichSuRutTienResponseModel.rutTienList
+                    var i=1;
+                    for rut_tien in rutTienList {
+                        self.dataSource.append([
+                            DataTableValueType.string(String(i)),
+                            DataTableValueType.string(rut_tien.amount),
+                            DataTableValueType.string("20/10/20201"),
+                            DataTableValueType.string(rut_tien.withdrawalstatus.name),
+                            DataTableValueType.string("ation"),
+                        ])
+                        i=i+1
+                    }
                     
+                    self.dataTable.reload()
+                    
+                    
+                    
+                    
+                } catch let error as NSError  {
+                    print("error: \(error)")
                 }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
+                
+                
+                //print("userModel:\(userModel)")
+                
             }
         }
+        
+        
+        
+        
+        
+        
     }
 }
 extension WithdrawalListVC {
