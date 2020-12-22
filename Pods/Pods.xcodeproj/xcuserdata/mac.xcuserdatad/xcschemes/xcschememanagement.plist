@@ -154,11 +154,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftDataTables.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>

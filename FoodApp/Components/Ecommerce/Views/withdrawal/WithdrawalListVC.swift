@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftyJSON
-import SwiftDataTables
 
 
 
@@ -94,7 +93,7 @@ extension WithdrawalListVC {
                             DataTableValueType.string(rut_tien.amount),
                             DataTableValueType.string("20/10/20201"),
                             DataTableValueType.string(rut_tien.withdrawalstatus.name),
-                            DataTableValueType.string("ation"),
+                            DataTableValueType.string("ation")
                         ])
                         i=i+1
                     }
@@ -135,7 +134,7 @@ extension WithdrawalListVC: SwiftDataTableDataSource {
     }
     
     public func numberOfColumns(in: SwiftDataTable) -> Int {
-        return 4
+        return 5
     }
     
     func numberOfRows(in: SwiftDataTable) -> Int {
