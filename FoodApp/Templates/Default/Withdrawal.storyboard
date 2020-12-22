@@ -167,6 +167,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dbf-Jd-VWx"/>
                     </view>
+                    <connections>
+                        <outlet property="UIViewLichSuRutTien" destination="Y02-Jo-Mcv" id="SJU-JX-Z4Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D97-sP-fLC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
