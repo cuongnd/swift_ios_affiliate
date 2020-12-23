@@ -527,6 +527,8 @@ extension SwiftDataTable {
     }
     
     func didTapColumn(index: IndexPath) {
+        //comment tạm
+        /*
         defer {
             self.update()
         }
@@ -535,14 +537,16 @@ extension SwiftDataTable {
         self.highlight(column: index)
         let sortType = self.headerViewModels[index].sortType
         self.sort(column: index, sort: sortType)
+        */
+        //TODO nhớ sửa cái này
     }
     
     func sort(column index: Int, sort by: DataTableSortType){
         func ascendingOrder(rowOne: [DataCellViewModel], rowTwo: [DataCellViewModel]) -> Bool {
-            return rowOne[index].data.text < rowTwo[index].data.text
+            return rowOne[index].data.text.stringRepresentation < rowTwo[index].data.text.stringRepresentation
         }
         func descendingOrder(rowOne: [DataCellViewModel], rowTwo: [DataCellViewModel]) -> Bool {
-            return rowOne[index].data.text > rowTwo[index].data.text
+            return rowOne[index].data.text.stringRepresentation > rowTwo[index].data.text.stringRepresentation
         }
         
         switch by {
@@ -650,9 +654,9 @@ extension SwiftDataTable {
             return self.columnWidths[index]
         }
         //TODO: Implement it so that the preferred column widths are calculated first, and then the scaling happens after to fill the frame.
-//        if width != SwiftDataTableAutomaticColumnWidth {
-//            self.columnWidths[index] = width
-//        }
+        //        if width != SwiftDataTableAutomaticColumnWidth {
+        //            self.columnWidths[index] = width
+        //        }
         return width
     }
     

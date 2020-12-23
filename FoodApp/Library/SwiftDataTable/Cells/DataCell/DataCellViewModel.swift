@@ -52,7 +52,7 @@ extension DataCellViewModel: Equatable {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     public static func ==(lhs: DataCellViewModel, rhs: DataCellViewModel) -> Bool {
-        return lhs.data.text == rhs.data.text
+        return lhs.data.text.stringRepresentation == rhs.data.text.stringRepresentation
         && lhs.highlighted == rhs.highlighted
     }
 
