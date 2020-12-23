@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Foundation
 class DataCell: UICollectionViewCell {
     
     //MARK: - Properties
@@ -50,6 +50,13 @@ class DataCell: UICollectionViewCell {
             //to do
             break
         case RowType.Buttom:
+            self.dataButton.backgroundColor = UIColor( red: CGFloat(92/255.0), green: CGFloat(203/255.0), blue: CGFloat(207/255.0), alpha: CGFloat(1.0) )
+            self.dataButton.layer.cornerRadius = 5
+            self.dataButton.sizeToFit()
+            /*
+            self.dataButton.addTarget(self,action: "first:", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            */
             self.dataButton.setTitle(viewModel.data.text, for: .normal)
             self.dataButton.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(self.dataButton)

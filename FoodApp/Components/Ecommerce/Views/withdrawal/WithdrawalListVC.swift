@@ -98,10 +98,10 @@ extension WithdrawalListVC {
                         //RowModel
                         self.dataSource.append([
                             DataRowModel(type: .Text, text:String(i)),
-                            DataRowModel(type: .Text, text:rut_tien.amount),
+                            DataRowModel(type: .Buttom, text:rut_tien.amount),
                             DataRowModel(type: .Text, text:"20/20/2010"),
                             DataRowModel(type: .Text, text:rut_tien.withdrawalstatus.name),
-                            DataRowModel(type: .Buttom, text:"Action"),
+                            DataRowModel(type: .Buttom, text:"Xóa"),
                         ])
                         i=i+1
                     }
