@@ -94,7 +94,7 @@ extension WithdrawalListVC {
                             DataTableValueType.string(rut_tien.amount),
                             DataTableValueType.string("20/10/20201"),
                             DataTableValueType.string(rut_tien.withdrawalstatus.name),
-                            DataTableValueType.string("ation")
+                            DataTableValueType.Btn("ation")
                         ])
                         i=i+1
                     }
@@ -135,7 +135,7 @@ extension WithdrawalListVC: SwiftDataTableDataSource {
     }
     
     public func numberOfColumns(in: SwiftDataTable) -> Int {
-        return 5
+        return self.headerTitles.count
     }
     
     func numberOfRows(in: SwiftDataTable) -> Int {
