@@ -19,7 +19,7 @@ open class DataCellViewModel: VirtualPositionTrackable, CollectionViewCellRepres
     var highlighted: Bool = false
     //
     public var stringRepresentation: String {
-        return self.data.text
+        return self.data.text.stringRepresentation
     }
     //MARK: - Lifecycle
     init(data: DataRowModel){

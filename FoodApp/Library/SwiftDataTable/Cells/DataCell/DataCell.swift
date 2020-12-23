@@ -37,7 +37,7 @@ class DataCell: UICollectionViewCell {
     func configure(_ viewModel: DataCellViewModel){
         switch viewModel.data.type {
         case RowType.Text:
-            self.dataLabel.text = viewModel.data.text
+            self.dataLabel.text = viewModel.data.text.stringRepresentation
             dataLabel.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(dataLabel)
             NSLayoutConstraint.activate([
@@ -57,7 +57,7 @@ class DataCell: UICollectionViewCell {
             self.dataButton.addTarget(self,action: "first:", forControlEvents: UIControlEvents.TouchUpInside)
             
             */
-            self.dataButton.setTitle(viewModel.data.text, for: .normal)
+            self.dataButton.setTitle(viewModel.data.text.stringRepresentation, for: .normal)
             self.dataButton.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(self.dataButton)
             NSLayoutConstraint.activate([

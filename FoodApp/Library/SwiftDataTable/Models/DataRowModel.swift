@@ -17,5 +17,7 @@ public enum RowType {
 
 public struct DataRowModel {
     var type: RowType
-    var text: String
+    var text: DataTableValueType
 }
+
+

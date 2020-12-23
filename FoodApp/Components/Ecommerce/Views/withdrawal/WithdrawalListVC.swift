@@ -18,11 +18,11 @@ class WithdrawalListVC: UIViewController {
     var dataSource: DataTableContent = []
     @IBOutlet weak var UIViewLichSuRutTien: UIView!
     let headerTitles = [
-        DataRowModel(type: .Text, text:"STT"),
-        DataRowModel(type:.Text, text:"Số tiền"),
-        DataRowModel(type: .Text, text:"Ngày"),
-        DataRowModel(type: .Text, text:"Trạng thái"),
-        DataRowModel(type: .Text, text:"Action")
+        DataRowModel(type: .Text, text:DataTableValueType.string("STT")),
+        DataRowModel(type:.Text, text:DataTableValueType.string("Số tiền")),
+        DataRowModel(type: .Text, text:DataTableValueType.string("Ngày")),
+        DataRowModel(type: .Text, text:DataTableValueType.string("Trạng thái")),
+        DataRowModel(type: .Text, text:DataTableValueType.string("Action"))
         
     ]
     override func viewDidLoad() {
@@ -97,11 +97,11 @@ extension WithdrawalListVC {
                     for rut_tien in rutTienList {
                         //RowModel
                         self.dataSource.append([
-                            DataRowModel(type: .Text, text:String(i)),
-                            DataRowModel(type: .Buttom, text:rut_tien.amount),
-                            DataRowModel(type: .Text, text:"20/20/2010"),
-                            DataRowModel(type: .Text, text:rut_tien.withdrawalstatus.name),
-                            DataRowModel(type: .Buttom, text:"Xóa"),
+                            DataRowModel(type: .Text, text:DataTableValueType.init(i)),
+                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount)),
+                            DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010")),
+                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name)),
+                            DataRowModel(type: .Buttom, text:DataTableValueType.string("Xóa"))
                         ])
                         i=i+1
                     }
@@ -138,7 +138,7 @@ extension WithdrawalListVC {
 }
 extension WithdrawalListVC: SwiftDataTableDataSource {
     public func dataTable(_ dataTable: SwiftDataTable, headerTitleForColumnAt columnIndex: NSInteger) -> String {
-        return self.headerTitles[columnIndex].text
+        return self.headerTitles[columnIndex].text.stringRepresentation
     }
     
     public func numberOfColumns(in: SwiftDataTable) -> Int {

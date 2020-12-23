@@ -757,7 +757,7 @@ extension SwiftDataTable: UISearchBarDelegate {
             //The idnex array will be defined by the column definition inside the configuration object provided by the user
             //Index array might look like this [1, 3, 4]. Which means only those columns should be searched into
             for item in row {
-                let stringData: String = item.data.text.lowercased()
+                let stringData: String = item.data.text.stringRepresentation.lowercased()
                 if stringData.lowercased().range(of: needle) != nil{
                     filteredSet.append(row)
                     //Stop searching through the rest of the columns in the same row and break
