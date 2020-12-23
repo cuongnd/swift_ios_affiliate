@@ -181,7 +181,7 @@ public class SwiftDataTable: UIView {
                             frame: CGRect = .zero)
     {
         self.init(
-            data: data.map { $0.map { .string($0) }},
+            data: data,
             headerTitles: headerTitles,
             options: options,
             frame: frame
@@ -307,7 +307,7 @@ public class SwiftDataTable: UIView {
         self.collectionView.reloadData()
     }
     
-    public func data(for indexPath: IndexPath) -> DataTableValueType {
+    public func data(for indexPath: IndexPath) -> DataRowModel {
         return rows[indexPath.section][indexPath.row].data
     }
 }
@@ -539,10 +539,10 @@ extension SwiftDataTable {
     
     func sort(column index: Int, sort by: DataTableSortType){
         func ascendingOrder(rowOne: [DataCellViewModel], rowTwo: [DataCellViewModel]) -> Bool {
-            return rowOne[index].data < rowTwo[index].data
+            return rowOne[index].data.text < rowTwo[index].data.text
         }
         func descendingOrder(rowOne: [DataCellViewModel], rowTwo: [DataCellViewModel]) -> Bool {
-            return rowOne[index].data > rowTwo[index].data
+            return rowOne[index].data.text > rowTwo[index].data.text
         }
         
         switch by {
@@ -757,7 +757,7 @@ extension SwiftDataTable: UISearchBarDelegate {
             //The idnex array will be defined by the column definition inside the configuration object provided by the user
             //Index array might look like this [1, 3, 4]. Which means only those columns should be searched into
             for item in row {
-                let stringData: String = item.data.stringRepresentation.lowercased()
+                let stringData: String = item.data.text.lowercased()
                 if stringData.lowercased().range(of: needle) != nil{
                     filteredSet.append(row)
                     //Stop searching through the rest of the columns in the same row and break

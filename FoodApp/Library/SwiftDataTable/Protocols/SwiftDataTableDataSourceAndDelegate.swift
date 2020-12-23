@@ -31,8 +31,8 @@ public protocol SwiftDataTableDataSource: class {
     /// - Parameters:
     ///   - dataTable: SwiftDataTable
     ///   - index: the index position of the row wishing to be displayed
-    /// - Returns: return an array of the DataTableValueType type so the row can be processed and displayed.
-    func dataTable(_ dataTable: SwiftDataTable, dataForRowAt index: NSInteger) -> [DataTableValueType]
+    /// - Returns: return an array of the DataRowModel type so the row can be processed and displayed.
+    func dataTable(_ dataTable: SwiftDataTable, dataForRowAt index: NSInteger) -> [DataRowModel]
     
     /// The header title for the column position to be displayed
     ///

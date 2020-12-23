@@ -15,14 +15,14 @@ open class DataCellViewModel: VirtualPositionTrackable, CollectionViewCellRepres
     var xPositionRunningTotal: CGFloat?  = nil
     var yPositionRunningTotal: CGFloat?  = nil
     var virtualHeight: CGFloat = 0
-    public let data: DataTableValueType
+    public let data: DataRowModel
     var highlighted: Bool = false
     //
     public var stringRepresentation: String {
-        return self.data.stringRepresentation
+        return self.data.text
     }
     //MARK: - Lifecycle
-    init(data: DataTableValueType){
+    init(data: DataRowModel){
         self.data = data
     }
     
@@ -52,7 +52,7 @@ extension DataCellViewModel: Equatable {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     public static func ==(lhs: DataCellViewModel, rhs: DataCellViewModel) -> Bool {
-        return lhs.data == rhs.data
+        return lhs.data.text == rhs.data.text
         && lhs.highlighted == rhs.highlighted
     }
 

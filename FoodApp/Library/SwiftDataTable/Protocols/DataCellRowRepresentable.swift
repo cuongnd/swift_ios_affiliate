@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol DataCellRowRepresentable {
-    func dataCellRowRepresentable() -> [DataTableValueType]
+    func dataCellRowRepresentable() -> [DataRowModel]
 }

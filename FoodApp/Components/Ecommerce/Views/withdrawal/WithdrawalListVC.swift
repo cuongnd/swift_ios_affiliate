@@ -17,7 +17,14 @@ class WithdrawalListVC: UIViewController {
     lazy var dataTable = makeDataTable()
     var dataSource: DataTableContent = []
     @IBOutlet weak var UIViewLichSuRutTien: UIView!
-    let headerTitles = ["STT", "Amout", "Date", "Status", "Action"]
+    let headerTitles = [
+        DataRowModel(type: "text", text:"STT"),
+        DataRowModel(type: "text", text:"Số tiền"),
+        DataRowModel(type: "text", text:"Ngày"),
+        DataRowModel(type: "text", text:"Trạng thái"),
+        DataRowModel(type: "text", text:"Action")
+        
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selected = ""
@@ -90,11 +97,11 @@ extension WithdrawalListVC {
                     for rut_tien in rutTienList {
                         //RowModel
                         self.dataSource.append([
-                            DataRowModel(type: "text", text:"text"),
-                            DataRowModel(type: "text", text:"text"),
-                            DataRowModel(type: "text", text:"text"),
-                            DataRowModel(type: "text", text:"text"),
-                            DataRowModel(type: "text", text:"text"),
+                            DataRowModel(type: "text", text:String(i)),
+                            DataRowModel(type: "text", text:rut_tien.amount),
+                            DataRowModel(type: "text", text:"20/20/2010"),
+                            DataRowModel(type: "text", text:rut_tien.withdrawalstatus.name),
+                            DataRowModel(type: "text", text:"Action"),
                         ])
                         i=i+1
                     }
@@ -131,7 +138,7 @@ extension WithdrawalListVC {
 }
 extension WithdrawalListVC: SwiftDataTableDataSource {
     public func dataTable(_ dataTable: SwiftDataTable, headerTitleForColumnAt columnIndex: NSInteger) -> String {
-        return self.headerTitles[columnIndex]
+        return self.headerTitles[columnIndex].text
     }
     
     public func numberOfColumns(in: SwiftDataTable) -> Int {
