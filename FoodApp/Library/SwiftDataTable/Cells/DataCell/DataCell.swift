@@ -9,7 +9,7 @@
 import UIKit
 
 class DataCell: UICollectionViewCell {
-
+    
     //MARK: - Properties
     private enum Properties {
         static let verticalMargin: CGFloat = 5
@@ -18,6 +18,7 @@ class DataCell: UICollectionViewCell {
     }
     
     let dataLabel = UILabel()
+    let dataButton = UIButton()
     
     //MARK: - Lifecycle
     override init(frame: CGRect) {
@@ -30,19 +31,43 @@ class DataCell: UICollectionViewCell {
     }
     
     private func setup() {
-        dataLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(dataLabel)
-        NSLayoutConstraint.activate([
-            dataLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: Properties.widthConstant),
-            dataLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Properties.verticalMargin),
-            dataLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Properties.verticalMargin),
-            dataLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Properties.horizontalMargin),
-            dataLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Properties.horizontalMargin),
-        ])
+        
     }
     
     func configure(_ viewModel: DataCellViewModel){
-        self.dataLabel.text = viewModel.data.text
-//        self.contentView.backgroundColor = .white
+        switch viewModel.data.type {
+        case RowType.Text:
+            self.dataLabel.text = viewModel.data.text
+            dataLabel.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview(dataLabel)
+            NSLayoutConstraint.activate([
+                dataLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: Properties.widthConstant),
+                dataLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Properties.verticalMargin),
+                dataLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Properties.verticalMargin),
+                dataLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Properties.horizontalMargin),
+                dataLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Properties.horizontalMargin),
+            ])
+            //to do
+            break
+        case RowType.Buttom:
+            self.dataButton.setTitle(viewModel.data.text, for: .normal)
+            self.dataButton.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview(self.dataButton)
+            NSLayoutConstraint.activate([
+                dataButton.widthAnchor.constraint(greaterThanOrEqualToConstant: Properties.widthConstant),
+                dataButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Properties.verticalMargin),
+                dataButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Properties.verticalMargin),
+                dataButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Properties.horizontalMargin),
+                dataButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Properties.horizontalMargin),
+            ])
+           //to do
+           break
+        default:
+            //to do
+            break
+        }
+        
+        
+        //        self.contentView.backgroundColor = .white
     }
 }

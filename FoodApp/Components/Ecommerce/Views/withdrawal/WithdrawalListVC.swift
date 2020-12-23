@@ -18,11 +18,11 @@ class WithdrawalListVC: UIViewController {
     var dataSource: DataTableContent = []
     @IBOutlet weak var UIViewLichSuRutTien: UIView!
     let headerTitles = [
-        DataRowModel(type: "text", text:"STT"),
-        DataRowModel(type: "text", text:"Số tiền"),
-        DataRowModel(type: "text", text:"Ngày"),
-        DataRowModel(type: "text", text:"Trạng thái"),
-        DataRowModel(type: "text", text:"Action")
+        DataRowModel(type: .Text, text:"STT"),
+        DataRowModel(type:.Text, text:"Số tiền"),
+        DataRowModel(type: .Text, text:"Ngày"),
+        DataRowModel(type: .Text, text:"Trạng thái"),
+        DataRowModel(type: .Text, text:"Action")
         
     ]
     override func viewDidLoad() {
@@ -97,11 +97,11 @@ extension WithdrawalListVC {
                     for rut_tien in rutTienList {
                         //RowModel
                         self.dataSource.append([
-                            DataRowModel(type: "text", text:String(i)),
-                            DataRowModel(type: "text", text:rut_tien.amount),
-                            DataRowModel(type: "text", text:"20/20/2010"),
-                            DataRowModel(type: "text", text:rut_tien.withdrawalstatus.name),
-                            DataRowModel(type: "text", text:"Action"),
+                            DataRowModel(type: .Text, text:String(i)),
+                            DataRowModel(type: .Text, text:rut_tien.amount),
+                            DataRowModel(type: .Text, text:"20/20/2010"),
+                            DataRowModel(type: .Text, text:rut_tien.withdrawalstatus.name),
+                            DataRowModel(type: .Buttom, text:"Action"),
                         ])
                         i=i+1
                     }

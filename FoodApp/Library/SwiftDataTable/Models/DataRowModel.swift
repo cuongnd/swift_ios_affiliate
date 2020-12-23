@@ -7,7 +7,15 @@
 //
 
 import Foundation
+public enum RowType {
+    
+    //MARK: - Properties
+    case Text
+    case Buttom
+    case Select
+}
+
 public struct DataRowModel {
-    var type: String
+    var type: RowType
     var text: String
 }
