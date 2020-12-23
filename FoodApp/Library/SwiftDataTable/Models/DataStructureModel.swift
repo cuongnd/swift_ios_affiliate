@@ -24,9 +24,9 @@ public struct DataStructureModel {
     var headerTitles = [String]()
     var footerTitles = [String]()
     var shouldFootersShowSortingElement: Bool = false
-    //code
+    
     private var columnAverageContentLength = [Float]()
-     
+    
     //MARK: - Lifecycle
     init() {
         self.init(data: DataTableContent(), headerTitles: [String]())

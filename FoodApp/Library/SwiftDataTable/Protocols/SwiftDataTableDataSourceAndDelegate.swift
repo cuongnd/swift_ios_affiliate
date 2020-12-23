@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
- 
+
 //public let SwiftDataTableAutomaticColumnWidth: CGFloat = CGFloat.greatestFiniteMagnitude
 
 /// This is an optional data source, you can also set static data in the initialiser of the `SwiftDataTable` class so you can avoid conforming to the data source. But for those with more dynamic content, use this protocol.

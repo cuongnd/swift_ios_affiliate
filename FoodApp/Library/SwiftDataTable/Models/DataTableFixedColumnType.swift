@@ -8,7 +8,7 @@ import Foundation
 public enum DataTableFixedColumnSideType {
     case left
     case right
-} 
+}
 public class DataTableFixedColumnType: NSObject {
     
     //MARK: - Properties

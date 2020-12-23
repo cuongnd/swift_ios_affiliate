@@ -88,6 +88,7 @@ extension WithdrawalListVC {
                     let rutTienList:[RutTienModel]=getLichSuRutTienResponseModel.rutTienList
                     var i=1;
                     for rut_tien in rutTienList {
+                        
                         self.dataSource.append([
                             DataTableValueType.string(String(i)),
                             DataTableValueType.string(rut_tien.amount),

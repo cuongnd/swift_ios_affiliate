@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
- 
+
 protocol VirtualPositionTrackable {
     var xPositionRunningTotal: CGFloat? { get set }
     var yPositionRunningTotal: CGFloat? { get set }

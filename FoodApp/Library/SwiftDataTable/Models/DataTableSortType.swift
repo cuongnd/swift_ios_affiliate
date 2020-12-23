@@ -38,4 +38,4 @@ extension DataTableSortType {
             self = .unspecified
         }
     }
-} 
+}

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-  
+
 public extension IndexPath {
     /// An index number for single matrix indexPath
     var index: Int {

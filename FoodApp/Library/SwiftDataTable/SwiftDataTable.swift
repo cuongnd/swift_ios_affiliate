@@ -377,7 +377,7 @@ extension SwiftDataTable: UICollectionViewDataSource, UICollectionViewDelegate {
         //    return dataSource.numberOfRows(in: self)
         //}
         return self.numberOfRows()
-    } 
+    }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellViewModel: DataCellViewModel

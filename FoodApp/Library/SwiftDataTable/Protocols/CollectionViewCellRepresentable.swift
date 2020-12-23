@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
- 
+
 @objc protocol CollectionViewCellRepresentable {
     static func registerCell(collectionView: UICollectionView)
     func dequeueCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell

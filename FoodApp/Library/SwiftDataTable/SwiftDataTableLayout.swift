@@ -7,7 +7,7 @@
 //
 
 import UIKit
- 
+
 class SwiftDataTableLayout: UICollectionViewFlowLayout {
     
     //MARK: - Properties
