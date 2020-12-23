@@ -88,13 +88,13 @@ extension WithdrawalListVC {
                     let rutTienList:[RutTienModel]=getLichSuRutTienResponseModel.rutTienList
                     var i=1;
                     for rut_tien in rutTienList {
-                        
+                        //RowModel
                         self.dataSource.append([
-                            DataTableValueType.string(String(i)),
-                            DataTableValueType.string(rut_tien.amount),
-                            DataTableValueType.string("20/10/20201"),
-                            DataTableValueType.string(rut_tien.withdrawalstatus.name),
-                            DataTableValueType.Btn("ation")
+                            DataRowModel(type: "text", text:"text"),
+                            DataRowModel(type: "text", text:"text"),
+                            DataRowModel(type: "text", text:"text"),
+                            DataRowModel(type: "text", text:"text"),
+                            DataRowModel(type: "text", text:"text"),
                         ])
                         i=i+1
                     }
@@ -142,7 +142,7 @@ extension WithdrawalListVC: SwiftDataTableDataSource {
         return self.dataSource.count
     }
     
-    public func dataTable(_ dataTable: SwiftDataTable, dataForRowAt index: NSInteger) -> [DataTableValueType] {
+    public func dataTable(_ dataTable: SwiftDataTable, dataForRowAt index: NSInteger) -> [DataRowModel] {
         return self.dataSource[index]
     }
 }

@@ -42,6 +42,7 @@
 		0443F7652592E614005D5637 /* PaginationHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7632592E614005D5637 /* PaginationHeaderViewModel.swift */; };
 		0443F7662592E614005D5637 /* PaginationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7642592E614005D5637 /* PaginationHeader.swift */; };
 		0443F7712592E9AB005D5637 /* SwiftDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7702592E9AB005D5637 /* SwiftDataTable.swift */; };
+		0443F7752593734A005D5637 /* DataRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7742593734A005D5637 /* DataRowModel.swift */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -224,6 +225,7 @@
 		0443F7632592E614005D5637 /* PaginationHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationHeaderViewModel.swift; sourceTree = "<group>"; };
 		0443F7642592E614005D5637 /* PaginationHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationHeader.swift; sourceTree = "<group>"; };
 		0443F7702592E9AB005D5637 /* SwiftDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataTable.swift; sourceTree = "<group>"; };
+		0443F7742593734A005D5637 /* DataRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRowModel.swift; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				0443F72C2592DD0E005D5637 /* DataTableFixedColumnType.swift */,
 				0443F72D2592DD0E005D5637 /* DataTableSortType.swift */,
 				0443F7292592DA7C005D5637 /* DataTableValueType.swift */,
+				0443F7742593734A005D5637 /* DataRowModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1441,6 +1444,7 @@
 				0C42DC3E257F8E8C007009E4 /* ADRTableSetting.swift in Sources */,
 				0C8A566725846C4400CAD7F1 /* GetOrderResponseModel.swift in Sources */,
 				0C42DC07257BD6BD007009E4 /* ADRTable.swift in Sources */,
+				0443F7752593734A005D5637 /* DataRowModel.swift in Sources */,
 				0C8A564D2581C5C900CAD7F1 /* UserModel.swift in Sources */,
 				0C8A56712584802600CAD7F1 /* OrderCustomerModel.swift in Sources */,
 				0443F6AA2590F30A005D5637 /* GetDoanhThuTheoThangResponseModel.swift in Sources */,

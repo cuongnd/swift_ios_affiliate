@@ -8,7 +8,7 @@
 
 import UIKit
 
-public typealias DataTableRow = [DataTableValueType]
+public typealias DataTableRow = [DataRowModel]
 public typealias DataTableContent = [DataTableRow]
 public typealias DataTableViewModelContent = [[DataCellViewModel]]
 
