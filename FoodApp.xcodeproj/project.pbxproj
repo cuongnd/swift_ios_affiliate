@@ -28,7 +28,6 @@
 		0443F7422592E0B1005D5637 /* SwiftDataTable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7412592E0B1005D5637 /* SwiftDataTable+Extensions.swift */; };
 		0443F7472592E0D8005D5637 /* DataTableSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7432592E0D7005D5637 /* DataTableSearchTextField.swift */; };
 		0443F7482592E0D8005D5637 /* SwiftDataTableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7442592E0D8005D5637 /* SwiftDataTableLayout.swift */; };
-		0443F7492592E0D8005D5637 /* SwiftDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7452592E0D8005D5637 /* SwiftDataTable.swift */; };
 		0443F74A2592E0D8005D5637 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7462592E0D8005D5637 /* DataStore.swift */; };
 		0443F7522592E109005D5637 /* CollectionViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F74C2592E107005D5637 /* CollectionViewCellRepresentable.swift */; };
 		0443F7532592E109005D5637 /* SwiftDataTableDataSourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F74D2592E108005D5637 /* SwiftDataTableDataSourceAndDelegate.swift */; };
@@ -42,9 +41,7 @@
 		0443F7612592E5EE005D5637 /* MenuLengthHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F75F2592E5EE005D5637 /* MenuLengthHeaderViewModel.swift */; };
 		0443F7652592E614005D5637 /* PaginationHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7632592E614005D5637 /* PaginationHeaderViewModel.swift */; };
 		0443F7662592E614005D5637 /* PaginationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7642592E614005D5637 /* PaginationHeader.swift */; };
-		0443F76A2592E6D0005D5637 /* SwiftDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7692592E6D0005D5637 /* SwiftDataTable.swift */; };
-		0443F76C2592E6D8005D5637 /* SwiftDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F76B2592E6D8005D5637 /* SwiftDataTable.swift */; };
-		0443F76F2592E7B0005D5637 /* SwiftDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F76E2592E7B0005D5637 /* SwiftDataTable.swift */; };
+		0443F7712592E9AB005D5637 /* SwiftDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7702592E9AB005D5637 /* SwiftDataTable.swift */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -213,7 +210,6 @@
 		0443F7412592E0B1005D5637 /* SwiftDataTable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftDataTable+Extensions.swift"; sourceTree = "<group>"; };
 		0443F7432592E0D7005D5637 /* DataTableSearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableSearchTextField.swift; sourceTree = "<group>"; };
 		0443F7442592E0D8005D5637 /* SwiftDataTableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDataTableLayout.swift; sourceTree = "<group>"; };
-		0443F7452592E0D8005D5637 /* SwiftDataTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftDataTable.swift; path = "../../../../Documents/template_can_delete/SwiftDataTables-master/SwiftDataTables/Classes/SwiftDataTable.swift"; sourceTree = "<group>"; };
 		0443F7462592E0D8005D5637 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		0443F74C2592E107005D5637 /* CollectionViewCellRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellRepresentable.swift; sourceTree = "<group>"; };
 		0443F74D2592E108005D5637 /* SwiftDataTableDataSourceAndDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDataTableDataSourceAndDelegate.swift; sourceTree = "<group>"; };
@@ -227,10 +223,7 @@
 		0443F75F2592E5EE005D5637 /* MenuLengthHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuLengthHeaderViewModel.swift; sourceTree = "<group>"; };
 		0443F7632592E614005D5637 /* PaginationHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationHeaderViewModel.swift; sourceTree = "<group>"; };
 		0443F7642592E614005D5637 /* PaginationHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationHeader.swift; sourceTree = "<group>"; };
-		0443F7682592E69B005D5637 /* SwiftDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataTable.swift; sourceTree = "<group>"; };
-		0443F7692592E6D0005D5637 /* SwiftDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftDataTable.swift; path = "../../../../../Documents/template_can_delete/SwiftDataTables-master/SwiftDataTables/Classes/SwiftDataTable.swift"; sourceTree = "<group>"; };
-		0443F76B2592E6D8005D5637 /* SwiftDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftDataTable.swift; path = "../../../../../Documents/template_can_delete/SwiftDataTables-master/SwiftDataTables/Classes/SwiftDataTable.swift"; sourceTree = "<group>"; };
-		0443F76E2592E7B0005D5637 /* SwiftDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftDataTable.swift; path = "../../../../../Documents/template_can_delete/SwiftDataTables-master/SwiftDataTables/Classes/SwiftDataTable.swift"; sourceTree = "<group>"; };
+		0443F7702592E9AB005D5637 /* SwiftDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataTable.swift; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -483,17 +476,14 @@
 		0443F7672592E67D005D5637 /* SwiftDataTable */ = {
 			isa = PBXGroup;
 			children = (
-				0443F76E2592E7B0005D5637 /* SwiftDataTable.swift */,
 				0443F76D2592E6F0005D5637 /* Models */,
-				0443F7692592E6D0005D5637 /* SwiftDataTable.swift */,
-				0443F76B2592E6D8005D5637 /* SwiftDataTable.swift */,
 				0443F74B2592E0EF005D5637 /* Protocols */,
 				0443F7462592E0D8005D5637 /* DataStore.swift */,
 				0443F7432592E0D7005D5637 /* DataTableSearchTextField.swift */,
-				0443F7682592E69B005D5637 /* SwiftDataTable.swift */,
 				0443F7442592E0D8005D5637 /* SwiftDataTableLayout.swift */,
 				0443F7402592E095005D5637 /* Extensions */,
 				0443F7382592DE49005D5637 /* Cells */,
+				0443F7702592E9AB005D5637 /* SwiftDataTable.swift */,
 			);
 			path = SwiftDataTable;
 			sourceTree = "<group>";
@@ -999,7 +989,6 @@
 			isa = PBXGroup;
 			children = (
 				0443F7672592E67D005D5637 /* SwiftDataTable */,
-				0443F7452592E0D8005D5637 /* SwiftDataTable.swift */,
 				0CDCD68125807B5A000B7F44 /* Fronts */,
 				0C42DC35257F1F6C007009E4 /* Utilities */,
 				0C42DC04257BD678007009E4 /* Mvc */,
@@ -1383,7 +1372,6 @@
 				0C42DC0A257BD719007009E4 /* ADRTableProduct.swift in Sources */,
 				0443F7662592E614005D5637 /* PaginationHeader.swift in Sources */,
 				880BDE8E24D552310085FC1D /* AddOnsVC.swift in Sources */,
-				0443F76A2592E6D0005D5637 /* SwiftDataTable.swift in Sources */,
 				0C42DC1B257BDA31007009E4 /* ADRList.swift in Sources */,
 				0443F6BB2591D305005D5637 /* WithdrawalStatusModel.swift in Sources */,
 				C8BAC0692489257100ECE181 /* OrderDetails.swift in Sources */,
@@ -1405,11 +1393,9 @@
 				0443F72A2592DA7C005D5637 /* DataTableValueType.swift in Sources */,
 				C8BAC0602488EBEB00ECE181 /* HomeVC3.swift in Sources */,
 				C83E16C5248BA64C0067AD34 /* EditProfileVC.swift in Sources */,
-				0443F7492592E0D8005D5637 /* SwiftDataTable.swift in Sources */,
 				C8C99E092488D93C00B5C187 /* CornerView.swift in Sources */,
 				0CD77A5D257A29C10083BC09 /* ADRFrontEndModelCartItems.swift in Sources */,
 				C82AF9E32491FD2A00464115 /* SettingsVC.swift in Sources */,
-				0443F76F2592E7B0005D5637 /* SwiftDataTable.swift in Sources */,
 				C89F47FA248A64A700694308 /* Webservices.swift in Sources */,
 				0443F6B725918539005D5637 /* GetLichSuRutTienResponseModel.swift in Sources */,
 				88F6721E24A4ADE5000061FB /* PromoCodeListVC.swift in Sources */,
@@ -1466,6 +1452,7 @@
 				C8F07A2B248F879700665143 /* OrderHistoryDetailsVC.swift in Sources */,
 				0443F6A82590D834005D5637 /* HomeVC2.swift in Sources */,
 				0C42DC2A257C6A6F007009E4 /* ObjectMapperFrontendCart.swift in Sources */,
+				0443F7712592E9AB005D5637 /* SwiftDataTable.swift in Sources */,
 				C8C99DF92488D90D00B5C187 /* LoginVC.swift in Sources */,
 				0C8A56572582E7AC00CAD7F1 /* ADRFrontEndViewCheckoutPaymentVC.swift in Sources */,
 				0443F7422592E0B1005D5637 /* SwiftDataTable+Extensions.swift in Sources */,
@@ -1474,7 +1461,6 @@
 				0C42DC1F257BDBDA007009E4 /* ADRView.swift in Sources */,
 				0443F7552592E109005D5637 /* VirtualPositionTrackable.swift in Sources */,
 				0CD77A62257A30550083BC09 /* Database.swift in Sources */,
-				0443F76C2592E6D8005D5637 /* SwiftDataTable.swift in Sources */,
 				0C8A566925846C6500CAD7F1 /* OrderModel.swift in Sources */,
 				0CDCD67F258053C2000B7F44 /* ADRFrontEndViewCheckoutVC.swift in Sources */,
 				C8C99E042488D93C00B5C187 /* AllKeyAndMessages.swift in Sources */,
