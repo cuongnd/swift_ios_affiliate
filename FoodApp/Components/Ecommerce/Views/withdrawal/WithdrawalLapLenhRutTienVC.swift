@@ -18,7 +18,6 @@ class WithdrawalLapLenhRutTienVC: UIViewController {
     var Note = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.text_viewNote.text = Note
         
     }
     

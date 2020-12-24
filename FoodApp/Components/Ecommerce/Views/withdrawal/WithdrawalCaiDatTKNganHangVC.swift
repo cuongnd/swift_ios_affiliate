@@ -18,9 +18,7 @@ class WithdrawalCaiDatTKNganHangVC: UIViewController {
     var Note = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.text_viewNote.text = Note
-        cornerRadius(viewName: btn_ok, radius: 6.0)
-        cornerRadius(viewName: text_viewNote, radius: 6.0)
+        
     }
     
 
