@@ -70,9 +70,8 @@ class DataCell: UICollectionViewCell {
             //to do
             break
         case RowType.UiView:
-            var currentUiView:UIView=viewModel.data.UiView!;
+            let currentUiView:UIView=viewModel.data.UiView!;
             if(currentUiView != nil){
-                print("hello io vi")
                 currentUiView.translatesAutoresizingMaskIntoConstraints = false
                 contentView.addSubview(currentUiView)
                 NSLayoutConstraint.activate([

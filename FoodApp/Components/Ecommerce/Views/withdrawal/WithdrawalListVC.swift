@@ -14,6 +14,7 @@ import SwiftyJSON
 class WithdrawalListVC: UIViewController {
     var OrderHistoryData = [JSON]()
     var selected = String()
+    var rutTienList:[RutTienModel]=[RutTienModel]();
     lazy var dataTable = makeDataTable()
     var dataSource: DataTableContent = []
     @IBOutlet weak var UIViewLichSuRutTien: UIView!
@@ -92,14 +93,20 @@ extension WithdrawalListVC {
                 do {
                     let jsonDecoder = JSONDecoder()
                     let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetLichSuRutTienResponseModel.self, from: jsonResponse!)
-                    let rutTienList:[RutTienModel]=getLichSuRutTienResponseModel.rutTienList
-                    var i=1;
-                    for rut_tien in rutTienList {
+                    self.rutTienList=getLichSuRutTienResponseModel.rutTienList
+                    var i=0;
+                    for rut_tien in self.rutTienList {
                         //RowModel
                         let dataButton = UIButton()
                         dataButton.setTitle("hello242", for: .normal)
+                        
+                        dataButton.backgroundColor = UIColor( red: CGFloat(92/255.0), green: CGFloat(203/255.0), blue: CGFloat(207/255.0), alpha: CGFloat(1.0) )
+                        dataButton.layer.cornerRadius = 5
+                        dataButton.sizeToFit()
+                        dataButton.tag=i
+                        dataButton.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
                         self.dataSource.append([
-                            DataRowModel(type: .Text, text:DataTableValueType.init(i)),
+                            DataRowModel(type: .Text, text:DataTableValueType.init(i+1)),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount)),
                             DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010")),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name)),
@@ -128,6 +135,11 @@ extension WithdrawalListVC {
         
         
         
+    }
+    @objc func btnTapMines(sender:UIButton)
+    {
+        let tag=sender.tag
+        print("tag \(tag)")
     }
 }
 extension WithdrawalListVC {
