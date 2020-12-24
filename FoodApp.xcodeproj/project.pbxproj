@@ -48,6 +48,9 @@
 		0443F77C25948D75005D5637 /* GetDeletewithdrawalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F77B25948D75005D5637 /* GetDeletewithdrawalModel.swift */; };
 		0443F77E2594B2AF005D5637 /* WithdrawalLapLenhRutTienVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F77D2594B2AF005D5637 /* WithdrawalLapLenhRutTienVC.swift */; };
 		0443F7802594B2DC005D5637 /* WithdrawalCaiDatTKNganHangVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F77F2594B2DC005D5637 /* WithdrawalCaiDatTKNganHangVC.swift */; };
+		0443F7822594CBC1005D5637 /* GetTaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7812594CBC1005D5637 /* GetTaiKhoanNganHangModel.swift */; };
+		0443F7842594CC7A005D5637 /* TaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7832594CC7A005D5637 /* TaiKhoanNganHangModel.swift */; };
+		0443F7862594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -236,6 +239,9 @@
 		0443F77B25948D75005D5637 /* GetDeletewithdrawalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDeletewithdrawalModel.swift; sourceTree = "<group>"; };
 		0443F77D2594B2AF005D5637 /* WithdrawalLapLenhRutTienVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalLapLenhRutTienVC.swift; sourceTree = "<group>"; };
 		0443F77F2594B2DC005D5637 /* WithdrawalCaiDatTKNganHangVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawalCaiDatTKNganHangVC.swift; sourceTree = "<group>"; };
+		0443F7812594CBC1005D5637 /* GetTaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
+		0443F7832594CC7A005D5637 /* TaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
+		0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -520,6 +526,8 @@
 			children = (
 				0443F77725947F4A005D5637 /* GetAffiliateInfoModel.swift */,
 				0443F77B25948D75005D5637 /* GetDeletewithdrawalModel.swift */,
+				0443F7812594CBC1005D5637 /* GetTaiKhoanNganHangModel.swift */,
+				0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -661,6 +669,7 @@
 				0443F6B82591D20F005D5637 /* RutTienModel.swift */,
 				0443F6BA2591D305005D5637 /* WithdrawalStatusModel.swift */,
 				0443F6AF2590F7D1005D5637 /* HieuQuaDonHangModel.swift */,
+				0443F7832594CC7A005D5637 /* TaiKhoanNganHangModel.swift */,
 				0C8A565C25831AEC00CAD7F1 /* PaymentModel.swift */,
 				0C8A566A2584754F00CAD7F1 /* OrderProductModel.swift */,
 				0C8A565E25831BA900CAD7F1 /* ImageModel.swift */,
@@ -1414,6 +1423,7 @@
 				0C3C2E51256ABF2D000B21C5 /* HomeHeader.swift in Sources */,
 				C8C99DC62488D77E00B5C187 /* AppDelegate.swift in Sources */,
 				0443F7302592DD0E005D5637 /* DataTableFixedColumnType.swift in Sources */,
+				0443F7842594CC7A005D5637 /* TaiKhoanNganHangModel.swift in Sources */,
 				0443F7532592E109005D5637 /* SwiftDataTableDataSourceAndDelegate.swift in Sources */,
 				0C42DC19257BD9B5007009E4 /* ADRTableCart.swift in Sources */,
 				0443F72A2592DA7C005D5637 /* DataTableValueType.swift in Sources */,
@@ -1423,6 +1433,7 @@
 				0CD77A5D257A29C10083BC09 /* ADRFrontEndModelCartItems.swift in Sources */,
 				C82AF9E32491FD2A00464115 /* SettingsVC.swift in Sources */,
 				C89F47FA248A64A700694308 /* Webservices.swift in Sources */,
+				0443F7862594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift in Sources */,
 				0443F6B725918539005D5637 /* GetLichSuRutTienResponseModel.swift in Sources */,
 				0443F77825947F4A005D5637 /* GetAffiliateInfoModel.swift in Sources */,
 				88F6721E24A4ADE5000061FB /* PromoCodeListVC.swift in Sources */,
@@ -1451,6 +1462,7 @@
 				0C8A566525845D6F00CAD7F1 /* ADRFrontEndViewCheckoutThankyouVC.swift in Sources */,
 				C8BAC0622488F3FC00ECE181 /* SDWebImageSource.swift in Sources */,
 				88F7445124A5C2D300800568 /* FavoriteListVC.swift in Sources */,
+				0443F7822594CBC1005D5637 /* GetTaiKhoanNganHangModel.swift in Sources */,
 				0443F6B02590F7D1005D5637 /* HieuQuaDonHangModel.swift in Sources */,
 				0443F77A2594803C005D5637 /* UserAffiliateInfoModel.swift in Sources */,
 				C8C99E062488D93C00B5C187 /* UserDefaults.swift in Sources */,
