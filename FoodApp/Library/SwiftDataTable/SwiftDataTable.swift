@@ -387,7 +387,8 @@ extension SwiftDataTable: UICollectionViewDataSource, UICollectionViewDelegate {
         //else {
         cellViewModel = self.rowModel(at: indexPath)
         //}
-        let cell = cellViewModel.dequeueCell(collectionView: collectionView, indexPath: indexPath)
+        var  cell = cellViewModel.dequeueCell(collectionView: collectionView, indexPath: indexPath)
+        
         return cell
     }
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

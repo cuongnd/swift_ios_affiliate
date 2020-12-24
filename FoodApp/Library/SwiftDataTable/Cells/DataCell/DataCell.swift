@@ -53,8 +53,8 @@ class DataCell: UICollectionViewCell {
             self.dataButton.backgroundColor = UIColor( red: CGFloat(92/255.0), green: CGFloat(203/255.0), blue: CGFloat(207/255.0), alpha: CGFloat(1.0) )
             self.dataButton.layer.cornerRadius = 5
             self.dataButton.sizeToFit()
-            dataButton.addTarget(self, action: #selector(btnTapMines), for: .touchUpInside)
-
+            //dataButton.addTarget(self, action: #selector(btnTapMines), for: .touchUpInside)
+            
             
             
             self.dataButton.setTitle(viewModel.data.text.stringRepresentation, for: .normal)
@@ -67,8 +67,24 @@ class DataCell: UICollectionViewCell {
                 dataButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Properties.horizontalMargin),
                 dataButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Properties.horizontalMargin),
             ])
-           //to do
-           break
+            //to do
+            break
+        case RowType.UiView:
+            var currentUiView:UIView=viewModel.data.UiView!;
+            if(currentUiView != nil){
+                print("hello io vi")
+                currentUiView.translatesAutoresizingMaskIntoConstraints = false
+                contentView.addSubview(currentUiView)
+                NSLayoutConstraint.activate([
+                    currentUiView.widthAnchor.constraint(greaterThanOrEqualToConstant: Properties.widthConstant),
+                    currentUiView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Properties.verticalMargin),
+                    currentUiView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Properties.verticalMargin),
+                    currentUiView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Properties.horizontalMargin),
+                    currentUiView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Properties.horizontalMargin),
+                ])
+            }
+            //to do
+            break
         default:
             //to do
             break
@@ -77,8 +93,5 @@ class DataCell: UICollectionViewCell {
         
         //        self.contentView.backgroundColor = .white
     }
-   @objc func btnTapMines(sender:UIButton)
-       {
-           print("cvbn")
-       }
+    
 }

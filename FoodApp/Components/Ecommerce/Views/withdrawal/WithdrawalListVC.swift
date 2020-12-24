@@ -96,12 +96,14 @@ extension WithdrawalListVC {
                     var i=1;
                     for rut_tien in rutTienList {
                         //RowModel
+                        let dataButton = UIButton()
+                        dataButton.setTitle("hello242", for: .normal)
                         self.dataSource.append([
                             DataRowModel(type: .Text, text:DataTableValueType.init(i)),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount)),
                             DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010")),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name)),
-                            DataRowModel(type: .Buttom, text:DataTableValueType.string("Xóa"))
+                            DataRowModel(type: .UiView, text:DataTableValueType.string("Xóa"),key_column: "delete",UiView: dataButton)
                         ])
                         i=i+1
                     }
@@ -155,7 +157,10 @@ extension WithdrawalListVC: SwiftDataTableDataSource {
 }
 
 extension WithdrawalListVC: SwiftDataTableDelegate {
+   
     func didSelectItem(_ dataTable: SwiftDataTable, indexPath: IndexPath) {
+        //debugPrint("dataTable \(dataTable.data(for: indexPath))");
         debugPrint("did select item at indexPath: \(indexPath) dataValue: \(dataTable.data(for: indexPath))")
     }
+    
 }

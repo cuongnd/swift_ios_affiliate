@@ -181,6 +181,8 @@ public protocol SwiftDataTableDataSource: class {
     /// - Parameter dataTable: SwiftDataTable
     /// - Returns: `true` to flip horizontal scroll in RTL layouts.
     @objc optional func shouldSupportRightToLeftInterfaceDirection(in dataTable: SwiftDataTable) -> Bool
+    
+    
 }
 
 extension SwiftDataTableDelegate {
