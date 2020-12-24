@@ -236,6 +236,9 @@
                                         <state key="normal" title="Okay">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnTap_Ok:" destination="ceZ-eF-d6v" eventType="touchUpInside" id="7ku-a8-A89"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -284,6 +287,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kWM-wI-X9t"/>
                     </view>
+                    <connections>
+                        <outlet property="btn_ok" destination="JB0-x0-rlW" id="8G7-K2-Tfn"/>
+                        <outlet property="text_viewNote" destination="MKo-mU-J9e" id="bec-VE-kJk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXl-o9-dxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,6 +347,9 @@
                                         <state key="normal" title="Okay">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnTap_Ok:" destination="T39-Fu-d9u" eventType="touchUpInside" id="wFo-St-miy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -388,6 +398,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aQ0-9M-0Ay"/>
                     </view>
+                    <connections>
+                        <outlet property="btn_ok" destination="nTA-Le-1Cr" id="xk6-Ii-iYp"/>
+                        <outlet property="text_viewNote" destination="h1w-c7-O1O" id="IVx-Bx-z4W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENT-Tn-Hb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
