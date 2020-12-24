@@ -20,6 +20,8 @@ class WithdrawalListVC: UIViewController {
     @IBOutlet weak var UIViewLichSuRutTien: UIView!
     @IBOutlet weak var UILabelSoTienCoTheRut: UILabel!
     @IBOutlet weak var UILabelSoTIenDangSuLy: UILabel!
+    @IBOutlet weak var UIButtonCaiDatTkNganHang: UIButton!
+    @IBOutlet weak var UIButtonLapLenhRutTien: UIButton!
     let headerTitles = [
         DataRowModel(type: .Text, text:DataTableValueType.string("STT")),
         DataRowModel(type:.Text, text:DataTableValueType.string("Số tiền")),
@@ -28,6 +30,18 @@ class WithdrawalListVC: UIViewController {
         DataRowModel(type: .Text, text:DataTableValueType.string("Action"))
         
     ]
+    @IBAction func TouchUpInsideLapLenhRutTien(_ sender: UIButton) {
+        let VC = self.storyboard?.instantiateViewController(withIdentifier: "WithdrawalLapLenhRutTienVC") as! WithdrawalLapLenhRutTienVC
+        VC.modalPresentationStyle = .overFullScreen
+        VC.modalTransitionStyle = .crossDissolve
+       self.present(VC,animated: true,completion: nil)
+    }
+    @IBAction func TouchUpInSideCaiDatTKNganHang(_ sender: UIButton) {
+        let VC = self.storyboard?.instantiateViewController(withIdentifier: "WithdrawalCaiDatTKNganHangVC") as! WithdrawalCaiDatTKNganHangVC
+         VC.modalPresentationStyle = .overFullScreen
+         VC.modalTransitionStyle = .crossDissolve
+        self.present(VC,animated: true,completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selected = ""
@@ -160,6 +174,7 @@ extension WithdrawalListVC {
                 do {
                     let jsonDecoder = JSONDecoder()
                     let getDeletewithdrawalModel = try jsonDecoder.decode(GetDeletewithdrawalModel.self, from: jsonResponse!)
+                    debugPrint("getDeletewithdrawalModel \(getDeletewithdrawalModel)")
                     let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
                     showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Đã xóa thành công")
                     let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
