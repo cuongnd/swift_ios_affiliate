@@ -14,7 +14,11 @@ import SwiftyJSON
 class WithdrawalCaiDatTKNganHangVC: UIViewController {
    
    @IBOutlet weak var btn_ok: UIButton!
-    @IBOutlet weak var text_viewNote: UITextView!
+   
+    @IBOutlet weak var UITextFieldChuTaiKhoan: UITextField!
+    @IBOutlet weak var UITextFieldNganHang: UITextField!
+    @IBOutlet weak var UITextFieldSoTaiKhoan: UITextField!
+    @IBOutlet weak var UITextViewChiNhanh: UITextView!
     var Note = String()
     override func viewDidLoad() {
         super.viewDidLoad()

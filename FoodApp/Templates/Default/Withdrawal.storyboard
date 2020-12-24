@@ -495,6 +495,10 @@
                         <viewLayoutGuide key="safeArea" id="cDE-CZ-YZQ"/>
                     </view>
                     <connections>
+                        <outlet property="UITextFieldChuTaiKhoan" destination="fWk-SZ-6K9" id="hAI-si-Nwt"/>
+                        <outlet property="UITextFieldNganHang" destination="sf1-u6-toL" id="9ev-ev-KOJ"/>
+                        <outlet property="UITextFieldSoTaiKhoan" destination="AR8-sR-J7W" id="nPu-w1-ZOh"/>
+                        <outlet property="UITextViewChiNhanh" destination="rtg-4x-AnE" id="ttO-cu-9FE"/>
                         <outlet property="btn_ok" destination="5yY-mE-mOM" id="72A-LF-yNf"/>
                     </connections>
                 </viewController>
