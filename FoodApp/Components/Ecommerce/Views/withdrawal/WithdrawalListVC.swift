@@ -62,6 +62,7 @@ class WithdrawalListVC: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        print("hello viewWillAppear")
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
         let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
         self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
@@ -120,8 +121,10 @@ extension WithdrawalListVC {
                 do {
                     let jsonDecoder = JSONDecoder()
                     let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetLichSuRutTienResponseModel.self, from: jsonResponse!)
+                    print("getLichSuRutTienResponseModel \(getLichSuRutTienResponseModel)")
                     self.rutTienList=getLichSuRutTienResponseModel.rutTienList
                     var i=0;
+                    self.dataSource.removeAll();
                     for rut_tien in self.rutTienList {
                         //RowModel
                         let dataButton = UIButton()
@@ -131,7 +134,7 @@ extension WithdrawalListVC {
                         dataButton.layer.cornerRadius = 5
                         dataButton.sizeToFit()
                         dataButton.tag=i
-                        self.dataSource.removeAll();
+                        
                         dataButton.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
                         self.dataSource.append([
                             DataRowModel(type: .Text, text:DataTableValueType.init(i+1)),
@@ -208,8 +211,8 @@ extension WithdrawalListVC {
                 print(jsonResponse!)
                 do {
                     let jsonDecoder = JSONDecoder()
-                    let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetAffiliateInfoModel.self, from: jsonResponse!)
-                    let UserAffiliateInfoModel=getLichSuRutTienResponseModel.userAffiliateInfoModel
+                    let getAffiliateInfoModel = try jsonDecoder.decode(GetAffiliateInfoModel.self, from: jsonResponse!)
+                    let UserAffiliateInfoModel=getAffiliateInfoModel.userAffiliateInfoModel
                     self.UILabelSoTienCoTheRut.text=String(UserAffiliateInfoModel.total)
                     self.UILabelSoTIenDangSuLy.text=String(UserAffiliateInfoModel.total_processing)
                     

@@ -51,6 +51,7 @@
 		0443F7822594CBC1005D5637 /* GetTaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7812594CBC1005D5637 /* GetTaiKhoanNganHangModel.swift */; };
 		0443F7842594CC7A005D5637 /* TaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7832594CC7A005D5637 /* TaiKhoanNganHangModel.swift */; };
 		0443F7862594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */; };
+		0443F7882594E8C7005D5637 /* PostLapLenhRutTienModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7872594E8C7005D5637 /* PostLapLenhRutTienModel.swift */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -242,6 +243,7 @@
 		0443F7812594CBC1005D5637 /* GetTaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
 		0443F7832594CC7A005D5637 /* TaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
 		0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
+		0443F7872594E8C7005D5637 /* PostLapLenhRutTienModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostLapLenhRutTienModel.swift; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 				0443F77B25948D75005D5637 /* GetDeletewithdrawalModel.swift */,
 				0443F7812594CBC1005D5637 /* GetTaiKhoanNganHangModel.swift */,
 				0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */,
+				0443F7872594E8C7005D5637 /* PostLapLenhRutTienModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1389,6 +1392,7 @@
 				C80208CC248A72B3001D8864 /* SideMenuVC.swift in Sources */,
 				0C42DC21257BDC09007009E4 /* ADRViewAdmin.swift in Sources */,
 				C8349E3A2497A554009EEF8D /* WriteReviewVC.swift in Sources */,
+				0443F7882594E8C7005D5637 /* PostLapLenhRutTienModel.swift in Sources */,
 				0C3C2E43256ABB70000B21C5 /* HomeDiscountProductCell.swift in Sources */,
 				C8B4B8502497485A0085ACAC /* ForgotPassword.swift in Sources */,
 				0C8A565B2583186E00CAD7F1 /* GetPaymentResponseModel.swift in Sources */,

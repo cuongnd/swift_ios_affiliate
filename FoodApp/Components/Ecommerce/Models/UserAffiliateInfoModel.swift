@@ -15,4 +15,9 @@ struct UserAffiliateInfoModel: Codable {
         case total = "total"
         case total_processing = "total_processing"
     }
+    init() {
+        user_id=""
+        total=0.0
+        total_processing=0.0
+    }
 }

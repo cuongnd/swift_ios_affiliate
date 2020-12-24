@@ -15,4 +15,9 @@ struct WithdrawalStatusModel: Codable {
         case name = "name"
         case is_confirm = "is_confirm"
     }
+    init() {
+        _id=""
+        name=""
+        is_confirm=""
+    }
 }
