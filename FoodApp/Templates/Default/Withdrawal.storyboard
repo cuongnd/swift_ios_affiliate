@@ -309,6 +309,8 @@
                         <viewLayoutGuide key="safeArea" id="aQ0-9M-0Ay"/>
                     </view>
                     <connections>
+                        <outlet property="UILabelSoTienToiDa" destination="Yh3-x8-5TN" id="HTy-77-ttf"/>
+                        <outlet property="UITextFieldSoTien" destination="b0v-3b-zcE" id="39K-r9-kLk"/>
                         <outlet property="btn_ok" destination="nTA-Le-1Cr" id="xk6-Ii-iYp"/>
                     </connections>
                 </viewController>

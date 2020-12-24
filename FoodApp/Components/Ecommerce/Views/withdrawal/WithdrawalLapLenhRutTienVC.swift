@@ -14,7 +14,9 @@ import SwiftyJSON
 class WithdrawalLapLenhRutTienVC: UIViewController {
     
     @IBOutlet weak var btn_ok: UIButton!
-    @IBOutlet weak var text_viewNote: UITextView!
+   
+    @IBOutlet weak var UILabelSoTienToiDa: UILabel!
+    @IBOutlet weak var UITextFieldSoTien: UITextField!
     var Note = String()
     override func viewDidLoad() {
         super.viewDidLoad()
