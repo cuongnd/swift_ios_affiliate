@@ -43,6 +43,8 @@
 		0443F7662592E614005D5637 /* PaginationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7642592E614005D5637 /* PaginationHeader.swift */; };
 		0443F7712592E9AB005D5637 /* SwiftDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7702592E9AB005D5637 /* SwiftDataTable.swift */; };
 		0443F7752593734A005D5637 /* DataRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7742593734A005D5637 /* DataRowModel.swift */; };
+		0443F77825947F4A005D5637 /* GetAffiliateInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F77725947F4A005D5637 /* GetAffiliateInfoModel.swift */; };
+		0443F77A2594803C005D5637 /* UserAffiliateInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7792594803C005D5637 /* UserAffiliateInfoModel.swift */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -226,6 +228,8 @@
 		0443F7642592E614005D5637 /* PaginationHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationHeader.swift; sourceTree = "<group>"; };
 		0443F7702592E9AB005D5637 /* SwiftDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataTable.swift; sourceTree = "<group>"; };
 		0443F7742593734A005D5637 /* DataRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRowModel.swift; sourceTree = "<group>"; };
+		0443F77725947F4A005D5637 /* GetAffiliateInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAffiliateInfoModel.swift; sourceTree = "<group>"; };
+		0443F7792594803C005D5637 /* UserAffiliateInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAffiliateInfoModel.swift; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -503,6 +507,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0443F77625947F2C005D5637 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0443F77725947F4A005D5637 /* GetAffiliateInfoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0C172C43256DF5F1005DA537 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +645,7 @@
 				0443F6B625918539005D5637 /* GetLichSuRutTienResponseModel.swift */,
 				0443F6AD2590F784005D5637 /* GetHieuQuaDonHangResponseModel.swift */,
 				0C8A564C2581C5C900CAD7F1 /* UserModel.swift */,
+				0443F7792594803C005D5637 /* UserAffiliateInfoModel.swift */,
 				0C8A567A25874F8700CAD7F1 /* OrderUserModel.swift */,
 				0C8A566825846C6500CAD7F1 /* OrderModel.swift */,
 				0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */,
@@ -843,6 +856,7 @@
 		0C8A564B2581C58C00CAD7F1 /* APIResponse */ = {
 			isa = PBXGroup;
 			children = (
+				0443F77625947F2C005D5637 /* Models */,
 			);
 			path = APIResponse;
 			sourceTree = "<group>";
@@ -1401,6 +1415,7 @@
 				C82AF9E32491FD2A00464115 /* SettingsVC.swift in Sources */,
 				C89F47FA248A64A700694308 /* Webservices.swift in Sources */,
 				0443F6B725918539005D5637 /* GetLichSuRutTienResponseModel.swift in Sources */,
+				0443F77825947F4A005D5637 /* GetAffiliateInfoModel.swift in Sources */,
 				88F6721E24A4ADE5000061FB /* PromoCodeListVC.swift in Sources */,
 				0CD77A64257A48FC0083BC09 /* ADRFrontEndProduct.swift in Sources */,
 				0C42DC0E257BD764007009E4 /* ADRController.swift in Sources */,
@@ -1427,6 +1442,7 @@
 				C8BAC0622488F3FC00ECE181 /* SDWebImageSource.swift in Sources */,
 				88F7445124A5C2D300800568 /* FavoriteListVC.swift in Sources */,
 				0443F6B02590F7D1005D5637 /* HieuQuaDonHangModel.swift in Sources */,
+				0443F77A2594803C005D5637 /* UserAffiliateInfoModel.swift in Sources */,
 				C8C99E062488D93C00B5C187 /* UserDefaults.swift in Sources */,
 				C83E16C7248BB0170067AD34 /* PaymentVC.swift in Sources */,
 				0443F7472592E0D8005D5637 /* DataTableSearchTextField.swift in Sources */,

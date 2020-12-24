@@ -18,6 +18,8 @@ class WithdrawalListVC: UIViewController {
     lazy var dataTable = makeDataTable()
     var dataSource: DataTableContent = []
     @IBOutlet weak var UIViewLichSuRutTien: UIView!
+    @IBOutlet weak var UILabelSoTienCoTheRut: UILabel!
+    @IBOutlet weak var UILabelSoTIenDangSuLy: UILabel!
     let headerTitles = [
         DataRowModel(type: .Text, text:DataTableValueType.string("STT")),
         DataRowModel(type:.Text, text:DataTableValueType.string("Số tiền")),
@@ -40,11 +42,20 @@ class WithdrawalListVC: UIViewController {
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
         let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
         self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
+        
+        let urlAffiliateInfo = API_URL + "/api_task/users.get_user_affiliate_info_by_id?user_id=\(user_id)"
+        self.Webservice_GetAffiliateInfo(url: urlAffiliateInfo, params:[:])
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
         let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
         self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
+        
+        let urlAffiliateInfo = API_URL + "/api_task/users.get_user_affiliate_info_by_id?user_id=\(user_id)"
+        self.Webservice_GetAffiliateInfo(url: urlAffiliateInfo, params:[:])
+        
+        
     }
     @IBAction func btnTap_Menu(_ sender: UIButton) {
         if UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "en" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "N/A"
@@ -98,7 +109,7 @@ extension WithdrawalListVC {
                     for rut_tien in self.rutTienList {
                         //RowModel
                         let dataButton = UIButton()
-                        dataButton.setTitle("hello242", for: .normal)
+                        dataButton.setTitle("Xóa", for: .normal)
                         
                         dataButton.backgroundColor = UIColor( red: CGFloat(92/255.0), green: CGFloat(203/255.0), blue: CGFloat(207/255.0), alpha: CGFloat(1.0) )
                         dataButton.layer.cornerRadius = 5
@@ -116,6 +127,39 @@ extension WithdrawalListVC {
                     }
                     
                     self.dataTable.reload()
+                    
+                    
+                    
+                    
+                } catch let error as NSError  {
+                    print("error: \(error)")
+                }
+                
+                
+                //print("userModel:\(userModel)")
+                
+            }
+        }
+        
+        
+        
+        
+        
+        
+    }
+    func Webservice_GetAffiliateInfo(url:String, params:NSDictionary) -> Void {
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
+            if strErrorMessage.count != 0 {
+                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
+            }
+            else {
+                print(jsonResponse!)
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetAffiliateInfoModel.self, from: jsonResponse!)
+                    let UserAffiliateInfoModel=getLichSuRutTienResponseModel.userAffiliateInfoModel
+                    self.UILabelSoTienCoTheRut.text=String(UserAffiliateInfoModel.total)
+                    self.UILabelSoTIenDangSuLy.text=String(UserAffiliateInfoModel.total_processing)
                     
                     
                     
@@ -169,7 +213,7 @@ extension WithdrawalListVC: SwiftDataTableDataSource {
 }
 
 extension WithdrawalListVC: SwiftDataTableDelegate {
-   
+    
     func didSelectItem(_ dataTable: SwiftDataTable, indexPath: IndexPath) {
         //debugPrint("dataTable \(dataTable.data(for: indexPath))");
         debugPrint("did select item at indexPath: \(indexPath) dataValue: \(dataTable.data(for: indexPath))")

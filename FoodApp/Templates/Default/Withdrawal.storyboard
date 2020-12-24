@@ -168,6 +168,8 @@
                         <viewLayoutGuide key="safeArea" id="dbf-Jd-VWx"/>
                     </view>
                     <connections>
+                        <outlet property="UILabelSoTIenDangSuLy" destination="Bhh-PJ-a2H" id="ys6-7H-746"/>
+                        <outlet property="UILabelSoTienCoTheRut" destination="XhU-cb-znW" id="rcz-kj-fXJ"/>
                         <outlet property="UIViewLichSuRutTien" destination="Y02-Jo-Mcv" id="SJU-JX-Z4Y"/>
                     </connections>
                 </viewController>
