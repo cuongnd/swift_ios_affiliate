@@ -19,38 +19,23 @@ class WithdrawalLapLenhRutTienVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.text_viewNote.text = Note
-        cornerRadius(viewName: btn_ok, radius: 6.0)
-        cornerRadius(viewName: text_viewNote, radius: 6.0)
+        
     }
     
 
     @IBAction func btnTap_Ok(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+        let url_send_withdrawal_now = API_URL + "/api_task/withdrawals.send_withdrawal_now?user_id=\(user_id)"
+               self.Webservice_GetLapLenhRutTien(url: url_send_withdrawal_now, params:[:])
+        
+        
     }
     
     @IBAction func btnTap_dismiss(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc private func refreshData(_ sender: Any) {
-        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-        let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
-        self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
-        
-        let urlAffiliateInfo = API_URL + "/api_task/users.get_user_affiliate_info_by_id?user_id=\(user_id)"
-        self.Webservice_GetAffiliateInfo(url: urlAffiliateInfo, params:[:])
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-        let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
-        self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
-        
-        let urlAffiliateInfo = API_URL + "/api_task/users.get_user_affiliate_info_by_id?user_id=\(user_id)"
-        self.Webservice_GetAffiliateInfo(url: urlAffiliateInfo, params:[:])
-        
-        
-    }
+   
     
     
 }
@@ -61,67 +46,9 @@ class WithdrawalLapLenhRutTienVC: UIViewController {
 extension WithdrawalLapLenhRutTienVC {
     
     
-    func Webservice_GetLichSuRutTien(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
-            if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-            }
-            else {
-                print(jsonResponse!)
-                do {
-                    let jsonDecoder = JSONDecoder()
-                    let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetLichSuRutTienResponseModel.self, from: jsonResponse!)
-                   
-                    
-                    
-                    
-                } catch let error as NSError  {
-                    print("error: \(error)")
-                }
-                
-                
-                //print("userModel:\(userModel)")
-                
-            }
-        }
-        
-        
-        
-        
-        
-        
-    }
-    func Webservice_GetDeleteWithdrawal(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "POST", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
-            if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-            }
-            else {
-                print(jsonResponse!)
-                do {
-                    let jsonDecoder = JSONDecoder()
-                    let getDeletewithdrawalModel = try jsonDecoder.decode(GetDeletewithdrawalModel.self, from: jsonResponse!)
-                   
-                    
-                    
-                } catch let error as NSError  {
-                    print("error: \(error)")
-                }
-                
-                
-                //print("userModel:\(userModel)")
-                
-            }
-        }
-        
-        
-        
-        
-        
-        
-    }
+   
     
-    func Webservice_GetAffiliateInfo(url:String, params:NSDictionary) -> Void {
+    func Webservice_GetLapLenhRutTien(url:String, params:NSDictionary) -> Void {
         WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
                 showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
@@ -131,6 +58,7 @@ extension WithdrawalLapLenhRutTienVC {
                 do {
                     let jsonDecoder = JSONDecoder()
                     let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetAffiliateInfoModel.self, from: jsonResponse!)
+                        self.dismiss(animated: true, completion: nil)
                    
                     
                     
