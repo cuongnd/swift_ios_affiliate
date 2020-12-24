@@ -94,6 +94,8 @@ class WithdrawalListVC: UIViewController {
 
 //MARK: WithdrawalList
 extension WithdrawalListVC {
+    
+    
     func Webservice_GetLichSuRutTien(url:String, params:NSDictionary) -> Void {
         WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
@@ -115,6 +117,7 @@ extension WithdrawalListVC {
                         dataButton.layer.cornerRadius = 5
                         dataButton.sizeToFit()
                         dataButton.tag=i
+                        self.dataSource.removeAll();
                         dataButton.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
                         self.dataSource.append([
                             DataRowModel(type: .Text, text:DataTableValueType.init(i+1)),
@@ -147,6 +150,40 @@ extension WithdrawalListVC {
         
         
     }
+    func Webservice_GetDeleteWithdrawal(url:String, params:NSDictionary) -> Void {
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "POST", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
+            if strErrorMessage.count != 0 {
+                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
+            }
+            else {
+                print(jsonResponse!)
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getDeletewithdrawalModel = try jsonDecoder.decode(GetDeletewithdrawalModel.self, from: jsonResponse!)
+                    let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Đã xóa thành công")
+                    let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
+                    self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
+                    
+                    
+                    
+                } catch let error as NSError  {
+                    print("error: \(error)")
+                }
+                
+                
+                //print("userModel:\(userModel)")
+                
+            }
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
     func Webservice_GetAffiliateInfo(url:String, params:NSDictionary) -> Void {
         WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
@@ -183,7 +220,25 @@ extension WithdrawalListVC {
     @objc func btnTapMines(sender:UIButton)
     {
         let tag=sender.tag
-        print("tag \(tag)")
+        let rutTien=self.rutTienList[tag]
+        print("rutTien \(rutTien)")
+        
+        let alertVC = UIAlertController(title: Bundle.main.displayName!, message: "Bạn có chắc chắn muốn xóa không ?".localiz(), preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Yes".localiz(), style: .default) { (action) in
+            
+            let urlDeleteWithdrawal = API_URL + "//api_task/withdrawals.send_delete_withdrawal_now?id=\(rutTien._id)"
+            self.Webservice_GetDeleteWithdrawal(url: urlDeleteWithdrawal, params:[:])
+            
+            
+        }
+        let noAction = UIAlertAction(title: "No".localiz(), style: .destructive)
+        alertVC.addAction(yesAction)
+        alertVC.addAction(noAction)
+        self.present(alertVC,animated: true,completion: nil)
+        
+        
+        
+        
     }
 }
 extension WithdrawalListVC {
