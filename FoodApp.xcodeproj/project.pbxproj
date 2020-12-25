@@ -52,6 +52,7 @@
 		0443F7842594CC7A005D5637 /* TaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7832594CC7A005D5637 /* TaiKhoanNganHangModel.swift */; };
 		0443F7862594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */; };
 		0443F7882594E8C7005D5637 /* PostLapLenhRutTienModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7872594E8C7005D5637 /* PostLapLenhRutTienModel.swift */; };
+		0493654B25963897007431AB /* WithdrawalStickyGridCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493654A25963897007431AB /* WithdrawalStickyGridCollectionViewLayout.swift */; };
 		0C172C5B256ED43D005DA537 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C172C5A256ED43D005DA537 /* test2.swift */; };
 		0C172C5D256ED44C005DA537 /* test2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5C256ED44C005DA537 /* test2.xib */; };
 		0C172C5F256F49A6005DA537 /* homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C172C5E256F49A6005DA537 /* homepage.storyboard */; };
@@ -244,6 +245,7 @@
 		0443F7832594CC7A005D5637 /* TaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
 		0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
 		0443F7872594E8C7005D5637 /* PostLapLenhRutTienModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostLapLenhRutTienModel.swift; sourceTree = "<group>"; };
+		0493654A25963897007431AB /* WithdrawalStickyGridCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalStickyGridCollectionViewLayout.swift; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -658,6 +660,7 @@
 		0C42DC01257BD63E007009E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0493654A25963897007431AB /* WithdrawalStickyGridCollectionViewLayout.swift */,
 				0C8A565A2583186E00CAD7F1 /* GetPaymentResponseModel.swift */,
 				0C8A56502581DD4E00CAD7F1 /* GetUserResponseModel.swift */,
 				0C8A566625846C4300CAD7F1 /* GetOrderResponseModel.swift */,
@@ -1388,6 +1391,7 @@
 				0C8A5644258134EC00CAD7F1 /* CountryModel.swift in Sources */,
 				0C8A56752585167200CAD7F1 /* ViewOrderControllerViewModel.swift in Sources */,
 				0C42DC37257F1F98007009E4 /* LibraryUtilitiesUtility.swift in Sources */,
+				0493654B25963897007431AB /* WithdrawalStickyGridCollectionViewLayout.swift in Sources */,
 				0C8A566F258478F000CAD7F1 /* OrderColorModel.swift in Sources */,
 				C80208CC248A72B3001D8864 /* SideMenuVC.swift in Sources */,
 				0C42DC21257BDC09007009E4 /* ADRViewAdmin.swift in Sources */,

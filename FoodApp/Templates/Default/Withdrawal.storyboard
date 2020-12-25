@@ -142,16 +142,61 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y02-Jo-Mcv" userLabel="Table lịch sử rút tiền">
-                                        <rect key="frame" x="0.0" y="150" width="414" height="658"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="8" y="150" width="398" height="658"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oub-hO-SAh">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="654"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9NW-mF-Z9E" customClass="WithdrawalStickyGridCollectionViewLayout" customModule="adayroi_online" customModuleProvider="target">
+                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WithdrawalCollectionViewCell" id="Scd-ed-0SB" customClass="WithdrawalCollectionViewCell" customModule="adayroi_online" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc4-aG-FWF">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="dc4-aG-FWF" secondAttribute="trailing" id="3uF-J8-MMK"/>
+                                                            <constraint firstItem="dc4-aG-FWF" firstAttribute="top" secondItem="Scd-ed-0SB" secondAttribute="top" id="D8S-2P-OxA"/>
+                                                            <constraint firstItem="dc4-aG-FWF" firstAttribute="leading" secondItem="Scd-ed-0SB" secondAttribute="leading" id="GcR-SV-gmk"/>
+                                                            <constraint firstAttribute="bottom" secondItem="dc4-aG-FWF" secondAttribute="bottom" id="bJp-yY-hA3"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="titleLabel" destination="dc4-aG-FWF" id="tZc-30-ZhC"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="oub-hO-SAh" firstAttribute="top" secondItem="Y02-Jo-Mcv" secondAttribute="top" id="Mjy-sC-qwt"/>
+                                            <constraint firstAttribute="bottom" secondItem="oub-hO-SAh" secondAttribute="bottom" constant="4" id="f39-52-ngE"/>
+                                            <constraint firstItem="oub-hO-SAh" firstAttribute="leading" secondItem="Y02-Jo-Mcv" secondAttribute="leading" id="hIZ-fO-eLy"/>
+                                            <constraint firstAttribute="trailing" secondItem="oub-hO-SAh" secondAttribute="trailing" id="qKC-uW-Sk2"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Y02-Jo-Mcv" firstAttribute="top" secondItem="iWi-Td-8hH" secondAttribute="bottom" id="61r-bQ-NAP"/>
                                     <constraint firstItem="iWi-Td-8hH" firstAttribute="trailing" secondItem="xQ6-g6-a8a" secondAttribute="trailing" id="N0J-Tc-qNs"/>
-                                    <constraint firstItem="Y02-Jo-Mcv" firstAttribute="leading" secondItem="xQ6-g6-a8a" secondAttribute="leading" id="eEH-S4-BrO"/>
+                                    <constraint firstItem="Y02-Jo-Mcv" firstAttribute="leading" secondItem="xQ6-g6-a8a" secondAttribute="leading" constant="8" id="eEH-S4-BrO"/>
                                     <constraint firstAttribute="bottom" secondItem="Y02-Jo-Mcv" secondAttribute="bottom" id="fvF-SK-FdO"/>
-                                    <constraint firstItem="xQ6-g6-a8a" firstAttribute="trailing" secondItem="Y02-Jo-Mcv" secondAttribute="trailing" id="giH-rL-elO"/>
+                                    <constraint firstItem="xQ6-g6-a8a" firstAttribute="trailing" secondItem="Y02-Jo-Mcv" secondAttribute="trailing" constant="8" id="giH-rL-elO"/>
                                     <constraint firstAttribute="trailing" secondItem="iWi-Td-8hH" secondAttribute="trailing" id="jNF-fY-4gq"/>
                                     <constraint firstItem="iWi-Td-8hH" firstAttribute="top" secondItem="xQ6-g6-a8a" secondAttribute="top" id="nQb-cf-EBZ"/>
                                     <constraint firstItem="xQ6-g6-a8a" firstAttribute="bottom" secondItem="Y02-Jo-Mcv" secondAttribute="bottom" id="xn1-EU-3RE"/>
@@ -178,7 +223,8 @@
                         <outlet property="UIButtonLapLenhRutTien" destination="otm-wl-gmP" id="QOJ-JH-pdu"/>
                         <outlet property="UILabelSoTIenDangSuLy" destination="Bhh-PJ-a2H" id="ys6-7H-746"/>
                         <outlet property="UILabelSoTienCoTheRut" destination="XhU-cb-znW" id="rcz-kj-fXJ"/>
-                        <outlet property="UIViewLichSuRutTien" destination="Y02-Jo-Mcv" id="SJU-JX-Z4Y"/>
+                        <outlet property="gridCollectionView" destination="oub-hO-SAh" id="04D-FO-8aI"/>
+                        <outlet property="gridLayout" destination="9NW-mF-Z9E" id="7fi-kI-gdX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D97-sP-fLC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

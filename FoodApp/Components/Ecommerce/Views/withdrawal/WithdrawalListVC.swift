@@ -9,6 +9,10 @@
 import UIKit
 import SwiftyJSON
 
+class WithdrawalCollectionViewCell: UICollectionViewCell {
+    static let reuseID = "WithdrawalCollectionViewCell"
+    @IBOutlet weak var titleLabel: UILabel!
+}
 
 
 class WithdrawalListVC: UIViewController {
@@ -43,12 +47,26 @@ class WithdrawalListVC: UIViewController {
         VC.modalTransitionStyle = .crossDissolve
         self.present(VC,animated: true,completion: nil)
     }
+    @IBOutlet weak var gridCollectionView: UICollectionView! {
+        didSet {
+            gridCollectionView.bounces = false
+        }
+    }
+    
+    @IBOutlet weak var gridLayout: WithdrawalStickyGridCollectionViewLayout! {
+        didSet {
+            gridLayout.stickyRowsCount = 1
+            gridLayout.stickyColumnsCount = 1
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selected = ""
+        gridCollectionView.delegate=self
+        gridCollectionView.dataSource=self
         
-        setupViews()
-        setupConstraints()
+        
         
         
         
@@ -82,27 +100,9 @@ class WithdrawalListVC: UIViewController {
             self.slideMenuController()?.openRight()
         }
     }
-    func setupViews() {
-        automaticallyAdjustsScrollViewInsets = false
-        navigationController?.navigationBar.isTranslucent = false
-        title = "Streaming fans"
-        self.UIViewLichSuRutTien.backgroundColor = UIColor.white
-        self.UIViewLichSuRutTien.addSubview(dataTable)
-    }
+   
     
-    func setupConstraints() {
-        NSLayoutConstraint.activate([
-            dataTable.topAnchor.constraint(equalTo: self.UIViewLichSuRutTien.layoutMarginsGuide.topAnchor),
-            dataTable.leadingAnchor.constraint(equalTo: self.UIViewLichSuRutTien.leadingAnchor),
-            dataTable.bottomAnchor.constraint(equalTo: self.UIViewLichSuRutTien.layoutMarginsGuide.bottomAnchor),
-            dataTable.trailingAnchor.constraint(equalTo: self.UIViewLichSuRutTien.trailingAnchor),
-        ])
-    }
     
-    public func addDataSourceAfter(){
-        
-        
-    }
     
 }
 
@@ -136,25 +136,10 @@ extension WithdrawalListVC {
                     print("getLichSuRutTienResponseModel \(getLichSuRutTienResponseModel)")
                     self.rutTienList=getLichSuRutTienResponseModel.rutTienList
                     var i=0;
-                    self.dataSource.removeAll();
+                    
                     for rut_tien in self.rutTienList {
                         //RowModel
-                        let dataButton = UIButton()
-                        dataButton.setTitle("Xóa", for: .normal)
                         
-                        dataButton.backgroundColor = UIColor( red: CGFloat(92/255.0), green: CGFloat(203/255.0), blue: CGFloat(207/255.0), alpha: CGFloat(1.0) )
-                        dataButton.layer.cornerRadius = 5
-                        dataButton.sizeToFit()
-                        dataButton.tag=i
-                        
-                        dataButton.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
-                        self.dataSource.append([
-                            DataRowModel(type: .Text, text:DataTableValueType.init(i+1)),
-                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount)),
-                            DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010")),
-                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name)),
-                            DataRowModel(type: .UiView, text:DataTableValueType.string("Xóa"),key_column: "delete",UiView: dataButton)
-                        ])
                         i=i+1
                     }
                     
@@ -304,4 +289,33 @@ extension WithdrawalListVC: SwiftDataTableDelegate {
         debugPrint("did select item at indexPath: \(indexPath) dataValue: \(dataTable.data(for: indexPath))")
     }
     
+}
+
+extension WithdrawalListVC: UICollectionViewDataSource {
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 100
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCell.reuseID, for: indexPath) as? WithdrawalCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+
+        cell.titleLabel.text = "\(indexPath)"
+        cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
+
+        return cell
+    }
+}
+
+extension WithdrawalListVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
 }

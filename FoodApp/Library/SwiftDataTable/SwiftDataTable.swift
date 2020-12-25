@@ -465,39 +465,7 @@ extension SwiftDataTable {
     }
 }
 
-//MARK: - UICollection View Delegate
-extension SwiftDataTable: UIScrollViewDelegate {
-    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        if(self.searchBar.isFirstResponder){
-            self.searchBar.resignFirstResponder()
-        }
-    }
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if self.disableScrollViewLeftBounce() {
-            if (self.collectionView.contentOffset.x <= 0) {
-                self.collectionView.contentOffset.x = 0
-            }
-        }
-        if self.disableScrollViewTopBounce() {
-            if (self.collectionView.contentOffset.y <= 0) {
-                self.collectionView.contentOffset.y = 0
-            }
-        }
-        if self.disableScrollViewRightBounce(){
-            let maxX = self.collectionView.contentSize.width-self.collectionView.frame.width
-            if (self.collectionView.contentOffset.x >= maxX){
-                self.collectionView.contentOffset.x = max(maxX-1, 0)
-            }
-        }
-        if self.disableScrollViewBottomBounce(){
-            let maxY = self.collectionView.contentSize.height-self.collectionView.frame.height
-            if (self.collectionView.contentOffset.y >= maxY){
-                self.collectionView.contentOffset.y = maxY-1
-            }
-        }
-    }
-}
+
 
 //MARK: - Refresh
 extension SwiftDataTable {
@@ -522,42 +490,15 @@ extension SwiftDataTable {
     }
     
     fileprivate func applyDefaultColumnOrder(_ columnOrder: DataTableColumnOrder){
-        self.highlight(column: columnOrder.index)
-        self.applyColumnOrder(columnOrder)
-        self.sort(column: columnOrder.index, sort: self.headerViewModels[columnOrder.index].sortType)
+        
     }
     
     func didTapColumn(index: IndexPath) {
-        //comment tạm
-        /*
-        defer {
-            self.update()
-        }
-        let index = index.index
-        self.toggleSortArrows(column: index)
-        self.highlight(column: index)
-        let sortType = self.headerViewModels[index].sortType
-        self.sort(column: index, sort: sortType)
-        */
-        //TODO nhớ sửa cái này
+        
     }
     
     func sort(column index: Int, sort by: DataTableSortType){
-        func ascendingOrder(rowOne: [DataCellViewModel], rowTwo: [DataCellViewModel]) -> Bool {
-            return rowOne[index].data.text.stringRepresentation < rowTwo[index].data.text.stringRepresentation
-        }
-        func descendingOrder(rowOne: [DataCellViewModel], rowTwo: [DataCellViewModel]) -> Bool {
-            return rowOne[index].data.text.stringRepresentation > rowTwo[index].data.text.stringRepresentation
-        }
-        
-        switch by {
-        case .ascending:
-            self.currentRowViewModels = self.currentRowViewModels.sorted(by: ascendingOrder)
-        case .descending:
-            self.currentRowViewModels = self.currentRowViewModels.sorted(by: descendingOrder)
-        default:
-            break
-        }
+       
     }
     
     func highlight(column: Int){
@@ -655,9 +596,9 @@ extension SwiftDataTable {
             return self.columnWidths[index]
         }
         //TODO: Implement it so that the preferred column widths are calculated first, and then the scaling happens after to fill the frame.
-        //        if width != SwiftDataTableAutomaticColumnWidth {
-        //            self.columnWidths[index] = width
-        //        }
+//        if width != SwiftDataTableAutomaticColumnWidth {
+//            self.columnWidths[index] = width
+//        }
         return width
     }
     

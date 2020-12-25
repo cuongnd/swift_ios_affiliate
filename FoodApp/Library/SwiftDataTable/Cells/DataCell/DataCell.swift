@@ -73,13 +73,12 @@ class DataCell: UICollectionViewCell {
             let currentUiView:UIView=viewModel.data.UiView!;
             if(currentUiView != nil){
                 currentUiView.translatesAutoresizingMaskIntoConstraints = false
-                contentView.addSubview(currentUiView)
+                addSubview(currentUiView)
                 NSLayoutConstraint.activate([
-                    currentUiView.widthAnchor.constraint(greaterThanOrEqualToConstant: Properties.widthConstant),
-                    currentUiView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Properties.verticalMargin),
-                    currentUiView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Properties.verticalMargin),
-                    currentUiView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Properties.horizontalMargin),
-                    currentUiView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Properties.horizontalMargin),
+                    currentUiView.topAnchor.constraint(equalTo: topAnchor),
+                    currentUiView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                    currentUiView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                    currentUiView.bottomAnchor.constraint(equalTo: bottomAnchor)
                 ])
             }
             //to do

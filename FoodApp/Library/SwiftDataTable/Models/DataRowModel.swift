@@ -21,6 +21,7 @@ public struct DataRowModel {
     var text: DataTableValueType
     var key_column: String=""
     var UiView:UIView?=nil
+    var order: Int=0
 }
 
 
