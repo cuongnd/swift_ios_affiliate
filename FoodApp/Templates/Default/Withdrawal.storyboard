@@ -179,6 +179,24 @@
                                                             <outlet property="titleLabel" destination="dc4-aG-FWF" id="tZc-30-ZhC"/>
                                                         </connections>
                                                     </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WithdrawalCollectionViewCellButtom" id="1ej-Xk-BqU" customClass="WithdrawalCollectionViewCellButtom" customModule="adayroi_online" customModuleProvider="target">
+                                                        <rect key="frame" x="69.5" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0X-3B-LqW">
+                                                                    <rect key="frame" x="1.5" y="10" width="46" height="30"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </view>
+                                                        <connections>
+                                                            <outlet property="UIButtonAction" destination="P0X-3B-LqW" id="YBt-ZW-ITV"/>
+                                                        </connections>
+                                                    </collectionViewCell>
                                                 </cells>
                                             </collectionView>
                                         </subviews>

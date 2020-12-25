@@ -13,6 +13,11 @@ class WithdrawalCollectionViewCell: UICollectionViewCell {
     static let reuseID = "WithdrawalCollectionViewCell"
     @IBOutlet weak var titleLabel: UILabel!
 }
+class WithdrawalCollectionViewCellButtom: UICollectionViewCell {
+    static let reuseID = "WithdrawalCollectionViewCellButtom"
+   
+    @IBOutlet weak var UIButtonAction: UIButton!
+}
 
 
 class WithdrawalListVC: UIViewController {
