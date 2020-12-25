@@ -307,14 +307,34 @@ extension WithdrawalListVC: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCell.reuseID, for: indexPath) as? WithdrawalCollectionViewCell else {
-            return UICollectionViewCell()
+        let column:Int = (indexPath.section*2)+indexPath.row
+        if(indexPath.row==4){
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCellButtom.reuseID, for: indexPath) as? WithdrawalCollectionViewCellButtom else {
+                return UICollectionViewCell()
+            }
+
+            cell.UIButtonAction.setTitle("\(indexPath)", for: .normal)
+            cell.UIButtonAction.backgroundColor = .clear
+            cell.UIButtonAction.layer.cornerRadius = 5
+            cell.UIButtonAction.layer.borderWidth = 1
+            cell.UIButtonAction.layer.borderColor = UIColor.black.cgColor
+            
+            cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
+
+            return cell
+            
+           
+        }else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCell.reuseID, for: indexPath) as? WithdrawalCollectionViewCell else {
+                           return UICollectionViewCell()
+                       }
+
+                       cell.titleLabel.text = "\(indexPath)"
+                       cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
+
+                       return cell
         }
-
-        cell.titleLabel.text = "\(indexPath)"
-        cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
-
-        return cell
+        
     }
 }
 
