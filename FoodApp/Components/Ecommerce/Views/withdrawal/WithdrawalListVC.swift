@@ -34,12 +34,13 @@ class WithdrawalListVC: UIViewController {
         let VC = self.storyboard?.instantiateViewController(withIdentifier: "WithdrawalLapLenhRutTienVC") as! WithdrawalLapLenhRutTienVC
         VC.modalPresentationStyle = .overFullScreen
         VC.modalTransitionStyle = .crossDissolve
-       self.present(VC,animated: true,completion: nil)
+        VC.delegate = self
+        self.present(VC,animated: true,completion: nil)
     }
     @IBAction func TouchUpInSideCaiDatTKNganHang(_ sender: UIButton) {
         let VC = self.storyboard?.instantiateViewController(withIdentifier: "WithdrawalCaiDatTKNganHangVC") as! WithdrawalCaiDatTKNganHangVC
-         VC.modalPresentationStyle = .overFullScreen
-         VC.modalTransitionStyle = .crossDissolve
+        VC.modalPresentationStyle = .overFullScreen
+        VC.modalTransitionStyle = .crossDissolve
         self.present(VC,animated: true,completion: nil)
     }
     override func viewDidLoad() {
@@ -105,7 +106,18 @@ class WithdrawalListVC: UIViewController {
     
 }
 
-
+extension WithdrawalListVC: WithdrawalLapLenhRutDelegate {
+    
+    func refreshData() {
+        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+        let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
+        self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
+        
+        let urlAffiliateInfo = API_URL + "/api_task/users.get_user_affiliate_info_by_id?user_id=\(user_id)"
+        self.Webservice_GetAffiliateInfo(url: urlAffiliateInfo, params:[:])
+        
+    }
+}
 
 //MARK: WithdrawalList
 extension WithdrawalListVC {

@@ -9,15 +9,16 @@
 import UIKit
 import SwiftyJSON
 
-
+protocol WithdrawalLapLenhRutDelegate {
+    func refreshData()
+}
 
 class WithdrawalLapLenhRutTienVC: UIViewController {
     
     @IBOutlet weak var btn_ok: UIButton!
-    
+    var delegate: WithdrawalLapLenhRutDelegate!
     @IBOutlet weak var UILabelSoTienToiDa: UILabel!
     @IBOutlet weak var UITextFieldSoTien: UITextField!
-    var Note = String()
     var userAffiliateInfoModel:UserAffiliateInfoModel=UserAffiliateInfoModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,11 @@ class WithdrawalLapLenhRutTienVC: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+       
+    }
     
     @IBAction func btnTap_Ok(_ sender: UIButton) {
         let amount=String(self.UITextFieldSoTien.text!)
@@ -123,7 +129,11 @@ extension WithdrawalLapLenhRutTienVC {
                     let jsonDecoder = JSONDecoder()
                     let postLapLenhRutTienModel = try jsonDecoder.decode(PostLapLenhRutTienModel.self, from: jsonResponse!)
                     if(postLapLenhRutTienModel.result=="success"){
-                        self.dismiss(animated: true, completion: nil)
+                        self.dismiss(animated: true) {
+                            self.delegate.refreshData()
+                        }
+                        
+                        
                         showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Bạn đã lập lệnh thành công, chúng tôi sẽ xem xét và sử lý lệnh này")
                     }
                     
@@ -136,12 +146,6 @@ extension WithdrawalLapLenhRutTienVC {
                 
             }
         }
-        
-        
-        
-        
-        
-        
     }
     func Webservice_GetAffiliateInfo(url:String, params:NSDictionary) -> Void {
         WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
@@ -167,12 +171,6 @@ extension WithdrawalLapLenhRutTienVC {
                 
             }
         }
-        
-        
-        
-        
-        
-        
     }
     
 }
