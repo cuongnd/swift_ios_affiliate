@@ -143,14 +143,13 @@ extension WithdrawalListVC {
                     self.gridCollectionView.reloadData()
                     var i=0;
                     for rut_tien in self.rutTienList {
-                        
                         self.dataSource.append([
                             DataRowModel(type: .Text, text:DataTableValueType.init(i)),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount)),
                             DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010")),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name))
                         ])
-                        i=i+1
+                        i += 1
                     }
                     
                     
