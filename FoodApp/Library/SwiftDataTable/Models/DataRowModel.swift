@@ -20,6 +20,8 @@ public struct DataRowModel {
     var type: RowType
     var text: DataTableValueType
     var key_column: String=""
+    var column_width:Int=50
+    var column_height:Int=50
     var UiView:UIView?=nil
     var order: Int=0
 }

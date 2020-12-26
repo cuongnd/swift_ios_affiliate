@@ -57,20 +57,21 @@ class WithdrawalListVC: UIViewController {
     }
     
     let headerTitles = [
-        DataRowModel(type: .Text, text:DataTableValueType.string("STT")),
-        DataRowModel(type:.Text, text:DataTableValueType.string("Số tiền")),
-        DataRowModel(type: .Text, text:DataTableValueType.string("Ngày")),
-        DataRowModel(type: .Text, text:DataTableValueType.string("Trạng thái")),
-        DataRowModel(type: .Text, text:DataTableValueType.string("Action"))
+        DataRowModel(type: .Text, text:DataTableValueType.string("STT"),key_column: "stt",column_width: 50,column_height: 50),
+        DataRowModel(type:.Text, text:DataTableValueType.string("Số tiền"),key_column: "",column_width: 100,column_height: 50),
+        DataRowModel(type: .Text, text:DataTableValueType.string("Ngày"),key_column: "",column_width: 100,column_height: 50),
+        DataRowModel(type: .Text, text:DataTableValueType.string("Trạng thái"),key_column: "",column_width: 200,column_height: 50),
+        DataRowModel(type: .Text, text:DataTableValueType.string("Action"),key_column: "",column_width: 100,column_height: 50)
         
     ]
     var dataSource:[[DataRowModel]]=[[DataRowModel]]()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selected = ""
         gridCollectionView.delegate=self
         gridCollectionView.dataSource=self
-        
+        self.dataSource.append(self.headerTitles)
         
         
         
@@ -142,12 +143,14 @@ extension WithdrawalListVC {
                     self.rutTienList=getLichSuRutTienResponseModel.rutTienList
                     self.dataSource=[[DataRowModel]]()
                     var i=0;
+                    self.dataSource.append(self.headerTitles)
                     for rut_tien in self.rutTienList {
                         self.dataSource.append([
-                            DataRowModel(type: .Text, text:DataTableValueType.init(i)),
-                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount)),
-                            DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010")),
-                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name))
+                            DataRowModel(type: .Text, text:DataTableValueType.init(i),key_column: "stt",column_width: 50,column_height: 50),
+                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount),key_column: "amount",column_width: 100,column_height: 50),
+                            DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010"),key_column: "created_date",column_width: 100,column_height: 50),
+                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name),key_column: "withdrawalstatus",column_width: 200,column_height: 50),
+                             DataRowModel(type: .Buttom, text:DataTableValueType.string("Xóa"),key_column: "withdrawalstatus",column_width: 100,column_height: 50)
                         ])
                         i += 1
                     }
@@ -328,26 +331,7 @@ extension WithdrawalListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let row_index=indexPath[0]
         let column_index=indexPath[1]
-        
-        let header_height=50
-        let header_width=100
-        let content_stt_width=50,header_stt_width=50
-        let content_height=50;
-        let content_width=100;
-        if(row_index==0){
-            if(column_index==0){
-                 return CGSize(width: header_stt_width, height: header_height)
-            }else if(column_index>0){
-                return CGSize(width: header_width, height: content_height)
-            }
-        }else if(row_index>0){
-            if(column_index==0){
-                 return CGSize(width: content_stt_width, height: content_height)
-            }else if(column_index>0){
-                return CGSize(width: content_width, height: content_height)
-            }
-        }
-        return CGSize(width: content_width, height: content_height)
-        
+        let item=self.dataSource[row_index][column_index]
+        return CGSize(width: item.column_width, height: item.column_height)
     }
 }
