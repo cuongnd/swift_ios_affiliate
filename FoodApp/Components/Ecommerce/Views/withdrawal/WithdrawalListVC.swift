@@ -145,11 +145,10 @@ extension WithdrawalListVC {
                     for rut_tien in self.rutTienList {
                         
                         self.dataSource.append([
-                            DataRowModel(type: .Text, text:DataTableValueType.init(i+1)),
+                            DataRowModel(type: .Text, text:DataTableValueType.init(i)),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount)),
                             DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010")),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name))
-                            
                         ])
                         i=i+1
                     }
@@ -279,7 +278,9 @@ extension WithdrawalListVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if(indexPath[0]==0){
+        let row_index=indexPath[0]
+        let column_index=indexPath[1]
+        if(row_index==0){
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCell.reuseID, for: indexPath) as? WithdrawalCollectionViewCell else {
                 return UICollectionViewCell()
@@ -290,7 +291,7 @@ extension WithdrawalListVC: UICollectionViewDataSource {
             
             return cell
             
-        }else if(indexPath[0]>0 && indexPath[1]==4){
+        }else if(row_index>0 && column_index==4){
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCellButtom.reuseID, for: indexPath) as? WithdrawalCollectionViewCellButtom else {
                 return UICollectionViewCell()
             }
@@ -311,7 +312,7 @@ extension WithdrawalListVC: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            cell.titleLabel.text = self.dataSource[indexPath[0]][indexPath[1]].text.stringRepresentation
+            cell.titleLabel.text = self.dataSource[row_index][column_index].text.stringRepresentation
             cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
             
             return cell
@@ -325,31 +326,26 @@ extension WithdrawalListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let row_index=indexPath[0]
         let column_index=indexPath[1]
+        
+        let header_height=50
+        let header_width=100
+        let content_stt_width=50,header_stt_width=50
+        let content_height=50;
+        let content_width=100;
         if(row_index==0){
-            if(row_index==0 && column_index>0){
-                return CGSize(width: 100, height: 50)
+            if(column_index==0){
+                 return CGSize(width: header_stt_width, height: header_height)
+            }else if(column_index>0){
+                return CGSize(width: header_width, height: content_height)
             }
-            else
-            {
-                return CGSize(width: 50, height: 50)
-            }
-            
-            
-        }else if(row_index>0 && column_index==4){
-            return CGSize(width: 100, height: 50)
-            
-            
-        }else{
-            if(row_index>0 && column_index==0){
-                return CGSize(width: 50, height: 50)
-            }
-            else
-            {
-                return CGSize(width: 100, height: 50)
+        }else if(row_index>0){
+            if(column_index==0){
+                 return CGSize(width: content_stt_width, height: content_height)
+            }else if(column_index>0){
+                return CGSize(width: content_width, height: content_height)
             }
         }
-        
-        
+        return CGSize(width: content_width, height: content_height)
         
     }
 }
