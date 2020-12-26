@@ -17,7 +17,7 @@ struct WithdrawalStatusModel: Codable {
     }
     init() {
         _id=""
-        name=""
+        name="Đang đợi sử lý"
         is_confirm=""
     }
 }

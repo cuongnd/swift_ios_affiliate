@@ -140,7 +140,7 @@ extension WithdrawalListVC {
                     let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetLichSuRutTienResponseModel.self, from: jsonResponse!)
                     print("getLichSuRutTienResponseModel \(getLichSuRutTienResponseModel)")
                     self.rutTienList=getLichSuRutTienResponseModel.rutTienList
-                    self.gridCollectionView.reloadData()
+                    self.dataSource=[[DataRowModel]]()
                     var i=0;
                     for rut_tien in self.rutTienList {
                         self.dataSource.append([
@@ -153,7 +153,7 @@ extension WithdrawalListVC {
                     }
                     
                     
-                    
+                     self.gridCollectionView.reloadData()
                     
                     
                     
@@ -300,6 +300,9 @@ extension WithdrawalListVC: UICollectionViewDataSource {
             cell.UIButtonAction.layer.cornerRadius = 5
             cell.UIButtonAction.layer.borderWidth = 1
             cell.UIButtonAction.layer.borderColor = UIColor.black.cgColor
+            cell.UIButtonAction.tag=indexPath.row;
+            cell.UIButtonAction.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
+
             
             cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
             
@@ -310,7 +313,7 @@ extension WithdrawalListVC: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCell.reuseID, for: indexPath) as? WithdrawalCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            
+            print("row_index \(row_index) column_index \(column_index)")
             cell.titleLabel.text = self.dataSource[row_index][column_index].text.stringRepresentation
             cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
             
