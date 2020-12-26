@@ -64,7 +64,7 @@ class WithdrawalListVC: UIViewController {
         DataRowModel(type: .Text, text:DataTableValueType.string("Action"))
         
     ]
-    var dataSource:[DataRowModel]=[DataRowModel]()
+    var dataSource:[[DataRowModel]]=[[DataRowModel]]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selected = ""
@@ -144,7 +144,7 @@ extension WithdrawalListVC {
                     var i=0;
                     for rut_tien in self.rutTienList {
                         
-                        self.dataSource.append(contentsOf: [
+                        self.dataSource.append([
                             DataRowModel(type: .Text, text:DataTableValueType.init(i+1)),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount)),
                             DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010")),
@@ -279,8 +279,6 @@ extension WithdrawalListVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let column:Int = (indexPath.section*2)+indexPath.row
-        print("indexPath \(indexPath[0])");
         if(indexPath[0]==0){
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCell.reuseID, for: indexPath) as? WithdrawalCollectionViewCell else {
@@ -313,7 +311,7 @@ extension WithdrawalListVC: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            cell.titleLabel.text = self.dataSource[indexPath[1]].text.stringRepresentation
+            cell.titleLabel.text = self.dataSource[indexPath[0]][indexPath[1]].text.stringRepresentation
             cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
             
             return cell
@@ -325,6 +323,33 @@ extension WithdrawalListVC: UICollectionViewDataSource {
 extension WithdrawalListVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        let row_index=indexPath[0]
+        let column_index=indexPath[1]
+        if(row_index==0){
+            if(row_index==0 && column_index>0){
+                return CGSize(width: 100, height: 50)
+            }
+            else
+            {
+                return CGSize(width: 50, height: 50)
+            }
+            
+            
+        }else if(row_index>0 && column_index==4){
+            return CGSize(width: 100, height: 50)
+            
+            
+        }else{
+            if(row_index>0 && column_index==0){
+                return CGSize(width: 50, height: 50)
+            }
+            else
+            {
+                return CGSize(width: 100, height: 50)
+            }
+        }
+        
+        
+        
     }
 }
