@@ -315,11 +315,18 @@ extension WithdrawalListVC: UICollectionViewDataSource {
             return cell
            
         } else if(current_rut_tien.type==RowType.Buttom){
+            let data_row=self.rutTienList[row_index-1]
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalButtonCollectionViewCell.reuseID, for: indexPath) as? WithdrawalButtonCollectionViewCell else {
                                  return UICollectionViewCell()
                              }
+            
             cell.UIButtonWithDrawal.setTitle(current_rut_tien.text.stringRepresentation, for: .normal)
              cell.UIButtonWithDrawal.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
+            if(data_row.withdrawalstatus.is_confirm==1){
+                cell.UIButtonWithDrawal.isHidden=true
+            }else{
+                 cell.UIButtonWithDrawal.isHidden=false
+            }
              cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
             return cell
         }
