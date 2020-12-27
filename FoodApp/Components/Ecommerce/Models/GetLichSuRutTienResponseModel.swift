@@ -17,4 +17,5 @@ struct GetLichSuRutTienResponseModel: Codable {
         case code = "code"
         case rutTienList = "data"
     }
+  
 }

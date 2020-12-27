@@ -19,4 +19,13 @@ struct RutTienModel: Codable {
         case withdrawalstatus_id = "withdrawalstatus_id"
         case withdrawalstatus = "withdrawalstatus"
     }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode("_id", forKey: ._id)
+        try container.encode("amount", forKey: .amount)
+        try container.encode("status", forKey: .status)
+        try container.encode("withdrawalstatus", forKey: .withdrawalstatus)
+    }
+    
+    
 }
