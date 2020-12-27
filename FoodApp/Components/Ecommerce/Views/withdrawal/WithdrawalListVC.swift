@@ -146,7 +146,7 @@ extension WithdrawalListVC {
                     self.dataSource.append(self.headerTitles)
                     for rut_tien in self.rutTienList {
                         self.dataSource.append([
-                            DataRowModel(type: .Text, text:DataTableValueType.init(i),key_column: "stt",column_width: 50,column_height: 50),
+                            DataRowModel(type: .Text, text:DataTableValueType.init(i+1),key_column: "stt",column_width: 50,column_height: 50),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount),key_column: "amount",column_width: 100,column_height: 50),
                             DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010"),key_column: "created_date",column_width: 100,column_height: 50),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name),key_column: "withdrawalstatus",column_width: 200,column_height: 50),
