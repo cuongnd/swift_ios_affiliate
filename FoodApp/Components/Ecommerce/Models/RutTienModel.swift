@@ -11,7 +11,7 @@ struct RutTienModel: Codable {
     let amount: String
     let status: String=""
     let withdrawalstatus_id: String
-    let withdrawalstatus: WithdrawalStatusModel=WithdrawalStatusModel()
+    let withdrawalstatus: WithdrawalStatusModel
     enum CodingKeys: String, CodingKey {
         case _id = "_id"
         case amount = "amount"

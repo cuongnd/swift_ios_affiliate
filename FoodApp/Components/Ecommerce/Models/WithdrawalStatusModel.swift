@@ -9,15 +9,11 @@ import Foundation
 struct WithdrawalStatusModel: Codable {
     let _id: String
     let name: String
-    let is_confirm: String
+    let is_confirm: Int
     enum CodingKeys: String, CodingKey {
         case _id = "_id"
         case name = "name"
         case is_confirm = "is_confirm"
     }
-    init() {
-        _id=""
-        name="Đang đợi sử lý"
-        is_confirm=""
-    }
+    
 }
