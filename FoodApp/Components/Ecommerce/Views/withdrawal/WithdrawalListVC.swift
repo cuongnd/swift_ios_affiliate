@@ -8,18 +8,18 @@
 
 import UIKit
 import SwiftyJSON
-
+import Foundation
 class WithdrawalCollectionViewCell: UICollectionViewCell {
     static let reuseID = "WithdrawalCollectionViewCell"
-    @IBOutlet weak var titleLabel: UILabel!
-}
-class WithdrawalCollectionViewCellButtom: UICollectionViewCell {
-    static let reuseID = "WithdrawalCollectionViewCellButtom"
-    
-    @IBOutlet weak var UIButtonAction: UIButton!
 }
 
 
+//MARK: - Properties
+private enum Properties {
+    static let verticalMargin: CGFloat = 5
+    static let horizontalMargin: CGFloat = 15
+    static let widthConstant: CGFloat = 20
+}
 class WithdrawalListVC: UIViewController {
     var OrderHistoryData = [JSON]()
     var selected = String()
@@ -55,17 +55,16 @@ class WithdrawalListVC: UIViewController {
             gridLayout.stickyColumnsCount = 1
         }
     }
-    
-    let headerTitles = [
-        DataRowModel(type: .Text, text:DataTableValueType.string("STT"),key_column: "stt",column_width: 50,column_height: 50),
-        DataRowModel(type:.Text, text:DataTableValueType.string("Số tiền"),key_column: "",column_width: 100,column_height: 50),
-        DataRowModel(type: .Text, text:DataTableValueType.string("Ngày"),key_column: "",column_width: 100,column_height: 50),
-        DataRowModel(type: .Text, text:DataTableValueType.string("Trạng thái"),key_column: "",column_width: 200,column_height: 50),
-        DataRowModel(type: .Text, text:DataTableValueType.string("Action"),key_column: "",column_width: 100,column_height: 50)
-        
-    ]
+   let headerTitles = [
+       DataRowModel(type: .Text, text:DataTableValueType.string("STT"),key_column: "stt",column_width: 50,column_height: 50),
+       DataRowModel(type:.Text, text:DataTableValueType.string("Số tiền"),key_column: "",column_width: 100,column_height: 50),
+       DataRowModel(type: .Text, text:DataTableValueType.string("Ngày"),key_column: "",column_width: 100,column_height: 50),
+       DataRowModel(type: .Text, text:DataTableValueType.string("Trạng thái"),key_column: "",column_width: 200,column_height: 50),
+       DataRowModel(type: .Text, text:DataTableValueType.string("Action"),key_column: "",column_width: 100,column_height: 50)
+       
+   ]
     var dataSource:[[DataRowModel]]=[[DataRowModel]]()
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selected = ""
@@ -150,13 +149,13 @@ extension WithdrawalListVC {
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount),key_column: "amount",column_width: 100,column_height: 50),
                             DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010"),key_column: "created_date",column_width: 100,column_height: 50),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name),key_column: "withdrawalstatus",column_width: 200,column_height: 50),
-                             DataRowModel(type: .Buttom, text:DataTableValueType.string("Xóa"),key_column: "withdrawalstatus",column_width: 100,column_height: 50)
+                            DataRowModel(type: .Buttom, text:DataTableValueType.string("Xóa"),key_column: "withdrawalstatus",column_width: 100,column_height: 50)
                         ])
                         i += 1
                     }
                     
                     
-                     self.gridCollectionView.reloadData()
+                    self.gridCollectionView.reloadData()
                     
                     
                     
@@ -282,46 +281,34 @@ extension WithdrawalListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let row_index=indexPath[0]
         let column_index=indexPath[1]
-        if(row_index==0){
-            
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCell.reuseID, for: indexPath) as? WithdrawalCollectionViewCell else {
-                return UICollectionViewCell()
-            }
-            
-            cell.titleLabel.text = headerTitles[indexPath[1]].text.stringRepresentation
-            cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
-            
-            return cell
-            
-        }else if(row_index>0 && column_index==4){
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCellButtom.reuseID, for: indexPath) as? WithdrawalCollectionViewCellButtom else {
-                return UICollectionViewCell()
-            }
-            
-            cell.UIButtonAction.setTitle("Xóa", for: .normal)
-            cell.UIButtonAction.backgroundColor = .clear
-            cell.UIButtonAction.layer.cornerRadius = 5
-            cell.UIButtonAction.layer.borderWidth = 1
-            cell.UIButtonAction.layer.borderColor = UIColor.black.cgColor
-            cell.UIButtonAction.tag=indexPath.row;
-            cell.UIButtonAction.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
-
-            
-            cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
-            
-            return cell
-            
-            
-        }else{
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCell.reuseID, for: indexPath) as? WithdrawalCollectionViewCell else {
-                return UICollectionViewCell()
-            }
-            print("row_index \(row_index) column_index \(column_index)")
-            cell.titleLabel.text = self.dataSource[row_index][column_index].text.stringRepresentation
-            cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
-            
-            return cell
+        
+        let current_rut_tien:DataRowModel=self.dataSource[row_index][column_index]
+        
+        print("row_index \(row_index)")
+        print("current_rut_tien \(current_rut_tien)")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalCollectionViewCell.reuseID, for: indexPath) as? WithdrawalCollectionViewCell else {
+            return UICollectionViewCell()
         }
+        if(current_rut_tien.UiView != nil){
+            cell.addSubview(current_rut_tien.UiView!)
+        }else{
+            let dataLabel = UILabel()
+            dataLabel.text = current_rut_tien.text.stringRepresentation
+            dataLabel.translatesAutoresizingMaskIntoConstraints = false
+            cell.addSubview(dataLabel)
+            NSLayoutConstraint.activate([
+                dataLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: Properties.widthConstant),
+                dataLabel.topAnchor.constraint(equalTo: cell.topAnchor, constant: Properties.verticalMargin),
+                dataLabel.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: -Properties.verticalMargin),
+                dataLabel.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: Properties.horizontalMargin),
+                dataLabel.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: Properties.horizontalMargin),
+            ])
+            
+            
+        }
+        cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
+        return cell
+        
         
     }
 }

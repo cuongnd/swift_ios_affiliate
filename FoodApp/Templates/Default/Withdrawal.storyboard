@@ -160,53 +160,8 @@
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="26"/>
                                                             <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc4-aG-FWF">
-                                                                    <rect key="frame" x="4" y="0.0" width="42" height="21"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
                                                         </view>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="dc4-aG-FWF" secondAttribute="trailing" constant="4" id="3uF-J8-MMK"/>
-                                                            <constraint firstItem="dc4-aG-FWF" firstAttribute="top" secondItem="Scd-ed-0SB" secondAttribute="top" id="6Er-lo-9op"/>
-                                                            <constraint firstItem="dc4-aG-FWF" firstAttribute="top" secondItem="Scd-ed-0SB" secondAttribute="top" id="D8S-2P-OxA"/>
-                                                            <constraint firstItem="dc4-aG-FWF" firstAttribute="leading" secondItem="Scd-ed-0SB" secondAttribute="leading" constant="4" id="DHj-r3-QAO"/>
-                                                            <constraint firstItem="dc4-aG-FWF" firstAttribute="leading" secondItem="Scd-ed-0SB" secondAttribute="leading" constant="4" id="GcR-SV-gmk"/>
-                                                            <constraint firstAttribute="bottom" secondItem="dc4-aG-FWF" secondAttribute="bottom" constant="5" id="UJe-us-Wq7"/>
-                                                            <constraint firstAttribute="trailing" secondItem="dc4-aG-FWF" secondAttribute="trailing" constant="4" id="VcP-wk-oyy"/>
-                                                            <constraint firstAttribute="bottom" secondItem="dc4-aG-FWF" secondAttribute="bottom" constant="5" id="bJp-yY-hA3"/>
-                                                        </constraints>
                                                         <size key="customSize" width="50" height="26"/>
-                                                        <connections>
-                                                            <outlet property="titleLabel" destination="dc4-aG-FWF" id="tZc-30-ZhC"/>
-                                                        </connections>
-                                                    </collectionViewCell>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WithdrawalCollectionViewCellButtom" id="1ej-Xk-BqU" customClass="WithdrawalCollectionViewCellButtom" customModule="adayroi_online" customModuleProvider="target">
-                                                        <rect key="frame" x="60" y="1" width="50" height="24"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="24"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0X-3B-LqW">
-                                                                    <rect key="frame" x="2" y="0.0" width="46" height="24"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                </button>
-                                                            </subviews>
-                                                        </view>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="P0X-3B-LqW" secondAttribute="bottom" id="N5B-7a-8T5"/>
-                                                            <constraint firstItem="P0X-3B-LqW" firstAttribute="top" secondItem="1ej-Xk-BqU" secondAttribute="top" id="QDE-Rq-bcp"/>
-                                                            <constraint firstAttribute="trailing" secondItem="P0X-3B-LqW" secondAttribute="trailing" constant="2" id="tIZ-75-rab"/>
-                                                            <constraint firstItem="P0X-3B-LqW" firstAttribute="leading" secondItem="1ej-Xk-BqU" secondAttribute="leading" constant="2" id="wcE-tv-Hv2"/>
-                                                        </constraints>
-                                                        <size key="customSize" width="50" height="24"/>
-                                                        <connections>
-                                                            <outlet property="UIButtonAction" destination="P0X-3B-LqW" id="YBt-ZW-ITV"/>
-                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
