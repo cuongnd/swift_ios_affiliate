@@ -148,20 +148,75 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="654"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9NW-mF-Z9E" customClass="WithdrawalStickyGridCollectionViewLayout" customModule="adayroi_online" customModuleProvider="target">
-                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="itemSize" width="168" height="158"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WithdrawalCollectionViewCell" id="Scd-ed-0SB" customClass="WithdrawalCollectionViewCell" customModule="adayroi_online" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="26"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WithdrawalLabelCollectionViewCell" id="Scd-ed-0SB" customClass="WithdrawalLabelCollectionViewCell" customModule="adayroi_online" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168" height="158"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="26"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="168" height="158"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbe-VR-vPq">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="158"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL7-od-5MH">
+                                                                            <rect key="frame" x="24" y="19" width="81" height="21"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                </view>
+                                                            </subviews>
                                                         </view>
-                                                        <size key="customSize" width="50" height="26"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="lbe-VR-vPq" secondAttribute="trailing" id="DDJ-47-sZt"/>
+                                                            <constraint firstItem="lbe-VR-vPq" firstAttribute="leading" secondItem="Scd-ed-0SB" secondAttribute="leading" id="bMM-Nh-vPp"/>
+                                                            <constraint firstItem="lbe-VR-vPq" firstAttribute="top" secondItem="Scd-ed-0SB" secondAttribute="top" id="lCL-Mp-CRc"/>
+                                                            <constraint firstAttribute="bottom" secondItem="lbe-VR-vPq" secondAttribute="bottom" id="yQE-Ab-N46"/>
+                                                        </constraints>
+                                                        <size key="customSize" width="168" height="158"/>
+                                                        <connections>
+                                                            <outlet property="UILabelText" destination="hL7-od-5MH" id="AFS-UD-s09"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WithdrawalButtonCollectionViewCell" id="eBy-0J-Y25" customClass="WithdrawalButtonCollectionViewCell" customModule="adayroi_online" customModuleProvider="target">
+                                                        <rect key="frame" x="230" y="0.0" width="168" height="158"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="168" height="158"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmk-5Q-gmk">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="158"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etI-Ai-F1R">
+                                                                            <rect key="frame" x="54" y="64" width="46" height="30"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <state key="normal" title="Button"/>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                </view>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="lmk-5Q-gmk" secondAttribute="trailing" id="2gY-Rz-yPj"/>
+                                                            <constraint firstAttribute="bottom" secondItem="lmk-5Q-gmk" secondAttribute="bottom" id="K0A-14-LB7"/>
+                                                            <constraint firstItem="lmk-5Q-gmk" firstAttribute="leading" secondItem="eBy-0J-Y25" secondAttribute="leading" id="c4U-Rb-EMq"/>
+                                                            <constraint firstItem="lmk-5Q-gmk" firstAttribute="top" secondItem="eBy-0J-Y25" secondAttribute="top" id="lqS-fA-i9n"/>
+                                                        </constraints>
+                                                        <size key="customSize" width="168" height="158"/>
+                                                        <connections>
+                                                            <outlet property="UIButtonWithDrawal" destination="etI-Ai-F1R" id="331-hT-Di0"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>

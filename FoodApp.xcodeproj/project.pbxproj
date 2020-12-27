@@ -421,8 +421,8 @@
 		0443F6B12591019C005D5637 /* withdrawal */ = {
 			isa = PBXGroup;
 			children = (
-				0443F6B2259101BD005D5637 /* WithdrawalListVC.swift */,
 				0443F77D2594B2AF005D5637 /* WithdrawalLapLenhRutTienVC.swift */,
+				0443F6B2259101BD005D5637 /* WithdrawalListVC.swift */,
 				0443F77F2594B2DC005D5637 /* WithdrawalCaiDatTKNganHangVC.swift */,
 			);
 			path = withdrawal;
