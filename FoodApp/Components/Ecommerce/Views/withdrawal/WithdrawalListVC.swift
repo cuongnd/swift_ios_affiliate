@@ -62,11 +62,11 @@ class WithdrawalListVC: UIViewController {
         }
     }
    let headerTitles = [
-       DataRowModel(type: .Text, text:DataTableValueType.string("STT"),key_column: "stt",column_width: 300,column_height: 50),
-       DataRowModel(type:.Text, text:DataTableValueType.string("Số tiền"),key_column: "",column_width: 300,column_height: 50),
-       DataRowModel(type: .Text, text:DataTableValueType.string("Ngày"),key_column: "",column_width: 300,column_height: 50),
-       DataRowModel(type: .Text, text:DataTableValueType.string("Trạng thái"),key_column: "",column_width: 300,column_height: 50),
-       DataRowModel(type: .Text, text:DataTableValueType.string("Action"),key_column: "",column_width: 300,column_height: 50)
+       DataRowModel(type: .Text, text:DataTableValueType.string("STT"),key_column: "stt",column_width: 50,column_height: 50),
+       DataRowModel(type:.Text, text:DataTableValueType.string("Số tiền"),key_column: "",column_width: 100,column_height: 50),
+       DataRowModel(type: .Text, text:DataTableValueType.string("Ngày"),key_column: "",column_width: 150,column_height: 50),
+       DataRowModel(type: .Text, text:DataTableValueType.string("Trạng thái"),key_column: "",column_width: 150,column_height: 50),
+       DataRowModel(type: .Text, text:DataTableValueType.string("Action"),key_column: "",column_width: 100,column_height: 50)
        
    ]
     var dataSource:[[DataRowModel]]=[[DataRowModel]]()
@@ -164,11 +164,11 @@ extension WithdrawalListVC {
                     
                     for rut_tien in self.rutTienList {
                         self.dataSource.append([
-                            DataRowModel(type: .Text, text:DataTableValueType.init(i+1),key_column: "stt",column_width: 300,column_height: 50),
-                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount),key_column: "amount",column_width: 300,column_height: 50),
-                            DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010"),key_column: "created_date",column_width: 300,column_height: 50),
-                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name),key_column: "withdrawalstatus",column_width: 300,column_height: 50),
-                            DataRowModel(type: .Buttom, text:DataTableValueType.string("Xóa"),key_column: "withdrawalstatus",column_width: 300,column_height: 50,UiView: dataButton)
+                            DataRowModel(type: .Text, text:DataTableValueType.init(i+1),key_column: "stt",column_width: 50,column_height: 50),
+                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount),key_column: "amount",column_width: 100,column_height: 50),
+                            DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010"),key_column: "created_date",column_width: 150,column_height: 50),
+                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name),key_column: "withdrawalstatus",column_width: 150,column_height: 50),
+                            DataRowModel(type: .Buttom, text:DataTableValueType.string("Xóa"),key_column: "withdrawalstatus",column_width: 100,column_height: 50,UiView: dataButton)
                         ])
                         i += 1
                     }
@@ -311,6 +311,7 @@ extension WithdrawalListVC: UICollectionViewDataSource {
                       return UICollectionViewCell()
                   }
             cell.UILabelText.text=current_rut_tien.text.stringRepresentation
+             cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
             return cell
            
         } else if(current_rut_tien.type==RowType.Buttom){
@@ -318,6 +319,8 @@ extension WithdrawalListVC: UICollectionViewDataSource {
                                  return UICollectionViewCell()
                              }
             cell.UIButtonWithDrawal.setTitle(current_rut_tien.text.stringRepresentation, for: .normal)
+             cell.UIButtonWithDrawal.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
+             cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
             return cell
         }
        
