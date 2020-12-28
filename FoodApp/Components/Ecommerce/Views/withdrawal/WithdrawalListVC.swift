@@ -205,8 +205,13 @@ extension WithdrawalListVC {
                     let jsonDecoder = JSONDecoder()
                     let getDeletewithdrawalModel = try jsonDecoder.decode(GetDeletewithdrawalModel.self, from: jsonResponse!)
                     debugPrint("getDeletewithdrawalModel \(getDeletewithdrawalModel)")
+                    if(getDeletewithdrawalModel.result=="error"){
+                        showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: getDeletewithdrawalModel.errorMessage)
+                    }else{
+                        showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Đã xóa thành công")
+                    }
                     let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Đã xóa thành công")
+                    
                     let urlString = API_URL + "/api/withdrawals/list?user_id=\(user_id)&limit=30&offset=0"
                     self.Webservice_GetLichSuRutTien(url: urlString, params:[:])
                     
@@ -289,7 +294,7 @@ extension WithdrawalListVC {
 extension WithdrawalListVC: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return self.rutTienList.count
+        return self.rutTienList.count+1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -301,36 +306,46 @@ extension WithdrawalListVC: UICollectionViewDataSource {
         let column_index=indexPath[1]
         
         let current_rut_tien:DataRowModel=self.dataSource[row_index][column_index]
-       
-       
-        if(current_rut_tien.type==RowType.Text){
+        //if header
+        if(row_index==0){
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalLabelCollectionViewCell.reuseID, for: indexPath) as? WithdrawalLabelCollectionViewCell else {
                       return UICollectionViewCell()
                   }
             cell.UILabelText.text=current_rut_tien.text.stringRepresentation
              cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
             return cell
-           
-        } else if(current_rut_tien.type==RowType.Buttom){
-            let data_row=self.rutTienList[row_index-1]
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalButtonCollectionViewCell.reuseID, for: indexPath) as? WithdrawalButtonCollectionViewCell else {
-                                 return UICollectionViewCell()
-                             }
+        }else{
+            if(current_rut_tien.type==RowType.Text){
+                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalLabelCollectionViewCell.reuseID, for: indexPath) as? WithdrawalLabelCollectionViewCell else {
+                                      return UICollectionViewCell()
+                                  }
+                            cell.UILabelText.text=current_rut_tien.text.stringRepresentation
+                             cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
+                            return cell
+                
+             } else if(current_rut_tien.type==RowType.Buttom){
+                 let data_row=self.rutTienList[row_index-1]
+                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalButtonCollectionViewCell.reuseID, for: indexPath) as? WithdrawalButtonCollectionViewCell else {
+                                      return UICollectionViewCell()
+                                  }
+                cell.UIButtonWithDrawal.tag=row_index-1
+                 cell.UIButtonWithDrawal.setTitle(current_rut_tien.text.stringRepresentation, for: .normal)
+                  cell.UIButtonWithDrawal.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
+                 print("data_row.withdrawalstatus \(data_row.withdrawalstatus)")
+                 if(data_row.withdrawalstatus.can_delete==1){
+                     cell.UIButtonWithDrawal.isHidden=false
+                 }else{
+                      cell.UIButtonWithDrawal.isHidden=true
+                 }
+                  cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
+                 return cell
+             }
+            return UICollectionViewCell()
             
-            cell.UIButtonWithDrawal.setTitle(current_rut_tien.text.stringRepresentation, for: .normal)
-             cell.UIButtonWithDrawal.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
-            print("data_row.withdrawalstatus \(data_row.withdrawalstatus)")
-            if(data_row.withdrawalstatus.can_delete==1){
-                cell.UIButtonWithDrawal.isHidden=false
-            }else{
-                 cell.UIButtonWithDrawal.isHidden=true
-            }
-             cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
-            return cell
         }
-       
         
-        return UICollectionViewCell()
+        
+        
         
         
     }

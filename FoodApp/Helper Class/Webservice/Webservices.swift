@@ -175,9 +175,9 @@ class WebServices: NSObject
                                 if let httpStatusCode = response.response?.statusCode {
                                     switch(httpStatusCode) {
                                     case 400:
-                                        message = "Something Went Wrong..Try Again"
+                                        message = "Có lỗi phát sinh, xin vui lòng thử lại"
                                     case 401:
-                                        message = "Something Went Wrong..Try Again"
+                                        message = "Có lỗi phát sinh, xin vui lòng thử lại"
                                         DispatchQueue.main.async {
                                             self.ProgressViewHide(uiView: uiView)
                                             responseDict(response.value,message)
@@ -220,9 +220,9 @@ class WebServices: NSObject
                                 if let httpStatusCode = response.response?.statusCode {
                                     switch(httpStatusCode) {
                                     case 400:
-                                        message = "Something Went Wrong..Try Again"
+                                        message = "Có lỗi phát sinh, xin vui lòng thử lại"
                                     case 401:
-                                        message = "Something Went Wrong..Try Again"
+                                        message = "Có lỗi phát sinh, xin vui lòng thử lại"
                                         DispatchQueue.main.async {
                                             self.ProgressViewHide(uiView: uiView)
                                             responseDict(response.value,message)
@@ -244,7 +244,7 @@ class WebServices: NSObject
                 else {
                     self.ProgressViewHide(uiView: uiView)
                     if networkAlert == true {
-                        showAlertMessage(titleStr: "Error!", messageStr: MESSAGE_ERR_NETWORK)
+                        showAlertMessage(titleStr: "Lỗi!", messageStr: MESSAGE_ERR_NETWORK)
                     }
                 }
             }

@@ -9,10 +9,12 @@ import Foundation
 struct GetDeletewithdrawalModel: Codable {
     let result: String
     let code: Int=200
+    let errorMessage: String
     let completed: Bool
     enum CodingKeys: String, CodingKey {
         case result = "result"
         case code = "code"
+        case errorMessage = "errorMessage"
         case completed = "data"
     }
 }
