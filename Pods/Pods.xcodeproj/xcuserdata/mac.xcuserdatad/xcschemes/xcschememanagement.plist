@@ -164,17 +164,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TLCustomMask.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TagListView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>VMaskTextField-VMaskTextField.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>VMaskTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

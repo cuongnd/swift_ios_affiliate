@@ -25,8 +25,8 @@ ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework
 ${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/TLCustomMask/TLCustomMask.framework
 ${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework
-${BUILT_PRODUCTS_DIR}/VMaskTextField/VMaskTextField.framework
 ${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework
 ${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework
 ${PODS_ROOT}/razorpay-pod/Pod/Razorpay.framework

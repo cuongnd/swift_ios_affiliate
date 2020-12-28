@@ -5,7 +5,7 @@
 //  Created by Mitesh's MAC on 07/06/20.
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.
 //
-
+import TLCustomMask
 import UIKit
 import SwiftyJSON
 
@@ -20,6 +20,7 @@ class WithdrawalLapLenhRutTienVC: UIViewController {
     @IBOutlet weak var UILabelSoTienToiDa: UILabel!
     @IBOutlet weak var UITextFieldSoTien: UITextField!
     var userAffiliateInfoModel:UserAffiliateInfoModel=UserAffiliateInfoModel()
+    var customMask = TLCustomMask()
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -30,6 +31,8 @@ class WithdrawalLapLenhRutTienVC: UIViewController {
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
         let urlAffiliateInfo = API_URL + "/api_task/users.get_user_affiliate_info_by_id?user_id=\(user_id)"
         self.Webservice_GetAffiliateInfo(url: urlAffiliateInfo, params:[:])
+        customMask.formattingPattern = "$$$ $$$ $$$ $$$"
+        self.UITextFieldSoTien.delegate = self
         
     }
     
@@ -179,4 +182,14 @@ extension WithdrawalLapLenhRutTienVC {
         }
     }
     
+}
+extension WithdrawalLapLenhRutTienVC: UITextFieldDelegate{
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+
+        self.UITextFieldSoTien.text = customMask.formatStringWithRange(range: range, string: string)
+
+        return false
+    }
 }

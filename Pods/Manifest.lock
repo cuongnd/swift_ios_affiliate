@@ -109,7 +109,7 @@ PODS:
   - SQLite.swift/standard (0.12.2)
   - SwiftyJSON (5.0.0)
   - TagListView (1.4.1)
-  - VMaskTextField (1.0.8)
+  - TLCustomMask (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
@@ -134,7 +134,7 @@ DEPENDENCIES:
   - SQLite.swift (~> 0.12.0)
   - SwiftyJSON
   - TagListView (~> 1.0)
-  - VMaskTextField
+  - TLCustomMask
 
 SPEC REPOS:
   trunk:
@@ -171,7 +171,7 @@ SPEC REPOS:
     - SQLite.swift
     - SwiftyJSON
     - TagListView
-    - VMaskTextField
+    - TLCustomMask
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -207,8 +207,8 @@ SPEC CHECKSUMS:
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
-  VMaskTextField: e77fe33633f999c5c38e70bed0afece0625624a4
+  TLCustomMask: 32bcd873851167c2d2a3726b048766b737873710
 
-PODFILE CHECKSUM: 62a99ab3b7f9374565098f754a21b15b6846fcd2
+PODFILE CHECKSUM: 2a7e51c4a2f6d7eb3fb5f6794b144e073e08edfb
 
 COCOAPODS: 1.10.0
