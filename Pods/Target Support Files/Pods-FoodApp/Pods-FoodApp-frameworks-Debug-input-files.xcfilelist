@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-FoodApp/Pods-FoodApp-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AnyFormatKit/AnyFormatKit.framework
 ${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/ETBinding/ETBinding.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework

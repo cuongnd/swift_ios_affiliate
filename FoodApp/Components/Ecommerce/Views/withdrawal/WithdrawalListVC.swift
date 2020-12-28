@@ -1,4 +1,4 @@
-//
+ //
 //  OrderHistoryVC.swift
 //  FoodApp
 //
@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Foundation
+import AnyFormatKit
 class WithdrawalLabelCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var UILabelText: UILabel!
     static let reuseID = "WithdrawalLabelCollectionViewCell"
@@ -165,7 +166,7 @@ extension WithdrawalListVC {
                     for rut_tien in self.rutTienList {
                         self.dataSource.append([
                             DataRowModel(type: .Text, text:DataTableValueType.init(i+1),key_column: "stt",column_width: 50,column_height: 50),
-                            DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.amount),key_column: "amount",column_width: 100,column_height: 50),
+                            DataRowModel(type: .Text, text:DataTableValueType.string(LibraryUtilitiesUtility.format_currency(amount: UInt64(rut_tien.amount)!,decimalCount: 0)  ),key_column: "amount",column_width: 100,column_height: 50),
                             DataRowModel(type: .Text, text:DataTableValueType.string("20/20/2010"),key_column: "created_date",column_width: 150,column_height: 50),
                             DataRowModel(type: .Text, text:DataTableValueType.string(rut_tien.withdrawalstatus.name),key_column: "withdrawalstatus",column_width: 150,column_height: 50),
                             DataRowModel(type: .Buttom, text:DataTableValueType.string("Xóa"),key_column: "withdrawalstatus",column_width: 100,column_height: 50,UiView: dataButton)
@@ -240,8 +241,8 @@ extension WithdrawalListVC {
                     let jsonDecoder = JSONDecoder()
                     let getAffiliateInfoModel = try jsonDecoder.decode(GetAffiliateInfoModel.self, from: jsonResponse!)
                     let UserAffiliateInfoModel=getAffiliateInfoModel.userAffiliateInfoModel
-                    self.UILabelSoTienCoTheRut.text=String(UserAffiliateInfoModel.total)
-                    self.UILabelSoTIenDangSuLy.text=String(UserAffiliateInfoModel.total_processing)
+                    self.UILabelSoTienCoTheRut.text=LibraryUtilitiesUtility.format_currency(amount: UInt64(UserAffiliateInfoModel.total),decimalCount: 0)
+                    self.UILabelSoTIenDangSuLy.text=LibraryUtilitiesUtility.format_currency(amount: UInt64(UserAffiliateInfoModel.total_processing),decimalCount: 0) 
                     
                     
                     

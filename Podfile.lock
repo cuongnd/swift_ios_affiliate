@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
+  - AnyFormatKit (2.0.6)
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
@@ -99,9 +100,9 @@ PODS:
   - RxRelay (6.0.0-rc.2):
     - RxSwift (= 6.0.0-rc.2)
   - RxSwift (6.0.0-rc.2)
-  - SDWebImage (5.10.0):
-    - SDWebImage/Core (= 5.10.0)
-  - SDWebImage/Core (5.10.0)
+  - SDWebImage (5.10.1):
+    - SDWebImage/Core (= 5.10.1)
+  - SDWebImage/Core (5.10.1)
   - SlideMenuControllerSwift (4.0.0)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
@@ -111,6 +112,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
+  - AnyFormatKit
   - Charts
   - ETBinding
   - Firebase/Core
@@ -135,6 +137,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AnyFormatKit
     - Charts
     - ETBinding
     - Firebase
@@ -169,6 +172,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AnyFormatKit: 3401a4e46db072447a4c7656fa5dc06b12b6678c
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   ETBinding: 27be01c2b38dbc88b63189a0ca05187cd24be2ec
   Firebase: 26223c695fe322633274198cb19dca8cb7e54416
@@ -195,12 +199,12 @@ SPEC CHECKSUMS:
   RxCocoa: 38445a25751be5907f52f7ea02c137f52ce2e7f2
   RxRelay: b9e2483e83f46e4e7bf1234c6fe418e5c2eaf825
   RxSwift: ada35be6643bedf6881cdbd6bbfb27aeea527670
-  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  SDWebImage: f66a16b95183b92ed6b965ad21d33167bc07612d
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
 
-PODFILE CHECKSUM: fd544dfb789a3d7b3d5b7c6abada36cd1ad26761
+PODFILE CHECKSUM: 97d343137e66d5668aee554d7af5b320f16d9300
 
 COCOAPODS: 1.10.0

@@ -158,7 +158,8 @@ extension WithdrawalLapLenhRutTienVC {
                     let jsonDecoder = JSONDecoder()
                     let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetAffiliateInfoModel.self, from: jsonResponse!)
                     self.userAffiliateInfoModel=getLichSuRutTienResponseModel.userAffiliateInfoModel
-                    self.UILabelSoTienToiDa.text=String(self.userAffiliateInfoModel.total-self.userAffiliateInfoModel.total_processing)
+                    self.UILabelSoTienToiDa.text=LibraryUtilitiesUtility.format_currency(amount: UInt64(self.userAffiliateInfoModel.total-self.userAffiliateInfoModel.total_processing),decimalCount: 0)
+                    
                     
                     
                     
