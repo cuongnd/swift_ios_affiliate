@@ -92,7 +92,7 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - ObjectMapper (3.5.3)
-  - PromisesObjC (1.2.11)
+  - PromisesObjC (1.2.12)
   - razorpay-pod (1.1.10)
   - RxCocoa (6.0.0-rc.2):
     - RxRelay (= 6.0.0-rc.2)
@@ -109,6 +109,7 @@ PODS:
   - SQLite.swift/standard (0.12.2)
   - SwiftyJSON (5.0.0)
   - TagListView (1.4.1)
+  - VMaskTextField (1.0.8)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
@@ -133,6 +134,7 @@ DEPENDENCIES:
   - SQLite.swift (~> 0.12.0)
   - SwiftyJSON
   - TagListView (~> 1.0)
+  - VMaskTextField
 
 SPEC REPOS:
   trunk:
@@ -169,6 +171,7 @@ SPEC REPOS:
     - SQLite.swift
     - SwiftyJSON
     - TagListView
+    - VMaskTextField
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -194,7 +197,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   razorpay-pod: ee8dc073c65baee8df6e8c4275b1c989bab614a2
   RxCocoa: 38445a25751be5907f52f7ea02c137f52ce2e7f2
   RxRelay: b9e2483e83f46e4e7bf1234c6fe418e5c2eaf825
@@ -204,7 +207,8 @@ SPEC CHECKSUMS:
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
+  VMaskTextField: e77fe33633f999c5c38e70bed0afece0625624a4
 
-PODFILE CHECKSUM: 97d343137e66d5668aee554d7af5b320f16d9300
+PODFILE CHECKSUM: 62a99ab3b7f9374565098f754a21b15b6846fcd2
 
 COCOAPODS: 1.10.0

@@ -30,6 +30,7 @@ target 'FoodApp' do
     pod 'TagListView', '~> 1.0'
     pod 'Charts'
     pod 'AnyFormatKit'
+    pod "VMaskTextField"
 
   target 'FoodAppTests' do
     inherit! :search_paths
