@@ -31,6 +31,8 @@ class SideMenuVC: UIViewController {
     var SettingsViewController = UINavigationController()
     var RatingsViewController = UINavigationController()
     var FavoriteViewController = UINavigationController()
+    var CategoryListViewController = UINavigationController()
+    
     
     //MARK: Viewcontroller lifecycle
     override func viewDidLoad() {
@@ -92,6 +94,11 @@ class SideMenuVC: UIViewController {
         self.FavoriteViewController = UINavigationController(rootViewController: FavoritesVC)
         self.FavoriteViewController.setNavigationBarHidden(true,animated:true)
         
+        let CategoryListVC = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "CategoryListVC") as! CategoryListVC
+        self.CategoryListViewController = UINavigationController(rootViewController: CategoryListVC)
+        self.CategoryListViewController.setNavigationBarHidden(true,animated:true)
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -140,13 +147,7 @@ extension SideMenuVC : UITableViewDataSource,UITableViewDelegate
         }
         if indexPath.row == 2
         {
-            if UserDefaultManager.getStringFromUserDefaults(key: UD_isSkip) == "1"
-            {
-                self.slideMenuController()?.changeMainViewController(self.LoginViewController, close: true)
-            }
-            else{
-                self.slideMenuController()?.changeMainViewController(self.FavoriteViewController, close: true)
-            }
+            self.slideMenuController()?.changeMainViewController(self.CategoryListViewController, close: true)
             
         }
         if indexPath.row == 3
