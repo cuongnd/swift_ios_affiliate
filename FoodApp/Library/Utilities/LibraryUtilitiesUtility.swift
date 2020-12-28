@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.
 //
 import UIKit
+import TLCustomMask
 import Foundation
 import AnyFormatKit
 class LibraryUtilitiesUtility{
@@ -23,9 +24,10 @@ class LibraryUtilitiesUtility{
     
     static func format_currency(amount: UInt64, decimalCount: Int) -> String {
         let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "VI_VN")
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = decimalCount
-        formatter.numberStyle = .decimal
+        formatter.numberStyle = .currency
 
         let value = Double(amount) / pow(Double(10), Double(decimalCount))
         let fallback = String(format: "%.0f", value)

@@ -145,7 +145,6 @@ extension WithdrawalListVC {
                 do {
                     let jsonDecoder = JSONDecoder()
                     let getLichSuRutTienResponseModel = try jsonDecoder.decode(GetLichSuRutTienResponseModel.self, from: jsonResponse!)
-                    print("getLichSuRutTienResponseModel \(getLichSuRutTienResponseModel)")
                     self.rutTienList=getLichSuRutTienResponseModel.rutTienList
                     self.dataSource=[[DataRowModel]]()
                     var i=0;
@@ -267,7 +266,6 @@ extension WithdrawalListVC {
     {
         let tag=sender.tag
         let rutTien=self.rutTienList[tag]
-        print("rutTien \(rutTien)")
         
         let alertVC = UIAlertController(title: Bundle.main.displayName!, message: "Bạn có chắc chắn muốn xóa không ?".localiz(), preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "Yes".localiz(), style: .default) { (action) in
@@ -303,9 +301,7 @@ extension WithdrawalListVC: UICollectionViewDataSource {
         let column_index=indexPath[1]
         
         let current_rut_tien:DataRowModel=self.dataSource[row_index][column_index]
-        
-        print("row_index \(row_index)")
-        print("current_rut_tien \(current_rut_tien)")
+       
        
         if(current_rut_tien.type==RowType.Text){
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WithdrawalLabelCollectionViewCell.reuseID, for: indexPath) as? WithdrawalLabelCollectionViewCell else {
@@ -323,10 +319,11 @@ extension WithdrawalListVC: UICollectionViewDataSource {
             
             cell.UIButtonWithDrawal.setTitle(current_rut_tien.text.stringRepresentation, for: .normal)
              cell.UIButtonWithDrawal.addTarget(self, action: #selector(self.btnTapMines), for: .touchUpInside)
-            if(data_row.withdrawalstatus.is_confirm==1){
-                cell.UIButtonWithDrawal.isHidden=true
+            print("data_row.withdrawalstatus \(data_row.withdrawalstatus)")
+            if(data_row.withdrawalstatus.can_delete==1){
+                cell.UIButtonWithDrawal.isHidden=false
             }else{
-                 cell.UIButtonWithDrawal.isHidden=false
+                 cell.UIButtonWithDrawal.isHidden=true
             }
              cell.backgroundColor = gridLayout.isItemSticky(at: indexPath) ? .groupTableViewBackground : .white
             return cell

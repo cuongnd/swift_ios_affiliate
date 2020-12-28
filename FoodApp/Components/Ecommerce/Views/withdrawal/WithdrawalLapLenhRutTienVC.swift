@@ -43,8 +43,12 @@ class WithdrawalLapLenhRutTienVC: UIViewController {
     }
     
     @IBAction func btnTap_Ok(_ sender: UIButton) {
-        let amount=String(self.UITextFieldSoTien.text!)
-        if(UITextFieldSoTien.text?.trimmingCharacters(in: .whitespacesAndNewlines)==""){
+        var amount=String(self.UITextFieldSoTien.text!)
+        amount = String(amount.filter { !" \n\t\r".contains($0) })
+
+
+        
+        if(amount==""){
             UITextFieldSoTien.text="";
             UITextFieldSoTien.becomeFirstResponder()
             let alert = UIAlertController(title: "Thông báo", message: "Vui lòng nhập số Số tiền", preferredStyle: .alert)
