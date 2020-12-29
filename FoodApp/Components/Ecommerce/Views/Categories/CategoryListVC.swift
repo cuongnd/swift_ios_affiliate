@@ -25,7 +25,7 @@ class CategoryListVC: UIViewController {
     @IBOutlet weak var UICollectionViewCategories: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
          let urlStringGetListCategory = API_URL + "/api/categories"
          self.Webservice_getListCategory(url: urlStringGetListCategory, params: [:])
          
@@ -60,7 +60,9 @@ extension CategoryListVC {
                     let jsonDecoder = JSONDecoder()
                     let getApiResponseCategoryModel = try jsonDecoder.decode(GetApiResponseCategoryModel.self, from: jsonResponse!)
                     self.list_category=getApiResponseCategoryModel.list_category
-                    
+                    self.UICollectionViewCategories.delegate = self
+                    self.UICollectionViewCategories.dataSource = self
+                    self.UICollectionViewCategories.reloadData()
                     
                 } catch let error as NSError  {
                     print("error: \(error)")
@@ -90,6 +92,7 @@ extension CategoryListVC {
          let cell = self.UICollectionViewCategories.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
            //cornerRadius(viewName: cell.img_categories, radius: 6.0)
            let categoryModel = self.list_category[indexPath.item]
+        print("categoryModel \(categoryModel)")
         cell.UILabelCategoryName.text = categoryModel.name
         let categoryImage = categoryModel.default_photo
         cell.UIImageViewCategoryImage.sd_setImage(with: URL(string: categoryImage.img_path), placeholderImage: UIImage(named: "placeholder_image"))

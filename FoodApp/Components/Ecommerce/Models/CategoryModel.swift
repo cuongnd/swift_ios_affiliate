@@ -9,12 +9,12 @@ import Foundation
 struct CategoryModel: Codable {
     let _id: String
     let name: String
-    let status: String
+    let status: Bool
     let added_date: String
     let added_user_id: String
-    let updated_date: String
+    let updated_date: String?=""
     let updated_user_id: String
-    let ordering: String
+    let ordering: Int
     let alias: String
     let description: String
     let default_photo: ImageModel
