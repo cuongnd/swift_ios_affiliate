@@ -20,7 +20,7 @@ class SearchProductCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
 }
 
 class SearchVC: UIViewController {
@@ -55,7 +55,7 @@ class SearchVC: UIViewController {
         else{
             let urlString = API_URL + "/api/products?cat_id=\(self.cat_id)&keyword="+String(searchTxt)+"&user_id="+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
             var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-             let params: NSDictionary = [:]
+            let params: NSDictionary = [:]
             self.Webservice_getSearch(url: urlString1!, params:params)
         }
     }
@@ -79,13 +79,16 @@ extension SearchVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         return list_product.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let cell = self.Collectioview_SearchList.dequeueReusableCell(withReuseIdentifier: "SearchProductCell", for: indexPath) as! SearchProductCell
-                   //cornerRadius(viewName: cell.img_categories, radius: 6.0)
-                   let productItem = self.list_product[indexPath.item]
-                    cell.lbl_SearchProductName.text = productItem.name
+        let cell = self.Collectioview_SearchList.dequeueReusableCell(withReuseIdentifier: "SearchProductCell", for: indexPath) as! SearchProductCell
+        //cornerRadius(viewName: cell.img_categories, radius: 6.0)
+        let productItem = self.list_product[indexPath.item]
+        cell.lbl_SearchProductName.text = productItem.name
+        cell.lbl_SearchProductOriginalPrice.text=LibraryUtilitiesUtility.format_currency(amount: UInt64(productItem.original_price), decimalCount: 0)
+        cell.lbl_SearchProductUnitPrice.attributedText=LibraryUtilitiesUtility.format_currency(amount: UInt64(productItem.unit_price), decimalCount: 0).strikeThrough()
+        cell.lbl_SearchProductPercent.text=String(productItem.discount_percent!)+"%"
         cell.img_search_product.sd_setImage(with: URL(string: productItem.default_photo.img_path), placeholderImage: UIImage(named: "placeholder_image"))
-                  
-                   return cell
+        
+        return cell
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -112,7 +115,7 @@ extension SearchVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollec
             }
         }
     }
-   
+    
 }
 extension SearchVC
 {
@@ -143,5 +146,5 @@ extension SearchVC
         
         
     }
-   
+    
 }

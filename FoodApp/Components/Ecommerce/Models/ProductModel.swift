@@ -17,10 +17,10 @@ struct ProductModel: Codable {
     let alias: String?=""
     let search_tag: String?=""
     let original_price: Double
-    let unitPrice: Double?=0.0
+    let unit_price: Double
     let discount_percent: Int?=0
     let discount_value: Double?=0.0
-    let commistion: Double?=0.0
+    let commistion: Double
     let default_photo: ImageModel
     enum CodingKeys: String, CodingKey {
        case _id = "_id"
@@ -33,7 +33,7 @@ struct ProductModel: Codable {
         case alias = "alias"
         case search_tag = "search_tag"
         case original_price = "original_price"
-        case unitPrice = "unitPrice"
+        case unit_price = "unit_price"
         case discount_percent =  "discount_percent"
         case discount_value =  "discount_value"
         case commistion = "commistion"
