@@ -14,6 +14,7 @@ class SearchProductCell: UICollectionViewCell {
     @IBOutlet weak var lbl_SearchProductName: UILabel!
     @IBOutlet weak var lbl_SearchProductPercent: UILabel!
     
+    @IBOutlet weak var UILabelCommistion: UILabel!
     @IBOutlet weak var lbl_SearchProductOriginalPrice: UILabel!
     @IBOutlet weak var lbl_SearchProductUnitPrice: UILabel!
     override func awakeFromNib() {
@@ -86,6 +87,9 @@ extension SearchVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         cell.lbl_SearchProductOriginalPrice.text=LibraryUtilitiesUtility.format_currency(amount: UInt64(productItem.original_price), decimalCount: 0)
         cell.lbl_SearchProductUnitPrice.attributedText=LibraryUtilitiesUtility.format_currency(amount: UInt64(productItem.unit_price), decimalCount: 0).strikeThrough()
         cell.lbl_SearchProductPercent.text=String(productItem.discount_percent!)+"%"
+        let commistionValue=(productItem.commistion*productItem.unit_price)/100
+        let commistionValue1=LibraryUtilitiesUtility.format_currency(amount: UInt64(commistionValue), decimalCount: 0)
+        cell.UILabelCommistion.text="Hoa hồng:\(String(productItem.commistion))%(\(commistionValue1))"
         cell.img_search_product.sd_setImage(with: URL(string: productItem.default_photo.img_path), placeholderImage: UIImage(named: "placeholder_image"))
         
         return cell
