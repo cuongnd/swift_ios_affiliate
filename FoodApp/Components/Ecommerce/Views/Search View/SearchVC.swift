@@ -8,13 +8,28 @@
 
 import UIKit
 import SwiftyJSON
+
+class SearchProductCell: UICollectionViewCell {
+    @IBOutlet weak var img_search_product: UIImageView!
+    @IBOutlet weak var lbl_SearchProductName: UILabel!
+    @IBOutlet weak var lbl_SearchProductPercent: UILabel!
+    
+    @IBOutlet weak var lbl_SearchProductOriginalPrice: UILabel!
+    @IBOutlet weak var lbl_SearchProductUnitPrice: UILabel!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+}
+
 class SearchVC: UIViewController {
     @IBOutlet weak var Collectioview_SearchList: UICollectionView!
     var pageIndex = 1
     var cat_id = ""
     var lastIndex = 0
     @IBOutlet weak var lbl_titleLabel: UILabel!
-    var categoryWiseItemsArray = [[String:String]]()
+    var list_product:[ProductModel] = [ProductModel]()
     var searchTxt = String()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +49,7 @@ class SearchVC: UIViewController {
         print(searchTxt)
         if searchTxt == ""
         {
-            categoryWiseItemsArray.removeAll()
+            self.list_product.removeAll()
             self.Collectioview_SearchList.reloadData()
         }
         else{
@@ -55,51 +70,38 @@ extension SearchVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         //messageLabel.font = UIFont(name: "POPPINS-REGULAR", size: 15)!
         messageLabel.sizeToFit()
         self.Collectioview_SearchList.backgroundView = messageLabel;
-        if self.categoryWiseItemsArray.count == 0 {
+        if self.list_product.count == 0 {
             messageLabel.text = "NO DATA FOUND".localiz()
         }
         else {
             messageLabel.text = ""
         }
-        return categoryWiseItemsArray.count
+        return list_product.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = self.Collectioview_SearchList.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as! GridCell
-        cornerRadius(viewName: cell.img_food, radius: 6.0)
-        cornerRadius(viewName: cell.lbl_Price, radius: 6.0)
-        cornerRadius(viewName: cell.btn_Favorites, radius: 6.0)
-        let data = self.categoryWiseItemsArray[indexPath.row]
-        let imgUrl = data["product_image"]!
-        cell.img_food.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder_image"))
-        cell.lbl_Name.text = data["item_name"]!
-        let ItemPrice = formatter.string(for: data["item_price"]!.toDouble)
-        cell.lbl_Price.text = " \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPrice!) "
-        if data["isFavorite"]! == "0" {
-            cell.btn_Favorites.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
-        else {
-            cell.btn_Favorites.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        }
-        cell.btn_Favorites.tag = indexPath.row
-        cell.btn_Favorites.addTarget(self, action:#selector(btnTap_Favorites), for: .touchUpInside)
-        return cell
+         let cell = self.Collectioview_SearchList.dequeueReusableCell(withReuseIdentifier: "SearchProductCell", for: indexPath) as! SearchProductCell
+                   //cornerRadius(viewName: cell.img_categories, radius: 6.0)
+                   let productItem = self.list_product[indexPath.item]
+                    cell.lbl_SearchProductName.text = productItem.name
+        cell.img_search_product.sd_setImage(with: URL(string: productItem.default_photo.img_path), placeholderImage: UIImage(named: "placeholder_image"))
+                  
+                   return cell
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width - 30.0) / 2, height: (UIScreen.main.bounds.width - 30.0 ) / 2)
+        return CGSize(width: (UIScreen.main.bounds.width - 30.0) / 2, height: 275)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let data = self.categoryWiseItemsArray[indexPath.row]
+        let productItem = self.list_product[indexPath.row]
         let vc = self.storyboard?.instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsVC
         //vc.itemsId = data["id"]!
-        vc.itemsId = data["_id"]!
-        vc.SubCategoryId = data["sub_cat_id"]!
+        vc.itemsId = productItem._id
+        vc.SubCategoryId = productItem.sub_cat_id
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == self.categoryWiseItemsArray.count - 1 {
+        if indexPath.item == self.list_product.count - 1 {
             if self.pageIndex != self.lastIndex {
                 self.pageIndex = self.pageIndex + 1
                 
@@ -110,93 +112,36 @@ extension SearchVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollec
             }
         }
     }
-    @objc func btnTap_Favorites(sender:UIButton!) {
-        print("Button tapped")
-        if UserDefaultManager.getStringFromUserDefaults(key:UD_isSkip) == "1"
-        {
-            let storyBoard = UIStoryboard(name: "User", bundle: nil)
-            let objVC = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            let nav : UINavigationController = UINavigationController(rootViewController: objVC)
-            nav.navigationBar.isHidden = true
-            UIApplication.shared.windows[0].rootViewController = nav
-        }
-        else{
-            if self.categoryWiseItemsArray[sender.tag]["isFavorite"]! == "0" {
-                let urlString = API_URL + "addfavorite"
-                let params: NSDictionary = ["user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),
-                                            "item_id":self.categoryWiseItemsArray[sender.tag]["id"]!]
-                self.Webservice_FavoriteItems(url: urlString, params: params, productIndex: sender.tag)
-            }
-        }
-        
-    }
+   
 }
 extension SearchVC
 {
     func Webservice_getSearch(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-            }
-            else {
-                let responseCode = jsonResponse!["result"].stringValue
-                if responseCode == "success" {
-                    if self.pageIndex == 1 {
-                        //self.lastIndex = Int(responcedata["last_page"]!.stringValue)!
-                        self.categoryWiseItemsArray.removeAll()
-                    }
-                    let productsData = jsonResponse!["data"].arrayValue
-                    for product in productsData {
-                        let productImage = product["default_photo"].dictionaryValue
-                        let productObj = [
-                            "item_price":product["unit_price"].stringValue,
-                            "_id":product["_id"].stringValue,
-                            "item_name":product["productTitle"].stringValue,
-                            "product_image":productImage["img_path"]!.stringValue,
-                            "isFavorite":product["is_featured"].stringValue,
-                            "sub_cat_id":product["sub_cat_id"].stringValue
-                        ]
-                        self.categoryWiseItemsArray.append(productObj)
-                    }
-                    
-                    self.Collectioview_SearchList.delegate = self
-                    self.Collectioview_SearchList.dataSource = self
-                    self.Collectioview_SearchList.reloadData()
-                    
-                }
-                else {
-                    self.Collectioview_SearchList.delegate = self
-                    self.Collectioview_SearchList.dataSource = self
-                    self.Collectioview_SearchList.reloadData()
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                    
-                }
-            }
-        }
-    }
-    func Webservice_FavoriteItems(url:String, params:NSDictionary, productIndex:Int) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "POST", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
                 showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
             }
             else {
                 print(jsonResponse!)
-                let responseCode = jsonResponse!["status"].stringValue
-                if responseCode == "1" {
-                    let productObj = ["item_price":self.categoryWiseItemsArray[productIndex]["item_price"]!,"id":self.categoryWiseItemsArray[productIndex]["id"]!,"item_name":self.categoryWiseItemsArray[productIndex]["item_name"]!,"product_image":self.categoryWiseItemsArray[productIndex]["product_image"]!,"isFavorite":"1"]
-                    
-                    self.categoryWiseItemsArray.remove(at: productIndex)
-                    self.categoryWiseItemsArray.insert(productObj, at: productIndex)
-                    
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getApiResponseProductModel = try jsonDecoder.decode(GetApiResponseProductModel.self, from: jsonResponse!)
+                    self.list_product=getApiResponseProductModel.list_product
                     self.Collectioview_SearchList.delegate = self
                     self.Collectioview_SearchList.dataSource = self
                     self.Collectioview_SearchList.reloadData()
+                    
+                } catch let error as NSError  {
+                    print("error: \(error)")
                 }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
+                
+                
+                //print("userModel:\(userModel)")
+                
             }
         }
+        
+        
     }
+   
 }
