@@ -18,8 +18,8 @@ struct ProductModel: Codable {
     let search_tag: String?=""
     let original_price: Double
     let unit_price: Double
-    let discount_percent: Int?=0
-    let discount_value: Double?=0.0
+    let discount_percent: Int
+    let discount_value: Double
     let commistion: Double
     let default_photo: ImageModel
     enum CodingKeys: String, CodingKey {
