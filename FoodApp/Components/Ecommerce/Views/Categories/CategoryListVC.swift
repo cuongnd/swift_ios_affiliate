@@ -102,7 +102,7 @@ extension CategoryListVC {
          
      }
      func numberOfSections(in collectionView: UICollectionView) -> Int {
-         return 2
+         return 1
          
      }
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -111,14 +111,13 @@ extension CategoryListVC {
          
      }
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /*
+        
          let storyBoardProduct = UIStoryboard(name: "Products", bundle: nil)
-         let data = self.list_category[indexPath.row]
-         let vc = storyBoardProduct.instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsVC
-         vc.itemsId = data["_id"].stringValue
-         vc.SubCategoryId = data["sub_cat_id"].stringValue
-         self.navigationController?.pushViewController(vc, animated: true)
-  */
+         let categoryItem = self.list_category[indexPath.row]
+         let searchVC = storyBoardProduct.instantiateViewController(identifier: "SearchVC") as! SearchVC
+         searchVC.cat_id = categoryItem._id
+         self.navigationController?.pushViewController(searchVC, animated: true)
+  
          
      }
      func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
