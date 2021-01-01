@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8C99DC12488D77E00B5C187"
-               BuildableName = "adayroi online.app"
-               BlueprintName = "FoodApp"
-               ReferencedContainer = "container:FoodApp.xcodeproj">
+               BuildableName = "AdayroiAffiliate.app"
+               BlueprintName = "AdayroiAffiliate"
+               ReferencedContainer = "container:AdayroiAffiliate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8C99DDA2488D77F00B5C187"
-               BuildableName = "FoodAppTests.xctest"
-               BlueprintName = "FoodAppTests"
-               ReferencedContainer = "container:FoodApp.xcodeproj">
+               BuildableName = "AdayroiAffiliateTests.xctest"
+               BlueprintName = "AdayroiAffiliateTests"
+               ReferencedContainer = "container:AdayroiAffiliate.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8C99DE52488D77F00B5C187"
-               BuildableName = "FoodAppUITests.xctest"
-               BlueprintName = "FoodAppUITests"
-               ReferencedContainer = "container:FoodApp.xcodeproj">
+               BuildableName = "AdayroiAffiliateUITests.xctest"
+               BlueprintName = "AdayroiAffiliateUITests"
+               ReferencedContainer = "container:AdayroiAffiliate.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8C99DC12488D77E00B5C187"
-            BuildableName = "adayroi online.app"
-            BlueprintName = "FoodApp"
-            ReferencedContainer = "container:FoodApp.xcodeproj">
+            BuildableName = "AdayroiAffiliate.app"
+            BlueprintName = "AdayroiAffiliate"
+            ReferencedContainer = "container:AdayroiAffiliate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8C99DC12488D77E00B5C187"
-            BuildableName = "adayroi online.app"
-            BlueprintName = "FoodApp"
-            ReferencedContainer = "container:FoodApp.xcodeproj">
+            BuildableName = "AdayroiAffiliate.app"
+            BlueprintName = "AdayroiAffiliate"
+            ReferencedContainer = "container:AdayroiAffiliate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

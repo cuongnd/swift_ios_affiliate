@@ -1,12 +1,12 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'FoodApp' do
+target 'AdayroiAffiliate' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
 
-  # Pods for FoodApp
+  # Pods for AdayroiAffiliate
 
     pod 'MBProgressHUD'
     pod 'SwiftyJSON'
@@ -32,12 +32,12 @@ target 'FoodApp' do
     pod 'AnyFormatKit'
     pod "TLCustomMask"
 
-  target 'FoodAppTests' do
+  target 'AdayroiAffiliateTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'FoodAppUITests' do
+  target 'AdayroiAffiliateUITests' do
     inherit! :search_paths
     # Pods for testing
   end
