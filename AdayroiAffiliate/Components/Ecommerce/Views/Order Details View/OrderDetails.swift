@@ -385,6 +385,7 @@ class OrderDetails: UIViewController,UITextViewDelegate {
     }
     @objc func btnTap_ShareProduct(sender: UITapGestureRecognizer)
     {
+        /*
          let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
         let productItem=self.list_product[sender.view!.tag];
         let link_product_detail:String = "https://adayroi.online/landingpage/\(productItem._id)/\(user_id)/default/\(productItem.alias).html";
@@ -396,7 +397,7 @@ class OrderDetails: UIViewController,UITextViewDelegate {
         let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController, animated: true, completion: nil)
-        
+        */
         
     }
     
