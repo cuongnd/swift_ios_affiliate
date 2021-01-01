@@ -75,6 +75,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     var SelectedAddons = [[String:String]]()
     var SelectedAttributes: [String: JSON] = [:]
     
+    @IBOutlet weak var UIImageViewShareProduct: UIImageView!
     var FinalTotal = Double()
     var itemsData=[String : JSON]();
     @IBOutlet weak var lbl_count: UILabel!
@@ -129,7 +130,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
                
         self.liveDataCart.observeForever(observer: observer)
         
-        
+        UIImageViewShareProduct
         
         
     }

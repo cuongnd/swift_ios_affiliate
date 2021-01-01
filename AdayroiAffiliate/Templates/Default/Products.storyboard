@@ -847,7 +847,7 @@
         <!--Product DetailsVC-->
         <scene sceneID="duC-fJ-GdQ">
             <objects>
-                <viewController storyboardIdentifier="ProductDetailsVC" id="pQp-xO-lQ8" customClass="ProductDetailsVC" customModule="adayroi_online" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailsVC" id="pQp-xO-lQ8" customClass="ProductDetailsVC" customModule="Adayroi_Affiliate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hJT-4B-NLy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="4300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -905,7 +905,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductDetailColorCell" id="cNW-eR-gt9" customClass="ProductDetailColorCell" customModule="adayroi_online" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductDetailColorCell" id="cNW-eR-gt9" customClass="ProductDetailColorCell" customModule="Adayroi_Affiliate" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="3" width="131" height="154"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yFd-mP-yu8">
@@ -972,7 +972,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="attributesHeaderCell" id="y9Q-86-ttG" customClass="ProductDetailAttributesHeaderCell" customModule="adayroi_online" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="attributesHeaderCell" id="y9Q-86-ttG" customClass="ProductDetailAttributesHeaderCell" customModule="Adayroi_Affiliate" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="46"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FMp-9L-Zqg">
@@ -1067,14 +1067,14 @@
                                                     <constraint firstAttribute="height" constant="299" id="SSx-Ag-e3Y"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddonseCell" rowHeight="83" id="NLC-qI-lv6" customClass="AddonseCell" customModule="adayroi_online" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddonseCell" rowHeight="83" id="NLC-qI-lv6" customClass="AddonseCell" customModule="Adayroi_Affiliate" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="359" height="83"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NLC-qI-lv6" id="vgG-Il-dzj">
                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="83"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNe-eN-AV6" customClass="CardViewMaster" customModule="adayroi_online" customModuleProvider="target">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNe-eN-AV6" customClass="CardViewMaster" customModule="Adayroi_Affiliate" customModuleProvider="target">
                                                                     <rect key="frame" x="4" y="8" width="351" height="67"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asf-gy-W4k">
@@ -1165,7 +1165,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RelatedProductCell" id="0zc-qU-YUT" customClass="RelatedProductCell" customModule="adayroi_online" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RelatedProductCell" id="0zc-qU-YUT" customClass="RelatedProductCell" customModule="Adayroi_Affiliate" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="1" width="184" height="248"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Iye-zm-fiG">
@@ -1409,7 +1409,7 @@
                                     <action selector="btnTap_AddtoCart:" destination="pQp-xO-lQ8" eventType="touchUpInside" id="lkg-T7-W4I"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7L-mp-GCm" customClass="CornerView" customModule="adayroi_online" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7L-mp-GCm" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
                                 <rect key="frame" x="8" y="4212" width="120" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF8-Bw-8z1">
@@ -1523,6 +1523,7 @@
                         <outlet property="TableView_AddonsList" destination="u5z-IT-CSf" id="eBc-Ha-giZ"/>
                         <outlet property="UICollectionViewAttributesHeader" destination="U5I-4S-eaZ" id="xlX-3f-yvM"/>
                         <outlet property="UICollectionViewColors" destination="2L4-A6-ibq" id="RPn-1W-zgu"/>
+                        <outlet property="UIImageViewShareProduct" destination="K3v-kR-iYz" id="qVt-JB-Qf1"/>
                         <outlet property="UnavailableView_Height" destination="blh-Vt-yd7" id="r3u-p9-dMK"/>
                         <outlet property="btn_Addtocart" destination="trG-u7-m9n" id="7xE-Hp-tee"/>
                         <outlet property="btn_Cart" destination="Igd-iY-4zn" id="GJU-LT-407"/>
