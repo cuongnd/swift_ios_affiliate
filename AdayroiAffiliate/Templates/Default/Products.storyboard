@@ -1520,6 +1520,7 @@
                         <outlet property="TableView_AddonsList" destination="lxJ-Nw-fLP" id="J2t-Y7-87h"/>
                         <outlet property="UICollectionViewAttributesHeader" destination="rJH-zf-xYR" id="wBd-Fo-XQ6"/>
                         <outlet property="UICollectionViewColors" destination="Pd3-5v-9bL" id="9sU-2z-BkJ"/>
+                        <outlet property="UIImageViewShare" destination="fk1-1m-EXK" id="Bn4-xj-0m0"/>
                         <outlet property="UnavailableView_Height" destination="yP9-sW-Xdx" id="VaH-TJ-c0u"/>
                         <outlet property="btn_Addtocart" destination="iNi-Zj-5MM" id="PUC-xV-ot9"/>
                         <outlet property="btn_Cart" destination="gqv-xk-fbg" id="et8-fv-LoH"/>

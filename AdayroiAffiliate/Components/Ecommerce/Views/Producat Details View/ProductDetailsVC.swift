@@ -48,6 +48,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @IBOutlet weak var Addons_Height: NSLayoutConstraint!
     @IBOutlet weak var TableView_AddonsList: UITableView!
     
+    @IBOutlet weak var UIImageViewShare: UIImageView!
     @IBOutlet weak var btn_back: UIButton!
     @IBOutlet weak var btn_Cart: UIButton!
     @IBOutlet weak var CollectionViewRelatedProducts: UICollectionView!
@@ -129,6 +130,14 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
                
         self.liveDataCart.observeForever(observer: observer)
         
+       let tap = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareProduct))
+        self.UIImageViewShare.isUserInteractionEnabled = true
+       self.UIImageViewShare.addGestureRecognizer(tap)
+        
+        
+        
+
+        
         
         
         
@@ -144,6 +153,26 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
             textView.textColor = UIColor.black
         }
     }
+    @objc func btnTap_ShareProduct(sender: UITapGestureRecognizer)
+       {
+           
+            let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+           //let productItem=self.list_product[sender.view!.tag];
+        let link_product_detail:String = "https://adayroi.online/landingpage/\(self.itemsData["_id"]?.stringValue)/\(user_id)/default/\(self.itemsData["alias"]?.stringValue).html";
+ 
+           let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.itemsData["name"]?.stringValue)&utm_source=app_affiliate&product_id=\(self.itemsData["_id"]?.stringValue)&user_affiliate_id=\(user_id)&si=\(self.itemsData["image"]?.stringValue)&ibi=com.vantinviet.banhangonlineapp"
+           
+           
+           
+           let textShare = [ sharelinktext ]
+           let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+           activityViewController.popoverPresentationController?.sourceView = self.view
+           self.present(activityViewController, animated: true, completion: nil)
+          
+           
+       }
+    
+    
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Write Notes".localiz()
