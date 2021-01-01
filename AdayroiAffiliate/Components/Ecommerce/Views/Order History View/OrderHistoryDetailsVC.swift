@@ -1,6 +1,6 @@
 //
 //  OrderHistoryDetailsVC.swift
-//  FoodApp
+//  AdayroiAffiliate
 //
 //  Created by Mitesh's MAC on 09/06/20.
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.

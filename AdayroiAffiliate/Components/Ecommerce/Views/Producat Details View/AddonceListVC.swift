@@ -1,6 +1,6 @@
 //
 //  AddonceListVC.swift
-//  FoodApp
+//  AdayroiAffiliate
 //
 //  Created by iMac on 21/07/20.
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.

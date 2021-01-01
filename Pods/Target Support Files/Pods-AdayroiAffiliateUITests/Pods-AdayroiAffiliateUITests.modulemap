@@ -1,0 +1,6 @@
+framework module Pods_AdayroiAffiliateUITests {
+  umbrella header "Pods-AdayroiAffiliateUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -504,6 +504,7 @@
                         <outlet property="TableView_AddonsList" destination="pXa-d5-pX8" id="AF3-lw-0Il"/>
                         <outlet property="UICollectionViewAttributesHeader" destination="K8p-uX-9Ci" id="2mb-2A-UG9"/>
                         <outlet property="UICollectionViewColors" destination="B1n-4W-i3B" id="oSC-2Q-lO3"/>
+                        <outlet property="UIImageViewShared" destination="icT-5a-OMr" id="5ie-xS-95p"/>
                         <outlet property="btn_Addtocart" destination="YUn-jF-34S" id="dWY-Ql-XYi"/>
                         <outlet property="btn_Cart" destination="XtZ-7c-mnb" id="jmC-v2-SHp"/>
                         <outlet property="btn_Minus" destination="Ppf-QR-iSg" id="Euk-e6-7r5"/>

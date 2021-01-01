@@ -1,6 +1,6 @@
 //
 //  DataRowModel.swift
-//  FoodApp
+//  AdayroiAffiliate
 //
 //  Created by cuongnd on 12/23/20.
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.

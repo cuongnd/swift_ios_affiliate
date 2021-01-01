@@ -1,6 +1,6 @@
 //
 //  ProductDetailsVC.swift
-//  FoodApp
+//  AdayroiAffiliate
 //
 //  Created by Mitesh's MAC on 04/06/20.
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.
@@ -84,6 +84,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @IBOutlet weak var item_UnavailableView: UIView!
     @IBOutlet weak var UnavailableView_Height: NSLayoutConstraint!
     
+    @IBOutlet weak var UIImageViewShared: UIImageView!
     @IBOutlet weak var productUnitPrice: UILabel!
     @IBOutlet weak var MainViewHeight: NSLayoutConstraint!
     @IBOutlet weak var heightWebview: NSLayoutConstraint!
@@ -129,6 +130,9 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
                
         self.liveDataCart.observeForever(observer: observer)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareProduct))
+        self.UIImageViewShared.isUserInteractionEnabled = true
+        self.UIImageViewShared.addGestureRecognizer(tap)
         
         
         
@@ -150,7 +154,27 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
             textView.textColor = UIColor.lightGray
         }
     }
-    
+    @objc func btnTap_ShareProduct(sender: UITapGestureRecognizer)
+    {
+         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+        
+        
+        let productItem=self.itemsData
+       
+        let sharelinktext = "https://vantinviet1.page.link/?link=https://adayroi.online/landingpage/5e53f77c7f4ec97339808ac2/5f2e6f7c3833262a29ec5e96/default/sdfs.html&apn=vantinviet.banhangonline88&st=abc&utm_source=app_affiliate&product_id=5e53f77c7f4ec97339808ac2&user_affiliate_id=5f2e6f7c3833262a29ec5e96&ibi=com.vantinviet.banhangonlineapp"
+        
+        guard let url = URL(string: sharelinktext) else { return }
+        UIApplication.shared.open(url)
+        /*
+        let textShare = [ sharelinktext ]
+        let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+        */
+ 
+        
+        
+    }
     @IBAction func btnTap_back(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
