@@ -77,45 +77,30 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     
     var FinalTotal = Double()
     var itemsData=[String : JSON]();
-    @IBOutlet weak var lbl_count: UILabel!
-    @IBOutlet weak var btn_Minus: UIButton!
-    @IBOutlet weak var btn_Pluse: UIButton!
-    @IBOutlet weak var lbl_Cartcount: UILabel!
-    @IBOutlet weak var item_UnavailableView: UIView!
-    @IBOutlet weak var UnavailableView_Height: NSLayoutConstraint!
+    
     
     @IBOutlet weak var productUnitPrice: UILabel!
-    @IBOutlet weak var MainViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var heightWebview: NSLayoutConstraint!
     @IBOutlet weak var DescriptionProduct: WKWebView!
     let cartStr = "Add To Cart".localiz()
     var objectMapperFrontendProduct:ObjectMapperFrontendProduct!
     var liveDataCart: LiveData<[[String:Any]]> = LiveData(data: [[:]])
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.item_UnavailableView.isHidden = true
+        
         self.lbl_DetailsLabel.text = "Details".localiz()
         self.lbl_IngredientsLavel.text = "Ingredients".localiz()
         self.btn_Addtocart.setTitle(cartStr, for: .normal)
         let urlString = API_URL + "/api/products/"+String(self.itemsId)
         let params: NSDictionary = [:]
         self.Webservice_getitemsDetails(url: urlString, params:params)
-        cornerRadius(viewName: self.btn_Cart, radius: 8.0)
-        cornerRadius(viewName: self.btn_back, radius: 8.0)
-        cornerRadius(viewName: self.btn_Addtocart, radius: 6.0)
-        cornerRadius(viewName: self.text_view, radius: 6.0)
-        cornerRadius(viewName: self.lbl_Cartcount, radius: self.lbl_Cartcount.frame.height / 2)
+       
         self.productImages.removeAll()
         let urlGetImagesString = API_URL + "/api/images/list/img_parent_id/"+String(self.itemsId)+"/img_type/product"
         
         let paramsGetImages: NSDictionary = [:]
         
         self.Webservice_getImageByProductDetail(url: urlGetImagesString, params:paramsGetImages)
-        self.text_view.text = "Write Notes".localiz()
-        self.text_view.textColor = UIColor.lightGray
-        self.text_view.delegate = self
-        self.lbl_count.text! = "1"
-        self.DescriptionProduct.navigationDelegate = self
+       
         
         
         self.productImages.removeAll()
@@ -185,13 +170,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         
         print("color \(color!.description)")
         let product_Image = self.itemsData["default_photo"]!.dictionaryValue
-        ADRFrontEndModelCartItem.shared.addToCcart(
-            objectMapperFrontendProduct:self.objectMapperFrontendProduct,
-            attributes: self.SelectedAttributes,
-            color:color!,
-            attributesFilter: list_attribute,
-            quanlity: Int64(self.lbl_count.text!)!
-        )
+        
         
         showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "San pham da them vao gio hang")
         
@@ -218,10 +197,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
                     //self.DescriptionProduct.frame.size = self.DescriptionProduct.sizeThatFits(.zero)
                     //self.DescriptionProduct.scrollView.isScrollEnabled=false;
                     //myWebViewHeightConstraint.constant = self.DescriptionProduct.scrollView.contentSize.height
-                    self.heightWebview?.constant = height as! CGFloat
-                    print(height!)
-                    self.MainViewHeight?.constant += height as! CGFloat
-                    print(height!)
+                   
                     if((height as! Double)>10000){
                         //self.heightWebview?.constant = (height as! CGFloat)-10000
                         //self.MainViewHeight?.constant += (height as! CGFloat)-10000
@@ -246,49 +222,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func btnTap_Pluse(_ sender: UIButton) {
-        let CountPluse  = AFWrapperClass.compareStringValue(currentValue:self.lbl_count.text!, limit: 99, toDo: .Add)
-        print(CountPluse)
-        self.lbl_count.text = CountPluse
-        
-        var Prices = [Double]()
-        for data in self.SelectedAddons
-        {
-            Prices.append(Double("\(data["price"]!)")!)
-        }
-        print(Prices)
-        let total = Prices.reduce(0, +)
-        let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-        let Total = Double(SetTotal)! + total
-        let Qtyvalue = self.lbl_count.text!
-        self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
-        print(FinalTotal)
-        let ItemPriceTotal = formatter.string(for: FinalTotal)
-        self.btn_Addtocart.setTitle("\(cartStr) \(ItemPriceTotal!) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))".localiz(), for: .normal)
-        
-    }
-    @IBAction func btnTap_Minus(_ sender: UIButton) {
-        let CountMinus  = AFWrapperClass.compareStringValue(currentValue:self.lbl_count.text!, limit: 99, toDo: .Subtract)
-        self.lbl_count.text = CountMinus
-        
-        print(CountMinus)
-        
-        var Prices = [Double]()
-        for data in self.SelectedAddons
-        {
-            Prices.append(Double("\(data["price"]!)")!)
-            
-        }
-        print(Prices)
-        let total = Prices.reduce(0, +)
-        let SetTotal = self.lbl_itemsPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-        let Total = Double(SetTotal)! + total
-        let Qtyvalue = self.lbl_count.text!
-        self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
-        print(FinalTotal)
-        let ItemPriceTotal = formatter.string(for: FinalTotal)
-        self.btn_Addtocart.setTitle("\(cartStr) \(ItemPriceTotal!) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))".localiz(), for: .normal)
-    }
+    
 }
 
 extension ProductDetailsVC {
@@ -325,8 +259,7 @@ extension ProductDetailsVC: AddOnsDelegate {
         if SelectedAddons.count != 0
         {
             self.Addons_Height.constant = CGFloat(80 * self.SelectedAddons.count)
-            self.MainViewHeight.constant+=CGFloat(80 * self.SelectedAddons.count)
-            self.lbl_count.text = "1"
+          
             let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
             self.FinalTotal = Double(SetTotal)!
             let ItemPriceTotal = formatter.string(for: FinalTotal)
@@ -335,7 +268,6 @@ extension ProductDetailsVC: AddOnsDelegate {
         else{
             self.Addons_Height.constant = 80.0
             
-            self.lbl_count.text = "1"
             let SetTotal = self.lbl_itemsPrice.text!.dropFirst().replacingOccurrences(of: " ", with: "")
             self.FinalTotal = Double(SetTotal)!
             let ItemPriceTotal = formatter.string(for: FinalTotal)
@@ -355,8 +287,6 @@ extension ProductDetailsVC: AddOnsDelegate {
         let total = Prices.reduce(0, +)
         let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
         let Total = Double(SetTotal)! + total
-        let Qtyvalue = self.lbl_count.text!
-        self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
         let ItemPriceTotal = formatter.string(for: FinalTotal)
         self.btn_Addtocart.setTitle("\(cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)".localiz(), for: .normal)
         
@@ -573,52 +503,10 @@ extension ProductDetailsVC: UITableViewDelegate,UITableViewDataSource {
         }
         
         cell.btn_Close.tag = indexPath.row
-        cell.btn_Close.addTarget(self, action: #selector(btnTap_Cose), for: .touchUpInside)
         return cell
         
     }
-    @objc func btnTap_Cose(sender:UIButton)
-    {
-        self.SelectedAddons.remove(at: sender.tag)
-        if SelectedAddons.count != 0
-        {
-            self.Addons_Height.constant = CGFloat(80 * self.SelectedAddons.count)
-            self.MainViewHeight.constant-=80
-            var Prices = [Double]()
-            for data in self.SelectedAddons
-            {
-                Prices.append(Double("\(data["price"]!)")!)
-            }
-            print(Prices)
-            let total = Prices.reduce(0, +)
-            let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-            let Total = Double(SetTotal)! + total
-            let Qtyvalue = self.lbl_count.text!
-            self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
-            let ItemPriceTotal = formatter.string(for: FinalTotal)
-            self.btn_Addtocart.setTitle("\(cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)".localiz(), for: .normal)
-        }
-        else
-        {
-            self.Addons_Height.constant = 80.0
-            var Prices = [Double]()
-            for data in self.SelectedAddons
-            {
-                Prices.append(Double("\(data["price"]!)")!)
-            }
-            print(Prices)
-            let total = Prices.reduce(0, +)
-            let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-            let Total = Double(SetTotal)! + total
-            let Qtyvalue = self.lbl_count.text!
-            self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
-            let ItemPriceTotal = formatter.string(for: FinalTotal)
-            self.btn_Addtocart.setTitle("\(cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)".localiz(), for: .normal)
-        }
-        self.TableView_AddonsList.delegate = self
-        self.TableView_AddonsList.dataSource = self
-        self.TableView_AddonsList.reloadData()
-    }
+   
 }
 extension ProductDetailsVC
 {
@@ -654,15 +542,7 @@ extension ProductDetailsVC
                     self.objectMapperFrontendProduct=ObjectMapperFrontendProduct(JSONString: jsonResponse!["data"].description)
                     //let item_status = itemsData["item_status"]!.stringValue
                     let item_status="1"
-                    if item_status == "2"
-                    {
-                        self.item_UnavailableView.isHidden = false
-                        self.UnavailableView_Height.constant = 50.0
-                    }
-                    else{
-                        self.item_UnavailableView.isHidden = true
-                        
-                    }
+                    
                     let currency=UserDefaultManager.getStringFromUserDefaults(key: UD_currency);
                     var original_price = formatter.string(for: self.itemsData["original_price"]!.stringValue.toDouble)
                     original_price="\(original_price!) \(currency)";
@@ -779,7 +659,6 @@ extension ProductDetailsVC
                     self.text_view.text = ""
                     self.TableView_AddonsList.reloadData()
                     self.Addons_Height.constant = 80.0
-                    self.lbl_count.text = "1"
                     let SetTotal = self.lbl_itemsPrice.text!.dropFirst().replacingOccurrences(of: " ", with: "")
                     self.FinalTotal = Double(SetTotal)!
                     let ItemPriceTotal = formatter.string(for: self.FinalTotal)
@@ -803,15 +682,7 @@ extension ProductDetailsVC
             else {
                 print(jsonResponse!)
                 let responseCode = jsonResponse!["status"].stringValue
-                if responseCode == "1" {
-                    self.lbl_Cartcount.isHidden = false
-                    self.lbl_Cartcount.text = jsonResponse!["cart"].stringValue
-                }
-                else {
-                    self.lbl_Cartcount.isHidden = false
-                    self.lbl_Cartcount.text = "0"
-                    //                        showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
+                
             }
         }
     }
