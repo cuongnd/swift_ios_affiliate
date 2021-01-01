@@ -1,0 +1,6 @@
+framework module ETBinding {
+  umbrella header "ETBinding-umbrella.h"
+
+  export *
+  module * { export * }
+}
