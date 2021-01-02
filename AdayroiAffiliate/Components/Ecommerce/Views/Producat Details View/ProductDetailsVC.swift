@@ -161,6 +161,10 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @objc func btnTap_copyLinkProduct(sender: UITapGestureRecognizer)
           {
               
+            print("Button tapped")
+                   
+            
+            
                let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
               //let productItem=self.list_product[sender.view!.tag];
            let link_product_detail:String = "https://adayroi.online/landingpage/\(self.itemsData["_id"]?.stringValue)/\(user_id)/default/\(self.itemsData["alias"]?.stringValue).html";
@@ -169,10 +173,9 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
               
               
               
-              let textShare = [ sharelinktext ]
-              let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
-              activityViewController.popoverPresentationController?.sourceView = self.view
-              self.present(activityViewController, animated: true, completion: nil)
+              UIPasteboard.general.string = sharelinktext
+            
+            showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Link sản phẩm đã được sao chép")
              
               
           }
