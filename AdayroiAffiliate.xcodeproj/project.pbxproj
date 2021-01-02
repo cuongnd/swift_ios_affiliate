@@ -258,6 +258,7 @@
 		0497124E259AE7190024883E /* GetApiResponseProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetApiResponseProductModel.swift; sourceTree = "<group>"; };
 		04971250259AE74D0024883E /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		04F4993725A02334001A0FAE /* GetApiResponseProductsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetApiResponseProductsModel.swift; sourceTree = "<group>"; };
+		04F4993925A03B02001A0FAE /* Adayroi Affiliate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Adayroi Affiliate.entitlements"; sourceTree = "<group>"; };
 		0C172C5A256ED43D005DA537 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		0C172C5C256ED44C005DA537 /* test2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test2.xib; sourceTree = "<group>"; };
 		0C172C5E256F49A6005DA537 /* homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = homepage.storyboard; sourceTree = "<group>"; };
@@ -1090,6 +1091,7 @@
 		C8C99DC42488D77E00B5C187 /* AdayroiAffiliate */ = {
 			isa = PBXGroup;
 			children = (
+				04F4993925A03B02001A0FAE /* Adayroi Affiliate.entitlements */,
 				0C42DC14257BD8CD007009E4 /* Admin */,
 				0C172C43256DF5F1005DA537 /* Components */,
 				0C5171062566044700C4EA7F /* Layouts */,
@@ -1742,6 +1744,7 @@
 			baseConfigurationReference = CF10D8D4D29D7A8EA57BF2D3 /* Pods-AdayroiAffiliate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "AdayroiAffiliate/Adayroi Affiliate.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5Y52UW26J;
@@ -1764,6 +1767,7 @@
 			baseConfigurationReference = AA10EDE21CAA86DE1171B7E4 /* Pods-AdayroiAffiliate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "AdayroiAffiliate/Adayroi Affiliate.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5Y52UW26J;
