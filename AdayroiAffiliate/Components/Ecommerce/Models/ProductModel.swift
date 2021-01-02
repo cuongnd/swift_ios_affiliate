@@ -21,7 +21,10 @@ struct ProductModel: Codable {
     let discount_percent: Int
     let discount_value: Double
     let commistion: Double
+    let subCategory: SubCategoryModel?
     let default_photo: ImageModel
+    let colors:[ColorModel]?
+    let attributesHeader:[AttributesHeaderModel]?
     enum CodingKeys: String, CodingKey {
        case _id = "_id"
         case cat_id = "cat_id"
@@ -38,6 +41,9 @@ struct ProductModel: Codable {
         case discount_value =  "discount_value"
         case commistion = "commistion"
         case default_photo = "default_photo"
+        case subCategory = "subcategory"
+        case colors = "colors"
+        case attributesHeader = "attributes_header"
     }
     init() {
         _id = ""
@@ -55,5 +61,8 @@ struct ProductModel: Codable {
         discount_value = 0.0
         commistion=0.0
         default_photo=ImageModel()
+        subCategory=SubCategoryModel()
+        colors=[ColorModel]()
+        attributesHeader=[AttributesHeaderModel]()
     }
 }

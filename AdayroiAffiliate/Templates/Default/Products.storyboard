@@ -1551,9 +1551,9 @@
                         <outlet property="image_Slider" destination="grW-ag-ItN" id="7fg-3A-0gz"/>
                         <outlet property="item_UnavailableView" destination="n8x-BO-yDH" id="uPi-Cc-Kbf"/>
                         <outlet property="lbl_Cartcount" destination="tPb-7l-Iwe" id="eLc-4T-Pzt"/>
-                        <outlet property="lbl_CategoriesName" destination="1sA-Ih-GJb" id="05g-Y2-M78"/>
                         <outlet property="lbl_DetailsLabel" destination="fSV-2g-mxh" id="6iC-8v-eBt"/>
                         <outlet property="lbl_IngredientsLavel" destination="gQw-ML-LOK" id="GTK-Da-CTQ"/>
+                        <outlet property="lbl_SubCategoriesName" destination="1sA-Ih-GJb" id="05g-Y2-M78"/>
                         <outlet property="lbl_count" destination="yob-ZQ-ckK" id="3yu-6M-aKb"/>
                         <outlet property="lbl_itemsName" destination="v0O-QS-nEZ" id="iWv-Xl-j1D"/>
                         <outlet property="lbl_itemsPrice" destination="csF-wQ-Kdj" id="2i5-5M-QA5"/>

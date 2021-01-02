@@ -56,7 +56,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @IBOutlet weak var image_Slider: ImageSlideshow!
     
     @IBOutlet weak var lbl_itemsName: UILabel!
-    @IBOutlet weak var lbl_CategoriesName: UILabel!
+    @IBOutlet weak var lbl_SubCategoriesName: UILabel!
     @IBOutlet weak var lbl_itemsPrice: UILabel!
     @IBOutlet weak var lbl_itemsDescripation: UILabel!
     
@@ -69,12 +69,11 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     var itemsId = String()
     var SubCategoryId = String()
     var RelatedProductsData = [JSON]()
-    var colorsData = [JSON]()
-    var attributes_header = [JSON]()
+    var colorsData:[ColorModel]=[ColorModel]()
+    var attributesHeader:[AttributesHeaderModel] = [AttributesHeaderModel]()
     var productImages = [SDWebImageSource]()
     var addonsArray = [[String:String]]()
     var SelectedAddons = [[String:String]]()
-    var SelectedAttributes: [String: JSON] = [:]
     
     var FinalTotal = Double()
     var itemsData=[String : JSON]();
@@ -238,58 +237,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func btnTap_AddtoCart(_ sender: UIButton) {
-        var colorSelected:Bool=false
-        var color:JSON?
-        for index in 0...self.colorsData.count-1 {
-            
-            if self.colorsData[index]["isselected"]=="1"{
-                color=self.colorsData[index]
-                colorSelected=true
-            }
-        }
-        if !colorSelected{
-            showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Vui lòng lựa chọn màu sắc")
-            return;
-        }
-        var list_attribute:[String:String]=[:];
-        
-        for index in 0...self.attributes_header.count-1 {
-            let current_item=self.attributes_header[index];
-            if(self.SelectedAttributes[current_item["_id"].stringValue]==nil){
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Vui lòng lựa chọn \(current_item["name"])")
-                return
-            }
-        }
-        for attribute in self.SelectedAttributes
-        {
-            list_attribute[attribute.key]=attribute.value["_id"].stringValue
-        }
-        
-        print("color \(color!.description)")
-        let product_Image = self.itemsData["default_photo"]!.dictionaryValue
-        ADRFrontEndModelCartItem.shared.addToCcart(
-            objectMapperFrontendProduct:self.objectMapperFrontendProduct,
-            attributes: self.SelectedAttributes,
-            color:color!,
-            attributesFilter: list_attribute,
-            quanlity: Int64(self.lbl_count.text!)!
-        )
-        
-        showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "San pham da them vao gio hang")
-        
-        
-        //self.lbl_Cartcount.text = String(total)
-        
-        
-        
-    }
-    @IBAction func btnTap_Cart(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "AddtoCartVC") as! AddtoCartVC
-        self.navigationController?.pushViewController(vc, animated:true)
-        
-    }
-    
+   
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.DescriptionProduct.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
@@ -467,7 +415,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
         }else if (collectionView == self.UICollectionViewColors){
             return colorsData.count
         }else if(collectionView == self.UICollectionViewAttributesHeader){
-            return attributes_header.count
+            return attributesHeader.count
         }else{
             return 0
         }
@@ -490,52 +438,23 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
             
         }else if (collectionView == self.UICollectionViewColors){
             let cell = self.UICollectionViewColors.dequeueReusableCell(withReuseIdentifier: "ProductDetailColorCell", for: indexPath) as! ProductDetailColorCell
-            let data = self.colorsData[indexPath.item]
-            let imgUrl  = data["img_url"].stringValue
-            cell.colorName.text=data["value"].stringValue
-            cell.colorImage.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder_image"))
-            cell.btn_Check.tag = indexPath.row
-            if data["isselected"] == "0"
-            {
-                cell.btn_Check.setImage(UIImage(systemName: "square"), for: .normal)
-            }
-            else{
-                cell.btn_Check.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-            }
-            
-            cell.btn_Check.addTarget(self, action: #selector(btnTap_Check), for: .touchUpInside)
-            cell.colorName.tag = indexPath.row
-            let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTap))
-            cell.colorName.isUserInteractionEnabled = true
-            cell.colorName.addGestureRecognizer(tap)
+            let colorItem = self.colorsData[indexPath.item]
+            cell.colorName.text=colorItem.color_value
+            cell.colorImage.sd_setImage(with: URL(string: colorItem.img_url), placeholderImage: UIImage(named: "placeholder_image"))
             return cell
         }else if(collectionView == self.UICollectionViewAttributesHeader){
             let cell = self.UICollectionViewAttributesHeader.dequeueReusableCell(withReuseIdentifier: "attributesHeaderCell", for: indexPath) as! ProductDetailAttributesHeaderCell
-            let item = self.attributes_header[indexPath.item]
-            let attributes_detail=item["attributes_detail"]
-            cell.attributeName.text=item["name"].stringValue
+            let attributesHeaderItem = self.attributesHeader[indexPath.item]
+            let attributes_detail=attributesHeaderItem.attributesDetail!
+            cell.attributeName.text=attributesHeaderItem.name
             for index in 0...attributes_detail.count-1 {
                 let currentItem=attributes_detail[index]
-                cell.dropDown.optionArray.append("\(currentItem["name"].stringValue) (\(currentItem["additional_price"].stringValue) đ )")
+                cell.dropDown.optionArray.append("\(currentItem.name) (\(currentItem.additional_price) đ )")
                 cell.dropDown.optionIds?.insert(index, at: index)
                 
                 
             }
-            cell.dropDown.didSelect{(selectedText , index ,id) in
-                //get attribute selected
-                let attribute = self.attributes_header[indexPath.item]
-                print("attribute selected: \(attribute)")
-                //get list value of attribute
-                let list_value_attribute=attribute["attributes_detail"]
-                print("attributes_detail: \(list_value_attribute)")
-                //get current value of attribute
-                var current_value_of_attribute=list_value_attribute[index]
-                current_value_of_attribute["value"]=current_value_of_attribute["name"]
-                current_value_of_attribute["name"]=attribute["name"]
-                current_value_of_attribute["parent_attribute_id"]=current_value_of_attribute["header_id"]
-                print("currentItem: \(current_value_of_attribute)")
-                self.SelectedAttributes[attribute["_id"].stringValue]=current_value_of_attribute
-            }
+            
             return cell
         }
         else{
@@ -569,9 +488,9 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
         }else if (collectionView == self.UICollectionViewColors){
             print("hello selected")
             let cell = self.UICollectionViewColors.dequeueReusableCell(withReuseIdentifier: "ProductDetailColorCell", for: indexPath) as! ProductDetailColorCell
-            let data = self.colorsData[indexPath.item]
+            let colorItem = self.colorsData[indexPath.item]
             let imgUrl  = "https://i1-vnexpress.vnecdn.net/2020/12/02/sinhviendeokhautrang-160688307-4039-1690-1606884365.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=gYIV3FE_BRxdo0i4OWiXWg"
-            cell.colorName.text=data["value"].stringValue
+            cell.colorName.text=colorItem.name
             cell.colorImage.sd_setImage(with: URL(string: imgUrl), placeholderImage: UIImage(named: "placeholder_image"))
         }else if(collectionView == self.UICollectionViewAttributesHeader){
             //let cell = self.UICollectionViewColors.dequeueReusableCell(withReuseIdentifier: "ProductDetailColorCell", for: indexPath) as! ProductDetailColorCell
@@ -584,12 +503,12 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
     @objc func doubleTap(sender: UITapGestureRecognizer) {
         let current = self.colorsData[sender.view?.tag ?? 0]
         for index in 0...self.colorsData.count-1 {
-            self.colorsData[index]["isselected"]="0"
+            self.colorsData[index].is_selected=false
         }
         for index in 0...self.colorsData.count-1 {
             
-            if self.colorsData[index]["_id"]==current["_id"]{
-                self.colorsData[index]["isselected"]="1"
+            if self.colorsData[index]._id==current._id{
+                self.colorsData[index].is_selected=true
             }
         }
         self.UICollectionViewColors.reloadData()
@@ -603,12 +522,12 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
     {
         let current = colorsData[sender.tag]
         for index in 0...self.colorsData.count-1 {
-            self.colorsData[index]["isselected"]="0"
+            self.colorsData[index].is_selected=false
         }
         for index in 0...self.colorsData.count-1 {
             
-            if self.colorsData[index]["_id"]==current["_id"]{
-                self.colorsData[index]["isselected"]="1"
+            if self.colorsData[index]._id==current._id{
+                self.colorsData[index].is_selected=true
             }
         }
         print("self.colorsData \(self.colorsData)")
@@ -736,7 +655,57 @@ extension ProductDetailsVC
                     let jsonDecoder = JSONDecoder()
                     let getApiResponseProductModel = try jsonDecoder.decode(GetApiResponseProductModel.self, from: jsonResponse!)
                     self.productItem=getApiResponseProductModel.product
-                    //print("self.productItem \(self.productItem)")
+                    let item_status="1"
+                    if item_status == "2"
+                    {
+                        self.item_UnavailableView.isHidden = false
+                        self.UnavailableView_Height.constant = 50.0
+                    }
+                    else{
+                        self.item_UnavailableView.isHidden = true
+                        
+                    }
+                    let currency=UserDefaultManager.getStringFromUserDefaults(key: UD_currency);
+                    var original_price = formatter.string(for: self.productItem.original_price)
+                    original_price="\(original_price!) \(currency)";
+                    self.lbl_itemsPrice.attributedText = original_price?.strikeThrough()
+                    
+                    let unit_price = formatter.string(for: self.productItem.unit_price )
+                    self.productUnitPrice.text = "\(unit_price!) \(currency)"
+                    
+                    let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
+                    //self.FinalTotal = Double(SetTotal)!
+                    self.FinalTotal=self.productItem.unit_price
+                    let ItemPriceTotal = formatter.string(for: self.FinalTotal)
+                    self.btn_Addtocart.setTitle("\(self.cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)", for: .normal)
+                    //self.lbl_itemsDescripation.text = itemsData["productDescription"]!.stringValue
+                    let subcategory=self.productItem.sub_cat_id;
+                    self.lbl_SubCategoriesName.text = self.productItem.subCategory?.name
+                    self.lbl_itemsName.text = self.productItem.name
+                    //self.lbl_itemTime.text = itemsData["delivery_time"]!.stringValue
+                    self.colorsData = self.productItem.colors!
+                    
+                    self.UICollectionViewColors.delegate = self
+                    self.UICollectionViewColors.dataSource = self
+                    self.UICollectionViewColors.reloadData()
+                    self.attributesHeader = self.productItem.attributesHeader!
+                    self.UICollectionViewAttributesHeader.delegate = self
+                    self.UICollectionViewAttributesHeader.dataSource = self
+                    self.UICollectionViewAttributesHeader.reloadData()
+                    
+                    
+                    
+                    // self.Addons_Height.constant = 80 * 1
+                    _ = API_URL1 + "cartcount"
+                    let _: NSDictionary = ["user_id":2]
+                    //self.Webservice_cartcount(url: urlString, params:params)
+                    let myURL = URL(string:"https://api.adayroi.online/api/products/description/\(self.productItem._id)")
+                    
+                    let myRequest = URLRequest(url: myURL!)
+                    self.DescriptionProduct.load(myRequest)
+                    
+                    
+                    
                     
                 } catch let error as NSError  {
                     print("error: \(error)")
@@ -757,87 +726,7 @@ extension ProductDetailsVC
     
     
     
-    func Webservice_getitemsDetails(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            
-            if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-            }
-            else {
-                let responseCode = jsonResponse!["result"].stringValue
-                if responseCode == "success" {
-                    self.itemsData = jsonResponse!["data"].dictionaryValue
-                    self.objectMapperFrontendProduct=ObjectMapperFrontendProduct(JSONString: jsonResponse!["data"].description)
-                    //let item_status = itemsData["item_status"]!.stringValue
-                    let item_status="1"
-                    if item_status == "2"
-                    {
-                        self.item_UnavailableView.isHidden = false
-                        self.UnavailableView_Height.constant = 50.0
-                    }
-                    else{
-                        self.item_UnavailableView.isHidden = true
-                        
-                    }
-                    let currency=UserDefaultManager.getStringFromUserDefaults(key: UD_currency);
-                    var original_price = formatter.string(for: self.itemsData["original_price"]!.stringValue.toDouble)
-                    original_price="\(original_price!) \(currency)";
-                    self.lbl_itemsPrice.attributedText = original_price?.strikeThrough()
-                    
-                    let unit_price = formatter.string(for: self.itemsData["unit_price"]!.stringValue.toDouble)
-                    self.productUnitPrice.text = "\(unit_price!) \(currency)"
-                    
-                    let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-                    //self.FinalTotal = Double(SetTotal)!
-                    self.FinalTotal=self.itemsData["unit_price"]!.stringValue.toDouble;
-                    let ItemPriceTotal = formatter.string(for: self.FinalTotal)
-                    self.btn_Addtocart.setTitle("\(self.cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)", for: .normal)
-                    //self.lbl_itemsDescripation.text = itemsData["productDescription"]!.stringValue
-                    let subcategory=self.itemsData["subcategory"]?.dictionaryValue;
-                    self.lbl_CategoriesName.text = subcategory?["name"]!.stringValue
-                    self.lbl_itemsName.text = self.itemsData["productTitle"]!.stringValue
-                    //self.lbl_itemTime.text = itemsData["delivery_time"]!.stringValue
-                    self.colorsData = self.itemsData["colors"]!.arrayValue
-                    if self.colorsData.count>0{
-                        for index in 0...self.colorsData.count-1 {
-                            self.colorsData[index]["isselected"]="0"
-                        }
-                    }
-                    self.UICollectionViewColors.delegate = self
-                    self.UICollectionViewColors.dataSource = self
-                    self.UICollectionViewColors.reloadData()
-                    print("self.itemsData \(self.itemsData["attributes_header"]!)")
-                    self.attributes_header = self.itemsData["attributes_header"]!.arrayValue
-                    self.UICollectionViewAttributesHeader.delegate = self
-                    self.UICollectionViewAttributesHeader.dataSource = self
-                    self.UICollectionViewAttributesHeader.reloadData()
-                    
-                    let colors = self.itemsData["colors"]!.arrayValue
-                    for color in colors
-                    {
-                        let ItemPrice = formatter.string(for: color["price"].stringValue.toDouble)
-                        let obj = ["price":ItemPrice!,"item_id":color["_id"].stringValue,"name":color["name"].stringValue,"id":color["id"].stringValue,"isselected":"1"]
-                        self.addonsArray.append(obj)
-                    }
-                    print(self.addonsArray)
-                    
-                    
-                    // self.Addons_Height.constant = 80 * 1
-                    _ = API_URL1 + "cartcount"
-                    let _: NSDictionary = ["user_id":2]
-                    //self.Webservice_cartcount(url: urlString, params:params)
-                    let myURL = URL(string:"https://api.adayroi.online/api/products/description/"+self.itemsData["_id"]!.stringValue)
-                    //let myURL=URL(string:"https://dantri.com.vn/xa-hoi/giao-thong-hon-loan-tai-nga-tu-dat-ham-chui-gan-700-ty-dong-o-ha-noi-20201102220649341.htm")
-                    let myRequest = URLRequest(url: myURL!)
-                    self.DescriptionProduct.load(myRequest)
-                    
-                }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
-            }
-        }
-    }
+   
     func Webservice_getRelatedProducts(url:String, params:NSDictionary) -> Void {
         WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
             
