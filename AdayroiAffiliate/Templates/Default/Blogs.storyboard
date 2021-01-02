@@ -263,48 +263,30 @@
                                 <rect key="frame" x="0.0" y="178" width="414" height="684"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Aci-rQ-5GF">
-                                    <size key="itemSize" width="192" height="186"/>
+                                    <size key="itemSize" width="394" height="275"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="center" reuseIdentifier="SearchProductCell" id="WCp-wW-8A3" userLabel="Home hot product" customClass="SearchProductCell" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="180" height="275"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="center" reuseIdentifier="BlogCell" id="WCp-wW-8A3" userLabel="Home hot product" customClass="BlogCell" customModule="Adayroi_Affiliate" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="394" height="275"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="275"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="275"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_promotion" translatesAutoresizingMaskIntoConstraints="NO" id="b91-Fl-JT5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="134"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="206"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="134" id="BmY-6K-qzS"/>
+                                                        <constraint firstAttribute="height" constant="206" id="BmY-6K-qzS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lbl_HotProductName" text="Tinh Chất Tăng Cường Săn Chắc Da Và Giảm Nếp Nhăn L'oreal Revitalift (30ml) - G1340903" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svu-RM-KCK" userLabel="Hot product name">
-                                                    <rect key="frame" x="2" y="144" width="176" height="50.5"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="lbl_HotProductName"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lbl_Title" text="Một số thuật ngữ cần biết trong Affiliate Marketing" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svu-RM-KCK" userLabel="Hot product name">
+                                                    <rect key="frame" x="2" y="214" width="390" height="17"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="lbl_Title"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 000 đ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwV-cw-fAU">
-                                                    <rect key="frame" x="2" y="199.5" width="69.5" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="1" green="0.30738114010000001" blue="0.20628872240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoa hồng 10%(15 000 đ)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBK-yJ-rX3">
-                                                    <rect key="frame" x="8" y="220.5" width="160.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="240 000 đ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wz8-Ol-65c">
-                                                    <rect key="frame" x="76.5" y="199.5" width="72" height="18"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="HomeHotProductPercent" text="20%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frg-cs-O1o">
@@ -315,7 +297,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shared_icon" translatesAutoresizingMaskIntoConstraints="NO" id="O6K-08-6en">
-                                                    <rect key="frame" x="158" y="8" width="18" height="21.5"/>
+                                                    <rect key="frame" x="372" y="8" width="18" height="21.5"/>
                                                     <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21.5" id="8r1-rY-VIb"/>
@@ -327,31 +309,22 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="b91-Fl-JT5" firstAttribute="top" secondItem="WCp-wW-8A3" secondAttribute="top" id="4W0-ca-Ozb"/>
-                                            <constraint firstItem="uBK-yJ-rX3" firstAttribute="leading" secondItem="WCp-wW-8A3" secondAttribute="leading" constant="8" id="5a7-sa-a9r"/>
                                             <constraint firstItem="O6K-08-6en" firstAttribute="top" secondItem="WCp-wW-8A3" secondAttribute="top" constant="8" id="8Z7-0d-j9j"/>
                                             <constraint firstAttribute="trailing" secondItem="O6K-08-6en" secondAttribute="trailing" constant="4" id="A0Y-ik-QMK"/>
                                             <constraint firstItem="b91-Fl-JT5" firstAttribute="leading" secondItem="WCp-wW-8A3" secondAttribute="leading" id="MKC-pf-EwP"/>
                                             <constraint firstItem="Svu-RM-KCK" firstAttribute="leading" secondItem="WCp-wW-8A3" secondAttribute="leading" constant="2" id="TME-Xj-U0H"/>
-                                            <constraint firstItem="Svu-RM-KCK" firstAttribute="top" secondItem="b91-Fl-JT5" secondAttribute="bottom" constant="10" id="aIh-nJ-FJ9"/>
+                                            <constraint firstItem="Svu-RM-KCK" firstAttribute="top" secondItem="b91-Fl-JT5" secondAttribute="bottom" constant="8" id="aIh-nJ-FJ9"/>
                                             <constraint firstItem="frg-cs-O1o" firstAttribute="leading" secondItem="WCp-wW-8A3" secondAttribute="leading" constant="3" id="dE9-yc-Pm8"/>
-                                            <constraint firstItem="Wz8-Ol-65c" firstAttribute="leading" secondItem="lwV-cw-fAU" secondAttribute="trailing" constant="5" id="fPR-0r-8qT"/>
-                                            <constraint firstItem="lwV-cw-fAU" firstAttribute="top" secondItem="Svu-RM-KCK" secondAttribute="bottom" constant="5" id="g33-Wo-kXp"/>
-                                            <constraint firstItem="uBK-yJ-rX3" firstAttribute="top" secondItem="lwV-cw-fAU" secondAttribute="bottom" constant="3" id="gcX-z0-hCA"/>
                                             <constraint firstAttribute="trailing" secondItem="b91-Fl-JT5" secondAttribute="trailing" id="mJ5-8F-vWC"/>
                                             <constraint firstAttribute="trailing" secondItem="Svu-RM-KCK" secondAttribute="trailing" constant="2" id="mie-kV-B0j"/>
                                             <constraint firstItem="frg-cs-O1o" firstAttribute="top" secondItem="WCp-wW-8A3" secondAttribute="top" constant="3" id="on5-MK-wvU"/>
-                                            <constraint firstItem="lwV-cw-fAU" firstAttribute="leading" secondItem="WCp-wW-8A3" secondAttribute="leading" constant="2" id="ugc-Xl-eok"/>
-                                            <constraint firstItem="Wz8-Ol-65c" firstAttribute="top" secondItem="Svu-RM-KCK" secondAttribute="bottom" constant="5" id="vMB-rc-zB8"/>
                                         </constraints>
-                                        <size key="customSize" width="180" height="275"/>
+                                        <size key="customSize" width="394" height="275"/>
                                         <connections>
                                             <outlet property="UIImageViewShared" destination="O6K-08-6en" id="Yx1-Cn-Grq"/>
-                                            <outlet property="UILabelCommistion" destination="uBK-yJ-rX3" id="aVZ-0w-mEY"/>
                                             <outlet property="img_search_product" destination="b91-Fl-JT5" id="x2a-eW-6D1"/>
                                             <outlet property="lbl_SearchProductName" destination="Svu-RM-KCK" id="xpx-SM-5AC"/>
-                                            <outlet property="lbl_SearchProductOriginalPrice" destination="Wz8-Ol-65c" id="Ybf-eW-BTE"/>
                                             <outlet property="lbl_SearchProductPercent" destination="frg-cs-O1o" id="a8e-81-V80"/>
-                                            <outlet property="lbl_SearchProductUnitPrice" destination="lwV-cw-fAU" id="of6-Jg-SLZ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

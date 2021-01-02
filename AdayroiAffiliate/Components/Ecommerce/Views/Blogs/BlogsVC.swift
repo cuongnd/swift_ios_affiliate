@@ -81,9 +81,10 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
         return list_blog.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.Collectioview_SearchList.dequeueReusableCell(withReuseIdentifier: "SearchProductCell", for: indexPath) as! SearchProductCell
+        let cell = self.Collectioview_SearchList.dequeueReusableCell(withReuseIdentifier: "BlogCell", for: indexPath) as! BlogCell
         //cornerRadius(viewName: cell.img_categories, radius: 6.0)
         let blogItem:BlogModel = self.list_blog[indexPath.item]
+        //cell.lbl_titleLabel.text = blogItem.title
         /*
         cell.lbl_SearchProductName.text = productItem.name
         cell.lbl_SearchProductOriginalPrice.text=LibraryUtilitiesUtility.format_currency(amount: UInt64(productItem.original_price), decimalCount: 0)
@@ -128,7 +129,7 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width - 30.0) / 2, height: 275)
+        return CGSize(width: UIScreen.main.bounds.width, height: 275)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
