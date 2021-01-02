@@ -1490,25 +1490,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8x-BO-yDH">
-                                <rect key="frame" x="0.0" y="4212" width="375" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item currently unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKD-SX-BDx">
-                                        <rect key="frame" x="8" y="8" width="359" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="BKD-SX-BDx" secondAttribute="trailing" constant="8" id="4pa-Gp-wFP"/>
-                                    <constraint firstAttribute="bottom" secondItem="BKD-SX-BDx" secondAttribute="bottom" constant="8" id="URg-NS-88f"/>
-                                    <constraint firstItem="BKD-SX-BDx" firstAttribute="leading" secondItem="n8x-BO-yDH" secondAttribute="leading" constant="8" id="gIQ-Ej-xfq"/>
-                                    <constraint firstItem="BKD-SX-BDx" firstAttribute="top" secondItem="n8x-BO-yDH" secondAttribute="top" constant="8" id="hLW-fU-Val"/>
-                                    <constraint firstAttribute="height" constant="50" id="yP9-sW-Xdx"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -1517,17 +1498,13 @@
                             <constraint firstItem="KdH-bm-pfa" firstAttribute="top" secondItem="iNi-Zj-5MM" secondAttribute="top" id="FHl-N3-JrH"/>
                             <constraint firstItem="i3J-S4-CSU" firstAttribute="bottom" secondItem="iNi-Zj-5MM" secondAttribute="bottom" constant="4" id="GBs-KY-OAv"/>
                             <constraint firstItem="iNi-Zj-5MM" firstAttribute="leading" secondItem="KdH-bm-pfa" secondAttribute="trailing" constant="8" id="Hl6-kF-O7G"/>
-                            <constraint firstItem="n8x-BO-yDH" firstAttribute="leading" secondItem="i3J-S4-CSU" secondAttribute="leading" id="IL8-1C-4EK"/>
                             <constraint firstItem="oLR-Rr-Ght" firstAttribute="top" secondItem="i3J-S4-CSU" secondAttribute="top" constant="-44" id="Iuv-M4-aYj"/>
                             <constraint firstAttribute="bottom" secondItem="73t-JC-uzQ" secondAttribute="bottom" constant="96" id="Q8z-4Y-fYn"/>
                             <constraint firstItem="i3J-S4-CSU" firstAttribute="trailing" secondItem="iNi-Zj-5MM" secondAttribute="trailing" constant="8" id="WBN-kY-Uxi"/>
-                            <constraint firstItem="73t-JC-uzQ" firstAttribute="leading" secondItem="n8x-BO-yDH" secondAttribute="leading" id="aVL-cz-AXh"/>
-                            <constraint firstItem="i3J-S4-CSU" firstAttribute="bottom" secondItem="n8x-BO-yDH" secondAttribute="bottom" constant="4" id="dL6-9N-fsT"/>
                             <constraint firstItem="73t-JC-uzQ" firstAttribute="width" secondItem="RvQ-85-Jcl" secondAttribute="width" id="dN4-yx-nW7"/>
                             <constraint firstItem="oLR-Rr-Ght" firstAttribute="leading" secondItem="i3J-S4-CSU" secondAttribute="leading" id="jlT-St-x75"/>
                             <constraint firstItem="73t-JC-uzQ" firstAttribute="top" secondItem="RvQ-85-Jcl" secondAttribute="topMargin" constant="-14" id="kF7-mk-nys"/>
-                            <constraint firstItem="73t-JC-uzQ" firstAttribute="trailing" secondItem="n8x-BO-yDH" secondAttribute="trailing" id="mhu-x8-UPb"/>
-                            <constraint firstItem="i3J-S4-CSU" firstAttribute="trailing" secondItem="n8x-BO-yDH" secondAttribute="trailing" id="zOT-iJ-hTT"/>
+                            <constraint firstItem="73t-JC-uzQ" firstAttribute="leading" secondItem="oLR-Rr-Ght" secondAttribute="leading" id="uNG-lj-pp6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i3J-S4-CSU"/>
                     </view>
@@ -1543,7 +1520,6 @@
                         <outlet property="UIImageViewCopyLink" destination="krs-I0-Nop" id="vsr-Vc-yK2"/>
                         <outlet property="UIImageViewOpenBrowser" destination="jL6-qm-IRV" id="D9j-M4-jGB"/>
                         <outlet property="UIImageViewShare" destination="fk1-1m-EXK" id="Bn4-xj-0m0"/>
-                        <outlet property="UnavailableView_Height" destination="yP9-sW-Xdx" id="VaH-TJ-c0u"/>
                         <outlet property="btn_Addtocart" destination="iNi-Zj-5MM" id="PUC-xV-ot9"/>
                         <outlet property="btn_Cart" destination="gqv-xk-fbg" id="et8-fv-LoH"/>
                         <outlet property="btn_Minus" destination="Kdr-W7-Zdi" id="Dfq-de-OOZ"/>
@@ -1551,7 +1527,6 @@
                         <outlet property="btn_back" destination="Poi-ml-0dm" id="gbq-Zk-LeK"/>
                         <outlet property="heightWebview" destination="eSJ-en-oez" id="NNF-U0-nlY"/>
                         <outlet property="image_Slider" destination="grW-ag-ItN" id="7fg-3A-0gz"/>
-                        <outlet property="item_UnavailableView" destination="n8x-BO-yDH" id="uPi-Cc-Kbf"/>
                         <outlet property="lbl_Cartcount" destination="tPb-7l-Iwe" id="eLc-4T-Pzt"/>
                         <outlet property="lbl_DetailsLabel" destination="fSV-2g-mxh" id="6iC-8v-eBt"/>
                         <outlet property="lbl_IngredientsLavel" destination="gQw-ML-LOK" id="GTK-Da-CTQ"/>

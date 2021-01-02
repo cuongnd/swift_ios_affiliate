@@ -96,7 +96,6 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     var liveDataCart: LiveData<[[String:Any]]> = LiveData(data: [[:]])
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.item_UnavailableView.isHidden = true
         self.lbl_DetailsLabel.text = "Details".localiz()
         self.lbl_IngredientsLavel.text = "Ingredients".localiz()
         self.btn_Addtocart.setTitle(cartStr, for: .normal)
@@ -655,16 +654,7 @@ extension ProductDetailsVC
                     let jsonDecoder = JSONDecoder()
                     let getApiResponseProductModel = try jsonDecoder.decode(GetApiResponseProductModel.self, from: jsonResponse!)
                     self.productItem=getApiResponseProductModel.product
-                    let item_status="1"
-                    if item_status == "2"
-                    {
-                        self.item_UnavailableView.isHidden = false
-                        self.UnavailableView_Height.constant = 50.0
-                    }
-                    else{
-                        self.item_UnavailableView.isHidden = true
-                        
-                    }
+                    
                     let currency=UserDefaultManager.getStringFromUserDefaults(key: UD_currency);
                     var original_price = LibraryUtilitiesUtility.format_currency(amount: UInt64(self.productItem.original_price), decimalCount: 0)
                     self.lbl_itemsPrice.attributedText = original_price.strikeThrough()
