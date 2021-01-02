@@ -163,6 +163,9 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.UIImageViewOpenBrowser2.addGestureRecognizer(tapOpenBrowser)
         
         
+        let tapOpenSubCategory = UITapGestureRecognizer(target: self, action: #selector(btnTap_OpenSubCategory))
+        self.lbl_SubCategoriesName.isUserInteractionEnabled = true
+        self.lbl_SubCategoriesName.addGestureRecognizer(tapOpenSubCategory)
         
         
     }
@@ -177,6 +180,18 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
             textView.textColor = UIColor.black
         }
     }
+    
+    @objc func btnTap_OpenSubCategory(sender: UITapGestureRecognizer)
+       {
+           
+           let storyBoardProduct = UIStoryboard(name: "Products", bundle: nil)
+           let searchVC = storyBoardProduct.instantiateViewController(identifier: "SearchVC") as! SearchVC
+            searchVC.cat_id = self.productItem.cat_id
+            searchVC.sub_cat_id = self.productItem.sub_cat_id
+           self.navigationController?.pushViewController(searchVC, animated: true)
+           
+           
+       }
     
     @objc func btnTap_copyLinkProduct(sender: UITapGestureRecognizer)
     {

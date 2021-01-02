@@ -29,6 +29,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var Collectioview_SearchList: UICollectionView!
     var pageIndex = 1
     var cat_id = ""
+    var sub_cat_id = ""
     var lastIndex = 0
     @IBOutlet weak var lbl_titleLabel: UILabel!
     var list_product:[ProductModel] = [ProductModel]()
@@ -37,7 +38,7 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
         self.lbl_titleLabel.text = "Search".localiz()
         if(!self.cat_id.isEmpty){
-            let urlString = API_URL + "/api/products?cat_id="+self.cat_id+"&user_id="+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
+            let urlString = API_URL + "/api/products?cat_id="+self.cat_id+"&sub_cat_id=\(sub_cat_id)&user_id="+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
             var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             let params: NSDictionary = [:]
             self.Webservice_getSearch(url: urlString1!, params:params)
