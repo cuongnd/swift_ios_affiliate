@@ -32,6 +32,7 @@ class SideMenuVC: UIViewController {
     var RatingsViewController = UINavigationController()
     var FavoriteViewController = UINavigationController()
     var CategoryListViewController = UINavigationController()
+    var BlogsViewController = UINavigationController()
     
     
     //MARK: Viewcontroller lifecycle
@@ -98,6 +99,10 @@ class SideMenuVC: UIViewController {
         self.CategoryListViewController = UINavigationController(rootViewController: CategoryListVC)
         self.CategoryListViewController.setNavigationBarHidden(true,animated:true)
         
+        let BlogsVC = UIStoryboard(name: "Blogs", bundle: nil).instantiateViewController(withIdentifier: "BlogsVC") as! BlogsVC
+       self.BlogsViewController = UINavigationController(rootViewController: BlogsVC)
+       self.BlogsViewController.setNavigationBarHidden(true,animated:true)
+               
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -152,7 +157,7 @@ extension SideMenuVC : UITableViewDataSource,UITableViewDelegate
         }
         if indexPath.row == 3
         {
-            self.slideMenuController()?.changeMainViewController(self.RatingsViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.BlogsViewController, close: true)
             
         }
         if indexPath.row == 4
