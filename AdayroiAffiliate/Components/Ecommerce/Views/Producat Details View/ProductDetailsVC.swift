@@ -90,6 +90,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @IBOutlet weak var heightWebview: NSLayoutConstraint!
     @IBOutlet weak var DescriptionProduct: WKWebView!
     let cartStr = "Add To Cart".localiz()
+    @IBOutlet weak var UIImageViewCopyLink: UIImageView!
     var objectMapperFrontendProduct:ObjectMapperFrontendProduct!
     var liveDataCart: LiveData<[[String:Any]]> = LiveData(data: [[:]])
     override func viewDidLoad() {
@@ -134,6 +135,9 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.UIImageViewShare.isUserInteractionEnabled = true
        self.UIImageViewShare.addGestureRecognizer(tap)
         
+        let tapCopy = UITapGestureRecognizer(target: self, action: #selector(btnTap_copyLinkProduct))
+               self.UIImageViewCopyLink.isUserInteractionEnabled = true
+              self.UIImageViewCopyLink.addGestureRecognizer(tapCopy)
         
         
 
@@ -153,6 +157,25 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
             textView.textColor = UIColor.black
         }
     }
+    
+    @objc func btnTap_copyLinkProduct(sender: UITapGestureRecognizer)
+          {
+              
+               let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+              //let productItem=self.list_product[sender.view!.tag];
+           let link_product_detail:String = "https://adayroi.online/landingpage/\(self.itemsData["_id"]?.stringValue)/\(user_id)/default/\(self.itemsData["alias"]?.stringValue).html";
+    
+              let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.itemsData["name"]?.stringValue)&utm_source=app_affiliate&product_id=\(self.itemsData["_id"]?.stringValue)&user_affiliate_id=\(user_id)&si=\(self.itemsData["image"]?.stringValue)&ibi=com.vantinviet.banhangonlineapp"
+              
+              
+              
+              let textShare = [ sharelinktext ]
+              let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+              activityViewController.popoverPresentationController?.sourceView = self.view
+              self.present(activityViewController, animated: true, completion: nil)
+             
+              
+          }
     @objc func btnTap_ShareProduct(sender: UITapGestureRecognizer)
        {
            

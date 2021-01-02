@@ -1265,6 +1265,13 @@
                                                     <constraint firstAttribute="height" constant="40" id="SAG-bq-jgM"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="copy-icon" translatesAutoresizingMaskIntoConstraints="NO" id="krs-I0-Nop">
+                                                <rect key="frame" x="277" y="307.5" width="41" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="41" id="Acx-G0-ZuA"/>
+                                                    <constraint firstAttribute="height" constant="40" id="LpT-to-1XT"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -1306,9 +1313,11 @@
                                             <constraint firstItem="Zdu-8e-O7N" firstAttribute="trailing" secondItem="lxJ-Nw-fLP" secondAttribute="trailing" id="epV-DU-lgS"/>
                                             <constraint firstAttribute="trailing" secondItem="Pd3-5v-9bL" secondAttribute="trailing" constant="8" id="gth-h5-gCq"/>
                                             <constraint firstItem="5QY-7e-WZZ" firstAttribute="top" secondItem="fSV-2g-mxh" secondAttribute="bottom" constant="20" id="i8O-or-r8V"/>
+                                            <constraint firstItem="fk1-1m-EXK" firstAttribute="leading" secondItem="krs-I0-Nop" secondAttribute="trailing" constant="8" id="io9-HT-uDB"/>
                                             <constraint firstItem="lxJ-Nw-fLP" firstAttribute="top" secondItem="VbQ-f9-JL5" secondAttribute="bottom" constant="14" id="iro-9h-mVe"/>
                                             <constraint firstItem="grW-ag-ItN" firstAttribute="centerX" secondItem="J0b-27-0pz" secondAttribute="centerX" id="jnf-PW-7JY"/>
                                             <constraint firstItem="csF-wQ-Kdj" firstAttribute="leading" secondItem="dvX-e6-vu1" secondAttribute="trailing" constant="20" id="ktq-0F-J4z"/>
+                                            <constraint firstItem="krs-I0-Nop" firstAttribute="centerY" secondItem="csF-wQ-Kdj" secondAttribute="centerY" id="l2l-Wy-mA2"/>
                                             <constraint firstItem="v0O-QS-nEZ" firstAttribute="leading" secondItem="fSV-2g-mxh" secondAttribute="leading" id="lG5-o3-2rW"/>
                                             <constraint firstAttribute="trailing" secondItem="fk1-1m-EXK" secondAttribute="trailing" constant="8" id="lhI-HM-icF"/>
                                             <constraint firstItem="lxJ-Nw-fLP" firstAttribute="leading" secondItem="VbQ-f9-JL5" secondAttribute="leading" id="mBx-qz-Rv1"/>
@@ -1520,6 +1529,7 @@
                         <outlet property="TableView_AddonsList" destination="lxJ-Nw-fLP" id="J2t-Y7-87h"/>
                         <outlet property="UICollectionViewAttributesHeader" destination="rJH-zf-xYR" id="wBd-Fo-XQ6"/>
                         <outlet property="UICollectionViewColors" destination="Pd3-5v-9bL" id="9sU-2z-BkJ"/>
+                        <outlet property="UIImageViewCopyLink" destination="krs-I0-Nop" id="vsr-Vc-yK2"/>
                         <outlet property="UIImageViewShare" destination="fk1-1m-EXK" id="Bn4-xj-0m0"/>
                         <outlet property="UnavailableView_Height" destination="yP9-sW-Xdx" id="VaH-TJ-c0u"/>
                         <outlet property="btn_Addtocart" destination="iNi-Zj-5MM" id="PUC-xV-ot9"/>
@@ -1551,6 +1561,7 @@
         <image name="book" catalog="system" width="128" height="101"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="clear" catalog="system" width="128" height="114"/>
+        <image name="copy-icon" width="60" height="60"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="ic_Star" width="180" height="29"/>
         <image name="ic_cart" width="246" height="259"/>
