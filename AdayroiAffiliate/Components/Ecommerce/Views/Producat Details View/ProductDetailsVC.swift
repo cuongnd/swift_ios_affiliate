@@ -110,10 +110,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         let urlString = API_URL + "/api/products/"+String(self.itemsId)
         let params: NSDictionary = [:]
         self.Webservice_getProductDetail(url: urlString, params:params)
-        cornerRadius(viewName: self.btn_Cart, radius: 8.0)
-        cornerRadius(viewName: self.btn_back, radius: 8.0)
-        cornerRadius(viewName: self.text_view, radius: 6.0)
-        cornerRadius(viewName: self.lbl_Cartcount, radius: self.lbl_Cartcount.frame.height / 2)
+       
         self.productImages.removeAll()
         let urlGetImagesString = API_URL + "/api/images/list/img_parent_id/"+String(self.itemsId)+"/img_type/product"
         

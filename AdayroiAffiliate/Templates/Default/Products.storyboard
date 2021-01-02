@@ -1373,42 +1373,12 @@
                                             <action selector="btnTap_back:" destination="NzS-cY-52P" eventType="touchUpInside" id="EoI-Cr-lXy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqv-xk-fbg">
-                                        <rect key="frame" x="323" y="44" width="44" height="44"/>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.49205803869999998" blue="0.33279678229999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="3hY-LD-AAD"/>
-                                            <constraint firstAttribute="width" constant="44" id="LmA-Hl-VeR"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="cart.fill" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="semibold"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnTap_Cart:" destination="NzS-cY-52P" eventType="touchUpInside" id="cZN-pN-F7d"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPb-7l-Iwe">
-                                        <rect key="frame" x="342" y="35" width="25" height="25"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="7Ei-DY-MsX"/>
-                                            <constraint firstAttribute="width" constant="25" id="XUS-ha-Uzu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Poi-ml-0dm" secondAttribute="bottom" id="2Ig-aA-VCw"/>
-                                    <constraint firstAttribute="trailing" secondItem="tPb-7l-Iwe" secondAttribute="trailing" constant="8" id="NGR-Q8-ywF"/>
-                                    <constraint firstItem="gqv-xk-fbg" firstAttribute="top" secondItem="tPb-7l-Iwe" secondAttribute="bottom" constant="-16" id="X9H-7t-2oE"/>
-                                    <constraint firstAttribute="bottom" secondItem="gqv-xk-fbg" secondAttribute="bottom" id="ojw-ln-DN3"/>
                                     <constraint firstAttribute="height" constant="88" id="rbk-U2-gRm"/>
                                     <constraint firstItem="Poi-ml-0dm" firstAttribute="leading" secondItem="oLR-Rr-Ght" secondAttribute="leading" constant="8" id="taL-9G-odx"/>
-                                    <constraint firstAttribute="trailing" secondItem="gqv-xk-fbg" secondAttribute="trailing" constant="8" id="wgh-38-dsN"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdH-bm-pfa" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
@@ -1510,11 +1480,9 @@
                         <outlet property="UIImageViewSharing2" destination="s3F-HA-nsK" id="68w-gP-UAB"/>
                         <outlet property="UILabelOriginPrice" destination="Bds-Pg-X7r" id="S06-9L-Ddj"/>
                         <outlet property="UILabelUnitPrice" destination="dQH-Ck-YjE" id="9A9-yk-wEV"/>
-                        <outlet property="btn_Cart" destination="gqv-xk-fbg" id="et8-fv-LoH"/>
                         <outlet property="btn_back" destination="Poi-ml-0dm" id="gbq-Zk-LeK"/>
                         <outlet property="heightWebview" destination="eSJ-en-oez" id="NNF-U0-nlY"/>
                         <outlet property="image_Slider" destination="grW-ag-ItN" id="7fg-3A-0gz"/>
-                        <outlet property="lbl_Cartcount" destination="tPb-7l-Iwe" id="eLc-4T-Pzt"/>
                         <outlet property="lbl_DetailsLabel" destination="fSV-2g-mxh" id="6iC-8v-eBt"/>
                         <outlet property="lbl_IngredientsLavel" destination="gQw-ML-LOK" id="GTK-Da-CTQ"/>
                         <outlet property="lbl_SubCategoriesName" destination="1sA-Ih-GJb" id="05g-Y2-M78"/>
@@ -1532,7 +1500,6 @@
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="book" catalog="system" width="128" height="101"/>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="clear" catalog="system" width="128" height="114"/>
         <image name="copy-icon" width="60" height="60"/>
         <image name="eye-icon" width="60" height="60"/>
