@@ -78,7 +78,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     
     var FinalTotal = Double()
     var itemsData=[String : JSON]();
-    var productItem:ProductModel;
+    var productItem:ProductModel=ProductModel();
     @IBOutlet weak var lbl_count: UILabel!
     @IBOutlet weak var btn_Minus: UIButton!
     @IBOutlet weak var btn_Pluse: UIButton!
@@ -708,8 +708,7 @@ extension ProductDetailsVC
                 do {
                     let jsonDecoder = JSONDecoder()
                     let getApiResponseProductModel = try jsonDecoder.decode(GetApiResponseProductModel.self, from: jsonResponse!)
-                    self.productItem=getApiResponseProductModel.product
-                    print("self.productItem \(self.productItem)")
+                    //print("self.productItem \(self.productItem)")
                     
                 } catch let error as NSError  {
                     print("error: \(error)")

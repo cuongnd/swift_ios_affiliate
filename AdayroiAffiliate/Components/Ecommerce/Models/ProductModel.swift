@@ -10,12 +10,12 @@ struct ProductModel: Codable {
     let _id: String
     let cat_id: String
     let sub_cat_id: String
-    let is_discount: Int?=0
-    let is_featured: Int?=0
-    let code: String?=""
+    var is_discount: Bool
+    let is_featured: Int
+    let code: String
     let name: String
     let alias: String
-    let search_tag: String?=""
+    let search_tag: String
     let original_price: Double
     let unit_price: Double
     let discount_percent: Int
@@ -38,5 +38,22 @@ struct ProductModel: Codable {
         case discount_value =  "discount_value"
         case commistion = "commistion"
         case default_photo = "default_photo"
+    }
+    init() {
+        _id = ""
+        cat_id = ""
+        sub_cat_id = ""
+        is_discount = false
+        is_featured = 0
+        code = ""
+        name = ""
+        alias = ""
+        search_tag = ""
+        original_price = 0.0
+        unit_price = 0.0
+        discount_percent = 0
+        discount_value = 0.0
+        commistion=0.0
+        default_photo=ImageModel()
     }
 }
