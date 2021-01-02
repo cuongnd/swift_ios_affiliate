@@ -439,7 +439,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
         }else if (collectionView == self.UICollectionViewColors){
             let cell = self.UICollectionViewColors.dequeueReusableCell(withReuseIdentifier: "ProductDetailColorCell", for: indexPath) as! ProductDetailColorCell
             let colorItem = self.colorsData[indexPath.item]
-            cell.colorName.text=colorItem.color_value
+            cell.colorName.text=colorItem.value
             cell.colorImage.sd_setImage(with: URL(string: colorItem.img_url), placeholderImage: UIImage(named: "placeholder_image"))
             return cell
         }else if(collectionView == self.UICollectionViewAttributesHeader){
@@ -449,7 +449,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
             cell.attributeName.text=attributesHeaderItem.name
             for index in 0...attributes_detail.count-1 {
                 let currentItem=attributes_detail[index]
-                cell.dropDown.optionArray.append("\(currentItem.name) (\(currentItem.additional_price) đ )")
+                cell.dropDown.optionArray.append("\(currentItem.name) (\(currentItem.additional_price!) đ )")
                 cell.dropDown.optionIds?.insert(index, at: index)
                 
                 
@@ -666,12 +666,13 @@ extension ProductDetailsVC
                         
                     }
                     let currency=UserDefaultManager.getStringFromUserDefaults(key: UD_currency);
-                    var original_price = formatter.string(for: self.productItem.original_price)
-                    original_price="\(original_price!) \(currency)";
-                    self.lbl_itemsPrice.attributedText = original_price?.strikeThrough()
+                    var original_price = LibraryUtilitiesUtility.format_currency(amount: UInt64(self.productItem.original_price), decimalCount: 0)
+                    self.lbl_itemsPrice.attributedText = original_price.strikeThrough()
                     
-                    let unit_price = formatter.string(for: self.productItem.unit_price )
-                    self.productUnitPrice.text = "\(unit_price!) \(currency)"
+                    
+                     var unit_price = LibraryUtilitiesUtility.format_currency(amount: UInt64(self.productItem.unit_price), decimalCount: 0)
+                    
+                    self.productUnitPrice.text = unit_price
                     
                     let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
                     //self.FinalTotal = Double(SetTotal)!
