@@ -86,6 +86,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @IBOutlet weak var item_UnavailableView: UIView!
     @IBOutlet weak var UnavailableView_Height: NSLayoutConstraint!
     
+    @IBOutlet weak var UIImageViewOpenBrowser: UIImageView!
     @IBOutlet weak var productUnitPrice: UILabel!
     @IBOutlet weak var MainViewHeight: NSLayoutConstraint!
     @IBOutlet weak var heightWebview: NSLayoutConstraint!
