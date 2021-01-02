@@ -94,6 +94,15 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @IBOutlet weak var UIImageViewCopyLink: UIImageView!
     var objectMapperFrontendProduct:ObjectMapperFrontendProduct!
     var liveDataCart: LiveData<[[String:Any]]> = LiveData(data: [[:]])
+    
+    @IBOutlet weak var UIImageViewOpenBrowser2: UIImageView!
+    
+    @IBOutlet weak var UIImageViewSharing2: UIImageView!
+    @IBOutlet weak var UIImageViewCopy2: UIImageView!
+    
+    @IBOutlet weak var UILabelOriginPrice: UILabel!
+    @IBOutlet weak var UILabelUnitPrice: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.lbl_DetailsLabel.text = "Details".localiz()
@@ -132,16 +141,27 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.UIImageViewShare.isUserInteractionEnabled = true
         self.UIImageViewShare.addGestureRecognizer(tap)
         
+        self.UIImageViewSharing2.isUserInteractionEnabled = true
+        self.UIImageViewSharing2.addGestureRecognizer(tap)
+        
+        
+        
         let tapCopy = UITapGestureRecognizer(target: self, action: #selector(btnTap_copyLinkProduct))
         self.UIImageViewCopyLink.isUserInteractionEnabled = true
         self.UIImageViewCopyLink.addGestureRecognizer(tapCopy)
+        
+        
+        self.UIImageViewCopy2.isUserInteractionEnabled = true
+        self.UIImageViewCopy2.addGestureRecognizer(tapCopy)
+        
         
         
         let tapOpenBrowser = UITapGestureRecognizer(target: self, action: #selector(btnTap_OpenBrowserLinkProduct))
         self.UIImageViewOpenBrowser.isUserInteractionEnabled = true
         self.UIImageViewOpenBrowser.addGestureRecognizer(tapOpenBrowser)
         
-        
+        self.UIImageViewOpenBrowser2.isUserInteractionEnabled = true
+        self.UIImageViewOpenBrowser2.addGestureRecognizer(tapOpenBrowser)
         
         
         
@@ -181,25 +201,25 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         
     }
     
-      @objc func btnTap_OpenBrowserLinkProduct(sender: UITapGestureRecognizer)
-      {
-          
-          print("Button tapped")
-          
-          
-          
-          let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-          //let productItem=self.list_product[sender.view!.tag];
-          let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
-          
-          let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
-          print("link_product_detail \(link_product_detail)")
-          guard let url = URL(string: link_product_detail) else { return }
-          UIApplication.shared.open(url)
-       
-          
-      }
-      
+    @objc func btnTap_OpenBrowserLinkProduct(sender: UITapGestureRecognizer)
+    {
+        
+        print("Button tapped")
+        
+        
+        
+        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+        //let productItem=self.list_product[sender.view!.tag];
+        let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
+        
+        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+        print("link_product_detail \(link_product_detail)")
+        guard let url = URL(string: link_product_detail) else { return }
+        UIApplication.shared.open(url)
+        
+        
+    }
+    
     
     
     @objc func btnTap_ShareProduct(sender: UITapGestureRecognizer)
@@ -233,7 +253,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.navigationController?.popViewController(animated: true)
     }
     
-   
+    
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.DescriptionProduct.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
@@ -657,7 +677,7 @@ extension ProductDetailsVC
                     self.lbl_itemsPrice.attributedText = original_price.strikeThrough()
                     
                     
-                     var unit_price = LibraryUtilitiesUtility.format_currency(amount: UInt64(self.productItem.unit_price), decimalCount: 0)
+                    var unit_price = LibraryUtilitiesUtility.format_currency(amount: UInt64(self.productItem.unit_price), decimalCount: 0)
                     
                     self.productUnitPrice.text = unit_price
                     
@@ -665,7 +685,7 @@ extension ProductDetailsVC
                     //self.FinalTotal = Double(SetTotal)!
                     self.FinalTotal=self.productItem.unit_price
                     let ItemPriceTotal = formatter.string(for: self.FinalTotal)
-                   
+                    
                     //self.lbl_itemsDescripation.text = itemsData["productDescription"]!.stringValue
                     let subcategory=self.productItem.sub_cat_id;
                     self.lbl_SubCategoriesName.text = self.productItem.subCategory?.name
@@ -714,7 +734,7 @@ extension ProductDetailsVC
     
     
     
-   
+    
     func Webservice_getRelatedProducts(url:String, params:NSDictionary) -> Void {
         WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
             

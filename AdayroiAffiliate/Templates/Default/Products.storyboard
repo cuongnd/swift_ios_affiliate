@@ -1502,9 +1502,14 @@
                         <outlet property="TableView_AddonsList" destination="lxJ-Nw-fLP" id="J2t-Y7-87h"/>
                         <outlet property="UICollectionViewAttributesHeader" destination="rJH-zf-xYR" id="wBd-Fo-XQ6"/>
                         <outlet property="UICollectionViewColors" destination="Pd3-5v-9bL" id="9sU-2z-BkJ"/>
+                        <outlet property="UIImageViewCopy2" destination="hFG-Rq-gVb" id="ggS-Jz-GIp"/>
                         <outlet property="UIImageViewCopyLink" destination="krs-I0-Nop" id="vsr-Vc-yK2"/>
                         <outlet property="UIImageViewOpenBrowser" destination="jL6-qm-IRV" id="D9j-M4-jGB"/>
+                        <outlet property="UIImageViewOpenBrowser2" destination="rVh-4s-sY0" id="DuW-qG-KT8"/>
                         <outlet property="UIImageViewShare" destination="fk1-1m-EXK" id="Bn4-xj-0m0"/>
+                        <outlet property="UIImageViewSharing2" destination="s3F-HA-nsK" id="68w-gP-UAB"/>
+                        <outlet property="UILabelOriginPrice" destination="Bds-Pg-X7r" id="S06-9L-Ddj"/>
+                        <outlet property="UILabelUnitPrice" destination="dQH-Ck-YjE" id="9A9-yk-wEV"/>
                         <outlet property="btn_Cart" destination="gqv-xk-fbg" id="et8-fv-LoH"/>
                         <outlet property="btn_back" destination="Poi-ml-0dm" id="gbq-Zk-LeK"/>
                         <outlet property="heightWebview" destination="eSJ-en-oez" id="NNF-U0-nlY"/>
