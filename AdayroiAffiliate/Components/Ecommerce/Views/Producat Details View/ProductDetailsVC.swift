@@ -103,6 +103,8 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @IBOutlet weak var UILabelOriginPrice: UILabel!
     @IBOutlet weak var UILabelUnitPrice: UILabel!
     
+    @IBOutlet weak var UILabelCommistion2: UILabel!
+    @IBOutlet weak var UILabelCommistion: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.lbl_DetailsLabel.text = "Details".localiz()
@@ -708,6 +710,12 @@ extension ProductDetailsVC
                     
                     let myRequest = URLRequest(url: myURL!)
                     self.DescriptionProduct.load(myRequest)
+                    
+                    
+                    let commistionValue=(self.productItem.commistion*self.productItem.unit_price)/100
+                    let commistionValue1=LibraryUtilitiesUtility.format_currency(amount: UInt64(commistionValue), decimalCount: 0)
+                    self.UILabelCommistion.text="Hoa hồng:\(String(self.productItem.commistion))%(\(commistionValue1))"
+                    self.UILabelCommistion2.text="Hoa hồng:\(String(self.productItem.commistion))%(\(commistionValue1))"
                     
                     
                     
