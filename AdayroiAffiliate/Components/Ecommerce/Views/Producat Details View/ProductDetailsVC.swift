@@ -22,7 +22,7 @@ class AddonseCell: UITableViewCell {
     
 }
 class ProductDetailColorCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var colorImage: UIImageView!
     @IBOutlet weak var colorName: UILabel!
     @IBOutlet weak var btn_Check: UIButton!
@@ -36,11 +36,11 @@ class ProductDetailAttributesHeaderCell: UICollectionViewCell {
 
 class RelatedProductCell: UICollectionViewCell {
     
-     @IBOutlet weak var img_Related_product: UIImageView!
-       @IBOutlet weak var lbl_RelatedProductName: UILabel!
-       @IBOutlet weak var lbl_RelatedProductPercent: UILabel!
-       @IBOutlet weak var lbl_RelatedProductOriginalPrice: UILabel!
-       @IBOutlet weak var lbl_RelatedProductUnitPrice: UILabel!
+    @IBOutlet weak var img_Related_product: UIImageView!
+    @IBOutlet weak var lbl_RelatedProductName: UILabel!
+    @IBOutlet weak var lbl_RelatedProductPercent: UILabel!
+    @IBOutlet weak var lbl_RelatedProductOriginalPrice: UILabel!
+    @IBOutlet weak var lbl_RelatedProductUnitPrice: UILabel!
 }
 class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigationDelegate {
     
@@ -126,22 +126,22 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         let paramsRelatedProducts: NSDictionary = [:]
         self.Webservice_getRelatedProducts(url: urlGetRelatedProducts, params:paramsRelatedProducts)
         let observer: Observer<[[String:Any]]> = Observer(update: { liveDataCart in
-                   print("hello \(liveDataCart)")
-               })
-               // … and later
-               
+            print("hello \(liveDataCart)")
+        })
+        // … and later
+        
         self.liveDataCart.observeForever(observer: observer)
         
-       let tap = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareProduct))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareProduct))
         self.UIImageViewShare.isUserInteractionEnabled = true
-       self.UIImageViewShare.addGestureRecognizer(tap)
+        self.UIImageViewShare.addGestureRecognizer(tap)
         
         let tapCopy = UITapGestureRecognizer(target: self, action: #selector(btnTap_copyLinkProduct))
-               self.UIImageViewCopyLink.isUserInteractionEnabled = true
-              self.UIImageViewCopyLink.addGestureRecognizer(tapCopy)
+        self.UIImageViewCopyLink.isUserInteractionEnabled = true
+        self.UIImageViewCopyLink.addGestureRecognizer(tapCopy)
         
         
-
+        
         
         
         
@@ -160,44 +160,44 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     }
     
     @objc func btnTap_copyLinkProduct(sender: UITapGestureRecognizer)
-          {
-              
-            print("Button tapped")
-                   
-            
-            
-               let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-              //let productItem=self.list_product[sender.view!.tag];
-           let link_product_detail:String = "https://adayroi.online/landingpage/\(self.itemsData["_id"]?.stringValue)/\(user_id)/default/\(self.itemsData["alias"]?.stringValue).html";
-    
-              let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.itemsData["name"]?.stringValue)&utm_source=app_affiliate&product_id=\(self.itemsData["_id"]?.stringValue)&user_affiliate_id=\(user_id)&si=\(self.itemsData["image"]?.stringValue)&ibi=com.vantinviet.banhangonlineapp"
-              
-              
-              
-              UIPasteboard.general.string = sharelinktext
-            
-            showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Link sản phẩm đã được sao chép")
-             
-              
-          }
+    {
+        
+        print("Button tapped")
+        
+        
+        
+        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+        //let productItem=self.list_product[sender.view!.tag];
+        let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
+        
+        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+        
+        
+        
+        UIPasteboard.general.string = sharelinktext
+        
+        showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Link sản phẩm đã được sao chép")
+        
+        
+    }
     @objc func btnTap_ShareProduct(sender: UITapGestureRecognizer)
-       {
-           
-            let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-           //let productItem=self.list_product[sender.view!.tag];
-        let link_product_detail:String = "https://adayroi.online/landingpage/\(self.itemsData["_id"]?.stringValue)/\(user_id)/default/\(self.itemsData["alias"]?.stringValue).html";
- 
-           let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.itemsData["name"]?.stringValue)&utm_source=app_affiliate&product_id=\(self.itemsData["_id"]?.stringValue)&user_affiliate_id=\(user_id)&si=\(self.itemsData["image"]?.stringValue)&ibi=com.vantinviet.banhangonlineapp"
-           
-           
-           
-           let textShare = [ sharelinktext ]
-           let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
-           activityViewController.popoverPresentationController?.sourceView = self.view
-           self.present(activityViewController, animated: true, completion: nil)
-          
-           
-       }
+    {
+        
+        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+        //let productItem=self.list_product[sender.view!.tag];
+        let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
+        
+        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+        
+        
+        
+        let textShare = [ sharelinktext ]
+        let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+        
+        
+    }
     
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -233,7 +233,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
                 showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Vui lòng lựa chọn \(current_item["name"])")
                 return
             }
-       }
+        }
         for attribute in self.SelectedAttributes
         {
             list_attribute[attribute.key]=attribute.value["_id"].stringValue
@@ -258,8 +258,8 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         
     }
     @IBAction func btnTap_Cart(_ sender: UIButton) {
-         let vc = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "AddtoCartVC") as! AddtoCartVC
-         self.navigationController?.pushViewController(vc, animated:true)
+        let vc = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(identifier: "AddtoCartVC") as! AddtoCartVC
+        self.navigationController?.pushViewController(vc, animated:true)
         
     }
     
@@ -509,7 +509,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
                 print("currentItem: \(current_value_of_attribute)")
                 self.SelectedAttributes[attribute["_id"].stringValue]=current_value_of_attribute
             }
-          return cell
+            return cell
         }
         else{
             let cell = self.CollectionViewRelatedProducts.dequeueReusableCell(withReuseIdentifier: "IngredientsCell", for: indexPath) as! RelatedProductCell
@@ -519,7 +519,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.CollectionViewRelatedProducts{
-             return CGSize(width: UIScreen.main.bounds.width / 2, height: 260.0)
+            return CGSize(width: UIScreen.main.bounds.width / 2, height: 260.0)
         }else if (collectionView == self.UICollectionViewColors){
             return CGSize(width: UIScreen.main.bounds.width / 3, height: 155.0)
         }else if(collectionView == self.UICollectionViewAttributesHeader){
@@ -527,8 +527,8 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
         }else{
             return CGSize(width: (UIScreen.main.bounds.width - 20.0) / 3, height: 100.0)
         }
-          
-       
+        
+        
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.CollectionViewRelatedProducts{
@@ -557,7 +557,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
     @objc func doubleTap(sender: UITapGestureRecognizer) {
         let current = self.colorsData[sender.view?.tag ?? 0]
         for index in 0...self.colorsData.count-1 {
-           self.colorsData[index]["isselected"]="0"
+            self.colorsData[index]["isselected"]="0"
         }
         for index in 0...self.colorsData.count-1 {
             
@@ -568,15 +568,15 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
         self.UICollectionViewColors.reloadData()
         
     }
-
     
-   
+    
+    
     
     @objc func btnTap_Check(sender:UIButton)
     {
         let current = colorsData[sender.tag]
         for index in 0...self.colorsData.count-1 {
-           self.colorsData[index]["isselected"]="0"
+            self.colorsData[index]["isselected"]="0"
         }
         for index in 0...self.colorsData.count-1 {
             
@@ -708,6 +708,7 @@ extension ProductDetailsVC
                 do {
                     let jsonDecoder = JSONDecoder()
                     let getApiResponseProductModel = try jsonDecoder.decode(GetApiResponseProductModel.self, from: jsonResponse!)
+                    self.productItem=getApiResponseProductModel.product
                     //print("self.productItem \(self.productItem)")
                     
                 } catch let error as NSError  {
@@ -772,8 +773,8 @@ extension ProductDetailsVC
                     self.colorsData = self.itemsData["colors"]!.arrayValue
                     if self.colorsData.count>0{
                         for index in 0...self.colorsData.count-1 {
-                              self.colorsData[index]["isselected"]="0"
-                           }
+                            self.colorsData[index]["isselected"]="0"
+                        }
                     }
                     self.UICollectionViewColors.delegate = self
                     self.UICollectionViewColors.dataSource = self
