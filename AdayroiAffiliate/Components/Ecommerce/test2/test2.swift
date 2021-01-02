@@ -1,6 +1,6 @@
 //
 //  test2.swift
-//  FoodApp
+//  AdayroiAffiliate
 //
 //  Created by MAC OSX on 11/26/20.
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.

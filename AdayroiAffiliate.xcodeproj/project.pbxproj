@@ -137,9 +137,9 @@
 		0CDCD68525807B8C000B7F44 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0CDCD68225807B8B000B7F44 /* Font Awesome 5 Brands-Regular-400.otf */; };
 		0CDCD68625807B8C000B7F44 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0CDCD68325807B8B000B7F44 /* Font Awesome 5 Free-Regular-400.otf */; };
 		0CDCD68725807B8C000B7F44 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0CDCD68425807B8B000B7F44 /* Font Awesome 5 Free-Solid-900.otf */; };
-		3158D387ECE044FAA2E345B4 /* Pods_FoodAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA734C84F8708E51D60AFAB /* Pods_FoodAppUITests.framework */; };
-		462E27F9DFCBDA8CC42467F9 /* Pods_FoodAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281C0BC3F3E4979D860086D0 /* Pods_FoodAppTests.framework */; };
-		809C673A70B84F1780EFDE8D /* Pods_FoodApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E9028D1FEB6A09E3D77F28 /* Pods_FoodApp.framework */; };
+		3158D387ECE044FAA2E345B4 /* Pods_AdayroiAffiliateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA734C84F8708E51D60AFAB /* Pods_AdayroiAffiliateUITests.framework */; };
+		462E27F9DFCBDA8CC42467F9 /* Pods_AdayroiAffiliateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281C0BC3F3E4979D860086D0 /* Pods_AdayroiAffiliateTests.framework */; };
+		809C673A70B84F1780EFDE8D /* Pods_AdayroiAffiliate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E9028D1FEB6A09E3D77F28 /* Pods_AdayroiAffiliate.framework */; };
 		880BDE8E24D552310085FC1D /* AddOnsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BDE8D24D552310085FC1D /* AddOnsVC.swift */; };
 		880BDE9024D5524F0085FC1D /* AddonceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BDE8F24D5524F0085FC1D /* AddonceListVC.swift */; };
 		880BDE9224D55F870085FC1D /* NoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BDE9124D55F870085FC1D /* NoteVC.swift */; };
@@ -171,8 +171,8 @@
 		C8C99DD02488D77E00B5C187 /* AdayroiAffiliate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8C99DCE2488D77E00B5C187 /* AdayroiAffiliate.xcdatamodeld */; };
 		C8C99DD22488D77F00B5C187 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C99DD12488D77F00B5C187 /* Assets.xcassets */; };
 		C8C99DD52488D77F00B5C187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C99DD32488D77F00B5C187 /* LaunchScreen.storyboard */; };
-		C8C99DE02488D77F00B5C187 /* FoodAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C99DDF2488D77F00B5C187 /* FoodAppTests.swift */; };
-		C8C99DEB2488D77F00B5C187 /* FoodAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C99DEA2488D77F00B5C187 /* FoodAppUITests.swift */; };
+		C8C99DE02488D77F00B5C187 /* AdayroiAffiliateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C99DDF2488D77F00B5C187 /* AdayroiAffiliateTests.swift */; };
+		C8C99DEB2488D77F00B5C187 /* AdayroiAffiliateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C99DEA2488D77F00B5C187 /* AdayroiAffiliateUITests.swift */; };
 		C8C99DF92488D90D00B5C187 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C99DF82488D90D00B5C187 /* LoginVC.swift */; };
 		C8C99E022488D93C00B5C187 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C99DFA2488D93B00B5C187 /* Reachability.swift */; };
 		C8C99E032488D93C00B5C187 /* commonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C99DFB2488D93B00B5C187 /* commonFunction.swift */; };
@@ -192,19 +192,19 @@
 			containerPortal = C8C99DBA2488D77E00B5C187 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C8C99DC12488D77E00B5C187;
-			remoteInfo = FoodApp;
+			remoteInfo = AdayroiAffiliate;
 		};
 		C8C99DE72488D77F00B5C187 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C8C99DBA2488D77E00B5C187 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C8C99DC12488D77E00B5C187;
-			remoteInfo = FoodApp;
+			remoteInfo = AdayroiAffiliate;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01E2E19DB1CA0A2FA3792ED6 /* Pods-FoodAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FoodAppUITests/Pods-FoodAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		01E2E19DB1CA0A2FA3792ED6 /* Pods-AdayroiAffiliateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateUITests.debug.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateUITests/Pods-AdayroiAffiliateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0443F6A72590D834005D5637 /* HomeVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC2.swift; sourceTree = "<group>"; };
 		0443F6A92590F309005D5637 /* GetDoanhThuTheoThangResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDoanhThuTheoThangResponseModel.swift; sourceTree = "<group>"; };
 		0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoanhThuThangModel.swift; sourceTree = "<group>"; };
@@ -339,11 +339,11 @@
 		0CDCD68225807B8B000B7F44 /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		0CDCD68325807B8B000B7F44 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		0CDCD68425807B8B000B7F44 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
-		281C0BC3F3E4979D860086D0 /* Pods_FoodAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EA734C84F8708E51D60AFAB /* Pods_FoodAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EE5B8DD4D09D6572CFDDBF3 /* Pods-FoodAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAppUITests.release.xcconfig"; path = "Target Support Files/Pods-FoodAppUITests/Pods-FoodAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7C770297236A6BCBD9612F7C /* Pods-FoodAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FoodAppTests/Pods-FoodAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		80282219D133322512C5C8D4 /* Pods-FoodAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAppTests.release.xcconfig"; path = "Target Support Files/Pods-FoodAppTests/Pods-FoodAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		281C0BC3F3E4979D860086D0 /* Pods_AdayroiAffiliateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdayroiAffiliateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EA734C84F8708E51D60AFAB /* Pods_AdayroiAffiliateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdayroiAffiliateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EE5B8DD4D09D6572CFDDBF3 /* Pods-AdayroiAffiliateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateUITests.release.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateUITests/Pods-AdayroiAffiliateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7C770297236A6BCBD9612F7C /* Pods-AdayroiAffiliateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateTests.debug.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateTests/Pods-AdayroiAffiliateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		80282219D133322512C5C8D4 /* Pods-AdayroiAffiliateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateTests.release.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateTests/Pods-AdayroiAffiliateTests.release.xcconfig"; sourceTree = "<group>"; };
 		880BDE8D24D552310085FC1D /* AddOnsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnsVC.swift; sourceTree = "<group>"; };
 		880BDE8F24D5524F0085FC1D /* AddonceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddonceListVC.swift; sourceTree = "<group>"; };
 		880BDE9124D55F870085FC1D /* NoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVC.swift; sourceTree = "<group>"; };
@@ -354,8 +354,8 @@
 		88D6F6EA24A63245005F1439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88F6721D24A4ADE5000061FB /* PromoCodeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeListVC.swift; sourceTree = "<group>"; };
 		88F7445024A5C2D300800568 /* FavoriteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListVC.swift; sourceTree = "<group>"; };
-		98E9028D1FEB6A09E3D77F28 /* Pods_FoodApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA10EDE21CAA86DE1171B7E4 /* Pods-FoodApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodApp.release.xcconfig"; path = "Target Support Files/Pods-FoodApp/Pods-FoodApp.release.xcconfig"; sourceTree = "<group>"; };
+		98E9028D1FEB6A09E3D77F28 /* Pods_AdayroiAffiliate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdayroiAffiliate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA10EDE21CAA86DE1171B7E4 /* Pods-AdayroiAffiliate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliate.release.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate.release.xcconfig"; sourceTree = "<group>"; };
 		C80208CB248A72B2001D8864 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		C811991C2495F57F00F9CF6F /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		C82AF9E22491FD2A00464115 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -376,15 +376,15 @@
 		C8C99DC22488D77E00B5C187 /* Adayroi Affiliate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adayroi Affiliate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C99DC52488D77E00B5C187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C99DC72488D77E00B5C187 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8C99DCF2488D77E00B5C187 /* FoodApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodApp.xcdatamodel; sourceTree = "<group>"; };
+		C8C99DCF2488D77E00B5C187 /* AdayroiAffiliate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AdayroiAffiliate.xcdatamodel; sourceTree = "<group>"; };
 		C8C99DD12488D77F00B5C187 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8C99DD42488D77F00B5C187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8C99DD62488D77F00B5C187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C99DDB2488D77F00B5C187 /* AdayroiAffiliateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdayroiAffiliateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8C99DDF2488D77F00B5C187 /* FoodAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAppTests.swift; sourceTree = "<group>"; };
+		C8C99DDF2488D77F00B5C187 /* AdayroiAffiliateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdayroiAffiliateTests.swift; sourceTree = "<group>"; };
 		C8C99DE12488D77F00B5C187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C99DE62488D77F00B5C187 /* AdayroiAffiliateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdayroiAffiliateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8C99DEA2488D77F00B5C187 /* FoodAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAppUITests.swift; sourceTree = "<group>"; };
+		C8C99DEA2488D77F00B5C187 /* AdayroiAffiliateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdayroiAffiliateUITests.swift; sourceTree = "<group>"; };
 		C8C99DEC2488D77F00B5C187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8C99DF82488D90D00B5C187 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C8C99DFA2488D93B00B5C187 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 		C8C99E012488D93C00B5C187 /* CornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerView.swift; sourceTree = "<group>"; };
 		C8F07A2A248F879700665143 /* OrderHistoryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailsVC.swift; sourceTree = "<group>"; };
 		C8F882D1248CB79F0064D74F /* OrderHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryVC.swift; sourceTree = "<group>"; };
-		CF10D8D4D29D7A8EA57BF2D3 /* Pods-FoodApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodApp.debug.xcconfig"; path = "Target Support Files/Pods-FoodApp/Pods-FoodApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CF10D8D4D29D7A8EA57BF2D3 /* Pods-AdayroiAffiliate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliate.debug.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,7 +405,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				809C673A70B84F1780EFDE8D /* Pods_FoodApp.framework in Frameworks */,
+				809C673A70B84F1780EFDE8D /* Pods_AdayroiAffiliate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +413,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				462E27F9DFCBDA8CC42467F9 /* Pods_FoodAppTests.framework in Frameworks */,
+				462E27F9DFCBDA8CC42467F9 /* Pods_AdayroiAffiliateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +421,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3158D387ECE044FAA2E345B4 /* Pods_FoodAppUITests.framework in Frameworks */,
+				3158D387ECE044FAA2E345B4 /* Pods_AdayroiAffiliateUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,9 +940,9 @@
 		7375846AB9787D291AB10AED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98E9028D1FEB6A09E3D77F28 /* Pods_FoodApp.framework */,
-				281C0BC3F3E4979D860086D0 /* Pods_FoodAppTests.framework */,
-				3EA734C84F8708E51D60AFAB /* Pods_FoodAppUITests.framework */,
+				98E9028D1FEB6A09E3D77F28 /* Pods_AdayroiAffiliate.framework */,
+				281C0BC3F3E4979D860086D0 /* Pods_AdayroiAffiliateTests.framework */,
+				3EA734C84F8708E51D60AFAB /* Pods_AdayroiAffiliateUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1115,7 +1115,7 @@
 		C8C99DDE2488D77F00B5C187 /* Adayroi AffiliateTests */ = {
 			isa = PBXGroup;
 			children = (
-				C8C99DDF2488D77F00B5C187 /* FoodAppTests.swift */,
+				C8C99DDF2488D77F00B5C187 /* AdayroiAffiliateTests.swift */,
 				C8C99DE12488D77F00B5C187 /* Info.plist */,
 			);
 			path = "Adayroi AffiliateTests";
@@ -1124,7 +1124,7 @@
 		C8C99DE92488D77F00B5C187 /* Adayroi AffiliateUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C8C99DEA2488D77F00B5C187 /* FoodAppUITests.swift */,
+				C8C99DEA2488D77F00B5C187 /* AdayroiAffiliateUITests.swift */,
 				C8C99DEC2488D77F00B5C187 /* Info.plist */,
 			);
 			path = "Adayroi AffiliateUITests";
@@ -1149,12 +1149,12 @@
 		EE9A72D6B2945F7873CDD215 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF10D8D4D29D7A8EA57BF2D3 /* Pods-FoodApp.debug.xcconfig */,
-				AA10EDE21CAA86DE1171B7E4 /* Pods-FoodApp.release.xcconfig */,
-				7C770297236A6BCBD9612F7C /* Pods-FoodAppTests.debug.xcconfig */,
-				80282219D133322512C5C8D4 /* Pods-FoodAppTests.release.xcconfig */,
-				01E2E19DB1CA0A2FA3792ED6 /* Pods-FoodAppUITests.debug.xcconfig */,
-				4EE5B8DD4D09D6572CFDDBF3 /* Pods-FoodAppUITests.release.xcconfig */,
+				CF10D8D4D29D7A8EA57BF2D3 /* Pods-AdayroiAffiliate.debug.xcconfig */,
+				AA10EDE21CAA86DE1171B7E4 /* Pods-AdayroiAffiliate.release.xcconfig */,
+				7C770297236A6BCBD9612F7C /* Pods-AdayroiAffiliateTests.debug.xcconfig */,
+				80282219D133322512C5C8D4 /* Pods-AdayroiAffiliateTests.release.xcconfig */,
+				01E2E19DB1CA0A2FA3792ED6 /* Pods-AdayroiAffiliateUITests.debug.xcconfig */,
+				4EE5B8DD4D09D6572CFDDBF3 /* Pods-AdayroiAffiliateUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1177,7 +1177,7 @@
 			dependencies = (
 			);
 			name = AdayroiAffiliate;
-			productName = FoodApp;
+			productName = AdayroiAffiliate;
 			productReference = C8C99DC22488D77E00B5C187 /* Adayroi Affiliate.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -1196,7 +1196,7 @@
 				C8C99DDD2488D77F00B5C187 /* PBXTargetDependency */,
 			);
 			name = AdayroiAffiliateTests;
-			productName = FoodAppTests;
+			productName = AdayroiAffiliateTests;
 			productReference = C8C99DDB2488D77F00B5C187 /* AdayroiAffiliateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -1215,7 +1215,7 @@
 				C8C99DE82488D77F00B5C187 /* PBXTargetDependency */,
 			);
 			name = AdayroiAffiliateUITests;
-			productName = FoodAppUITests;
+			productName = AdayroiAffiliateUITests;
 			productReference = C8C99DE62488D77F00B5C187 /* AdayroiAffiliateUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -1320,15 +1320,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodApp/Pods-FoodApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodApp/Pods-FoodApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodApp/Pods-FoodApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2C52937642C5939B3BC2E2B3 /* [CP] Check Pods Manifest.lock */ = {
@@ -1346,7 +1346,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AdayroiAffiliateTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1368,7 +1368,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AdayroiAffiliate-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1390,7 +1390,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodAppUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AdayroiAffiliateUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1557,7 +1557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C99DE02488D77F00B5C187 /* FoodAppTests.swift in Sources */,
+				C8C99DE02488D77F00B5C187 /* AdayroiAffiliateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1565,7 +1565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C99DEB2488D77F00B5C187 /* FoodAppUITests.swift in Sources */,
+				C8C99DEB2488D77F00B5C187 /* AdayroiAffiliateUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1735,14 +1735,14 @@
 		};
 		C8C99DF02488D77F00B5C187 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF10D8D4D29D7A8EA57BF2D3 /* Pods-FoodApp.debug.xcconfig */;
+			baseConfigurationReference = CF10D8D4D29D7A8EA57BF2D3 /* Pods-AdayroiAffiliate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5Y52UW26J;
 				INFOPLIST_FILE = "$(SRCROOT)/AdayroiAffiliate/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1757,14 +1757,14 @@
 		};
 		C8C99DF12488D77F00B5C187 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA10EDE21CAA86DE1171B7E4 /* Pods-FoodApp.release.xcconfig */;
+			baseConfigurationReference = AA10EDE21CAA86DE1171B7E4 /* Pods-AdayroiAffiliate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H5Y52UW26J;
 				INFOPLIST_FILE = "$(SRCROOT)/AdayroiAffiliate/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1779,19 +1779,19 @@
 		};
 		C8C99DF32488D77F00B5C187 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C770297236A6BCBD9612F7C /* Pods-FoodAppTests.debug.xcconfig */;
+			baseConfigurationReference = 7C770297236A6BCBD9612F7C /* Pods-AdayroiAffiliateTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FoodAppTests/Info.plist;
+				INFOPLIST_FILE = AdayroiAffiliateTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gravityinfotech.FoodAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = gravityinfotech.AdayroiAffiliateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1801,19 +1801,19 @@
 		};
 		C8C99DF42488D77F00B5C187 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80282219D133322512C5C8D4 /* Pods-FoodAppTests.release.xcconfig */;
+			baseConfigurationReference = 80282219D133322512C5C8D4 /* Pods-AdayroiAffiliateTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FoodAppTests/Info.plist;
+				INFOPLIST_FILE = AdayroiAffiliateTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gravityinfotech.FoodAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = gravityinfotech.AdayroiAffiliateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1823,41 +1823,41 @@
 		};
 		C8C99DF62488D77F00B5C187 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01E2E19DB1CA0A2FA3792ED6 /* Pods-FoodAppUITests.debug.xcconfig */;
+			baseConfigurationReference = 01E2E19DB1CA0A2FA3792ED6 /* Pods-AdayroiAffiliateUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FoodAppUITests/Info.plist;
+				INFOPLIST_FILE = AdayroiAffiliateUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gravityinfotech.FoodAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = gravityinfotech.AdayroiAffiliateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FoodApp;
+				TEST_TARGET_NAME = AdayroiAffiliate;
 			};
 			name = Debug;
 		};
 		C8C99DF72488D77F00B5C187 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EE5B8DD4D09D6572CFDDBF3 /* Pods-FoodAppUITests.release.xcconfig */;
+			baseConfigurationReference = 4EE5B8DD4D09D6572CFDDBF3 /* Pods-AdayroiAffiliateUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FoodAppUITests/Info.plist;
+				INFOPLIST_FILE = AdayroiAffiliateUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gravityinfotech.FoodAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = gravityinfotech.AdayroiAffiliateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FoodApp;
+				TEST_TARGET_NAME = AdayroiAffiliate;
 			};
 			name = Release;
 		};
@@ -1906,9 +1906,9 @@
 		C8C99DCE2488D77E00B5C187 /* AdayroiAffiliate.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C8C99DCF2488D77E00B5C187 /* FoodApp.xcdatamodel */,
+				C8C99DCF2488D77E00B5C187 /* AdayroiAffiliate.xcdatamodel */,
 			);
-			currentVersion = C8C99DCF2488D77E00B5C187 /* FoodApp.xcdatamodel */;
+			currentVersion = C8C99DCF2488D77E00B5C187 /* AdayroiAffiliate.xcdatamodel */;
 			path = AdayroiAffiliate.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
