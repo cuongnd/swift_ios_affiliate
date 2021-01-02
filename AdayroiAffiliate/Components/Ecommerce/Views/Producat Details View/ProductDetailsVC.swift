@@ -675,12 +675,12 @@ extension ProductDetailsVC
                     let currency=UserDefaultManager.getStringFromUserDefaults(key: UD_currency);
                     var original_price = LibraryUtilitiesUtility.format_currency(amount: UInt64(self.productItem.original_price), decimalCount: 0)
                     self.lbl_itemsPrice.attributedText = original_price.strikeThrough()
-                    
+                    self.UILabelOriginPrice.attributedText = original_price.strikeThrough()
                     
                     var unit_price = LibraryUtilitiesUtility.format_currency(amount: UInt64(self.productItem.unit_price), decimalCount: 0)
                     
                     self.productUnitPrice.text = unit_price
-                    
+                    self.UILabelUnitPrice.text = unit_price
                     let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
                     //self.FinalTotal = Double(SetTotal)!
                     self.FinalTotal=self.productItem.unit_price
