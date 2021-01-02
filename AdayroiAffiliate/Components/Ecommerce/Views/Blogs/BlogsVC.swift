@@ -32,17 +32,16 @@ class BlogsVC: UIViewController {
     var sub_cat_id = ""
     var lastIndex = 0
     @IBOutlet weak var lbl_titleLabel: UILabel!
-    var list_product:[ProductModel] = [ProductModel]()
+    var list_blog:[BlogModel] = [BlogModel]()
+    
     var searchTxt = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.lbl_titleLabel.text = "Search".localiz()
-        if(!self.cat_id.isEmpty){
-            let urlString = API_URL + "/api/products?cat_id="+self.cat_id+"&sub_cat_id=\(sub_cat_id)&user_id="+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
-            var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            let params: NSDictionary = [:]
-            self.Webservice_getSearch(url: urlString1!, params:params)
-        }
+        let urlString = API_URL + "/api/blogs?limit=20&start=0";
+        var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        let params: NSDictionary = [:]
+        self.Webservice_getBlogs(url: urlString1!, params:params)
     }
     @IBAction func btnTap_Back(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -52,14 +51,14 @@ class BlogsVC: UIViewController {
         print(searchTxt)
         if searchTxt == ""
         {
-            self.list_product.removeAll()
+            self.list_blog.removeAll()
             self.Collectioview_SearchList.reloadData()
         }
         else{
-            let urlString = API_URL + "/api/products?cat_id=\(self.cat_id)&keyword="+String(searchTxt)+"&user_id="+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
+            let urlString = API_URL + "/api/api/blogs?limit=20&start=0";
             var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             let params: NSDictionary = [:]
-            self.Webservice_getSearch(url: urlString1!, params:params)
+            self.Webservice_getBlogs(url: urlString1!, params:params)
         }
     }
 }
@@ -73,18 +72,19 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
         //messageLabel.font = UIFont(name: "POPPINS-REGULAR", size: 15)!
         messageLabel.sizeToFit()
         self.Collectioview_SearchList.backgroundView = messageLabel;
-        if self.list_product.count == 0 {
+        if self.list_blog.count == 0 {
             messageLabel.text = "NO DATA FOUND".localiz()
         }
         else {
             messageLabel.text = ""
         }
-        return list_product.count
+        return list_blog.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.Collectioview_SearchList.dequeueReusableCell(withReuseIdentifier: "SearchProductCell", for: indexPath) as! SearchProductCell
         //cornerRadius(viewName: cell.img_categories, radius: 6.0)
-        let productItem = self.list_product[indexPath.item]
+        let blogItem:BlogModel = self.list_blog[indexPath.item]
+        /*
         cell.lbl_SearchProductName.text = productItem.name
         cell.lbl_SearchProductOriginalPrice.text=LibraryUtilitiesUtility.format_currency(amount: UInt64(productItem.original_price), decimalCount: 0)
         cell.lbl_SearchProductUnitPrice.attributedText=LibraryUtilitiesUtility.format_currency(amount: UInt64(productItem.unit_price), decimalCount: 0).strikeThrough()
@@ -93,7 +93,7 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
         let commistionValue1=LibraryUtilitiesUtility.format_currency(amount: UInt64(commistionValue), decimalCount: 0)
         cell.UILabelCommistion.text="Hoa hồng:\(String(productItem.commistion))%(\(commistionValue1))"
         cell.img_search_product.sd_setImage(with: URL(string: productItem.default_photo.img_path), placeholderImage: UIImage(named: "placeholder_image"))
-        
+        */
         cell.UIImageViewShared.tag = indexPath.row
         let tap = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareProduct))
         cell.UIImageViewShared.isUserInteractionEnabled = true
@@ -109,10 +109,10 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
     
     @objc func btnTap_ShareProduct(sender: UITapGestureRecognizer)
     {
-         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-        let productItem=self.list_product[sender.view!.tag];
-        let link_product_detail:String = "https://adayroi.online/landingpage/\(productItem._id)/\(user_id)/default/\(productItem.alias).html";
-        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(productItem.name)&sd=\(productItem.name)&utm_source=app_affiliate&product_id=\(productItem._id)&user_affiliate_id=\(user_id)&si=\(productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+        let blogItem:BlogModel=self.list_blog[sender.view!.tag];
+        let link_product_detail:String = "https://adayroi.online/landingpage/\(blogItem._id)/\(user_id)/default/\(blogItem.alias).html";
+        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(blogItem.title)&sd=\(blogItem.title)&utm_source=app_affiliate&product_id=\(blogItem._id)&user_affiliate_id=\(user_id)&si=\(blogItem.image_intro!.img_path)&ibi=com.vantinviet.banhangonlineapp"
         
         
         
@@ -132,7 +132,7 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let productItem = self.list_product[indexPath.row]
+        let productItem = self.list_blog[indexPath.row]
         let vc = self.storyboard?.instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsVC
         //vc.itemsId = data["id"]!
         vc.itemsId = productItem._id
@@ -140,14 +140,14 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == self.list_product.count - 1 {
+        if indexPath.item == self.list_blog.count - 1 {
             if self.pageIndex != self.lastIndex {
                 self.pageIndex = self.pageIndex + 1
                 
-                let urlString = API_URL + "/api/products?cat_id=\(self.cat_id)&keyword="+String(searchTxt)+"&limit=30&start="+String(self.pageIndex)+"&user_id"+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
-                let params: NSDictionary = [:]
+                let urlString = API_URL + "/api/api/blogs?limit=20&start=0";
                 var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                self.Webservice_getSearch(url: urlString1!, params:params)
+                let params: NSDictionary = [:]
+                self.Webservice_getBlogs(url: urlString1!, params:params)
             }
         }
     }
@@ -155,7 +155,7 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
 }
 extension BlogsVC
 {
-    func Webservice_getSearch(url:String, params:NSDictionary) -> Void {
+    func Webservice_getBlogs(url:String, params:NSDictionary) -> Void {
         WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
                 showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
@@ -164,8 +164,8 @@ extension BlogsVC
                 print(jsonResponse!)
                 do {
                     let jsonDecoder = JSONDecoder()
-                    let getApiResponseProductsModel = try jsonDecoder.decode(GetApiResponseProductsModel.self, from: jsonResponse!)
-                    self.list_product=getApiResponseProductsModel.list_product
+                    let getBlogsModel = try jsonDecoder.decode(GetBlogsModel.self, from: jsonResponse!)
+                    self.list_blog=getBlogsModel.list_blog
                     self.Collectioview_SearchList.delegate = self
                     self.Collectioview_SearchList.dataSource = self
                     self.Collectioview_SearchList.reloadData()
