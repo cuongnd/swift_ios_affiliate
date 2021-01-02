@@ -6,15 +6,15 @@
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.
 //
 import Foundation
-struct GetApiResponseProductModel: Codable {
+struct GetApiResponseProductsModel: Codable {
     let result: String
     let errorMessage: String
     let code: Int=200
-    let product: ProductModel
+    let list_product: [ProductModel]
     enum CodingKeys: String, CodingKey {
         case result = "result"
         case code = "code"
         case errorMessage="errorMessage"
-        case product = "data"
+        case list_product = "data"
     }
 }

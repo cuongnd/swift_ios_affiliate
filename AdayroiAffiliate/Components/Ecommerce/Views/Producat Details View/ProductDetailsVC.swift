@@ -78,6 +78,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     
     var FinalTotal = Double()
     var itemsData=[String : JSON]();
+    var productItem:ProductModel;
     @IBOutlet weak var lbl_count: UILabel!
     @IBOutlet weak var btn_Minus: UIButton!
     @IBOutlet weak var btn_Pluse: UIButton!
@@ -101,7 +102,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.btn_Addtocart.setTitle(cartStr, for: .normal)
         let urlString = API_URL + "/api/products/"+String(self.itemsId)
         let params: NSDictionary = [:]
-        self.Webservice_getitemsDetails(url: urlString, params:params)
+        self.Webservice_getProductDetail(url: urlString, params:params)
         cornerRadius(viewName: self.btn_Cart, radius: 8.0)
         cornerRadius(viewName: self.btn_back, radius: 8.0)
         cornerRadius(viewName: self.btn_Addtocart, radius: 6.0)
@@ -696,6 +697,39 @@ extension ProductDetailsVC
             }
         }
     }
+    
+    func Webservice_getProductDetail(url:String, params:NSDictionary) -> Void {
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
+            if strErrorMessage.count != 0 {
+                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
+            }
+            else {
+                print(jsonResponse!)
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getApiResponseProductModel = try jsonDecoder.decode(GetApiResponseProductModel.self, from: jsonResponse!)
+                    self.productItem=getApiResponseProductModel.product
+                    print("self.productItem \(self.productItem)")
+                    
+                } catch let error as NSError  {
+                    print("error: \(error)")
+                }
+                
+                
+                //print("userModel:\(userModel)")
+                
+            }
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
     func Webservice_getitemsDetails(url:String, params:NSDictionary) -> Void {
         WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
             

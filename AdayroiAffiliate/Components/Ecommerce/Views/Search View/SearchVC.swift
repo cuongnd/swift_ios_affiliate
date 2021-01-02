@@ -163,8 +163,8 @@ extension SearchVC
                 print(jsonResponse!)
                 do {
                     let jsonDecoder = JSONDecoder()
-                    let getApiResponseProductModel = try jsonDecoder.decode(GetApiResponseProductModel.self, from: jsonResponse!)
-                    self.list_product=getApiResponseProductModel.list_product
+                    let getApiResponseProductsModel = try jsonDecoder.decode(GetApiResponseProductsModel.self, from: jsonResponse!)
+                    self.list_product=getApiResponseProductsModel.list_product
                     self.Collectioview_SearchList.delegate = self
                     self.Collectioview_SearchList.dataSource = self
                     self.Collectioview_SearchList.reloadData()
