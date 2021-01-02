@@ -98,13 +98,11 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         super.viewDidLoad()
         self.lbl_DetailsLabel.text = "Details".localiz()
         self.lbl_IngredientsLavel.text = "Ingredients".localiz()
-        self.btn_Addtocart.setTitle(cartStr, for: .normal)
         let urlString = API_URL + "/api/products/"+String(self.itemsId)
         let params: NSDictionary = [:]
         self.Webservice_getProductDetail(url: urlString, params:params)
         cornerRadius(viewName: self.btn_Cart, radius: 8.0)
         cornerRadius(viewName: self.btn_back, radius: 8.0)
-        cornerRadius(viewName: self.btn_Addtocart, radius: 6.0)
         cornerRadius(viewName: self.text_view, radius: 6.0)
         cornerRadius(viewName: self.lbl_Cartcount, radius: self.lbl_Cartcount.frame.height / 2)
         self.productImages.removeAll()
@@ -116,7 +114,6 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.text_view.text = "Write Notes".localiz()
         self.text_view.textColor = UIColor.lightGray
         self.text_view.delegate = self
-        self.lbl_count.text! = "1"
         self.DescriptionProduct.navigationDelegate = self
         
         
@@ -668,7 +665,7 @@ extension ProductDetailsVC
                     //self.FinalTotal = Double(SetTotal)!
                     self.FinalTotal=self.productItem.unit_price
                     let ItemPriceTotal = formatter.string(for: self.FinalTotal)
-                    self.btn_Addtocart.setTitle("\(self.cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)", for: .normal)
+                   
                     //self.lbl_itemsDescripation.text = itemsData["productDescription"]!.stringValue
                     let subcategory=self.productItem.sub_cat_id;
                     self.lbl_SubCategoriesName.text = self.productItem.subCategory?.name
