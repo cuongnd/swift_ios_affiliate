@@ -1349,6 +1349,7 @@
                                     <constraint firstAttribute="bottom" secondItem="4BK-t7-LPe" secondAttribute="bottom" constant="2154" id="9wW-5d-cEC"/>
                                     <constraint firstItem="4BK-t7-LPe" firstAttribute="top" secondItem="73t-JC-uzQ" secondAttribute="top" id="K63-sr-0a1"/>
                                     <constraint firstAttribute="trailing" secondItem="4BK-t7-LPe" secondAttribute="trailing" id="YCQ-Dd-FTI"/>
+                                    <constraint firstItem="4BK-t7-LPe" firstAttribute="width" secondItem="73t-JC-uzQ" secondAttribute="width" id="gfg-4v-oyM"/>
                                     <constraint firstAttribute="height" constant="4174" id="jZM-O7-RYf"/>
                                     <constraint firstItem="4BK-t7-LPe" firstAttribute="leading" secondItem="73t-JC-uzQ" secondAttribute="leading" id="mxp-WR-FPw"/>
                                     <constraint firstItem="4BK-t7-LPe" firstAttribute="centerX" secondItem="73t-JC-uzQ" secondAttribute="centerX" id="oY7-cL-rX1"/>
@@ -1522,6 +1523,7 @@
                             <constraint firstItem="i3J-S4-CSU" firstAttribute="trailing" secondItem="iNi-Zj-5MM" secondAttribute="trailing" constant="8" id="WBN-kY-Uxi"/>
                             <constraint firstItem="73t-JC-uzQ" firstAttribute="leading" secondItem="n8x-BO-yDH" secondAttribute="leading" id="aVL-cz-AXh"/>
                             <constraint firstItem="i3J-S4-CSU" firstAttribute="bottom" secondItem="n8x-BO-yDH" secondAttribute="bottom" constant="4" id="dL6-9N-fsT"/>
+                            <constraint firstItem="73t-JC-uzQ" firstAttribute="width" secondItem="RvQ-85-Jcl" secondAttribute="width" id="dN4-yx-nW7"/>
                             <constraint firstItem="oLR-Rr-Ght" firstAttribute="leading" secondItem="i3J-S4-CSU" secondAttribute="leading" id="jlT-St-x75"/>
                             <constraint firstItem="73t-JC-uzQ" firstAttribute="top" secondItem="RvQ-85-Jcl" secondAttribute="topMargin" constant="-14" id="kF7-mk-nys"/>
                             <constraint firstItem="73t-JC-uzQ" firstAttribute="trailing" secondItem="n8x-BO-yDH" secondAttribute="trailing" id="mhu-x8-UPb"/>
