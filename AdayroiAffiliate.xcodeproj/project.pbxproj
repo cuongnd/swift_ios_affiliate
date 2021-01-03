@@ -62,6 +62,8 @@
 		04E6CFC525A0A13E00C13FA6 /* Blogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E6CFC425A0A13E00C13FA6 /* Blogs.storyboard */; };
 		04E6CFC725A0A46300C13FA6 /* GetBlogsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6CFC625A0A46300C13FA6 /* GetBlogsModel.swift */; };
 		04E6CFC925A0B72A00C13FA6 /* BlogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6CFC825A0B72A00C13FA6 /* BlogModel.swift */; };
+		04E6CFCB25A0C8B900C13FA6 /* BlogDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6CFCA25A0C8B900C13FA6 /* BlogDetailsVC.swift */; };
+		04E6CFCD25A1726100C13FA6 /* GetApiRespondeBlogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6CFCC25A1726100C13FA6 /* GetApiRespondeBlogModel.swift */; };
 		04F4993825A02335001A0FAE /* GetApiResponseProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4993725A02334001A0FAE /* GetApiResponseProductsModel.swift */; };
 		04F4993C25A03FA2001A0FAE /* SubCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4993B25A03FA2001A0FAE /* SubCategoryModel.swift */; };
 		04F4993E25A0417C001A0FAE /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4993D25A0417C001A0FAE /* ColorModel.swift */; };
@@ -269,6 +271,8 @@
 		04E6CFC425A0A13E00C13FA6 /* Blogs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Blogs.storyboard; sourceTree = "<group>"; };
 		04E6CFC625A0A46300C13FA6 /* GetBlogsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBlogsModel.swift; sourceTree = "<group>"; };
 		04E6CFC825A0B72A00C13FA6 /* BlogModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogModel.swift; sourceTree = "<group>"; };
+		04E6CFCA25A0C8B900C13FA6 /* BlogDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogDetailsVC.swift; sourceTree = "<group>"; };
+		04E6CFCC25A1726100C13FA6 /* GetApiRespondeBlogModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetApiRespondeBlogModel.swift; sourceTree = "<group>"; };
 		04F4993725A02334001A0FAE /* GetApiResponseProductsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetApiResponseProductsModel.swift; sourceTree = "<group>"; };
 		04F4993925A03B02001A0FAE /* Adayroi Affiliate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Adayroi Affiliate.entitlements"; sourceTree = "<group>"; };
 		04F4993B25A03FA2001A0FAE /* SubCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryModel.swift; sourceTree = "<group>"; };
@@ -559,6 +563,7 @@
 			children = (
 				0443F77725947F4A005D5637 /* GetAffiliateInfoModel.swift */,
 				04E6CFC625A0A46300C13FA6 /* GetBlogsModel.swift */,
+				04E6CFCC25A1726100C13FA6 /* GetApiRespondeBlogModel.swift */,
 				0497124C259A9CE70024883E /* GetApiResponseCategoryModel.swift */,
 				0497124E259AE7190024883E /* GetApiResponseProductModel.swift */,
 				04F4993725A02334001A0FAE /* GetApiResponseProductsModel.swift */,
@@ -581,6 +586,7 @@
 		04E6CFC325A0A0D800C13FA6 /* Blogs */ = {
 			isa = PBXGroup;
 			children = (
+				04E6CFCA25A0C8B900C13FA6 /* BlogDetailsVC.swift */,
 				04E6CFC125A0A0D100C13FA6 /* BlogsVC.swift */,
 			);
 			path = Blogs;
@@ -1536,6 +1542,7 @@
 				0443F74A2592E0D8005D5637 /* DataStore.swift in Sources */,
 				0C8A566525845D6F00CAD7F1 /* ADRFrontEndViewCheckoutThankyouVC.swift in Sources */,
 				04F4993E25A0417C001A0FAE /* ColorModel.swift in Sources */,
+				04E6CFCB25A0C8B900C13FA6 /* BlogDetailsVC.swift in Sources */,
 				C8BAC0622488F3FC00ECE181 /* SDWebImageSource.swift in Sources */,
 				88F7445124A5C2D300800568 /* FavoriteListVC.swift in Sources */,
 				04F4993825A02335001A0FAE /* GetApiResponseProductsModel.swift in Sources */,
@@ -1556,6 +1563,7 @@
 				0C8A565F25831BA900CAD7F1 /* ImageModel.swift in Sources */,
 				C8C99DC82488D77E00B5C187 /* SceneDelegate.swift in Sources */,
 				0C42DC2C257C6D62007009E4 /* ObjectMapperFrontendProduct.swift in Sources */,
+				04E6CFCD25A1726100C13FA6 /* GetApiRespondeBlogModel.swift in Sources */,
 				0C42DC3E257F8E8C007009E4 /* ADRTableSetting.swift in Sources */,
 				0C8A566725846C4400CAD7F1 /* GetOrderResponseModel.swift in Sources */,
 				0C42DC07257BD6BD007009E4 /* ADRTable.swift in Sources */,

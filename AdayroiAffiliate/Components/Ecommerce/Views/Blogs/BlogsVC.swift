@@ -10,19 +10,11 @@ import UIKit
 import SwiftyJSON
 
 class BlogCell: UICollectionViewCell {
-    @IBOutlet weak var img_search_product: UIImageView!
-    @IBOutlet weak var lbl_SearchProductName: UILabel!
-    @IBOutlet weak var lbl_SearchProductPercent: UILabel!
     
-    @IBOutlet weak var UIImageViewShared: UIImageView!
-    @IBOutlet weak var UILabelCommistion: UILabel!
-    @IBOutlet weak var lbl_SearchProductOriginalPrice: UILabel!
-    @IBOutlet weak var lbl_SearchProductUnitPrice: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var UIImageViewBlogImage: UIImageView!
     
+    @IBOutlet weak var UIImageViewSharingBlogItem: UIImageView!
+    @IBOutlet weak var UILabelBlogTitle: UILabel!
 }
 
 class BlogsVC: UIViewController {
@@ -84,6 +76,16 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
         let cell = self.Collectioview_SearchList.dequeueReusableCell(withReuseIdentifier: "BlogCell", for: indexPath) as! BlogCell
         //cornerRadius(viewName: cell.img_categories, radius: 6.0)
         let blogItem:BlogModel = self.list_blog[indexPath.item]
+        if(blogItem.image_intro != nil){
+            cell.UIImageViewBlogImage.sd_setImage(with: URL(string: blogItem.image_intro!.img_path), placeholderImage: UIImage(named: "placeholder_image"))
+        }
+        cell.UILabelBlogTitle.text=blogItem.title
+        
+        cell.UIImageViewSharingBlogItem.tag = indexPath.row
+       let tap = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareBlog))
+       cell.UIImageViewSharingBlogItem.isUserInteractionEnabled = true
+       cell.UIImageViewSharingBlogItem.addGestureRecognizer(tap)
+        
         //cell.lbl_titleLabel.text = blogItem.title
         /*
         cell.lbl_SearchProductName.text = productItem.name
@@ -94,13 +96,13 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
         let commistionValue1=LibraryUtilitiesUtility.format_currency(amount: UInt64(commistionValue), decimalCount: 0)
         cell.UILabelCommistion.text="Hoa hồng:\(String(productItem.commistion))%(\(commistionValue1))"
         cell.img_search_product.sd_setImage(with: URL(string: productItem.default_photo.img_path), placeholderImage: UIImage(named: "placeholder_image"))
-        */
+        
         cell.UIImageViewShared.tag = indexPath.row
         let tap = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareProduct))
         cell.UIImageViewShared.isUserInteractionEnabled = true
         cell.UIImageViewShared.addGestureRecognizer(tap)
         
-        
+        */
         
         return cell
         
@@ -108,7 +110,7 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
     
     
     
-    @objc func btnTap_ShareProduct(sender: UITapGestureRecognizer)
+    @objc func btnTap_ShareBlog(sender: UITapGestureRecognizer)
     {
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
         let blogItem:BlogModel=self.list_blog[sender.view!.tag];
@@ -133,11 +135,11 @@ extension BlogsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollect
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let productItem = self.list_blog[indexPath.row]
-        let vc = self.storyboard?.instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsVC
+        let blogItem = self.list_blog[indexPath.row]
+        let vc = self.storyboard?.instantiateViewController(identifier: "BlogDetailsVC") as! BlogDetailsVC
         //vc.itemsId = data["id"]!
-        vc.itemsId = productItem._id
-        vc.SubCategoryId = productItem.sub_cat_id
+        vc.blog_id = blogItem._id
+        vc.sub_cat_id = blogItem.sub_cat_id
         self.navigationController?.pushViewController(vc, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
