@@ -326,7 +326,9 @@ extension BlogDetailsVC
                     let jsonDecoder = JSONDecoder()
                     let getApiRespondeBlogsModel = try jsonDecoder.decode(GetApiRespondeBlogsModel.self, from: jsonResponse!)
                     self.list_blog_related=getApiRespondeBlogsModel.list_blog
-                    
+                    self.CollectionViewRelatedBlogs.delegate = self
+                    self.CollectionViewRelatedBlogs.dataSource = self
+                    self.CollectionViewRelatedBlogs.reloadData()
                     
                     
                 } catch let error as NSError  {
