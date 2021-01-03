@@ -29,15 +29,22 @@ class BlogsVC: UIViewController {
     var searchTxt = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lbl_titleLabel.text = "Search".localiz()
         let urlString = API_URL + "/api/blogs?limit=20&start=0";
         var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let params: NSDictionary = [:]
         self.Webservice_getBlogs(url: urlString1!, params:params)
     }
-    @IBAction func btnTap_Back(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+    
+   @IBAction func btnTap_Menu(_ sender: UIButton) {
+        if UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "en" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "N/A"
+        {
+            self.slideMenuController()?.openLeft()
+        }
+        else {
+            self.slideMenuController()?.openRight()
+        }
     }
+    
     @IBAction func textTap_Search(_ sender: UITextField) {
         self.searchTxt = sender.text!
         print(searchTxt)
