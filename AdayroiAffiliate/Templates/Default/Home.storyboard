@@ -563,55 +563,13 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L6-RR-dwc" userLabel="Cart">
-                                        <rect key="frame" x="328.66666666666669" y="7" width="30.333333333333314" height="25"/>
-                                        <color key="tintColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="cart.fill" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="semibold"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="GoToCart:" destination="hci-27-zqJ" eventType="touchUpInside" id="jOC-bo-cS1"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hu1-OB-fQ4" userLabel="Cart count">
-                                        <rect key="frame" x="354" y="2" width="7" height="12"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktM-7H-1kK" userLabel="Location">
-                                        <rect key="frame" x="293.66666666666669" y="5" width="27" height="28"/>
-                                        <color key="tintColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="mappin.and.ellipse" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="semibold"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCi-RD-sN4" userLabel="Search">
-                                        <rect key="frame" x="260" y="8" width="25.666666666666686" height="25"/>
-                                        <color key="tintColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="magnifyingglass" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" weight="semibold"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="GoToSearch:" destination="hci-27-zqJ" eventType="touchUpInside" id="DzT-Ha-Qak"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="3L6-RR-dwc" firstAttribute="leading" secondItem="ktM-7H-1kK" secondAttribute="trailing" constant="8" id="3LZ-wB-Z9m"/>
-                                    <constraint firstItem="Hu1-OB-fQ4" firstAttribute="top" secondItem="4yw-G2-OF1" secondAttribute="top" constant="2" id="8pZ-fc-V4l"/>
                                     <constraint firstItem="r1S-kh-1ZT" firstAttribute="top" secondItem="4yw-G2-OF1" secondAttribute="top" constant="8" id="8tw-SB-p1a"/>
-                                    <constraint firstItem="bCi-RD-sN4" firstAttribute="top" secondItem="4yw-G2-OF1" secondAttribute="top" constant="8" id="AVr-Jz-Y9V"/>
-                                    <constraint firstItem="ktM-7H-1kK" firstAttribute="leading" secondItem="bCi-RD-sN4" secondAttribute="trailing" constant="8" id="BVl-4J-HU8"/>
                                     <constraint firstAttribute="height" constant="38" id="FIp-wV-pA1"/>
                                     <constraint firstItem="Sa5-be-yiE" firstAttribute="top" secondItem="4yw-G2-OF1" secondAttribute="top" constant="10" id="QyA-lq-KbJ"/>
-                                    <constraint firstItem="ktM-7H-1kK" firstAttribute="top" secondItem="4yw-G2-OF1" secondAttribute="top" constant="5" id="Wiy-gg-ggg"/>
                                     <constraint firstItem="Sa5-be-yiE" firstAttribute="leading" secondItem="r1S-kh-1ZT" secondAttribute="trailing" constant="27.670000000000002" id="ZxE-VQ-sEl"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hu1-OB-fQ4" secondAttribute="trailing" constant="14" id="lNg-c8-SMM"/>
-                                    <constraint firstAttribute="trailing" secondItem="3L6-RR-dwc" secondAttribute="trailing" constant="16" id="ov7-zG-flp"/>
-                                    <constraint firstItem="3L6-RR-dwc" firstAttribute="top" secondItem="4yw-G2-OF1" secondAttribute="top" constant="7" id="qMw-jM-41b"/>
                                     <constraint firstItem="r1S-kh-1ZT" firstAttribute="leading" secondItem="4yw-G2-OF1" secondAttribute="leading" constant="16" id="y8M-v7-M93"/>
                                 </constraints>
                             </view>
@@ -702,7 +660,6 @@
                     <connections>
                         <outlet property="barChart" destination="mNa-2Y-NdI" id="ozG-m6-9Zq"/>
                         <outlet property="btnMenu" destination="r1S-kh-1ZT" id="Ndm-sj-bSe"/>
-                        <outlet property="btnSearch" destination="bCi-RD-sN4" id="CCL-j2-b4l"/>
                         <outlet property="pieChart" destination="HYh-bM-iwB" id="PZN-jF-7ay"/>
                     </connections>
                 </viewController>
