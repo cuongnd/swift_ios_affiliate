@@ -17,16 +17,13 @@ class LoginVC: UIViewController {
     @IBOutlet weak var btn_showPassword: UIButton!
     @IBOutlet weak var txt_username: UITextField!
     @IBOutlet weak var btn_login: UIButton!
-    @IBOutlet weak var btn_Skip: UIButton!
     @IBOutlet weak var dropDown : DropDown!
     override func viewDidLoad() {
         super.viewDidLoad()
         btn_login.setTitle("Login".localiz(), for: .normal)
-        btn_Skip.setTitle("SKIP".localiz(), for: .normal)
         dropDown.placeholder="Change language".localiz()
         txt_Password.placeholder="Password".localiz()
         cornerRadius(viewName: self.btn_login, radius: 8.0)
-        cornerRadius(viewName: self.btn_Skip, radius: 6.0)
         self.btn_showPassword.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
         //        self.txt_Email.text = "Mitesh".localiz(comment: "123")
         
