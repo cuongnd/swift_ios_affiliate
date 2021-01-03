@@ -16,7 +16,7 @@ import ETBinding
 
 class BlogDetailColorCell: UICollectionViewCell {
     
-
+    
 }
 
 
@@ -26,7 +26,7 @@ class RelatedBlogCell: UICollectionViewCell {
 }
 class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigationDelegate {
     
-   
+    
     
     @IBOutlet weak var UIImageViewShare: UIImageView!
     @IBOutlet weak var btn_back: UIButton!
@@ -46,7 +46,7 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
     var FinalTotal = Double()
     var itemsData=[String : JSON]();
     var blogItem:BlogModel=BlogModel();
-   
+    
     
     @IBOutlet weak var UIImageViewOpenBrowser: UIImageView!
     @IBOutlet weak var MainViewHeight: NSLayoutConstraint!
@@ -71,7 +71,7 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
         let urlString = API_URL + "/api/blogs/"+String(self.blog_id)
         let params: NSDictionary = [:]
         self.Webservice_getBlogDetail(url: urlString, params:params)
-       
+        
         
         self.DescriptionProduct.navigationDelegate = self
         let urlGetRelatedBlogs = API_URL + "/api/blogs/get_related_blog_trending/blog_id/\(String(self.blog_id))/sub_cat_id/\(self.sub_cat_id)"
@@ -125,16 +125,16 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
     }
     
     @objc func btnTap_OpenSubCategory(sender: UITapGestureRecognizer)
-       {
-           
-           let storyBoardProduct = UIStoryboard(name: "Products", bundle: nil)
-           let searchVC = storyBoardProduct.instantiateViewController(identifier: "SearchVC") as! SearchVC
-           //searchVC.blog_id = self.blogItem._id
-            //searchVC.sub_cat_id = self.productItem.sub_cat_id
-           self.navigationController?.pushViewController(searchVC, animated: true)
-           
-           
-       }
+    {
+        
+        let storyBoardProduct = UIStoryboard(name: "Products", bundle: nil)
+        let searchVC = storyBoardProduct.instantiateViewController(identifier: "SearchVC") as! SearchVC
+        //searchVC.blog_id = self.blogItem._id
+        //searchVC.sub_cat_id = self.productItem.sub_cat_id
+        self.navigationController?.pushViewController(searchVC, animated: true)
+        
+        
+    }
     
     @objc func btnTap_copyLinkProduct(sender: UITapGestureRecognizer)
     {
@@ -165,15 +165,15 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
         
         
         /*
-        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-        //let productItem=self.list_product[sender.view!.tag];
-        let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
-        
-        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
-        print("link_product_detail \(link_product_detail)")
-        guard let url = URL(string: link_product_detail) else { return }
-        UIApplication.shared.open(url)
-        */
+         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+         //let productItem=self.list_product[sender.view!.tag];
+         let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
+         
+         let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+         print("link_product_detail \(link_product_detail)")
+         guard let url = URL(string: link_product_detail) else { return }
+         UIApplication.shared.open(url)
+         */
         
         
     }
@@ -183,19 +183,19 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
     @objc func btnTap_ShareProduct(sender: UITapGestureRecognizer)
     {
         /*
-        let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
-        //let productItem=self.list_product[sender.view!.tag];
-        let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
-        
-        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
-        
-        
-        
-        let textShare = [ sharelinktext ]
-        let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        self.present(activityViewController, animated: true, completion: nil)
-        */
+         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
+         //let productItem=self.list_product[sender.view!.tag];
+         let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
+         
+         let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+         
+         
+         
+         let textShare = [ sharelinktext ]
+         let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+         activityViewController.popoverPresentationController?.sourceView = self.view
+         self.present(activityViewController, animated: true, completion: nil)
+         */
         
     }
     
@@ -250,7 +250,7 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
 
 extension BlogDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return list_blog_related.count
+        return list_blog_related.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.CollectionViewRelatedBlogs.dequeueReusableCell(withReuseIdentifier: "RelatedBlogCell", for: indexPath) as! RelatedBlogCell
@@ -259,19 +259,19 @@ extension BlogDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         return CGSize(width: UIScreen.main.bounds.width / 2, height: 260.0)
+        return CGSize(width: UIScreen.main.bounds.width / 2, height: 260.0)
         
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         /*
-        let data = self.RelatedProductsData[indexPath.row]
-        itemsId = data["_id"].stringValue
-        let vc = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsVC
-        vc.itemsId = data["_id"].stringValue
-        vc.SubCategoryId = data["sub_cat_id"].stringValue
-        self.navigationController?.pushViewController(vc, animated: true)
-        */
+         let data = self.RelatedProductsData[indexPath.row]
+         itemsId = data["_id"].stringValue
+         let vc = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsVC
+         vc.itemsId = data["_id"].stringValue
+         vc.SubCategoryId = data["sub_cat_id"].stringValue
+         self.navigationController?.pushViewController(vc, animated: true)
+         */
     }
 }
 extension BlogDetailsVC
@@ -289,7 +289,7 @@ extension BlogDetailsVC
                     let getApiRespondeBlogModel = try jsonDecoder.decode(GetApiRespondeBlogModel.self, from: jsonResponse!)
                     self.blogItem=getApiRespondeBlogModel.blog
                     
-                   
+                    
                     
                 } catch let error as NSError  {
                     print("error: \(error)")
@@ -312,22 +312,26 @@ extension BlogDetailsVC
     
     
     func Webservice_getRelatedBlogs(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
                 showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
             }
             else {
-                let responseCode = jsonResponse!["result"].stringValue
-                if responseCode == "success" {
-                    let RelatedProductsData = jsonResponse!["data"].arrayValue
-                    self.RelatedProductsData = RelatedProductsData
-                 
+                print(jsonResponse!)
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getApiRespondeBlogsModel = try jsonDecoder.decode(GetApiRespondeBlogsModel.self, from: jsonResponse!)
+                    self.list_blog_related=getApiRespondeBlogsModel.list_blog
                     
+                    
+                    
+                } catch let error as NSError  {
+                    print("error: \(error)")
                 }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
+                
+                
+                //print("userModel:\(userModel)")
+                
             }
         }
     }

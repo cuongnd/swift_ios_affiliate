@@ -167,8 +167,8 @@ extension BlogsVC
                 print(jsonResponse!)
                 do {
                     let jsonDecoder = JSONDecoder()
-                    let getBlogsModel = try jsonDecoder.decode(GetBlogsModel.self, from: jsonResponse!)
-                    self.list_blog=getBlogsModel.list_blog
+                    let getApiRespondeBlogsModel = try jsonDecoder.decode(GetApiRespondeBlogsModel.self, from: jsonResponse!)
+                    self.list_blog=getApiRespondeBlogsModel.list_blog
                     self.Collectioview_SearchList.delegate = self
                     self.Collectioview_SearchList.dataSource = self
                     self.Collectioview_SearchList.reloadData()

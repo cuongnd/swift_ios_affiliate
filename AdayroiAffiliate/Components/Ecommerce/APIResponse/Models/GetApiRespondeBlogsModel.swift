@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.
 //
 import Foundation
-struct GetBlogsModel: Codable {
+struct GetApiRespondeBlogsModel: Codable {
     let result: String
     let code: Int
     let errorMessage:String
