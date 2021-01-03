@@ -17,6 +17,7 @@ struct BlogModel: Codable {
     var title:String
     let intro:String
     let image_intro:ImageModel?
+    let blogSubCategory:BlogSubCategoryModel?
    
    
     
@@ -31,6 +32,7 @@ struct BlogModel: Codable {
         case title = "title"
         case intro = "intro"
         case image_intro = "image_intro"
+        case blogSubCategory = "blogsubcategory"
         
     }
     init() {
@@ -44,6 +46,7 @@ struct BlogModel: Codable {
         title=""
         intro=""
         image_intro = ImageModel()
+        blogSubCategory=BlogSubCategoryModel()
       
     }
 }

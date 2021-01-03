@@ -14,14 +14,12 @@ import iOSDropDown
 import SQLite
 import ETBinding
 
-class BlogDetailColorCell: UICollectionViewCell {
-    
-    
-}
 
 
 class RelatedBlogCell: UICollectionViewCell {
     
+    @IBOutlet weak var UIImageViewBlogImage: UIImageView!
+    @IBOutlet weak var UILabelBlogTitle: UILabel!
     
 }
 class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigationDelegate {
@@ -38,13 +36,7 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
     @IBOutlet weak var lbl_IngredientsLavel: UILabel!
     var blog_id = String()
     var sub_cat_id = String()
-    var RelatedProductsData = [JSON]()
-    var colorsData:[ColorModel]=[ColorModel]()
     var list_blog_related:[BlogModel] = [BlogModel]()
-    var productImages = [SDWebImageSource]()
-    
-    var FinalTotal = Double()
-    var itemsData=[String : JSON]();
     var blogItem:BlogModel=BlogModel();
     
     
@@ -53,18 +45,8 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
     @IBOutlet weak var heightWebview: NSLayoutConstraint!
     @IBOutlet weak var DescriptionBlog: WKWebView!
     @IBOutlet weak var UIImageViewCopyLink: UIImageView!
-    var objectMapperFrontendProduct:ObjectMapperFrontendProduct!
-    var liveDataCart: LiveData<[[String:Any]]> = LiveData(data: [[:]])
     
-    @IBOutlet weak var UIImageViewOpenBrowser2: UIImageView!
-    
-    @IBOutlet weak var UIImageViewSharing2: UIImageView!
-    @IBOutlet weak var UIImageViewCopy2: UIImageView!
-    
-    @IBOutlet weak var UILabelOriginPrice: UILabel!
-    @IBOutlet weak var UILabelUnitPrice: UILabel!
-    
-    @IBOutlet weak var UILabelCommistion2: UILabel!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.lbl_IngredientsLavel.text = "Ingredients".localiz()
@@ -82,80 +64,42 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
         let tap = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareProduct))
         self.UIImageViewShare.isUserInteractionEnabled = true
         self.UIImageViewShare.addGestureRecognizer(tap)
-        
-        self.UIImageViewSharing2.isUserInteractionEnabled = true
-        self.UIImageViewSharing2.addGestureRecognizer(tap)
-        
-        
-        
         let tapCopy = UITapGestureRecognizer(target: self, action: #selector(btnTap_copyLinkProduct))
         self.UIImageViewCopyLink.isUserInteractionEnabled = true
         self.UIImageViewCopyLink.addGestureRecognizer(tapCopy)
-        
-        
-        self.UIImageViewCopy2.isUserInteractionEnabled = true
-        self.UIImageViewCopy2.addGestureRecognizer(tapCopy)
-        
-        
-        
-        let tapOpenBrowser = UITapGestureRecognizer(target: self, action: #selector(btnTap_OpenBrowserLinkProduct))
+         let tapOpenBrowser = UITapGestureRecognizer(target: self, action: #selector(btnTap_OpenBrowserLinkProduct))
         self.UIImageViewOpenBrowser.isUserInteractionEnabled = true
         self.UIImageViewOpenBrowser.addGestureRecognizer(tapOpenBrowser)
-        
-        self.UIImageViewOpenBrowser2.isUserInteractionEnabled = true
-        self.UIImageViewOpenBrowser2.addGestureRecognizer(tapOpenBrowser)
-        
-        
-        let tapOpenSubCategory = UITapGestureRecognizer(target: self, action: #selector(btnTap_OpenSubCategory))
+         let tapOpenSubCategory = UITapGestureRecognizer(target: self, action: #selector(btnTap_OpenSubCategory))
         self.lbl_SubCategoriesName.isUserInteractionEnabled = true
         self.lbl_SubCategoriesName.addGestureRecognizer(tapOpenSubCategory)
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         let urlString = API_URL1 + "cartcount"
         let params: NSDictionary = ["user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId)]
         //self.Webservice_cartcount(url: urlString, params:params)
     }
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
-    }
+    
     
     @objc func btnTap_OpenSubCategory(sender: UITapGestureRecognizer)
     {
         
-        let storyBoardProduct = UIStoryboard(name: "Products", bundle: nil)
-        let searchVC = storyBoardProduct.instantiateViewController(identifier: "SearchVC") as! SearchVC
-        //searchVC.blog_id = self.blogItem._id
-        //searchVC.sub_cat_id = self.productItem.sub_cat_id
-        self.navigationController?.pushViewController(searchVC, animated: true)
+        let storyBoardProduct = UIStoryboard(name: "Blogs", bundle: nil)
+        let blogsVC = storyBoardProduct.instantiateViewController(identifier: "BlogsVC") as! BlogsVC
+        blogsVC.sub_cat_id = self.blogItem.sub_cat_id
+        self.navigationController?.pushViewController(blogsVC, animated: true)
         
         
     }
     
     @objc func btnTap_copyLinkProduct(sender: UITapGestureRecognizer)
     {
-        
-        print("Button tapped")
-        
-        
-        
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
         //let productItem=self.list_product[sender.view!.tag];
         let link_product_detail:String = "https://adayroi.online/landingpage/\(self.blogItem._id)/\(user_id)/default/\(self.blogItem.alias).html";
-        
         /// let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
-        
-        
-        
         UIPasteboard.general.string = link_product_detail
-        
         showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Link sản phẩm đã được sao chép")
-        
-        
     }
     
     @objc func btnTap_OpenBrowserLinkProduct(sender: UITapGestureRecognizer)
@@ -200,12 +144,6 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
     }
     
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "Write Notes".localiz()
-            textView.textColor = UIColor.lightGray
-        }
-    }
     
     @IBAction func btnTap_back(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -217,26 +155,9 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
         self.DescriptionBlog.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
             if complete != nil {
                 self.DescriptionBlog.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
-                    print("hello set height")
-                    print(height!)
-                    //self.DescriptionProduct.frame.size.height = 1
-                    //self.DescriptionProduct.frame.size = self.DescriptionProduct.sizeThatFits(.zero)
-                    //self.DescriptionProduct.scrollView.isScrollEnabled=false;
-                    //myWebViewHeightConstraint.constant = self.DescriptionProduct.scrollView.contentSize.height
                     self.heightWebview?.constant = height as! CGFloat
-                    print(height!)
                     self.MainViewHeight?.constant += height as! CGFloat
-                    print(height!)
-                    if((height as! Double)>10000){
-                        //self.heightWebview?.constant = (height as! CGFloat)-10000
-                        //self.MainViewHeight?.constant += (height as! CGFloat)-10000
-                    }else{
-                        //self.heightWebview?.constant = (height as! CGFloat)
-                        //self.MainViewHeight?.constant += (height as! CGFloat)
-                    }
-                    // self.DescriptionProduct.frame = CGRect(x: 0, y: 0, width: self.DescriptionProduct.frame.width, height: self.DescriptionProduct.frame.height + 6000.0)
                     
-                    //self.DescriptionProduct.frame.size.height = height as! CGFloat
                 })
             }
             
@@ -254,7 +175,11 @@ extension BlogDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.CollectionViewRelatedBlogs.dequeueReusableCell(withReuseIdentifier: "RelatedBlogCell", for: indexPath) as! RelatedBlogCell
-        let data = self.list_blog_related[indexPath.item]
+        let currentBlog:BlogModel = self.list_blog_related[indexPath.item]
+        cell.UILabelBlogTitle.text=currentBlog.title
+        if((currentBlog.image_intro) != nil){
+            cell.UIImageViewBlogImage.sd_setImage(with: URL(string: currentBlog.image_intro!.img_path), placeholderImage: UIImage(named: "placeholder_image"))
+        }
         return cell
         
     }
@@ -264,14 +189,14 @@ extension BlogDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,UIC
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /*
-         let data = self.RelatedProductsData[indexPath.row]
-         itemsId = data["_id"].stringValue
-         let vc = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsVC
-         vc.itemsId = data["_id"].stringValue
-         vc.SubCategoryId = data["sub_cat_id"].stringValue
+        
+         let currentBlog = self.list_blog_related[indexPath.row]
+         blog_id = currentBlog._id
+         let vc = UIStoryboard(name: "Blogs", bundle: nil).instantiateViewController(identifier: "BlogDetailsVC") as! BlogDetailsVC
+         vc.blog_id = blog_id
+         vc.sub_cat_id = currentBlog.sub_cat_id
          self.navigationController?.pushViewController(vc, animated: true)
-         */
+         
     }
 }
 extension BlogDetailsVC
@@ -289,9 +214,11 @@ extension BlogDetailsVC
                     let getApiRespondeBlogModel = try jsonDecoder.decode(GetApiRespondeBlogModel.self, from: jsonResponse!)
                     self.blogItem=getApiRespondeBlogModel.blog
                     //self.Webservice_cartcount(url: urlString, params:params)
-                      let myURL = URL(string:"https://api.adayroi.online/api/blogs/full_content/\(self.blogItem._id)")
+                      let myURLFullContent = URL(string:"https://api.adayroi.online/api/blogs/full_content/\(self.blogItem._id)")
+                    print("myURLFullContent \(myURLFullContent!)")
                     self.lblBlogTitle.text = self.blogItem.title
-                      let myRequest = URLRequest(url: myURL!)
+                    self.lbl_SubCategoriesName.text=self.blogItem.blogSubCategory!.title
+                      let myRequest = URLRequest(url: myURLFullContent!)
                       self.DescriptionBlog.load(myRequest)
                     
                     

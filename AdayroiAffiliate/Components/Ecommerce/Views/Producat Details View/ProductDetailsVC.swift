@@ -721,9 +721,9 @@ extension ProductDetailsVC
                     _ = API_URL1 + "cartcount"
                     let _: NSDictionary = ["user_id":2]
                     //self.Webservice_cartcount(url: urlString, params:params)
-                    let myURL = URL(string:"https://api.adayroi.online/api/products/description/\(self.productItem._id)")
-                    
-                    let myRequest = URLRequest(url: myURL!)
+                    let UrlDescriptionProduct = URL(string:"https://api.adayroi.online/api/products/description/\(self.productItem._id)")
+                    print("UrlDescriptionProduct \(UrlDescriptionProduct!)")
+                    let myRequest = URLRequest(url: UrlDescriptionProduct!)
                     self.DescriptionProduct.load(myRequest)
                     
                     
