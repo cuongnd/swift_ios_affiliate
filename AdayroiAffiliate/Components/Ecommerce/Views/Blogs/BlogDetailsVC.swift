@@ -32,7 +32,7 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
     @IBOutlet weak var btn_back: UIButton!
     @IBOutlet weak var CollectionViewRelatedBlogs: UICollectionView!
     
-    @IBOutlet weak var lbl_itemsName: UILabel!
+    @IBOutlet weak var lblBlogTitle: UILabel!
     @IBOutlet weak var lbl_SubCategoriesName: UILabel!
     
     @IBOutlet weak var lbl_IngredientsLavel: UILabel!
@@ -51,7 +51,7 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
     @IBOutlet weak var UIImageViewOpenBrowser: UIImageView!
     @IBOutlet weak var MainViewHeight: NSLayoutConstraint!
     @IBOutlet weak var heightWebview: NSLayoutConstraint!
-    @IBOutlet weak var DescriptionProduct: WKWebView!
+    @IBOutlet weak var DescriptionBlog: WKWebView!
     @IBOutlet weak var UIImageViewCopyLink: UIImageView!
     var objectMapperFrontendProduct:ObjectMapperFrontendProduct!
     var liveDataCart: LiveData<[[String:Any]]> = LiveData(data: [[:]])
@@ -73,7 +73,7 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
         self.Webservice_getBlogDetail(url: urlString, params:params)
         
         
-        self.DescriptionProduct.navigationDelegate = self
+        self.DescriptionBlog.navigationDelegate = self
         let urlGetRelatedBlogs = API_URL + "/api/blogs/get_related_blog_trending/blog_id/\(String(self.blog_id))/sub_cat_id/\(self.sub_cat_id)"
         let paramsRelatedBlogs: NSDictionary = [:]
         self.Webservice_getRelatedBlogs(url: urlGetRelatedBlogs, params:paramsRelatedBlogs)
@@ -214,9 +214,9 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
     
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.DescriptionProduct.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
+        self.DescriptionBlog.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
             if complete != nil {
-                self.DescriptionProduct.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
+                self.DescriptionBlog.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
                     print("hello set height")
                     print(height!)
                     //self.DescriptionProduct.frame.size.height = 1
@@ -288,7 +288,11 @@ extension BlogDetailsVC
                     let jsonDecoder = JSONDecoder()
                     let getApiRespondeBlogModel = try jsonDecoder.decode(GetApiRespondeBlogModel.self, from: jsonResponse!)
                     self.blogItem=getApiRespondeBlogModel.blog
-                    
+                    //self.Webservice_cartcount(url: urlString, params:params)
+                      let myURL = URL(string:"https://api.adayroi.online/api/blogs/full_content/\(self.blogItem._id)")
+                    self.lblBlogTitle.text = self.blogItem.title
+                      let myRequest = URLRequest(url: myURL!)
+                      self.DescriptionBlog.load(myRequest)
                     
                     
                 } catch let error as NSError  {

@@ -479,7 +479,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BK-t7-LPe">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="877"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product name" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0O-QS-nEZ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blog title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0O-QS-nEZ">
                                                 <rect key="frame" x="8" y="40" width="359" height="74"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="74" id="ol4-cn-072"/>
@@ -766,7 +766,7 @@
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="CollectionViewRelatedBlogs" destination="J0b-27-0pz" id="zj9-04-9Ec"/>
-                        <outlet property="DescriptionProduct" destination="5QY-7e-WZZ" id="Yb4-Ia-SQL"/>
+                        <outlet property="DescriptionBlog" destination="5QY-7e-WZZ" id="Yb4-Ia-SQL"/>
                         <outlet property="MainViewHeight" destination="22t-ZJ-h7K" id="cUf-0C-BHK"/>
                         <outlet property="UIImageViewCopy2" destination="hFG-Rq-gVb" id="ggS-Jz-GIp"/>
                         <outlet property="UIImageViewCopyLink" destination="krs-I0-Nop" id="vsr-Vc-yK2"/>
@@ -779,9 +779,9 @@
                         <outlet property="UILabelUnitPrice" destination="dQH-Ck-YjE" id="9A9-yk-wEV"/>
                         <outlet property="btn_back" destination="Poi-ml-0dm" id="gbq-Zk-LeK"/>
                         <outlet property="heightWebview" destination="eSJ-en-oez" id="NNF-U0-nlY"/>
+                        <outlet property="lblBlogTitle" destination="v0O-QS-nEZ" id="iWv-Xl-j1D"/>
                         <outlet property="lbl_IngredientsLavel" destination="gQw-ML-LOK" id="GTK-Da-CTQ"/>
                         <outlet property="lbl_SubCategoriesName" destination="1sA-Ih-GJb" id="05g-Y2-M78"/>
-                        <outlet property="lbl_itemsName" destination="v0O-QS-nEZ" id="iWv-Xl-j1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T90-Ho-TDf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
