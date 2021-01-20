@@ -103,7 +103,7 @@ extension LoginVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func btnTap_Login(_ sender: UIButton) {
-        let urlString = API_URL + "/api_task/users.login"
+        let urlString = API_URL + "/api_task/users.affiliate_login"
         let params: NSDictionary = [
             "username":self.txt_username.text!,
             "password":self.txt_Password.text!,
