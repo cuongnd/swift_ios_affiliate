@@ -22,7 +22,11 @@ class TutorialVC: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     
     //MARK: Variables
-    var tutorialArr = [["image":"ic_First","title":"FRESH FOOD","description":"Get the freshly prepared food any time you want at your place"],["image":"ic_cart","title":"FAST DELIVERY","description":"Have your food delivered instantly with our rapid delivery system"],["image":"ic_Second","title":"EASY PAYMENT","description":"Pay us easily with online or cash on delivery options"]]
+    var tutorialArr = [
+        ["image":"anhside_1","title":"Mạng lưới affiliate hiệu quả và uy tín","description":"Nền tảng Tiếp thị liên kết quy mô và uy tín nhất Việt Nam"],
+        ["image":"anhside_2","title":"Hoa hồng chia sẻ hấp dẫn","description":"Hoa hồng lên tới 21%, thanh toán nhanh nhất vào ngày 18 hàng tháng"],
+        ["image":"anhside_3","title":"Đa Dạng Chiến Dịch","description":"Hàng nghìn chiến dịch trong các lĩnh vực Thương mại điện tử, Du lịch, Ngân hàng – Bảo hiểm, Làm đẹp…"]
+    ]
     //MARK: Viewcontroller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,10 +73,10 @@ extension TutorialVC {
         guard let indexPath = self.collection_tutorial.indexPathForItem(at: visiblePoint) else { return }
         self.pageControl.currentPage = indexPath.item
         if indexPath.item == 2 {
-            self.btnSkip.setTitle("START", for: .normal)
+            self.btnSkip.setTitle("Bắt đầu", for: .normal)
         }
         else {
-            self.btnSkip.setTitle("SKIP", for: .normal)
+            self.btnSkip.setTitle("Bỏ qua", for: .normal)
         }
     }
 }
