@@ -149,9 +149,8 @@
 		0CDCD68525807B8C000B7F44 /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0CDCD68225807B8B000B7F44 /* Font Awesome 5 Brands-Regular-400.otf */; };
 		0CDCD68625807B8C000B7F44 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0CDCD68325807B8B000B7F44 /* Font Awesome 5 Free-Regular-400.otf */; };
 		0CDCD68725807B8C000B7F44 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0CDCD68425807B8B000B7F44 /* Font Awesome 5 Free-Solid-900.otf */; };
-		3158D387ECE044FAA2E345B4 /* Pods_AdayroiAffiliateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA734C84F8708E51D60AFAB /* Pods_AdayroiAffiliateUITests.framework */; };
-		462E27F9DFCBDA8CC42467F9 /* Pods_AdayroiAffiliateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281C0BC3F3E4979D860086D0 /* Pods_AdayroiAffiliateTests.framework */; };
-		809C673A70B84F1780EFDE8D /* Pods_AdayroiAffiliate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E9028D1FEB6A09E3D77F28 /* Pods_AdayroiAffiliate.framework */; };
+		251B1AA3C656E308734FE898 /* Pods_AdayroiAffiliate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFE0382A476F22D05F1BD42 /* Pods_AdayroiAffiliate.framework */; };
+		7C7D27EFF55BDC64019F9220 /* Pods_AdayroiAffiliateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD262998937B99214E38671 /* Pods_AdayroiAffiliateTests.framework */; };
 		880BDE8E24D552310085FC1D /* AddOnsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BDE8D24D552310085FC1D /* AddOnsVC.swift */; };
 		880BDE9024D5524F0085FC1D /* AddonceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BDE8F24D5524F0085FC1D /* AddonceListVC.swift */; };
 		880BDE9224D55F870085FC1D /* NoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BDE9124D55F870085FC1D /* NoteVC.swift */; };
@@ -196,6 +195,7 @@
 		C8C99E092488D93C00B5C187 /* CornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C99E012488D93C00B5C187 /* CornerView.swift */; };
 		C8F07A2B248F879700665143 /* OrderHistoryDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F07A2A248F879700665143 /* OrderHistoryDetailsVC.swift */; };
 		C8F882D2248CB79F0064D74F /* OrderHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F882D1248CB79F0064D74F /* OrderHistoryVC.swift */; };
+		EA8F5D67398C6F4674A9BD5A /* Pods_AdayroiAffiliateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F893935B59FC917AD90E6F5E /* Pods_AdayroiAffiliateUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,7 +216,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01E2E19DB1CA0A2FA3792ED6 /* Pods-AdayroiAffiliateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateUITests.debug.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateUITests/Pods-AdayroiAffiliateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0443F6A72590D834005D5637 /* HomeVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC2.swift; sourceTree = "<group>"; };
 		0443F6A92590F309005D5637 /* GetDoanhThuTheoThangResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDoanhThuTheoThangResponseModel.swift; sourceTree = "<group>"; };
 		0443F6AB2590F370005D5637 /* DoanhThuThangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoanhThuThangModel.swift; sourceTree = "<group>"; };
@@ -364,11 +363,10 @@
 		0CDCD68225807B8B000B7F44 /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		0CDCD68325807B8B000B7F44 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		0CDCD68425807B8B000B7F44 /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
-		281C0BC3F3E4979D860086D0 /* Pods_AdayroiAffiliateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdayroiAffiliateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EA734C84F8708E51D60AFAB /* Pods_AdayroiAffiliateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdayroiAffiliateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EE5B8DD4D09D6572CFDDBF3 /* Pods-AdayroiAffiliateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateUITests.release.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateUITests/Pods-AdayroiAffiliateUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7C770297236A6BCBD9612F7C /* Pods-AdayroiAffiliateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateTests.debug.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateTests/Pods-AdayroiAffiliateTests.debug.xcconfig"; sourceTree = "<group>"; };
-		80282219D133322512C5C8D4 /* Pods-AdayroiAffiliateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateTests.release.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateTests/Pods-AdayroiAffiliateTests.release.xcconfig"; sourceTree = "<group>"; };
+		2A100DF90D7DF08D0835A88B /* Pods-AdayroiAffiliateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateTests.release.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateTests/Pods-AdayroiAffiliateTests.release.xcconfig"; sourceTree = "<group>"; };
+		2D7C7A4BC9AA38A012999CCB /* Pods-AdayroiAffiliateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateUITests.release.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateUITests/Pods-AdayroiAffiliateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2FFE0382A476F22D05F1BD42 /* Pods_AdayroiAffiliate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdayroiAffiliate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62025703CF328DEF86C4A8E6 /* Pods-AdayroiAffiliateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateUITests.debug.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateUITests/Pods-AdayroiAffiliateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		880BDE8D24D552310085FC1D /* AddOnsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnsVC.swift; sourceTree = "<group>"; };
 		880BDE8F24D5524F0085FC1D /* AddonceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddonceListVC.swift; sourceTree = "<group>"; };
 		880BDE9124D55F870085FC1D /* NoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVC.swift; sourceTree = "<group>"; };
@@ -379,8 +377,8 @@
 		88D6F6EA24A63245005F1439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88F6721D24A4ADE5000061FB /* PromoCodeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeListVC.swift; sourceTree = "<group>"; };
 		88F7445024A5C2D300800568 /* FavoriteListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListVC.swift; sourceTree = "<group>"; };
-		98E9028D1FEB6A09E3D77F28 /* Pods_AdayroiAffiliate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdayroiAffiliate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA10EDE21CAA86DE1171B7E4 /* Pods-AdayroiAffiliate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliate.release.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate.release.xcconfig"; sourceTree = "<group>"; };
+		9AAE5646B39E937AA34D1A9A /* Pods-AdayroiAffiliateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliateTests.debug.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliateTests/Pods-AdayroiAffiliateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B21597FA262EE8EB72B37FFB /* Pods-AdayroiAffiliate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliate.debug.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate.debug.xcconfig"; sourceTree = "<group>"; };
 		C80208CB248A72B2001D8864 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		C811991C2495F57F00F9CF6F /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		C82AF9E22491FD2A00464115 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -422,7 +420,9 @@
 		C8C99E012488D93C00B5C187 /* CornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerView.swift; sourceTree = "<group>"; };
 		C8F07A2A248F879700665143 /* OrderHistoryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailsVC.swift; sourceTree = "<group>"; };
 		C8F882D1248CB79F0064D74F /* OrderHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryVC.swift; sourceTree = "<group>"; };
-		CF10D8D4D29D7A8EA57BF2D3 /* Pods-AdayroiAffiliate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliate.debug.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate.debug.xcconfig"; sourceTree = "<group>"; };
+		E361F14D1CC509B2B4C5D377 /* Pods-AdayroiAffiliate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdayroiAffiliate.release.xcconfig"; path = "Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate.release.xcconfig"; sourceTree = "<group>"; };
+		EDD262998937B99214E38671 /* Pods_AdayroiAffiliateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdayroiAffiliateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F893935B59FC917AD90E6F5E /* Pods_AdayroiAffiliateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdayroiAffiliateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,7 +430,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				809C673A70B84F1780EFDE8D /* Pods_AdayroiAffiliate.framework in Frameworks */,
+				251B1AA3C656E308734FE898 /* Pods_AdayroiAffiliate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +438,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				462E27F9DFCBDA8CC42467F9 /* Pods_AdayroiAffiliateTests.framework in Frameworks */,
+				7C7D27EFF55BDC64019F9220 /* Pods_AdayroiAffiliateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +446,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3158D387ECE044FAA2E345B4 /* Pods_AdayroiAffiliateUITests.framework in Frameworks */,
+				EA8F5D67398C6F4674A9BD5A /* Pods_AdayroiAffiliateUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,12 +982,12 @@
 			path = Fronts;
 			sourceTree = "<group>";
 		};
-		7375846AB9787D291AB10AED /* Frameworks */ = {
+		2FEB774BEC1F66C416F5649E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98E9028D1FEB6A09E3D77F28 /* Pods_AdayroiAffiliate.framework */,
-				281C0BC3F3E4979D860086D0 /* Pods_AdayroiAffiliateTests.framework */,
-				3EA734C84F8708E51D60AFAB /* Pods_AdayroiAffiliateUITests.framework */,
+				2FFE0382A476F22D05F1BD42 /* Pods_AdayroiAffiliate.framework */,
+				EDD262998937B99214E38671 /* Pods_AdayroiAffiliateTests.framework */,
+				F893935B59FC917AD90E6F5E /* Pods_AdayroiAffiliateUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1115,7 +1115,7 @@
 				C8C99DE92488D77F00B5C187 /* Adayroi AffiliateUITests */,
 				C8C99DC32488D77E00B5C187 /* Products */,
 				EE9A72D6B2945F7873CDD215 /* Pods */,
-				7375846AB9787D291AB10AED /* Frameworks */,
+				2FEB774BEC1F66C416F5649E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1195,12 +1195,12 @@
 		EE9A72D6B2945F7873CDD215 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF10D8D4D29D7A8EA57BF2D3 /* Pods-AdayroiAffiliate.debug.xcconfig */,
-				AA10EDE21CAA86DE1171B7E4 /* Pods-AdayroiAffiliate.release.xcconfig */,
-				7C770297236A6BCBD9612F7C /* Pods-AdayroiAffiliateTests.debug.xcconfig */,
-				80282219D133322512C5C8D4 /* Pods-AdayroiAffiliateTests.release.xcconfig */,
-				01E2E19DB1CA0A2FA3792ED6 /* Pods-AdayroiAffiliateUITests.debug.xcconfig */,
-				4EE5B8DD4D09D6572CFDDBF3 /* Pods-AdayroiAffiliateUITests.release.xcconfig */,
+				B21597FA262EE8EB72B37FFB /* Pods-AdayroiAffiliate.debug.xcconfig */,
+				E361F14D1CC509B2B4C5D377 /* Pods-AdayroiAffiliate.release.xcconfig */,
+				9AAE5646B39E937AA34D1A9A /* Pods-AdayroiAffiliateTests.debug.xcconfig */,
+				2A100DF90D7DF08D0835A88B /* Pods-AdayroiAffiliateTests.release.xcconfig */,
+				62025703CF328DEF86C4A8E6 /* Pods-AdayroiAffiliateUITests.debug.xcconfig */,
+				2D7C7A4BC9AA38A012999CCB /* Pods-AdayroiAffiliateUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1212,11 +1212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8C99DEF2488D77F00B5C187 /* Build configuration list for PBXNativeTarget "AdayroiAffiliate" */;
 			buildPhases = (
-				79BB0E904C513A606C45568E /* [CP] Check Pods Manifest.lock */,
+				C23232A79487FA9CE3C28138 /* [CP] Check Pods Manifest.lock */,
 				C8C99DBE2488D77E00B5C187 /* Sources */,
 				C8C99DBF2488D77E00B5C187 /* Frameworks */,
 				C8C99DC02488D77E00B5C187 /* Resources */,
-				1464701AD7A0487033F01454 /* [CP] Embed Pods Frameworks */,
+				F3CDD0922915D2F547D7B785 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1231,7 +1231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8C99DF22488D77F00B5C187 /* Build configuration list for PBXNativeTarget "AdayroiAffiliateTests" */;
 			buildPhases = (
-				2C52937642C5939B3BC2E2B3 /* [CP] Check Pods Manifest.lock */,
+				6D2687C439B7D588B7C0CBDC /* [CP] Check Pods Manifest.lock */,
 				C8C99DD72488D77F00B5C187 /* Sources */,
 				C8C99DD82488D77F00B5C187 /* Frameworks */,
 				C8C99DD92488D77F00B5C187 /* Resources */,
@@ -1250,7 +1250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8C99DF52488D77F00B5C187 /* Build configuration list for PBXNativeTarget "AdayroiAffiliateUITests" */;
 			buildPhases = (
-				FC88FCBE900B6CF0ED979508 /* [CP] Check Pods Manifest.lock */,
+				7411D298EC82F213BEDE5B80 /* [CP] Check Pods Manifest.lock */,
 				C8C99DE22488D77F00B5C187 /* Sources */,
 				C8C99DE32488D77F00B5C187 /* Frameworks */,
 				C8C99DE42488D77F00B5C187 /* Resources */,
@@ -1361,24 +1361,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1464701AD7A0487033F01454 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2C52937642C5939B3BC2E2B3 /* [CP] Check Pods Manifest.lock */ = {
+		6D2687C439B7D588B7C0CBDC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1400,7 +1383,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		79BB0E904C513A606C45568E /* [CP] Check Pods Manifest.lock */ = {
+		7411D298EC82F213BEDE5B80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdayroiAffiliateUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C23232A79487FA9CE3C28138 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1422,26 +1427,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FC88FCBE900B6CF0ED979508 /* [CP] Check Pods Manifest.lock */ = {
+		F3CDD0922915D2F547D7B785 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AdayroiAffiliateUITests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdayroiAffiliate/Pods-AdayroiAffiliate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1793,7 +1793,7 @@
 		};
 		C8C99DF02488D77F00B5C187 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF10D8D4D29D7A8EA57BF2D3 /* Pods-AdayroiAffiliate.debug.xcconfig */;
+			baseConfigurationReference = B21597FA262EE8EB72B37FFB /* Pods-AdayroiAffiliate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AdayroiAffiliate/Adayroi Affiliate.entitlements";
@@ -1816,7 +1816,7 @@
 		};
 		C8C99DF12488D77F00B5C187 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA10EDE21CAA86DE1171B7E4 /* Pods-AdayroiAffiliate.release.xcconfig */;
+			baseConfigurationReference = E361F14D1CC509B2B4C5D377 /* Pods-AdayroiAffiliate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AdayroiAffiliate/Adayroi Affiliate.entitlements";
@@ -1839,7 +1839,7 @@
 		};
 		C8C99DF32488D77F00B5C187 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C770297236A6BCBD9612F7C /* Pods-AdayroiAffiliateTests.debug.xcconfig */;
+			baseConfigurationReference = 9AAE5646B39E937AA34D1A9A /* Pods-AdayroiAffiliateTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1861,7 +1861,7 @@
 		};
 		C8C99DF42488D77F00B5C187 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80282219D133322512C5C8D4 /* Pods-AdayroiAffiliateTests.release.xcconfig */;
+			baseConfigurationReference = 2A100DF90D7DF08D0835A88B /* Pods-AdayroiAffiliateTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1883,7 +1883,7 @@
 		};
 		C8C99DF62488D77F00B5C187 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01E2E19DB1CA0A2FA3792ED6 /* Pods-AdayroiAffiliateUITests.debug.xcconfig */;
+			baseConfigurationReference = 62025703CF328DEF86C4A8E6 /* Pods-AdayroiAffiliateUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1903,7 +1903,7 @@
 		};
 		C8C99DF72488D77F00B5C187 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EE5B8DD4D09D6572CFDDBF3 /* Pods-AdayroiAffiliateUITests.release.xcconfig */;
+			baseConfigurationReference = 2D7C7A4BC9AA38A012999CCB /* Pods-AdayroiAffiliateUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

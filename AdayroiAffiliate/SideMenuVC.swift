@@ -9,7 +9,19 @@
 import UIKit
 import SwiftyJSON
 import SDWebImage
-
+struct MenuModel {
+    let title: String
+    let icon: String
+    let viewController:UINavigationController
+    let is_logout:Bool
+    init(title:String,icon:String,viewController:UINavigationController,is_logout:Bool) {
+        self.title = title
+        self.icon = icon
+        self.is_logout = is_logout
+        self.viewController=viewController
+        
+    }
+}
 class MenuTableCell: UITableViewCell {
     @IBOutlet weak var lbl_menu: UILabel!
     @IBOutlet weak var img_menu: UIImageView!
@@ -23,96 +35,66 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var lblUsername: UILabel!
     
     //MARK: Variables
-    var menuArray = [String]()
-    var menuImgeArray = [String]()
-    var homeViewController = UINavigationController()
-    var historyViewController = UINavigationController()
-    var LoginViewController = UINavigationController()
-    var SettingsViewController = UINavigationController()
-    var RatingsViewController = UINavigationController()
-    var FavoriteViewController = UINavigationController()
-    var CategoryListViewController = UINavigationController()
-    var BlogsViewController = UINavigationController()
-    
+   
+    var list_item_menu:[MenuModel] = [MenuModel]()
     
     //MARK: Viewcontroller lifecycle
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        if UserDefaultManager.getStringFromUserDefaults(key: UD_isSkip) == "1"
-        {
-            if UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "en" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "N/A"
-            {
-                menuArray = ["Trang chủ","Rút tiền","Chia sẻ sản phẩm","sfs","Cài đặt"]
-                menuImgeArray = ["ic_Home","ic_OrderHistory","ic_heart","ic_rate","ic_settings"]
-            }
-            else{
-//                menuArray = ["الصفحة الرئيسية","تاريخ الطلب","قائمة المفضلة","التقييمات","الإعدادات"]
-//                menuImgeArray = ["ic_Home","ic_OrderHistory","ic_heart","ic_rate","ic_settings"]
-                menuArray = ["Home","Order History","Favorite List","Ratings","Settings"]
-                menuImgeArray = ["ic_Home","ic_OrderHistory","ic_heart","ic_rate","ic_settings"]
-            }
-        }
-        else{
-            
-            if UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "en" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "" || UserDefaultManager.getStringFromUserDefaults(key: UD_isSelectLng) == "N/A"
-            {
-                menuArray = ["Trang chủ","Rút tiền","Chia sẻ sản phẩm","Hướng dẫn","Thông tin tài khoản","Đăng xuất"]
-                menuImgeArray = ["ic_Home","ic_OrderHistory","ic_heart","ic_rate","ic_settings","ic_logout"]
-            }
-            else{
-//                menuArray = ["الصفحة الرئيسية","تاريخ الطلب","قائمة المفضلة","التقييمات","الإعدادات","تسجيل خروج"]
-//                menuImgeArray = ["ic_Home","ic_OrderHistory","ic_heart","ic_rate","ic_settings","ic_logout"]
-                menuArray = ["Home","Order History","Favorite List","Ratings","Settings","Logout"]
-                menuImgeArray = ["ic_Home","ic_OrderHistory","ic_heart","ic_rate","ic_settings","ic_logout"]
-            }
-            
-            
-        }
-        cornerRadius(viewName: self.imgProfile, radius: self.imgProfile.frame.height / 2)
         
         let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-        self.homeViewController = UINavigationController(rootViewController: homeVC)
-        self.homeViewController.setNavigationBarHidden(true, animated: true)
+        var viewController=UINavigationController(rootViewController: homeVC)
+        viewController.setNavigationBarHidden(true, animated: true)
+        self.list_item_menu.append(MenuModel(title: "Trang chủ", icon: "ic_Home",viewController: viewController,is_logout: false))
+        
+        
+        let myProductListVC = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "CategoryListVC") as! CategoryListVC
+        viewController = UINavigationController(rootViewController: myProductListVC)
+        viewController.setNavigationBarHidden(true, animated: true)
+        self.list_item_menu.append(MenuModel(title: "Chia sẻ sản phẩm", icon: "ic_Home",viewController: viewController,is_logout: false))
+        
+        
+        let ordersVC = UIStoryboard(name: "Order", bundle: nil).instantiateViewController(withIdentifier: "OrderHistoryVC") as! OrderHistoryVC
+        viewController = UINavigationController(rootViewController: ordersVC)
+        viewController.setNavigationBarHidden(true, animated: true)
+        self.list_item_menu.append(MenuModel(title: "Xem các đơn hàng", icon: "ic_OrderHistory",viewController: viewController,is_logout: false))
+        
+        
+        let blogVC = UIStoryboard(name: "Blogs", bundle: nil).instantiateViewController(withIdentifier: "BlogsVC") as! BlogsVC
+        viewController = UINavigationController(rootViewController: blogVC)
+        viewController.setNavigationBarHidden(true, animated: true)
+        self.list_item_menu.append(MenuModel(title: "Hướng dẫn", icon: "ic_OrderHistory",viewController: viewController,is_logout: false))
+               
+        
         
         let withdrawalListVC = UIStoryboard(name: "Withdrawal", bundle: nil).instantiateViewController(withIdentifier: "WithdrawalListVC") as! WithdrawalListVC
-        self.historyViewController = UINavigationController(rootViewController: withdrawalListVC)
-        self.historyViewController.setNavigationBarHidden(true, animated: true)
-        
-        let LoginsVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        self.LoginViewController = UINavigationController(rootViewController: LoginsVC)
-        self.LoginViewController.setNavigationBarHidden(true,animated:true)
+        viewController = UINavigationController(rootViewController: withdrawalListVC)
+        viewController.setNavigationBarHidden(true, animated: true)
+        self.list_item_menu.append(MenuModel(title: "Rút tiền", icon: "ic_Home",viewController: viewController,is_logout: false))
         
         
-        let SettingVC = UIStoryboard(name: "Setting", bundle: nil).instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
-        self.SettingsViewController = UINavigationController(rootViewController: SettingVC)
-        self.SettingsViewController.setNavigationBarHidden(true,animated:true)
         
-        let rateVC = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "RatingsVC") as! RatingsVC
-        self.RatingsViewController = UINavigationController(rootViewController: rateVC)
-        self.RatingsViewController.setNavigationBarHidden(true,animated:true)
+        let settingsVC = UIStoryboard(name: "Setting", bundle: nil).instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
+        viewController = UINavigationController(rootViewController: settingsVC)
+        viewController.setNavigationBarHidden(true, animated: true)
+        self.list_item_menu.append(MenuModel(title: "Cài đặt", icon: "ic_settings",viewController: viewController,is_logout: false))
         
-        let FavoritesVC = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "FavoriteListVC") as! FavoriteListVC
-        self.FavoriteViewController = UINavigationController(rootViewController: FavoritesVC)
-        self.FavoriteViewController.setNavigationBarHidden(true,animated:true)
-        
-        let CategoryListVC = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "CategoryListVC") as! CategoryListVC
-        self.CategoryListViewController = UINavigationController(rootViewController: CategoryListVC)
-        self.CategoryListViewController.setNavigationBarHidden(true,animated:true)
-        
-        let BlogsVC = UIStoryboard(name: "Blogs", bundle: nil).instantiateViewController(withIdentifier: "BlogsVC") as! BlogsVC
-       self.BlogsViewController = UINavigationController(rootViewController: BlogsVC)
-       self.BlogsViewController.setNavigationBarHidden(true,animated:true)
-               
+       
+        let loginVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        viewController = UINavigationController(rootViewController: loginVC)
+        viewController.setNavigationBarHidden(true, animated: true)
+        self.list_item_menu.append(MenuModel(title: "Đăng xuất", icon: "ic_logout",viewController: viewController,is_logout: true))
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if UserDefaultManager.getStringFromUserDefaults(key: UD_isSkip) != "1"
         {
-
-              let urlString = API_URL + "/api/users/"+String(UserDefaults.standard.value(forKey: UD_userId) as! String)
-                  let params: NSDictionary = [:]
-                  self.Webservice_GetProfile(url: urlString, params: params)
+            
+            let urlString = API_URL + "/api/users/"+String(UserDefaults.standard.value(forKey: UD_userId) as! String)
+            let params: NSDictionary = [:]
+            self.Webservice_GetProfile(url: urlString, params: params)
         }
     }
 }
@@ -122,12 +104,13 @@ extension SideMenuVC : UITableViewDataSource,UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.menuArray.count
+        return self.list_item_menu.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableCell") as! MenuTableCell
-        cell.lbl_menu.text = self.menuArray[indexPath.row]
-        cell.img_menu.image = UIImage.init(named: self.menuImgeArray[indexPath.row])
+        let menuModel:MenuModel=self.list_item_menu[indexPath.row]
+        cell.lbl_menu.text = menuModel.title
+        cell.img_menu.image = UIImage.init(named: menuModel.icon)
         return cell
     }
     
@@ -135,42 +118,11 @@ extension SideMenuVC : UITableViewDataSource,UITableViewDelegate
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0
-        {
-            self.slideMenuController()?.changeMainViewController(self.homeViewController, close: true)
+        let menuModel:MenuModel=self.list_item_menu[indexPath.row]
+        if(menuModel.is_logout){
+             UserDefaultManager.setStringToUserDefaults(value: "", key: UD_userId)
         }
-        if indexPath.row == 1
-        {
-            if UserDefaultManager.getStringFromUserDefaults(key: UD_isSkip) == "1"
-            {
-                self.slideMenuController()?.changeMainViewController(self.LoginViewController, close: true)
-            }
-            else{
-              self.slideMenuController()?.changeMainViewController(self.historyViewController, close: true)
-            }
-            
-        }
-        if indexPath.row == 2
-        {
-            self.slideMenuController()?.changeMainViewController(self.CategoryListViewController, close: true)
-            
-        }
-        if indexPath.row == 3
-        {
-            self.slideMenuController()?.changeMainViewController(self.BlogsViewController, close: true)
-            
-        }
-        if indexPath.row == 4
-        {
-            self.slideMenuController()?.changeMainViewController(self.SettingsViewController, close: true)
-            
-        }
-        if indexPath.row == 5
-        {
-            UserDefaultManager.setStringToUserDefaults(value: "", key: UD_userId)
-            self.slideMenuController()?.changeMainViewController(self.LoginViewController, close: true)
-            
-        }
+        self.slideMenuController()?.changeMainViewController(menuModel.viewController, close: true)
     }
 }
 //MARK: Webservices
