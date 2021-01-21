@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window?.rootViewController = nav
         }
         else {
-            if UserDefaults.standard.value(forKey: UD_userId) == nil || UserDefaults.standard.value(forKey: UD_userId) as! String == "" || UserDefaults.standard.value(forKey: UD_userId) as! String == "N/A" {
+            if UserDefaults.standard.value(forKey: UD_userId) == nil || UserDefaults.standard.value(forKey: UD_userId) as! String == "" || UserDefaults.standard.value(forKey: UD_userId) as! String == "N/A" || UserDefaults.standard.value(forKey: UD_userId) as! String == ""{
                 let storyBoard = UIStoryboard(name: "User", bundle: nil)
                 let objVC = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                 let nav : UINavigationController = UINavigationController(rootViewController: objVC)

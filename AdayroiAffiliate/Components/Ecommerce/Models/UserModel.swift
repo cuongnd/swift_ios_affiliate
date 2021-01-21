@@ -1,6 +1,6 @@
 //
 //  ObjectMapperFrontendCart.swift
-//  AdayroiAffiliate
+//  AdayroiVendor
 //
 //  Created by MAC OSX on 12/6/20.
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.
@@ -34,6 +34,7 @@ struct UserModel: Codable {
     let profile_image: String
     let shipping_phone: String
     let username: String
+    let default_photo: ImageModel?
     enum CodingKeys: String, CodingKey {
         case facebook_id = "facebook_id"
         case shipping_address_1 = "shipping_address_1"
@@ -63,5 +64,37 @@ struct UserModel: Codable {
         case profile_image = "profile_image"
         case shipping_phone = "shipping_phone"
         case username = "username"
+        case default_photo = "default_photo"
+    }
+    init() {
+        facebook_id = ""
+        shipping_address_1 = ""
+        shipping_city = ""
+        billing_country = ""
+        billing_phone = ""
+        billing_email = ""
+        billing_address_1 = ""
+        billing_fullname = ""
+        shipping_state = ""
+        active = 1
+        billing_company = ""
+        modify_date = ""
+        billing_state = ""
+        billing_city = ""
+        shipping_address_2 = ""
+        _id = ""
+        phonenumber = ""
+        fullname = ""
+        billing_postal_code = ""
+        email = ""
+        billing_address_2 = ""
+        shipping_email = ""
+        
+        shipping_fullname  = ""
+        shipping_postal_code = ""
+        profile_image = ""
+        shipping_phone = ""
+        username = ""
+        default_photo = ImageModel()
     }
 }
