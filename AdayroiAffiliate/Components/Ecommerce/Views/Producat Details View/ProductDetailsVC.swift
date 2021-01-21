@@ -760,26 +760,7 @@ extension ProductDetailsVC
     
     
     func Webservice_getRelatedProducts(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            
-            if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-            }
-            else {
-                let responseCode = jsonResponse!["result"].stringValue
-                if responseCode == "success" {
-                    let RelatedProductsData = jsonResponse!["data"].arrayValue
-                    self.RelatedProductsData = RelatedProductsData
-                    self.CollectionViewRelatedProducts.delegate = self
-                    self.CollectionViewRelatedProducts.dataSource = self
-                    self.CollectionViewRelatedProducts.reloadData()
-                    
-                }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
-            }
-        }
+       
     }
     func webViewDidFinishLoad(webView: UIWebView) {
         webView.frame.size.height = 1
