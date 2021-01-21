@@ -109,7 +109,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         super.viewDidLoad()
         self.lbl_DetailsLabel.text = "Details".localiz()
         self.lbl_IngredientsLavel.text = "Ingredients".localiz()
-        let urlString = API_URL + "/api/affiliateproduct/"+String(self.itemsId)
+        let urlString = API_URL + "/api/affiliateproducts/"+String(self.itemsId)
         let params: NSDictionary = [:]
         self.Webservice_getProductDetail(url: urlString, params:params)
        
@@ -664,10 +664,13 @@ extension ProductDetailsVC
                 let productImages = jsonResponse!.arrayValue
                 self.productImages.removeAll()
                 for image in productImages {
-                    print(image["itemimage"].stringValue)
-                    let imageSource = SDWebImageSource(url: URL(string: image["img_path"].stringValue)!, placeholder: UIImage(named: "placeholder_image"))
-                    print(imageSource)
-                    self.productImages.append(imageSource)
+                    if(image["img_path"].stringValue != ""){
+                        let imageSource = SDWebImageSource(url: URL(string: (image["img_path"].stringValue ?? "https://adayroi.online/no_image.jpg"))! , placeholder: UIImage(named: "placeholder_image"))
+                       print(imageSource)
+                       self.productImages.append(imageSource)
+                    }
+                  
+                   
                 }
                 self.imageSliderData()
             }
