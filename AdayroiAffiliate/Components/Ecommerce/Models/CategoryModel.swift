@@ -1,6 +1,6 @@
 //
 //  ObjectMapperFrontendCart.swift
-//  AdayroiAffiliate
+//  AdayroiVendor
 //
 //  Created by MAC OSX on 12/6/20.
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.
@@ -12,13 +12,13 @@ struct CategoryModel: Codable {
     let status: Bool
     let added_date: String
     let added_user_id: String
-    let updated_date: String?=""
+    var updated_date: String?=""
     let updated_user_id: String
     let ordering: Int
     let alias: String
     let description: String
-    let default_photo: ImageModel
-    let default_icon: ImageModel
+    let default_photo: ImageModel?
+    let default_icon: ImageModel?
    
     
     enum CodingKeys: String, CodingKey {
@@ -34,5 +34,20 @@ struct CategoryModel: Codable {
         case description = "description"
         case default_photo =  "default_photo"
         case default_icon = "default_icon"
+    }
+    init() {
+        _id = ""
+        name = ""
+        status = true
+        added_date = ""
+        added_user_id = ""
+        updated_date=""
+        updated_user_id=""
+        ordering=0
+        alias=""
+        description=""
+        default_photo=ImageModel()
+        default_icon=ImageModel()
+      
     }
 }

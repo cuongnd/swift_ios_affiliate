@@ -95,7 +95,7 @@ extension CategoryListVC {
         print("categoryModel \(categoryModel)")
         cell.UILabelCategoryName.text = categoryModel.name
         let categoryImage = categoryModel.default_photo
-        cell.UIImageViewCategoryImage.sd_setImage(with: URL(string: categoryImage.img_path), placeholderImage: UIImage(named: "placeholder_image"))
+        cell.UIImageViewCategoryImage.sd_setImage(with: URL(string: categoryImage!.img_path), placeholderImage: UIImage(named: "placeholder_image"))
          
            
            return cell

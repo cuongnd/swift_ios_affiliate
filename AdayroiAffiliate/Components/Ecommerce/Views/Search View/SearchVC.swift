@@ -38,7 +38,7 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
         self.lbl_titleLabel.text = "Search".localiz()
         if(!self.cat_id.isEmpty){
-            let urlString = API_URL + "/api/products?cat_id="+self.cat_id+"&sub_cat_id=\(sub_cat_id)&user_id="+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
+            let urlString = API_URL + "/api/affiliateproducts?cat_id="+self.cat_id+"&sub_cat_id=\(sub_cat_id)&user_id="+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
             var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             let params: NSDictionary = [:]
             self.Webservice_getSearch(url: urlString1!, params:params)
@@ -56,7 +56,7 @@ class SearchVC: UIViewController {
             self.Collectioview_SearchList.reloadData()
         }
         else{
-            let urlString = API_URL + "/api/products?cat_id=\(self.cat_id)&keyword="+String(searchTxt)+"&user_id="+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
+            let urlString = API_URL + "/api/affiliateproducts?cat_id=\(self.cat_id)&keyword="+String(searchTxt)+"&user_id="+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
             var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             let params: NSDictionary = [:]
             self.Webservice_getSearch(url: urlString1!, params:params)
@@ -92,7 +92,7 @@ extension SearchVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollec
         let commistionValue=(productItem.commistion*productItem.unit_price)/100
         let commistionValue1=LibraryUtilitiesUtility.format_currency(amount: UInt64(commistionValue), decimalCount: 0)
         cell.UILabelCommistion.text="Hoa hồng:\(String(productItem.commistion))%(\(commistionValue1))"
-        cell.img_search_product.sd_setImage(with: URL(string: productItem.default_photo.img_path), placeholderImage: UIImage(named: "placeholder_image"))
+        cell.img_search_product.sd_setImage(with: URL(string: productItem.default_photo!.img_path), placeholderImage: UIImage(named: "placeholder_image"))
         
         cell.UIImageViewShared.tag = indexPath.row
         let tap = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareProduct))
@@ -112,7 +112,7 @@ extension SearchVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollec
          let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
         let productItem=self.list_product[sender.view!.tag];
         let link_product_detail:String = "https://adayroi.online/landingpage/\(productItem._id)/\(user_id)/default/\(productItem.alias).html";
-        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(productItem.name)&sd=\(productItem.name)&utm_source=app_affiliate&product_id=\(productItem._id)&user_affiliate_id=\(user_id)&si=\(productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(productItem.name)&sd=\(productItem.name)&utm_source=app_affiliate&product_id=\(productItem._id)&user_affiliate_id=\(user_id)&si=\(productItem.default_photo!.img_path)&ibi=com.vantinviet.banhangonlineapp"
         
         
         
@@ -144,7 +144,7 @@ extension SearchVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollec
             if self.pageIndex != self.lastIndex {
                 self.pageIndex = self.pageIndex + 1
                 
-                let urlString = API_URL + "/api/products?cat_id=\(self.cat_id)&keyword="+String(searchTxt)+"&limit=30&start="+String(self.pageIndex)+"&user_id"+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
+                let urlString = API_URL + "/api/affiliateproducts?cat_id=\(self.cat_id)&keyword="+String(searchTxt)+"&limit=30&start="+String(self.pageIndex)+"&user_id"+String(UserDefaultManager.getStringFromUserDefaults(key: UD_userId));
                 let params: NSDictionary = [:]
                 var urlString1 = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                 self.Webservice_getSearch(url: urlString1!, params:params)

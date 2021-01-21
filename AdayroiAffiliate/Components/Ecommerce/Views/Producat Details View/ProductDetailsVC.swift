@@ -109,7 +109,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         super.viewDidLoad()
         self.lbl_DetailsLabel.text = "Details".localiz()
         self.lbl_IngredientsLavel.text = "Ingredients".localiz()
-        let urlString = API_URL + "/api/products/"+String(self.itemsId)
+        let urlString = API_URL + "/api/affiliateproduct/"+String(self.itemsId)
         let params: NSDictionary = [:]
         self.Webservice_getProductDetail(url: urlString, params:params)
        
@@ -126,7 +126,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         
         
         self.productImages.removeAll()
-        let urlGetRelatedProducts = API_URL + "/api/products/get_related_product_trending/product_id/\(String(self.itemsId))/sub_cat_id/\(self.SubCategoryId)"
+        let urlGetRelatedProducts = API_URL + "/api/affiliateproducts/get_related_product_trending/product_id/\(String(self.itemsId))/sub_cat_id/\(self.SubCategoryId)"
         let paramsRelatedProducts: NSDictionary = [:]
         self.Webservice_getRelatedProducts(url: urlGetRelatedProducts, params:paramsRelatedProducts)
         let observer: Observer<[[String:Any]]> = Observer(update: { liveDataCart in
@@ -204,7 +204,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         //let productItem=self.list_product[sender.view!.tag];
         let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
         
-        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.productItem.name)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo!.img_path)&ibi=com.vantinviet.banhangonlineapp"
         
         
         
@@ -225,8 +225,8 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         let user_id:String=UserDefaultManager.getStringFromUserDefaults(key: UD_userId);
         //let productItem=self.list_product[sender.view!.tag];
         let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
-        
-        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+        print("self.itemsData \(self.itemsData)")
+        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.productItem.name)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo!.img_path)&ibi=com.vantinviet.banhangonlineapp"
         print("link_product_detail \(link_product_detail)")
         guard let url = URL(string: link_product_detail) else { return }
         UIApplication.shared.open(url)
@@ -243,7 +243,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         //let productItem=self.list_product[sender.view!.tag];
         let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
         
-        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo.img_path)&ibi=com.vantinviet.banhangonlineapp"
+        let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.itemsData["name"]?.stringValue)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo!.img_path)&ibi=com.vantinviet.banhangonlineapp"
         
         
         
@@ -685,7 +685,7 @@ extension ProductDetailsVC
                     let jsonDecoder = JSONDecoder()
                     let getApiResponseProductModel = try jsonDecoder.decode(GetApiResponseProductModel.self, from: jsonResponse!)
                     self.productItem=getApiResponseProductModel.product
-                    
+                    print("self.productItem \(self.productItem)")
                     let currency=UserDefaultManager.getStringFromUserDefaults(key: UD_currency);
                     var original_price = LibraryUtilitiesUtility.format_currency(amount: UInt64(self.productItem.original_price), decimalCount: 0)
                     self.lbl_itemsPrice.attributedText = original_price.strikeThrough()
@@ -721,7 +721,7 @@ extension ProductDetailsVC
                     _ = API_URL1 + "cartcount"
                     let _: NSDictionary = ["user_id":2]
                     //self.Webservice_cartcount(url: urlString, params:params)
-                    let UrlDescriptionProduct = URL(string:"https://api.adayroi.online/api/products/description/\(self.productItem._id)")
+                    let UrlDescriptionProduct = URL(string:"https://api.adayroi.online/api/affiliateproducts/description/\(self.productItem._id)")
                     print("UrlDescriptionProduct \(UrlDescriptionProduct!)")
                     let myRequest = URLRequest(url: UrlDescriptionProduct!)
                     self.DescriptionProduct.load(myRequest)
@@ -736,6 +736,7 @@ extension ProductDetailsVC
                     
                     
                 } catch let error as NSError  {
+                    print("url: \(url)")
                     print("error: \(error)")
                 }
                 

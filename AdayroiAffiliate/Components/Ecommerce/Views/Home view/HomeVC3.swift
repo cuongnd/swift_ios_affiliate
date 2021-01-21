@@ -122,7 +122,7 @@ class HomeVC3: UIViewController {
         }
         let urlString = API_URL + "/api/categories"
         self.Webservice_getCategory(url: urlString, params: [:])
-       let urlStringFeatureProduct = API_URL + "/api/products?is_featured"
+       let urlStringFeatureProduct = API_URL + "/api/affiliateproducts?is_featured"
                             self.Webservice_getFeatureProduct(url: urlStringFeatureProduct, params: [:])
     }
     
