@@ -1,6 +1,6 @@
 //
 //  SettingsVC.swift
-//  AdayroiAffiliate
+//  AdayroiVendor
 //
 //  Created by Mitesh's MAC on 11/06/20.
 //  Copyright © 2020 Mitesh's MAC. All rights reserved.
@@ -61,13 +61,14 @@ class SettingsVC: UIViewController {
             UIApplication.shared.windows[0].rootViewController = nav
         }
         else{
-            let vc = self.storyboard?.instantiateViewController(identifier: "ChangePassswordVC") as! ChangePassswordVC
+            let storyBoard = UIStoryboard(name: "User", bundle: nil)
+            let vc = storyBoard.instantiateViewController(identifier: "ChangePassswordVC") as! ChangePassswordVC
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }
     @IBAction func btnTap_Shareapp(_ sender: UIButton) {
-            let text = "App Link"
+            let text = "Adayroi Affiliate"
                   let textShare = [ text ]
                   let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
                   activityViewController.popoverPresentationController?.sourceView = self.view
