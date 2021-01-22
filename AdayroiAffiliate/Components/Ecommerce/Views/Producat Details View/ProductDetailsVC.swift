@@ -15,7 +15,6 @@ import SQLite
 import ETBinding
 class AddonseCell: UITableViewCell {
     
-    @IBOutlet weak var btn_Close: UIButton!
     @IBOutlet weak var btn_Check: UIButton!
     @IBOutlet weak var lbl_Price: UILabel!
     @IBOutlet weak var lbl_Title: UILabel!
@@ -44,25 +43,18 @@ class RelatedProductCell: UICollectionViewCell {
 }
 class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigationDelegate {
     
-    @IBOutlet weak var text_view: UITextView!
-    @IBOutlet weak var Addons_Height: NSLayoutConstraint!
-    @IBOutlet weak var TableView_AddonsList: UITableView!
     
     @IBOutlet weak var UIImageViewShare: UIImageView!
     @IBOutlet weak var btn_back: UIButton!
-    @IBOutlet weak var btn_Cart: UIButton!
     @IBOutlet weak var CollectionViewRelatedProducts: UICollectionView!
-    @IBOutlet weak var btn_Addtocart: UIButton!
     @IBOutlet weak var image_Slider: ImageSlideshow!
     
     @IBOutlet weak var lbl_itemsName: UILabel!
     @IBOutlet weak var lbl_SubCategoriesName: UILabel!
     @IBOutlet weak var lbl_itemsPrice: UILabel!
-    @IBOutlet weak var lbl_itemsDescripation: UILabel!
     
     @IBOutlet weak var UICollectionViewColors: UICollectionView!
     @IBOutlet weak var UICollectionViewAttributesHeader: UICollectionView!
-    @IBOutlet weak var lbl_itemTime: UILabel!
     
     @IBOutlet weak var lbl_IngredientsLavel: UILabel!
     @IBOutlet weak var lbl_DetailsLabel: UILabel!
@@ -78,12 +70,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     var FinalTotal = Double()
     var itemsData=[String : JSON]();
     var productItem:ProductModel=ProductModel();
-    @IBOutlet weak var lbl_count: UILabel!
-    @IBOutlet weak var btn_Minus: UIButton!
-    @IBOutlet weak var btn_Pluse: UIButton!
-    @IBOutlet weak var lbl_Cartcount: UILabel!
-    @IBOutlet weak var item_UnavailableView: UIView!
-    @IBOutlet weak var UnavailableView_Height: NSLayoutConstraint!
+    
     
     @IBOutlet weak var UIImageViewOpenBrowser: UIImageView!
     @IBOutlet weak var productUnitPrice: UILabel!
@@ -119,9 +106,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         let paramsGetImages: NSDictionary = [:]
         
         self.Webservice_getImageByProductDetail(url: urlGetImagesString, params:paramsGetImages)
-        self.text_view.text = "Write Notes".localiz()
-        self.text_view.textColor = UIColor.lightGray
-        self.text_view.delegate = self
+       
         self.DescriptionProduct.navigationDelegate = self
         
         
@@ -302,56 +287,9 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         
         
     }
-    @IBAction func btnTap_AddOns(_ sender: UIButton) {
-        let vc = self.storyboard?.instantiateViewController(identifier: "AddOnsVC") as! AddOnsVC
-        vc.delegate = self
-        vc.addonsArray = self.addonsArray
-        self.present(vc, animated: true, completion: nil)
-    }
     
-    @IBAction func btnTap_Pluse(_ sender: UIButton) {
-        let CountPluse  = AFWrapperClass.compareStringValue(currentValue:self.lbl_count.text!, limit: 99, toDo: .Add)
-        print(CountPluse)
-        self.lbl_count.text = CountPluse
-        
-        var Prices = [Double]()
-        for data in self.SelectedAddons
-        {
-            Prices.append(Double("\(data["price"]!)")!)
-        }
-        print(Prices)
-        let total = Prices.reduce(0, +)
-        let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-        let Total = Double(SetTotal)! + total
-        let Qtyvalue = self.lbl_count.text!
-        self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
-        print(FinalTotal)
-        let ItemPriceTotal = formatter.string(for: FinalTotal)
-        self.btn_Addtocart.setTitle("\(cartStr) \(ItemPriceTotal!) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))".localiz(), for: .normal)
-        
-    }
-    @IBAction func btnTap_Minus(_ sender: UIButton) {
-        let CountMinus  = AFWrapperClass.compareStringValue(currentValue:self.lbl_count.text!, limit: 99, toDo: .Subtract)
-        self.lbl_count.text = CountMinus
-        
-        print(CountMinus)
-        
-        var Prices = [Double]()
-        for data in self.SelectedAddons
-        {
-            Prices.append(Double("\(data["price"]!)")!)
-            
-        }
-        print(Prices)
-        let total = Prices.reduce(0, +)
-        let SetTotal = self.lbl_itemsPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-        let Total = Double(SetTotal)! + total
-        let Qtyvalue = self.lbl_count.text!
-        self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
-        print(FinalTotal)
-        let ItemPriceTotal = formatter.string(for: FinalTotal)
-        self.btn_Addtocart.setTitle("\(cartStr) \(ItemPriceTotal!) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))".localiz(), for: .normal)
-    }
+    
+    
 }
 
 extension ProductDetailsVC {
@@ -372,60 +310,7 @@ extension ProductDetailsVC {
         self.image_Slider.presentFullScreenController(from: self)
     }
 }
-extension ProductDetailsVC: AddOnsDelegate {
-    
-    func refreshData(AddonsArray: [[String : String]]) {
-        print(AddonsArray)
-        self.SelectedAddons.removeAll()
-        for data in AddonsArray
-        {
-            if data["isselected"]! == "1"
-            {
-                self.SelectedAddons.append(data)
-            }
-        }
-        print(self.SelectedAddons)
-        if SelectedAddons.count != 0
-        {
-            self.Addons_Height.constant = CGFloat(80 * self.SelectedAddons.count)
-            self.MainViewHeight.constant+=CGFloat(80 * self.SelectedAddons.count)
-            self.lbl_count.text = "1"
-            let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-            self.FinalTotal = Double(SetTotal)!
-            let ItemPriceTotal = formatter.string(for: FinalTotal)
-            self.btn_Addtocart.setTitle("\(cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)".localiz(), for: .normal)
-        }
-        else{
-            self.Addons_Height.constant = 80.0
-            
-            self.lbl_count.text = "1"
-            let SetTotal = self.lbl_itemsPrice.text!.dropFirst().replacingOccurrences(of: " ", with: "")
-            self.FinalTotal = Double(SetTotal)!
-            let ItemPriceTotal = formatter.string(for: FinalTotal)
-            self.btn_Addtocart.setTitle("\(cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)".localiz(), for: .normal)
-        }
-        
-        self.TableView_AddonsList.delegate = self
-        self.TableView_AddonsList.dataSource = self
-        self.TableView_AddonsList.reloadData()
-        
-        var Prices = [Double]()
-        for data in self.SelectedAddons
-        {
-            Prices.append(Double("\(data["price"]!)")!)
-        }
-        print(Prices)
-        let total = Prices.reduce(0, +)
-        let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-        let Total = Double(SetTotal)! + total
-        let Qtyvalue = self.lbl_count.text!
-        self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
-        let ItemPriceTotal = formatter.string(for: FinalTotal)
-        self.btn_Addtocart.setTitle("\(cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)".localiz(), for: .normal)
-        
-    }
-    
-}
+
 extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.CollectionViewRelatedProducts{
@@ -568,92 +453,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
     }
     
 }
-extension ProductDetailsVC: UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.TableView_AddonsList.bounds.size.width, height: self.TableView_AddonsList.bounds.size.height))
-        let messageLabel = UILabel(frame: rect)
-        messageLabel.textColor = UIColor.lightGray
-        messageLabel.numberOfLines = 0
-        messageLabel.textAlignment = .center
-        //messageLabel.font = UIFont(name: "POPPINS-REGULAR", size: 15)!
-        messageLabel.sizeToFit()
-        self.TableView_AddonsList.backgroundView = messageLabel;
-        if self.SelectedAddons.count == 0 {
-            messageLabel.text = "NO ADD-ONS"
-        }
-        else {
-            messageLabel.text = ""
-        }
-        return SelectedAddons.count
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.TableView_AddonsList.dequeueReusableCell(withIdentifier: "AddonseCell") as! AddonseCell
-        let data = self.SelectedAddons[indexPath.row]
-        cell.lbl_Title.text = data["name"]!
-        
-        let ItemPrice = formatter.string(for: data["price"]!.toDouble)
-        if ItemPrice == "0.00" ||  ItemPrice == "0.0" || ItemPrice == "0" || ItemPrice == ""
-        {
-            cell.lbl_Price.text = "Free"
-        }
-        else{
-            cell.lbl_Price.text = "\(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPrice!)"
-        }
-        
-        cell.btn_Close.tag = indexPath.row
-        cell.btn_Close.addTarget(self, action: #selector(btnTap_Cose), for: .touchUpInside)
-        return cell
-        
-    }
-    @objc func btnTap_Cose(sender:UIButton)
-    {
-        self.SelectedAddons.remove(at: sender.tag)
-        if SelectedAddons.count != 0
-        {
-            self.Addons_Height.constant = CGFloat(80 * self.SelectedAddons.count)
-            self.MainViewHeight.constant-=80
-            var Prices = [Double]()
-            for data in self.SelectedAddons
-            {
-                Prices.append(Double("\(data["price"]!)")!)
-            }
-            print(Prices)
-            let total = Prices.reduce(0, +)
-            let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-            let Total = Double(SetTotal)! + total
-            let Qtyvalue = self.lbl_count.text!
-            self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
-            let ItemPriceTotal = formatter.string(for: FinalTotal)
-            self.btn_Addtocart.setTitle("\(cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)".localiz(), for: .normal)
-        }
-        else
-        {
-            self.Addons_Height.constant = 80.0
-            var Prices = [Double]()
-            for data in self.SelectedAddons
-            {
-                Prices.append(Double("\(data["price"]!)")!)
-            }
-            print(Prices)
-            let total = Prices.reduce(0, +)
-            let SetTotal = self.productUnitPrice.text!.dropLast().replacingOccurrences(of: " ", with: "")
-            let Total = Double(SetTotal)! + total
-            let Qtyvalue = self.lbl_count.text!
-            self.FinalTotal = ((Double(Qtyvalue)!) * Double(Total))
-            let ItemPriceTotal = formatter.string(for: FinalTotal)
-            self.btn_Addtocart.setTitle("\(cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)".localiz(), for: .normal)
-        }
-        self.TableView_AddonsList.delegate = self
-        self.TableView_AddonsList.dataSource = self
-        self.TableView_AddonsList.reloadData()
-    }
-}
+
 extension ProductDetailsVC
 {
     func Webservice_getImageByProductDetail(url:String, params:NSDictionary) -> Void {
@@ -781,60 +581,7 @@ extension ProductDetailsVC
         
         aWebView.frame = frame;
     }
-    func Webservice_AddtoCart(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "POST", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            
-            if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-            }
-            else {
-                print(jsonResponse!)
-                let responseCode = jsonResponse!["status"].stringValue
-                if responseCode == "1" {
-                    let responceData = jsonResponse!["data"].dictionaryValue
-                    
-                    //                    let vc = self.storyboard?.instantiateViewController(identifier: "AddtoCartVC") as! AddtoCartVC
-                    //                    self.navigationController?.pushViewController(vc, animated:true)
-                    self.SelectedAddons.removeAll()
-                    self.text_view.text = ""
-                    self.TableView_AddonsList.reloadData()
-                    self.Addons_Height.constant = 80.0
-                    self.lbl_count.text = "1"
-                    let SetTotal = self.lbl_itemsPrice.text!.dropFirst().replacingOccurrences(of: " ", with: "")
-                    self.FinalTotal = Double(SetTotal)!
-                    let ItemPriceTotal = formatter.string(for: self.FinalTotal)
-                    self.btn_Addtocart.setTitle("\(self.cartStr) \(UserDefaultManager.getStringFromUserDefaults(key: UD_currency))\(ItemPriceTotal!)", for: .normal)
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                    let urlString = API_URL + "cartcount"
-                    let params: NSDictionary = ["user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId)]
-                    //self.Webservice_cartcount(url: urlString, params:params)
-                }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
-            }
-        }
-    }
-    func Webservice_cartcount(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "POST", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-            }
-            else {
-                print(jsonResponse!)
-                let responseCode = jsonResponse!["status"].stringValue
-                if responseCode == "1" {
-                    self.lbl_Cartcount.isHidden = false
-                    self.lbl_Cartcount.text = jsonResponse!["cart"].stringValue
-                }
-                else {
-                    self.lbl_Cartcount.isHidden = false
-                    self.lbl_Cartcount.text = "0"
-                    //                        showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
-            }
-        }
-    }
+    
     
 }
 enum mathFunction {
