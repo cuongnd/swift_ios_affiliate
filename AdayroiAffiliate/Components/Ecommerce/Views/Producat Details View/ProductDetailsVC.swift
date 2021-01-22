@@ -60,7 +60,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @IBOutlet weak var lbl_DetailsLabel: UILabel!
     var itemsId = String()
     var SubCategoryId = String()
-    var RelatedProductsData = [JSON]()
+    var RelatedProductsData:[ProductModel]=[ProductModel]()
     var colorsData:[ColorModel]=[ColorModel]()
     var attributesHeader:[AttributesHeaderModel] = [AttributesHeaderModel]()
     var productImages = [SDWebImageSource]()
@@ -342,14 +342,13 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
         if collectionView == self.CollectionViewRelatedProducts{
             let cell = self.CollectionViewRelatedProducts.dequeueReusableCell(withReuseIdentifier: "RelatedProductCell", for: indexPath) as! RelatedProductCell
             //cornerRadius(viewName: cell.img_categories, radius: 6.0)
-            let data = self.RelatedProductsData[indexPath.item]
-            cell.lbl_RelatedProductName.text = data["name"].stringValue
-            let str_original_price=data["original_price"].stringValue+" đ";
+            let product = self.RelatedProductsData[indexPath.item]
+            cell.lbl_RelatedProductName.text = product.name
+            let str_original_price=LibraryUtilitiesUtility.format_currency(amount: UInt64(product.original_price), decimalCount: 0)
             cell.lbl_RelatedProductOriginalPrice.attributedText = str_original_price.strikeThrough()
-            cell.lbl_RelatedProductUnitPrice.text = data["unit_price"].stringValue+" đ"
-            cell.lbl_RelatedProductPercent.text = data["discount_percent"].stringValue+"%"
-            let product_Image = data["default_photo"].dictionaryValue
-            cell.img_Related_product.sd_setImage(with: URL(string: product_Image["img_path"]!.stringValue), placeholderImage: UIImage(named: "placeholder_image"))
+            cell.lbl_RelatedProductUnitPrice.text = LibraryUtilitiesUtility.format_currency(amount: UInt64(product.unit_price), decimalCount: 0)
+            cell.lbl_RelatedProductPercent.text = "\(product.discount_percent)%"
+            cell.img_Related_product.sd_setImage(with: URL(string: product.default_photo!.img_path), placeholderImage: UIImage(named: "placeholder_image"))
             return cell
             
         }else if (collectionView == self.UICollectionViewColors){
@@ -394,11 +393,10 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.CollectionViewRelatedProducts{
-            let data = self.RelatedProductsData[indexPath.row]
-            itemsId = data["_id"].stringValue
+            let product = self.RelatedProductsData[indexPath.row]
             let vc = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(identifier: "ProductDetailsVC") as! ProductDetailsVC
-            vc.itemsId = data["_id"].stringValue
-            vc.SubCategoryId = data["sub_cat_id"].stringValue
+            vc.itemsId = product._id
+            vc.SubCategoryId = product.sub_cat_id
             self.navigationController?.pushViewController(vc, animated: true)
             
         }else if (collectionView == self.UICollectionViewColors){
@@ -566,6 +564,13 @@ extension ProductDetailsVC
                     let jsonDecoder = JSONDecoder()
                     let getApiRespondeRelatedProducts = try jsonDecoder.decode(GetApiRespondeRelatedProducts.self, from: jsonResponse!)
                     if(getApiRespondeRelatedProducts.result=="success"){
+                        self.RelatedProductsData=getApiRespondeRelatedProducts.list_product
+                        
+                        self.CollectionViewRelatedProducts.delegate=self
+                        self.CollectionViewRelatedProducts.dataSource = self
+                        self.CollectionViewRelatedProducts.reloadData()
+                        
+                        
                         
                     }
                     
