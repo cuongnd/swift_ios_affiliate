@@ -323,7 +323,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
             messageLabel.sizeToFit()
             self.CollectionViewRelatedProducts.backgroundView = messageLabel;
             if self.RelatedProductsData.count == 0 {
-                messageLabel.text = "NO INGREDIENTS"
+                messageLabel.text = "Không có sản phẩm liên quan"
             }
             else {
                 messageLabel.text = ""
