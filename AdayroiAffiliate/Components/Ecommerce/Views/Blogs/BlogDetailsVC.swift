@@ -74,11 +74,7 @@ class BlogDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigat
         self.lbl_SubCategoriesName.isUserInteractionEnabled = true
         self.lbl_SubCategoriesName.addGestureRecognizer(tapOpenSubCategory)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        let urlString = API_URL1 + "cartcount"
-        let params: NSDictionary = ["user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId)]
-        //self.Webservice_cartcount(url: urlString, params:params)
-    }
+    
     
     
     @objc func btnTap_OpenSubCategory(sender: UITapGestureRecognizer)

@@ -157,11 +157,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        let urlString = API_URL1 + "cartcount"
-        let params: NSDictionary = ["user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId)]
-        //self.Webservice_cartcount(url: urlString, params:params)
-    }
+   
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
@@ -516,12 +512,7 @@ extension ProductDetailsVC
                     self.UICollectionViewAttributesHeader.delegate = self
                     self.UICollectionViewAttributesHeader.dataSource = self
                     self.UICollectionViewAttributesHeader.reloadData()
-                    
-                    
-                    
                     // self.Addons_Height.constant = 80 * 1
-                    _ = API_URL1 + "cartcount"
-                    let _: NSDictionary = ["user_id":2]
                     //self.Webservice_cartcount(url: urlString, params:params)
                     let UrlDescriptionProduct = URL(string:"https://api.adayroi.online/api/affiliateproducts/description/\(self.productItem._id)")
                     let myRequest = URLRequest(url: UrlDescriptionProduct!)
