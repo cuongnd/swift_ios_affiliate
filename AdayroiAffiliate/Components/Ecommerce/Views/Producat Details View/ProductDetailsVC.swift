@@ -94,19 +94,19 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     @IBOutlet weak var UILabelCommistion: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lbl_DetailsLabel.text = "Details".localiz()
-        self.lbl_IngredientsLavel.text = "Ingredients".localiz()
+        self.lbl_DetailsLabel.text = "Mô tả".localiz()
+        self.lbl_IngredientsLavel.text = "Sản phẩm liên quan".localiz()
         let urlString = API_URL + "/api/affiliateproducts/"+String(self.itemsId)
         let params: NSDictionary = [:]
         self.Webservice_getProductDetail(url: urlString, params:params)
-       
+        
         self.productImages.removeAll()
         let urlGetImagesString = API_URL + "/api/images/list/img_parent_id/"+String(self.itemsId)+"/img_type/product"
         
         let paramsGetImages: NSDictionary = [:]
         
         self.Webservice_getImageByProductDetail(url: urlGetImagesString, params:paramsGetImages)
-       
+        
         self.DescriptionProduct.navigationDelegate = self
         
         
@@ -135,7 +135,7 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.UIImageViewCopyLink.isUserInteractionEnabled = true
         self.UIImageViewCopyLink.addGestureRecognizer(tapCopy)
         
-         let tapCopy2 = UITapGestureRecognizer(target: self, action: #selector(btnTap_copyLinkProduct))
+        let tapCopy2 = UITapGestureRecognizer(target: self, action: #selector(btnTap_copyLinkProduct))
         self.UIImageViewCopy2.isUserInteractionEnabled = true
         self.UIImageViewCopy2.addGestureRecognizer(tapCopy2)
         
@@ -169,16 +169,16 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
     }
     
     @objc func btnTap_OpenSubCategory(sender: UITapGestureRecognizer)
-       {
-           
-           let storyBoardProduct = UIStoryboard(name: "Products", bundle: nil)
-           let searchVC = storyBoardProduct.instantiateViewController(identifier: "SearchVC") as! SearchVC
-            searchVC.cat_id = self.productItem.cat_id
-            searchVC.sub_cat_id = self.productItem.sub_cat_id
-           self.navigationController?.pushViewController(searchVC, animated: true)
-           
-           
-       }
+    {
+        
+        let storyBoardProduct = UIStoryboard(name: "Products", bundle: nil)
+        let searchVC = storyBoardProduct.instantiateViewController(identifier: "SearchVC") as! SearchVC
+        searchVC.cat_id = self.productItem.cat_id
+        searchVC.sub_cat_id = self.productItem.sub_cat_id
+        self.navigationController?.pushViewController(searchVC, animated: true)
+        
+        
+    }
     
     @objc func btnTap_copyLinkProduct(sender: UITapGestureRecognizer)
     {
@@ -214,7 +214,6 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         let link_product_detail:String = "https://adayroi.online/landingpage/\(self.productItem._id)/\(user_id)/default/\(self.productItem.alias).html";
         print("self.itemsData \(self.itemsData)")
         let sharelinktext = "https://vantinviet1.page.link/?link=\(link_product_detail)&apn=vantinviet.banhangonline88&st=\(self.productItem.name)&sd=\(self.productItem.name)&utm_source=app_affiliate&product_id=\(self.productItem._id)&user_affiliate_id=\(user_id)&si=\(self.productItem.default_photo!.img_path)&ibi=com.vantinviet.banhangonlineapp"
-        print("link_product_detail \(link_product_detail)")
         guard let url = URL(string: link_product_detail) else { return }
         UIApplication.shared.open(url)
         
@@ -403,7 +402,6 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
             self.navigationController?.pushViewController(vc, animated: true)
             
         }else if (collectionView == self.UICollectionViewColors){
-            print("hello selected")
             let cell = self.UICollectionViewColors.dequeueReusableCell(withReuseIdentifier: "ProductDetailColorCell", for: indexPath) as! ProductDetailColorCell
             let colorItem = self.colorsData[indexPath.item]
             let imgUrl  = "https://i1-vnexpress.vnecdn.net/2020/12/02/sinhviendeokhautrang-160688307-4039-1690-1606884365.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=gYIV3FE_BRxdo0i4OWiXWg"
@@ -447,7 +445,6 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
                 self.colorsData[index].is_selected=true
             }
         }
-        print("self.colorsData \(self.colorsData)")
         self.UICollectionViewColors.reloadData()
         
     }
@@ -468,11 +465,10 @@ extension ProductDetailsVC
                 for image in productImages {
                     if(image["img_path"].stringValue != ""){
                         let imageSource = SDWebImageSource(url: URL(string: (image["img_path"].stringValue ?? "https://adayroi.online/no_image.jpg"))! , placeholder: UIImage(named: "placeholder_image"))
-                       print(imageSource)
-                       self.productImages.append(imageSource)
+                        self.productImages.append(imageSource)
                     }
-                  
-                   
+                    
+                    
                 }
                 self.imageSliderData()
             }
@@ -490,7 +486,6 @@ extension ProductDetailsVC
                     let jsonDecoder = JSONDecoder()
                     let getApiResponseProductModel = try jsonDecoder.decode(GetApiResponseProductModel.self, from: jsonResponse!)
                     self.productItem=getApiResponseProductModel.product
-                    print("self.productItem \(self.productItem)")
                     let currency=UserDefaultManager.getStringFromUserDefaults(key: UD_currency);
                     var original_price = LibraryUtilitiesUtility.format_currency(amount: UInt64(self.productItem.original_price), decimalCount: 0)
                     self.lbl_itemsPrice.attributedText = original_price.strikeThrough()
@@ -527,7 +522,6 @@ extension ProductDetailsVC
                     let _: NSDictionary = ["user_id":2]
                     //self.Webservice_cartcount(url: urlString, params:params)
                     let UrlDescriptionProduct = URL(string:"https://api.adayroi.online/api/affiliateproducts/description/\(self.productItem._id)")
-                    print("UrlDescriptionProduct \(UrlDescriptionProduct!)")
                     let myRequest = URLRequest(url: UrlDescriptionProduct!)
                     self.DescriptionProduct.load(myRequest)
                     
@@ -562,7 +556,31 @@ extension ProductDetailsVC
     
     
     func Webservice_getRelatedProducts(url:String, params:NSDictionary) -> Void {
-       
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
+            if strErrorMessage.count != 0 {
+                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
+            }
+            else {
+                print(jsonResponse!)
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getApiRespondeRelatedProducts = try jsonDecoder.decode(GetApiRespondeRelatedProducts.self, from: jsonResponse!)
+                    if(getApiRespondeRelatedProducts.result=="success"){
+                        
+                    }
+                    
+                } catch let error as NSError  {
+                    print("url: \(url)")
+                    print("error: \(error)")
+                }
+                
+                
+                //print("userModel:\(userModel)")
+                
+            }
+        }
+        
+        
     }
     func webViewDidFinishLoad(webView: UIWebView) {
         webView.frame.size.height = 1
