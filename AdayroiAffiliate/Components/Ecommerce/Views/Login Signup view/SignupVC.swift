@@ -40,7 +40,7 @@ extension SignupVC
     
     
     @IBAction func btnTap_signup(_ sender: UIButton) {
-        let urlString = API_URL + "/api_task/users.register_user"
+        let urlString = API_URL + "/api_task/users.affiliate_register_user"
         let params: NSDictionary = ["user_name":self.txt_username.text!,
                                     "user_email":self.txt_Email.text!,
                                     "user_phone":self.txt_MobileNumber.text!,

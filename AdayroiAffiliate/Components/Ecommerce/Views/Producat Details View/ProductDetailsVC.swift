@@ -140,8 +140,9 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.UIImageViewShare.isUserInteractionEnabled = true
         self.UIImageViewShare.addGestureRecognizer(tap)
         
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(btnTap_ShareProduct))
         self.UIImageViewSharing2.isUserInteractionEnabled = true
-        self.UIImageViewSharing2.addGestureRecognizer(tap)
+        self.UIImageViewSharing2.addGestureRecognizer(tap2)
         
         
         
@@ -149,9 +150,9 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.UIImageViewCopyLink.isUserInteractionEnabled = true
         self.UIImageViewCopyLink.addGestureRecognizer(tapCopy)
         
-        
+         let tapCopy2 = UITapGestureRecognizer(target: self, action: #selector(btnTap_copyLinkProduct))
         self.UIImageViewCopy2.isUserInteractionEnabled = true
-        self.UIImageViewCopy2.addGestureRecognizer(tapCopy)
+        self.UIImageViewCopy2.addGestureRecognizer(tapCopy2)
         
         
         
@@ -159,8 +160,9 @@ class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavi
         self.UIImageViewOpenBrowser.isUserInteractionEnabled = true
         self.UIImageViewOpenBrowser.addGestureRecognizer(tapOpenBrowser)
         
+        let tapOpenBrowser2 = UITapGestureRecognizer(target: self, action: #selector(btnTap_OpenBrowserLinkProduct))
         self.UIImageViewOpenBrowser2.isUserInteractionEnabled = true
-        self.UIImageViewOpenBrowser2.addGestureRecognizer(tapOpenBrowser)
+        self.UIImageViewOpenBrowser2.addGestureRecognizer(tapOpenBrowser2)
         
         
         let tapOpenSubCategory = UITapGestureRecognizer(target: self, action: #selector(btnTap_OpenSubCategory))
