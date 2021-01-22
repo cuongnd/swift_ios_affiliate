@@ -40,6 +40,7 @@ class RelatedProductCell: UICollectionViewCell {
     @IBOutlet weak var lbl_RelatedProductPercent: UILabel!
     @IBOutlet weak var lbl_RelatedProductOriginalPrice: UILabel!
     @IBOutlet weak var lbl_RelatedProductUnitPrice: UILabel!
+    @IBOutlet weak var UILabelCommistion: UILabel!
 }
 class ProductDetailsVC: UIViewController,UITextViewDelegate,WKUIDelegate, WKNavigationDelegate {
     
@@ -348,6 +349,9 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
             cell.lbl_RelatedProductOriginalPrice.attributedText = str_original_price.strikeThrough()
             cell.lbl_RelatedProductUnitPrice.text = LibraryUtilitiesUtility.format_currency(amount: UInt64(product.unit_price), decimalCount: 0)
             cell.lbl_RelatedProductPercent.text = "\(product.discount_percent)%"
+            let commistionValue=(product.commistion*product.unit_price)/100
+            let commistionValue1=LibraryUtilitiesUtility.format_currency(amount: UInt64(commistionValue), decimalCount: 0)
+            cell.UILabelCommistion.text="Hoa hồng:\(String(product.commistion))%(\(commistionValue1))"
             cell.img_Related_product.sd_setImage(with: URL(string: product.default_photo!.img_path), placeholderImage: UIImage(named: "placeholder_image"))
             return cell
             
@@ -380,7 +384,7 @@ extension ProductDetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.CollectionViewRelatedProducts{
-            return CGSize(width: UIScreen.main.bounds.width / 2, height: 260.0)
+            return CGSize(width: UIScreen.main.bounds.width / 2, height: 270.0)
         }else if (collectionView == self.UICollectionViewColors){
             return CGSize(width: UIScreen.main.bounds.width / 3, height: 155.0)
         }else if(collectionView == self.UICollectionViewAttributesHeader){
