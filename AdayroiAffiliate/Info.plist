@@ -28,15 +28,15 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Để có thể cập nhật ảnh đại diện xin vui lòng cho phép chúng tôi truy cập camre</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Chúng tôi cần truy cập vị trí của bạn để cung cấp kết quả mà bạn tìm kiếm một cách tốt nhất, xin vui lòng cho phép điều này</string>
+	<string>We need to access your location to best provide your search results, please allow this.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Chúng tôi cần truy cập vị trí của bạn để cung cấp kết quả mà bạn tìm kiếm một cách tốt nhất, xin vui lòng cho phép điều này</string>
+	<string>We need to access your location to best provide your search results, please allow this.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Chúng tôi cần truy cập vị trí của bạn để cung cấp kết quả mà bạn tìm kiếm một cách tốt nhất, xin vui lòng cho phép điều này</string>
+	<string>We need to access your location to best provide your search results, please allow this.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Chúng tôi cần truy cập vị trí của bạn để cung cấp kết quả mà bạn tìm kiếm một cách tốt nhất, xin vui lòng cho phép điều này</string>
+	<string>We need to access your location to best provide your search results, please allow this.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Để có thể cập nhật ảnh đại diện xin vui lòng cho phép chúng tôi truy cập thư viện ảnh của bạn</string>
+	<string>We need to access your location to best provide your search results, please allow this.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

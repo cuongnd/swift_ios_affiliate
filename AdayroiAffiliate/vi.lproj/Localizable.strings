@@ -45,6 +45,7 @@
 "ONLINE" = "ONLINE";
 "SKIP"="Bỏ qua";
 "Change language"="Thay đổi ngôn ngữ";
+"USING_LOCATION"="Chúng tôi cần truy cập vị trí của bạn để cung cấp kết tìm kiếm một cách tốt nhất, xin vui lòng cho phép điều này";
 "Tax" = "Tax";
 "Search"= "Search";
 "Settings" = "Settings";

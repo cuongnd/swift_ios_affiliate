@@ -400,7 +400,7 @@
 		C8BAC0642488F44B00ECE181 /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		C8BAC06624891BB700ECE181 /* AddtoCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddtoCartVC.swift; sourceTree = "<group>"; };
 		C8BAC0682489257100ECE181 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
-		C8C99DC22488D77E00B5C187 /* Adayroi Affiliate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adayroi Affiliate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8C99DC22488D77E00B5C187 /* TienOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TienOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C99DC52488D77E00B5C187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C99DC72488D77E00B5C187 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C8C99DCF2488D77E00B5C187 /* AdayroiAffiliate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AdayroiAffiliate.xcdatamodel; sourceTree = "<group>"; };
@@ -1128,7 +1128,7 @@
 		C8C99DC32488D77E00B5C187 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8C99DC22488D77E00B5C187 /* Adayroi Affiliate.app */,
+				C8C99DC22488D77E00B5C187 /* TienOnline.app */,
 				C8C99DDB2488D77F00B5C187 /* AdayroiAffiliateTests.xctest */,
 				C8C99DE62488D77F00B5C187 /* AdayroiAffiliateUITests.xctest */,
 			);
@@ -1230,7 +1230,7 @@
 			);
 			name = AdayroiAffiliate;
 			productName = AdayroiAffiliate;
-			productReference = C8C99DC22488D77E00B5C187 /* Adayroi Affiliate.app */;
+			productReference = C8C99DC22488D77E00B5C187 /* TienOnline.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C8C99DDA2488D77F00B5C187 /* AdayroiAffiliateTests */ = {
@@ -1806,7 +1806,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AdayroiAffiliate/Adayroi Affiliate.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = H5Y52UW26J;
 				INFOPLIST_FILE = "$(SRCROOT)/AdayroiAffiliate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
@@ -1816,7 +1816,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vantinviet.affiliate;
-				PRODUCT_NAME = "Adayroi Affiliate";
+				PRODUCT_NAME = TienOnline;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1829,7 +1829,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AdayroiAffiliate/Adayroi Affiliate.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = H5Y52UW26J;
 				INFOPLIST_FILE = "$(SRCROOT)/AdayroiAffiliate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
@@ -1839,7 +1839,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vantinviet.affiliate;
-				PRODUCT_NAME = "Adayroi Affiliate";
+				PRODUCT_NAME = TienOnline;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1852,6 +1852,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5Y52UW26J;
 				INFOPLIST_FILE = AdayroiAffiliateTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1874,6 +1875,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5Y52UW26J;
 				INFOPLIST_FILE = AdayroiAffiliateTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1895,6 +1897,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5Y52UW26J;
 				INFOPLIST_FILE = AdayroiAffiliateUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1915,6 +1918,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H5Y52UW26J;
 				INFOPLIST_FILE = AdayroiAffiliateUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
