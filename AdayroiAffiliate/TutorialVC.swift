@@ -23,9 +23,9 @@ class TutorialVC: UIViewController {
     
     //MARK: Variables
     var tutorialArr = [
-        ["image":"anhside_1","title":"Mạng lưới affiliate hiệu quả và uy tín","description":"Nền tảng Tiếp thị liên kết quy mô và uy tín nhất Việt Nam"],
-        ["image":"anhside_2","title":"Hoa hồng chia sẻ hấp dẫn","description":"Hoa hồng lên tới 21%, thanh toán nhanh nhất vào ngày 18 hàng tháng"],
-        ["image":"anhside_3","title":"Đa Dạng Chiến Dịch","description":"Hàng nghìn chiến dịch trong các lĩnh vực Thương mại điện tử, Du lịch, Ngân hàng – Bảo hiểm, Làm đẹp…"]
+        ["image":"anhside_1","title":"title_anhside_1".localiz(),"description":"desciption_anhside_1".localiz()],
+        ["image":"anhside_2","title":"title_anhside_2".localiz(),"description":"desciption_anhside_1".localiz()],
+        ["image":"anhside_3","title":"title_anhside_3".localiz(),"description":"desciption_anhside_1".localiz()]
     ]
     //MARK: Viewcontroller lifecycle
     override func viewDidLoad() {

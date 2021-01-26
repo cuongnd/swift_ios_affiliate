@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  AdayroiAffiliate
+
+  Created by cuongnd on 1/26/21.
+  Copyright © 2021 Mitesh's MAC. All rights reserved.
+*/
+"NSLocationAlwaysAndWhenInUseUsageDescription"="We need to access your location to best provide your search results, please allow this";
+"NSLocationAlwaysUsageDescription"="We need to access your location to best provide your search results, please allow this";
+"NSLocationUsageDescription"="We need to access your location to best provide your search results, please allow this";
+"NSLocationWhenInUseUsageDescription"="We need to access your location to best provide your search results, please allow this";
+"NSCameraUsageDescription"="To have to update the image to be fun please for us me to access camre";
+"NSPhotoLibraryUsageDescription"="We need to access your location to best provide your search results, please allow this.";

@@ -13,6 +13,10 @@
 "Add To Cart" = "Add To Cart";
 "Cart" = "Cart";
 "Checkout" = "Checkout";
+"NSLocationAlwaysAndWhenInUseUsageDescription"="NSLocationAlwaysAndWhenInUseUsageDescriptionEN";
+"NSLocationAlwaysUsageDescription"="NSLocationAlwaysUsageDescriptionEN";
+"NSLocationUsageDescription"="NSLocationUsageDescriptionEN";
+"NSLocationWhenInUseUsageDescription"="NSLocationWhenInUseUsageDescriptionEN";
 "USING_LOCATION"="We need to access your location to best provide your search results, please allow this.";
 "Signup"="Signup";
 "Order Summary" = "Order Summary";
@@ -80,7 +84,12 @@
 "Select Lanaguage" = "Select Lanaguage";
 "English" = "English";
 "Arabic" = "Arabic";
-
+"title_anhside_1"="Effective affiliate networks and signals";
+"title_anhside_2"="Attractive sharing commission";
+"title_anhside_3"="Campaign Diversity";
+"desciption_anhside_1"="The largest and most reputable Affiliate Marketing platform in Vietnam";
+"desciption_anhside_2"="Commissions up to 21%, fastest payment on the 18th of every month";
+"desciption_anhside_3"="Thousands of campaigns in the fields of E-commerce, Tourism, Banking - Insurance, Beauty ..";
 "No Add-Ons Found" = "No Add-Ons Found";
 "Add to Cart " = "Add to Cart ";
 

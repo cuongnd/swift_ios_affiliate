@@ -52,6 +52,7 @@
 		0443F7842594CC7A005D5637 /* TaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7832594CC7A005D5637 /* TaiKhoanNganHangModel.swift */; };
 		0443F7862594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */; };
 		0443F7882594E8C7005D5637 /* PostLapLenhRutTienModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443F7872594E8C7005D5637 /* PostLapLenhRutTienModel.swift */; };
+		044C27BB25BFBAE200B692BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 044C27BD25BFBAE200B692BB /* InfoPlist.strings */; };
 		0493654B25963897007431AB /* WithdrawalStickyGridCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493654A25963897007431AB /* WithdrawalStickyGridCollectionViewLayout.swift */; };
 		04971249259A366A0024883E /* CategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04971248259A366A0024883E /* CategoryListVC.swift */; };
 		0497124D259A9CE70024883E /* GetApiResponseCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497124C259A9CE70024883E /* GetApiResponseCategoryModel.swift */; };
@@ -263,6 +264,8 @@
 		0443F7832594CC7A005D5637 /* TaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
 		0443F7852594DCD1005D5637 /* UpdateTaiKhoanNganHangModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTaiKhoanNganHangModel.swift; sourceTree = "<group>"; };
 		0443F7872594E8C7005D5637 /* PostLapLenhRutTienModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostLapLenhRutTienModel.swift; sourceTree = "<group>"; };
+		044C27BC25BFBAE200B692BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		044C27BE25BFBAF400B692BB /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0493654A25963897007431AB /* WithdrawalStickyGridCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalStickyGridCollectionViewLayout.swift; sourceTree = "<group>"; };
 		04971248259A366A0024883E /* CategoryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListVC.swift; sourceTree = "<group>"; };
 		0497124C259A9CE70024883E /* GetApiResponseCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetApiResponseCategoryModel.swift; sourceTree = "<group>"; };
@@ -1153,6 +1156,7 @@
 				C8BAC0632488F3FF00ECE181 /* Library */,
 				C8C99E0B2488D95000B5C187 /* Helper Class */,
 				88933DC324B45D4500995AEC /* Localizable.strings */,
+				044C27BD25BFBAE200B692BB /* InfoPlist.strings */,
 				C8C99DCB2488D77E00B5C187 /* Main.storyboard */,
 				C8C99DD12488D77F00B5C187 /* Assets.xcassets */,
 				C8C99DD32488D77F00B5C187 /* LaunchScreen.storyboard */,
@@ -1321,6 +1325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E6CFC525A0A13E00C13FA6 /* Blogs.storyboard in Resources */,
+				044C27BB25BFBAE200B692BB /* InfoPlist.strings in Resources */,
 				0C5171012565551C00C4EA7F /* Checkout.storyboard in Resources */,
 				0CDCD68625807B8C000B7F44 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				88933DC124B45D4500995AEC /* Localizable.strings in Resources */,
@@ -1651,6 +1656,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		044C27BD25BFBAE200B692BB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				044C27BC25BFBAE200B692BB /* en */,
+				044C27BE25BFBAF400B692BB /* vi */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		88933DC324B45D4500995AEC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

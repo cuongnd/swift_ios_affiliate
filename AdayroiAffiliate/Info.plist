@@ -26,7 +26,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Để có thể cập nhật ảnh đại diện xin vui lòng cho phép chúng tôi truy cập camre</string>
+	<string>To have to update the image to be fun please for us me to access camre</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>We need to access your location to best provide your search results, please allow this.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -35,6 +35,8 @@
 	<string>We need to access your location to best provide your search results, please allow this.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to access your location to best provide your search results, please allow this.</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need to access your location to best provide your search results, please allow this.</string>
 	<key>UIApplicationSceneManifest</key>
