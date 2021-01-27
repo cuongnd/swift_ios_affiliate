@@ -1025,6 +1025,8 @@
 		885D103D24D92FE000342F93 /* Login Signup view */ = {
 			isa = PBXGroup;
 			children = (
+				C8349E35249791A0009EEF8D /* ChangePassswordVC.swift */,
+				C83E16C4248BA64C0067AD34 /* EditProfileVC.swift */,
 				C8C99DF82488D90D00B5C187 /* LoginVC.swift */,
 				C8BAC05D2488E7BC00ECE181 /* SignupVC.swift */,
 				C8B4B84F2497485A0085ACAC /* ForgotPassword.swift */,
@@ -1151,8 +1153,6 @@
 				C811991C2495F57F00F9CF6F /* TutorialVC.swift */,
 				C82AF9E42492068400464115 /* TrackOrderVC.swift */,
 				C80208CB248A72B2001D8864 /* SideMenuVC.swift */,
-				C83E16C4248BA64C0067AD34 /* EditProfileVC.swift */,
-				C8349E35249791A0009EEF8D /* ChangePassswordVC.swift */,
 				C8BAC0632488F3FF00ECE181 /* Library */,
 				C8C99E0B2488D95000B5C187 /* Helper Class */,
 				88933DC324B45D4500995AEC /* Localizable.strings */,

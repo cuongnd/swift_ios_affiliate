@@ -37,7 +37,7 @@ class SideMenuVC: UIViewController {
     //MARK: Variables
    
     var list_item_menu:[MenuModel] = [MenuModel]()
-    
+    var user:UserModel=UserModel()
     //MARK: Viewcontroller lifecycle
     override func viewDidLoad() {
         
@@ -128,24 +128,39 @@ extension SideMenuVC : UITableViewDataSource,UITableViewDelegate
 //MARK: Webservices
 extension SideMenuVC {
     func Webservice_GetProfile(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
             if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: "", messageStr: strErrorMessage)
+                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
             }
             else {
                 print(jsonResponse!)
-                let responseCode = jsonResponse!["result"].stringValue
-                if responseCode == "success" {
-                    let responseData = jsonResponse!["data"].dictionaryValue
-                    print(responseData)
-                    self.imgProfile.sd_setImage(with: URL(string: responseData["profile_image"]!.stringValue), placeholderImage: UIImage(named: "placeholder_image"))
-                    self.lblUsername.text = responseData["name"]?.stringValue
+                do {
+                    let jsonDecoder = JSONDecoder()
+                    let getApiRespondeUser = try jsonDecoder.decode(GetApiRespondeUser.self, from: jsonResponse!)
+                    if(getApiRespondeUser.result=="success"){
+                       self.user = getApiRespondeUser.user
+                        if self.user.default_photo?.img_path != "" {
+                            self.imgProfile.sd_setImage(with: URL(string: self.user.default_photo!.img_path), placeholderImage: UIImage(named: "placeholder_image"))
+                        }
+                        self.lblUsername.text=self.user.fullname
+                    }
+                    
+                } catch let error as NSError  {
+                    print("url \(url)")
+                    print("error : \(error)")
+                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Có lỗi phát sinh")
+                    
                 }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
+                
+                
+                //print("userModel:\(userModel)")
+                
             }
         }
+        
+        
+        
     }
+    
+    
 }

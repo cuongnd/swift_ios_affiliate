@@ -19,7 +19,7 @@ class EditProfileVC: UIViewController, OpalImagePickerControllerDelegate {
     @IBOutlet weak var img_Profile: UIImageView!
     @IBOutlet weak var txt_Mobile: UITextField!
     @IBOutlet weak var txt_Email: UITextField!
-    @IBOutlet weak var txt_Name: UITextField!
+    @IBOutlet weak var txt_FullName: UITextField!
     let multiImagePicker = OpalImagePickerController()
     @IBOutlet weak var lbl_titleLabel: UILabel!
     var user:UserModel=UserModel()
@@ -51,10 +51,44 @@ class EditProfileVC: UIViewController, OpalImagePickerControllerDelegate {
         let imageData = self.img_Profile.image!.jpegData(compressionQuality: 0.5)
         
         let urlString = API_URL + "/api_task/users.update_user_affiliate_info"
-        let params = ["name":self.txt_Name.text!,
+        let params = [
+                        "fullname":self.txt_FullName.text!,
                       "user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),
                       "image":imageData!] as [String : Any]
         let headers: HTTPHeaders = ["Content-type": "multipart/form-data"]
+        
+        WebServices().CallGlobalAPIResponseDataUpdateUser(method:.post, URLString:urlString, encoding:JSONEncoding.default, parameters:params, fileData:imageData!, fileUrl:nil, headers:headers, keyName:"image", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
+                   if strErrorMessage.count != 0 {
+                       showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
+                   }
+                   else {
+                       print(jsonResponse!)
+                       do {
+                           let jsonDecoder = JSONDecoder()
+                           let getApiRespondeUser = try jsonDecoder.decode(GetApiRespondeUser.self, from: jsonResponse!)
+                           if(getApiRespondeUser.result=="success"){
+                            self.user=getApiRespondeUser.user
+                               self.txt_FullName.text = self.user.fullname
+                               self.txt_Email.text = self.user.email
+                               self.txt_Mobile.text = self.user.phonenumber
+                               if self.user.default_photo?.img_path != "" {
+                                   self.img_Profile.sd_setImage(with: URL(string: self.user.default_photo!.img_path), placeholderImage: UIImage(named: "placeholder_image"))
+                               }
+                            showAlertMessage(titleStr: "Thống báo", messageStr: "Cập nhật thông tin thành công")
+                            }
+                           
+                       } catch let error as NSError  {
+                           print("url: \(urlString)")
+                           print("error: \(error)")
+                       }
+                       
+                       
+                       //print("userModel:\(userModel)")
+                       
+                   }
+               }
+        
+        
         WebServices().multipartWebService(method:.post, URLString:urlString, encoding:JSONEncoding.default, parameters:params, fileData:imageData!, fileUrl:nil, headers:headers, keyName:"image") { (response, error) in
             
             MBProgressHUD.hide(for: self.view, animated: false)
@@ -126,7 +160,7 @@ extension EditProfileVC {
                     let getApiRespondeUser = try jsonDecoder.decode(GetApiRespondeUser.self, from: jsonResponse!)
                     if(getApiRespondeUser.result=="success"){
                         self.user = getApiRespondeUser.user
-                        self.txt_Name.text = self.user.fullname
+                        self.txt_FullName.text = self.user.fullname
                         self.txt_Email.text = self.user.email
                         self.txt_Mobile.text = self.user.phonenumber
                         if self.user.default_photo?.img_path != "" {
@@ -148,24 +182,7 @@ extension EditProfileVC {
         }
         
         
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "GET", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            
-            if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-            }
-            else {
-                let user = jsonResponse!.dictionaryValue
-                print(user)
-                if user["image"] != nil {
-                    let userImage = user["image"]!.dictionaryValue
-                    let userImagePath = userImage["img_path"]!.stringValue
-                    self.img_Profile.sd_setImage(with: URL(string: userImagePath), placeholderImage: UIImage(named: "placeholder_image"))
-                }
-                self.txt_Name.text = user["fullname"]?.stringValue
-                self.txt_Email.text = user["email"]?.stringValue
-                self.txt_Mobile.text = user["phonenumber"]?.stringValue
-            }
-        }
+        
     }
     
 }

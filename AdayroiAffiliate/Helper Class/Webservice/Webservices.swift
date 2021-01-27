@@ -252,6 +252,88 @@ class WebServices: NSObject
         operation.queuePriority = .normal
         operationQueue.addOperation(operation)
     }
+    func CallGlobalAPIResponseDataUpdateUser(method:HTTPMethod, URLString:String, encoding:Alamofire.ParameterEncoding, parameters:[String: Any], fileData:Data!, fileUrl:URL?, headers:HTTPHeaders, keyName:String,progressView:Bool, uiView:UIView, networkAlert:Bool, responseDict:@escaping (_ jsonResponce:Data?, _ strErrorMessage:String) -> Void) {
+        
+        
+        
+        print("Headers: \n\(headers)")
+        print("Parameters: \n\(parameters)")
+        if progressView == true {
+            self.ProgressViewShow(uiView:uiView)
+        }
+        let operation = BlockOperation.init {
+            DispatchQueue.global(qos: .background).async {
+                if self.internetChecker(reachability: Reachability()!) {
+                    
+                    let af_upload:UploadRequest=AF.upload(multipartFormData: { MultipartFormData in
+                        for (key, value) in parameters {
+                            MultipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+                        }
+                        let name = randomString(length: 8)
+                        if let data = fileData{
+                            MultipartFormData.append(data, withName: keyName, fileName: "user_\(name).jpeg", mimeType: "image/jpeg")
+                        }
+                    }, to: URLString, method: .post, headers: headers);
+                    af_upload.cURLDescription{ description in
+                        print(description)
+                    }
+                    
+                    af_upload.responseData { response in
+                        switch (response.result)
+                        {
+                        case .success:
+                            if((response.value) != nil) {
+                                let jsonResponce = Data(response.value!)
+                                print("Responce: \n\(jsonResponce)")
+                                DispatchQueue.main.async {
+                                    self.ProgressViewHide(uiView: uiView)
+                                    responseDict(jsonResponce,"")
+                                }
+                            }
+                            break
+                        case .failure(let error):
+                            let message : String
+                            if let httpStatusCode = response.response?.statusCode {
+                                switch(httpStatusCode) {
+                                case 400:
+                                    message = "Có lỗi phát sinh, xin vui lòng thử lại"
+                                case 401:
+                                    message = "Có lỗi phát sinh, xin vui lòng thử lại"
+                                    DispatchQueue.main.async {
+                                        self.ProgressViewHide(uiView: uiView)
+                                        responseDict(response.value,message)
+                                    }
+                                default: break
+                                }
+                            } else {
+                                message = error.localizedDescription
+                                let jsonError = Data(response.value!)
+                                DispatchQueue.main.async {
+                                    self.ProgressViewHide(uiView: uiView)
+                                    responseDict(jsonError,"")
+                                }
+                            }
+                            break
+                        }
+                    }
+                }
+            }
+        }
+        operation.queuePriority = .normal
+        operationQueue.addOperation(operation)
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
     func multipartWebService(method:HTTPMethod, URLString:String, encoding:Alamofire.ParameterEncoding, parameters:[String: Any], fileData:Data!, fileUrl:URL?, headers:HTTPHeaders, keyName:String, completion: @escaping (_ response:AnyObject?, _ error: NSError?) -> ()){
         
         print("Fetching WS : \(URLString)")
@@ -271,34 +353,34 @@ class WebServices: NSObject
             if let data = fileData{
                 MultipartFormData.append(data, withName: keyName, fileName: "user_\(name).jpeg", mimeType: "image/jpeg")
             }
-            }, to: URLString, method: .post, headers: headers);
+        }, to: URLString, method: .post, headers: headers);
         af_upload.cURLDescription{ description in
             print(description)
         }
-            af_upload.responseJSON { (response) in
-                if let statusCode = response.response?.statusCode {
-                    if  statusCode == HttpResponseStatusCode.noAuthorization.rawValue {
+        af_upload.responseJSON { (response) in
+            if let statusCode = response.response?.statusCode {
+                if  statusCode == HttpResponseStatusCode.noAuthorization.rawValue {
+                    showAlertMessage(titleStr: "Error!", messageStr: "Something went wrong.. Try again.")
+                    return
+                }
+            }
+            if let error = response.error {
+                completion(nil, error as NSError?)
+            }
+            else {
+                guard let data = response.data
+                    else {
                         showAlertMessage(titleStr: "Error!", messageStr: "Something went wrong.. Try again.")
                         return
-                    }
                 }
-                if let error = response.error {
-                    completion(nil, error as NSError?)
+                do {
+                    let unparsedObject = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as AnyObject
+                    completion(unparsedObject, nil)
                 }
-                else {
-                    guard let data = response.data
-                        else {
-                            showAlertMessage(titleStr: "Error!", messageStr: "Something went wrong.. Try again.")
-                            return
-                    }
-                    do {
-                        let unparsedObject = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as AnyObject
-                        completion(unparsedObject, nil)
-                    }
-                    catch let exception as NSError {
-                        completion(nil, exception)
-                    }
+                catch let exception as NSError {
+                    completion(nil, exception)
                 }
+            }
         }
     }
     
@@ -376,35 +458,35 @@ class WebServices: NSObject
     
 }
 extension URLRequest {
-
+    
     /**
      Returns a cURL command representation of this URL request.
      */
     public var curlString: String {
         guard let url = url else { return "" }
         var baseCommand = #"curl "\#(url.absoluteString)""#
-
+        
         if httpMethod == "HEAD" {
             baseCommand += " --head"
         }
-
+        
         var command = [baseCommand]
-
+        
         if let method = httpMethod, method != "GET" && method != "HEAD" {
             command.append("-X \(method)")
         }
-
+        
         if let headers = allHTTPHeaderFields {
             for (key, value) in headers where key != "Cookie" {
                 command.append("-H '\(key): \(value)'")
             }
         }
-
+        
         if let data = httpBody, let body = String(data: data, encoding: .utf8) {
             command.append("-d '\(body)'")
         }
-
+        
         return command.joined(separator: " \\\n\t")
     }
-
+    
 }

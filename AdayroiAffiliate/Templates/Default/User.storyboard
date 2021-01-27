@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,24 +16,24 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="Fuq-Hh-pwf" customClass="LoginVC" customModule="Adayroi_Affiliate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aQ4-sb-bjf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="mMb-EO-WbC">
-                                <rect key="frame" x="157" y="54" width="100" height="100"/>
+                                <rect key="frame" x="250" y="10" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="MIG-MX-RYV"/>
                                     <constraint firstAttribute="height" constant="100" id="T6d-7E-deB"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqP-uc-0t4" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="239" width="414" height="540"/>
+                                <rect key="frame" x="0.0" y="195" width="600" height="540"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fL-7m-lC6" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="61.5" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="61.5" width="560" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjI-Z8-aiv">
-                                                <rect key="frame" x="12" y="0.0" width="354" height="50"/>
+                                                <rect key="frame" x="12" y="0.0" width="540" height="50"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -63,15 +62,15 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kI-X9-NwA" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="123.5" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="123.5" width="560" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E9s-Kj-QFY">
-                                                <rect key="frame" x="12" y="0.0" width="316" height="50"/>
+                                                <rect key="frame" x="12" y="0.0" width="502" height="50"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCc-5r-Qwd">
-                                                <rect key="frame" x="336" y="10" width="30" height="30"/>
+                                                <rect key="frame" x="522" y="10" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="6Ox-Dx-NK1"/>
                                                     <constraint firstAttribute="width" constant="30" id="eTn-sP-wh4"/>
@@ -109,7 +108,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIy-Rs-DoX">
-                                        <rect key="frame" x="273" y="181.5" width="121" height="25"/>
+                                        <rect key="frame" x="459" y="181.5" width="121" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Yyu-XE-rKZ"/>
                                         </constraints>
@@ -122,7 +121,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXL-sH-Nwq">
-                                        <rect key="frame" x="95" y="287" width="160" height="21"/>
+                                        <rect key="frame" x="188" y="287" width="160" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="dII-k2-pPN"/>
                                         </constraints>
@@ -131,7 +130,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzI-zB-UJc">
-                                        <rect key="frame" x="257" y="281.5" width="53" height="32"/>
+                                        <rect key="frame" x="350" y="281.5" width="53" height="32"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="Signup">
                                             <color key="titleColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -141,7 +140,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-Ic-WCx">
-                                        <rect key="frame" x="20" y="216.5" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="216.5" width="560" height="50"/>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="vkj-dT-mkL"/>
@@ -155,16 +154,16 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyC-2p-lMF">
-                                        <rect key="frame" x="179.5" y="16" width="55" height="25.5"/>
+                                        <rect key="frame" x="272.5" y="16" width="55" height="25.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" red="0.99606674910000004" green="0.44583719970000002" blue="0.2983221412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyG-mp-Ch5" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="321" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="321" width="560" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Change language" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbK-eZ-ytA" customClass="DropDown" customModule="iOSDropDown">
-                                                <rect key="frame" x="12" y="0.0" width="354" height="50"/>
+                                                <rect key="frame" x="12" y="0.0" width="540" height="50"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
@@ -261,11 +260,11 @@
             <objects>
                 <viewController storyboardIdentifier="EditProfileVC" id="Jil-wp-eXB" customClass="EditProfileVC" customModule="Adayroi_Affiliate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMd-OL-GmT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T39-RB-lQp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                <rect key="frame" x="0.0" y="-44" width="600" height="88"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tA-95-UdM">
                                         <rect key="frame" x="8" y="44" width="44" height="44"/>
@@ -284,7 +283,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXy-1d-VmC">
-                                        <rect key="frame" x="163.5" y="52" width="87" height="28"/>
+                                        <rect key="frame" x="256.5" y="52" width="87" height="28"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.99606674910000004" green="0.44583719970000002" blue="0.2983221412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -301,7 +300,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFD-5C-WVZ">
-                                <rect key="frame" x="8" y="808" width="398" height="50"/>
+                                <rect key="frame" x="8" y="546" width="584" height="50"/>
                                 <color key="backgroundColor" red="0.99606674910000004" green="0.44583719970000002" blue="0.2983221412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ge8-bR-71N"/>
@@ -315,17 +314,17 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_image" translatesAutoresizingMaskIntoConstraints="NO" id="fPA-WR-v7z">
-                                <rect key="frame" x="132" y="123" width="150" height="150"/>
+                                <rect key="frame" x="225" y="79" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="fjL-s7-H1l"/>
                                     <constraint firstAttribute="width" constant="150" id="iiQ-WD-sA9"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAy-Gz-vQv" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                <rect key="frame" x="12" y="323" width="390" height="50"/>
+                                <rect key="frame" x="12" y="279" width="576" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7p-DG-lQo">
-                                        <rect key="frame" x="12" y="0.0" width="370" height="50"/>
+                                        <rect key="frame" x="12" y="0.0" width="556" height="50"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -354,10 +353,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFc-3h-apW" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                <rect key="frame" x="12" y="389" width="390" height="50"/>
+                                <rect key="frame" x="12" y="345" width="576" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LoM-ew-d5t">
-                                        <rect key="frame" x="12" y="0.0" width="370" height="50"/>
+                                        <rect key="frame" x="12" y="0.0" width="556" height="50"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -386,10 +385,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1s5-MP-PvG" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                <rect key="frame" x="12" y="455" width="390" height="50"/>
+                                <rect key="frame" x="12" y="411" width="576" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2wS-W1-g1a">
-                                        <rect key="frame" x="12" y="0.0" width="370" height="50"/>
+                                        <rect key="frame" x="12" y="0.0" width="556" height="50"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -418,7 +417,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lf-6R-j8U">
-                                <rect key="frame" x="238" y="229" width="44" height="44"/>
+                                <rect key="frame" x="331" y="185" width="44" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="ni8-Wj-9Jm"/>
@@ -463,8 +462,8 @@
                         <outlet property="img_Profile" destination="fPA-WR-v7z" id="6fO-fT-E90"/>
                         <outlet property="lbl_titleLabel" destination="QXy-1d-VmC" id="KpF-ow-Xjh"/>
                         <outlet property="txt_Email" destination="LoM-ew-d5t" id="edi-vE-Vgb"/>
+                        <outlet property="txt_FullName" destination="r7p-DG-lQo" id="TqI-qa-LIc"/>
                         <outlet property="txt_Mobile" destination="2wS-W1-g1a" id="fOh-zm-rgJ"/>
-                        <outlet property="txt_Name" destination="r7p-DG-lQo" id="TqI-qa-LIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rl-jJ-8iH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -476,17 +475,17 @@
             <objects>
                 <viewController storyboardIdentifier="SignupVC" id="xQc-p9-wXb" customClass="SignupVC" customModule="Adayroi_Affiliate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ub5-5x-gvD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mj1-9y-Lp3" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="34" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="-262" width="600" height="862"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rQ-gY-hxR">
-                                        <rect key="frame" x="0.0" y="8" width="414" height="792"/>
+                                        <rect key="frame" x="0.0" y="-2" width="600" height="802"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlP-Qt-Vio">
-                                                <rect key="frame" x="170" y="200" width="74.5" height="30"/>
+                                                <rect key="frame" x="263" y="200" width="74.5" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Pks-dc-Oj2"/>
                                                 </constraints>
@@ -495,20 +494,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="roJ-js-Nvh">
-                                                <rect key="frame" x="157" y="265" width="100" height="102"/>
+                                                <rect key="frame" x="250" y="265" width="100" height="102"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="102" id="BQw-0L-TVq"/>
                                                     <constraint firstAttribute="width" constant="100" id="fxS-BX-SSz"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z88-va-xP6">
-                                                <rect key="frame" x="20" y="389" width="374" height="318"/>
+                                                <rect key="frame" x="20" y="389" width="560" height="318"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsv-WE-mmO" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hkH-7B-58l">
-                                                                <rect key="frame" x="12" y="0.0" width="354" height="50"/>
+                                                                <rect key="frame" x="12" y="0.0" width="540" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -537,10 +536,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTE-Ym-VbT" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="67" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="67" width="560" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGT-cr-edl">
-                                                                <rect key="frame" x="12" y="0.0" width="354" height="50"/>
+                                                                <rect key="frame" x="12" y="0.0" width="540" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -569,10 +568,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyN-dc-kpr" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="134" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="134" width="560" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rhm-Au-RuJ">
-                                                                <rect key="frame" x="12" y="0.0" width="354" height="50"/>
+                                                                <rect key="frame" x="12" y="0.0" width="540" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                             </textField>
@@ -601,15 +600,15 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOc-1B-eJt" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="201" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="201" width="560" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vpL-B3-IFm">
-                                                                <rect key="frame" x="12" y="0.0" width="316" height="50"/>
+                                                                <rect key="frame" x="12" y="0.0" width="502" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGa-ph-Zaq">
-                                                                <rect key="frame" x="336" y="10" width="30" height="30"/>
+                                                                <rect key="frame" x="522" y="10" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="3qm-VU-ARH"/>
                                                                     <constraint firstAttribute="width" constant="30" id="g8O-gF-rg3"/>
@@ -647,7 +646,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ET-la-2fg">
-                                                        <rect key="frame" x="0.0" y="268" width="374" height="50"/>
+                                                        <rect key="frame" x="0.0" y="268" width="560" height="50"/>
                                                         <color key="backgroundColor" red="0.99606674910000004" green="0.44583719970000002" blue="0.2983221412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="vfA-64-HS1"/>
@@ -746,17 +745,17 @@
             <objects>
                 <viewController storyboardIdentifier="ForgotPassword" id="hD2-EH-buo" customClass="ForgotPassword" customModule="Adayroi_Affiliate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P8b-eh-P84">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5g9-aa-dkt" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="616" width="414" height="280"/>
+                                <rect key="frame" x="0.0" y="320" width="600" height="280"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGv-UA-PWu" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="76.5" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="76.5" width="560" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ech-Gf-2Yh">
-                                                <rect key="frame" x="12" y="0.0" width="354" height="50"/>
+                                                <rect key="frame" x="12" y="0.0" width="540" height="50"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -785,7 +784,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kku-6O-qGo">
-                                        <rect key="frame" x="95" y="217" width="160" height="21"/>
+                                        <rect key="frame" x="188" y="217" width="160" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="oyc-Vc-VlX"/>
                                         </constraints>
@@ -794,7 +793,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlg-qA-Koh">
-                                        <rect key="frame" x="257" y="211.5" width="53" height="32"/>
+                                        <rect key="frame" x="350" y="211.5" width="53" height="32"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="Signup">
                                             <color key="titleColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -804,7 +803,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2z-Co-lnP">
-                                        <rect key="frame" x="20" y="146.5" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="146.5" width="560" height="50"/>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="XfS-9N-P7e"/>
@@ -818,7 +817,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wum-r9-Fj3">
-                                        <rect key="frame" x="124" y="16" width="166" height="25.5"/>
+                                        <rect key="frame" x="217" y="16" width="166" height="25.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" red="0.99606674910000004" green="0.44583719970000002" blue="0.2983221412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -853,7 +852,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="cha-NW-92D">
-                                <rect key="frame" x="157" y="486" width="100" height="100"/>
+                                <rect key="frame" x="250" y="190" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="78y-eV-0ar"/>
                                     <constraint firstAttribute="width" constant="100" id="VD6-1l-c9b"/>
@@ -885,11 +884,11 @@
             <objects>
                 <viewController storyboardIdentifier="ChangePassswordVC" id="aXl-1R-PI4" customClass="ChangePassswordVC" customModule="Adayroi_Affiliate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Izw-JT-mh1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KQ-7w-vm1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                <rect key="frame" x="0.0" y="-44" width="600" height="88"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pM-9L-J3W">
                                         <rect key="frame" x="8" y="44" width="44" height="44"/>
@@ -907,7 +906,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipD-hq-LPa">
-                                        <rect key="frame" x="135.5" y="52" width="143" height="28"/>
+                                        <rect key="frame" x="228.5" y="52" width="143" height="28"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" red="0.99606674910000004" green="0.44583719970000002" blue="0.2983221412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -924,7 +923,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebd-2x-CVw">
-                                <rect key="frame" x="8" y="808" width="398" height="50"/>
+                                <rect key="frame" x="8" y="546" width="584" height="50"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.44705882349999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DjO-25-Hap"/>
@@ -938,10 +937,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUN-2c-aM7" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                <rect key="frame" x="12" y="108" width="390" height="50"/>
+                                <rect key="frame" x="12" y="64" width="576" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VgE-aB-6KD">
-                                        <rect key="frame" x="12" y="0.0" width="370" height="50"/>
+                                        <rect key="frame" x="12" y="0.0" width="556" height="50"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -970,10 +969,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTm-x9-Ti4" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                <rect key="frame" x="12" y="174" width="390" height="50"/>
+                                <rect key="frame" x="12" y="130" width="576" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BRO-qm-Yk0">
-                                        <rect key="frame" x="12" y="0.0" width="370" height="50"/>
+                                        <rect key="frame" x="12" y="0.0" width="556" height="50"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
@@ -1002,10 +1001,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGB-sC-kVb" customClass="CornerView" customModule="Adayroi_Affiliate" customModuleProvider="target">
-                                <rect key="frame" x="12" y="240" width="390" height="50"/>
+                                <rect key="frame" x="12" y="196" width="576" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fno-Fa-tHW">
-                                        <rect key="frame" x="12" y="0.0" width="370" height="50"/>
+                                        <rect key="frame" x="12" y="0.0" width="556" height="50"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>

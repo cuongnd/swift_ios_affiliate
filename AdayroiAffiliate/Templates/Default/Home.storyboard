@@ -685,7 +685,7 @@
                                             <constraint firstAttribute="height" constant="120" id="YN1-eY-Txj"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulB-5v-YWa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TienOnline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulB-5v-YWa">
                                         <rect key="frame" x="16" y="211" width="382" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="7ls-t4-Czq"/>
