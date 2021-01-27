@@ -262,7 +262,8 @@ class WebServices: NSObject
             return
         }
         
-        AF.upload(multipartFormData: { MultipartFormData in
+        
+        let af_upload:UploadRequest=AF.upload(multipartFormData: { MultipartFormData in
             for (key, value) in parameters {
                 MultipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
             }
@@ -270,8 +271,11 @@ class WebServices: NSObject
             if let data = fileData{
                 MultipartFormData.append(data, withName: keyName, fileName: "user_\(name).jpeg", mimeType: "image/jpeg")
             }
-        }, to: URLString, method: .post, headers: headers)
-            .responseJSON { (response) in
+            }, to: URLString, method: .post, headers: headers);
+        af_upload.cURLDescription{ description in
+            print(description)
+        }
+            af_upload.responseJSON { (response) in
                 if let statusCode = response.response?.statusCode {
                     if  statusCode == HttpResponseStatusCode.noAuthorization.rawValue {
                         showAlertMessage(titleStr: "Error!", messageStr: "Something went wrong.. Try again.")

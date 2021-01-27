@@ -50,7 +50,7 @@ class EditProfileVC: UIViewController, OpalImagePickerControllerDelegate {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         let imageData = self.img_Profile.image!.jpegData(compressionQuality: 0.5)
         
-        let urlString = API_URL + "/api_task/user.update"
+        let urlString = API_URL + "/api_task/users.update_user_affiliate_info"
         let params = ["name":self.txt_Name.text!,
                       "user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),
                       "image":imageData!] as [String : Any]
@@ -63,15 +63,7 @@ class EditProfileVC: UIViewController, OpalImagePickerControllerDelegate {
             }
             else {
                 print(response!)
-                let responseData = response as! NSDictionary
-                let responseCode = responseData.value(forKey: "status") as! NSNumber
-                let responseMsg = responseData.value(forKey: "message") as! String
-                if responseCode == 1 {
-                    self.navigationController?.popViewController(animated: true)
-                }
-                else {
-                    showAlertMessage(titleStr: "", messageStr: responseMsg)
-                }
+                
             }
         }
     }
