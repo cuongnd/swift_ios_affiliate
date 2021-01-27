@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import MBProgressHUD
 import Alamofire
+import OpalImagePicker
 
 class EditProfileVC: UIViewController {
     
@@ -19,7 +20,7 @@ class EditProfileVC: UIViewController {
     @IBOutlet weak var txt_Mobile: UITextField!
     @IBOutlet weak var txt_Email: UITextField!
     @IBOutlet weak var txt_Name: UITextField!
-    
+    let multiImagePicker = OpalImagePickerController()
     @IBOutlet weak var lbl_titleLabel: UILabel!
     var user:UserModel=UserModel()
     
@@ -78,6 +79,36 @@ class EditProfileVC: UIViewController {
         let alert = UIAlertController(title: "", message: "Select image".localiz(), preferredStyle: .actionSheet)
         let photoLibraryAction = UIAlertAction(title: "Photo Library".localiz(), style: .default) { (action) in
             self.imagePicker.sourceType = .photoLibrary
+            
+            self.present(self.multiImagePicker, animated: true, completion: nil)
+        }
+        let cameraAction = UIAlertAction(title: "Camera".localiz(), style: .default) { (action) in
+            if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+                let alertController = UIAlertController(title: nil, message: "Device has no camera.", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "Alright", style: .default, handler: { (alert: UIAlertAction!) in
+                })
+                
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                self.imagePicker.sourceType = .camera
+                self.present(self.imagePicker, animated: true, completion: nil)
+                
+            }
+            
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel".localiz(), style: .cancel)
+        alert.addAction(photoLibraryAction)
+        alert.addAction(cameraAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+        /*
+        self.imagePicker.delegate = self
+        let alert = UIAlertController(title: "", message: "Select image".localiz(), preferredStyle: .actionSheet)
+        let photoLibraryAction = UIAlertAction(title: "Photo Library".localiz(), style: .default) { (action) in
+            self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true, completion: nil)
         }
         let cameraAction = UIAlertAction(title: "Camera".localiz(), style: .default) { (action) in
@@ -89,6 +120,7 @@ class EditProfileVC: UIViewController {
         alert.addAction(cameraAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
+        */
     }
     @IBAction func btnTap_back(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)

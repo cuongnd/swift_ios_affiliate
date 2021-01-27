@@ -87,7 +87,7 @@ class SettingsVC: UIViewController {
             // change the language
             LanguageManager.shared.setLanguage(language: selectedLanguage,
                                                viewControllerFactory: { title -> UIViewController in
-                                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                                let storyBoard = UIStoryboard(name: "Home", bundle: nil)
                                                 let objVC = storyBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
                                                 let sideMenuViewController = storyBoard.instantiateViewController(withIdentifier: "SideMenuVC") as! SideMenuVC
                                                 let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)
@@ -109,7 +109,7 @@ class SettingsVC: UIViewController {
             // change the language
             LanguageManager.shared.setLanguage(language: selectedLanguage,
                                                viewControllerFactory: { title -> UIViewController in
-                                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                                let storyBoard = UIStoryboard(name: "Home", bundle: nil)
                                                 let objVC = storyBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
                                                 let sideMenuViewController = storyBoard.instantiateViewController(withIdentifier: "SideMenuVC") as! SideMenuVC
                                                 let appNavigation: UINavigationController = UINavigationController(rootViewController: objVC)

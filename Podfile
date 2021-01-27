@@ -19,6 +19,7 @@ target 'AdayroiAffiliate' do
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
     pod 'Localize-Swift', '~> 2.0'
+    pod 'OpalImagePicker', '~> 2.1.0'
     pod 'LanguageManager-iOS'
     pod 'Layout', '~> 0.6'
     pod 'iOSDropDown'
