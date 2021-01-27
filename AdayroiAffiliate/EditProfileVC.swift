@@ -12,7 +12,7 @@ import MBProgressHUD
 import Alamofire
 import OpalImagePicker
 
-class EditProfileVC: UIViewController {
+class EditProfileVC: UIViewController, OpalImagePickerControllerDelegate {
     
     @IBOutlet weak var btn_save: UIButton!
     @IBOutlet weak var btn_Camera: UIButton!
@@ -39,6 +39,7 @@ class EditProfileVC: UIViewController {
           let urlString = API_URL + "/api/users/"+String(UserDefaults.standard.value(forKey: UD_userId) as! String)
               let params: NSDictionary = [:]
               self.Webservice_GetProfile(url: urlString, params: params)
+        multiImagePicker.imagePickerDelegate = self
         
     }
     

@@ -1,22 +1,25 @@
 //
-//  DefaultTextFormatter.swift
+//  PlaceholderTextFormatter.swift
+//  AnyFormatKit
 //
-//  Created by branderstudio on 11/14/18.
-//  Copyright © 2018 branderstudio. All rights reserved.
+//  Created by Oleksandr Orlov on 12.11.2020.
+//  Copyright © 2020 Oleksandr Orlov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-open class DefaultTextFormatter: TextFormatter {
-  // MARK: - Fields
+open class PlaceholderTextFormatter: TextFormatter, TextUnformatter {
+  
+  // MARK: - Properties
   
   /// String, that will use for formatting of string replacing patter symbol, example: patternSymbol - "#", format - "### (###) ###-##-##"
-    public let textPattern: String
+  public let textPattern: String
   
   /// Symbol that will be replace by input symbols
-    public let patternSymbol: Character
+  public let patternSymbol: Character
   
-  // MARK: - Init
+  // MARK: - Life cycle
+  
   /**
    Initializes formatter with pattern
    
@@ -24,24 +27,19 @@ open class DefaultTextFormatter: TextFormatter {
    - textPatterm: String, that will use for formatting of string replacing patter symbol
    - patternSymbol: Character, that will be replaced by input characters in textPattern
    */
-  public init(textPattern: String,
-              patternSymbol: Character = Constants.defaultPatternSymbol) {
+  public init(
+    textPattern: String,
+    patternSymbol: Character = "#"
+  ) {
     self.textPattern = textPattern
     self.patternSymbol = patternSymbol
   }
   
   // MARK: - TextFormatter
-  /**
-   Formatting text with current textPattern
-   
-   - Parameters:
-     - unformatted: String, that need to be convert with current textPattern
-   
-   - Returns: Formatted text with current textPattern
-  */
+  
   open func format(_ unformattedText: String?) -> String? {
-    guard let unformattedText = unformattedText else { return nil }
-    var formatted = String.init()
+    guard let unformattedText = unformattedText, !unformattedText.isEmpty else { return textPattern }
+    var formatted = ""
     var unformattedIndex = 0
     var patternIndex = 0
     
@@ -57,19 +55,18 @@ open class DefaultTextFormatter: TextFormatter {
       }
       patternIndex += 1
     }
+    if formatted.count < textPattern.count {
+      let start = textPattern.index(textPattern.startIndex, offsetBy: formatted.count)
+      let end = textPattern.endIndex
+      formatted = formatted + textPattern[start..<end]
+    }
     return formatted
   }
   
-  /**
-   Method for convert string, that sutisfy current textPattern, into unformatted string
-   
-   - Parameters:
-     - formatted: String, that will convert
-   
-   - Returns: string converted into unformatted with current textPattern
-  */
-  open func unformat(_ formatted: String?) -> String? {
-    guard let formatted = formatted else { return nil }
+  // MARK: - TextUnformatter
+  
+  open func unformat(_ formattedText: String?) -> String? {
+    guard let formatted = formattedText else { return nil }
     var unformatted = String()
     var formattedIndex = 0
     
@@ -84,9 +81,5 @@ open class DefaultTextFormatter: TextFormatter {
       }
     }
     return unformatted
-  }
-  
-  public struct Constants {
-    public static let defaultPatternSymbol: Character = "#"
   }
 }
