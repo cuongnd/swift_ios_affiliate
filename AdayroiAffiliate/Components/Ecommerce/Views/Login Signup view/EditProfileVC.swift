@@ -89,17 +89,7 @@ class EditProfileVC: UIViewController, OpalImagePickerControllerDelegate {
                }
         
         
-        WebServices().multipartWebService(method:.post, URLString:urlString, encoding:JSONEncoding.default, parameters:params, fileData:imageData!, fileUrl:nil, headers:headers, keyName:"image") { (response, error) in
-            
-            MBProgressHUD.hide(for: self.view, animated: false)
-            if error != nil {
-                showAlertMessage(titleStr: "", messageStr: error!.localizedDescription)
-            }
-            else {
-                print(response!)
-                
-            }
-        }
+        
     }
     @IBAction func btnTap_camera(_ sender: UIButton) {
         self.imagePicker.delegate = self

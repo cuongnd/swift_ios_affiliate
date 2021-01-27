@@ -18,4 +18,14 @@ struct GetApiRespondeUser: Codable {
         case user = "data"
     }
 }
+struct GetApiRespondeUserChangePassword: Codable {
+    let result: String
+    let code: Int
+    let errorMessage:String
+    enum CodingKeys: String, CodingKey {
+        case result = "result"
+        case code = "code"
+        case errorMessage = "errorMessage"
+    }
+}
 

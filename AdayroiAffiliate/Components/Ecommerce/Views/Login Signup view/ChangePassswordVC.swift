@@ -32,7 +32,7 @@ class ChangePassswordVC: UIViewController {
             showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "New password & Confirm password must be same".localiz())
         }
         else {
-            let urlString = API_URL + "changepassword"
+            let urlString = API_URL + "/api_task/users.change_password_user_affiliate_info"
             let params: NSDictionary = ["user_id":UserDefaultManager.getStringFromUserDefaults(key: UD_userId),
                                         "old_password":self.txt_oldPassword.text!,
                                         "new_password":self.txt_NewPassword.text!]
@@ -44,22 +44,36 @@ class ChangePassswordVC: UIViewController {
 extension ChangePassswordVC
 {
     func Webservice_ChangePassword(url:String, params:NSDictionary) -> Void {
-        WebServices().CallGlobalAPI(url: url, headers: [:], parameters:params, httpMethod: "POST", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:JSON? , _ strErrorMessage:String) in
-            
-            if strErrorMessage.count != 0 {
-                showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
-            }
-            else {
-                print(jsonResponse!)
-                let responseCode = jsonResponse!["status"].stringValue
-                if responseCode == "1" {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                    self.navigationController?.popViewController(animated: true)
-                }
-                else {
-                    showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: jsonResponse!["message"].stringValue)
-                }
-            }
-        }
+        WebServices().CallGlobalAPIResponseData(url: url, headers: [:], parameters:params, httpMethod: "POST", progressView:true, uiView:self.view, networkAlert: true) {(_ jsonResponse:Data? , _ strErrorMessage:String) in
+                   if strErrorMessage.count != 0 {
+                       showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: strErrorMessage)
+                   }
+                   else {
+                       print(jsonResponse!)
+                       do {
+                           let jsonDecoder = JSONDecoder()
+                           let getApiRespondeUserChangePassword = try jsonDecoder.decode(GetApiRespondeUserChangePassword.self, from: jsonResponse!)
+                           if(getApiRespondeUserChangePassword.result=="success"){
+                            self.navigationController?.popViewController(animated: true)
+                            showAlertMessage(titleStr: "Thông báo", messageStr: "Cập nhật password thành công")
+                           }else{
+                            showAlertMessage(titleStr: "Có lỗi", messageStr: getApiRespondeUserChangePassword.errorMessage)
+                            }
+                           
+                       } catch let error as NSError  {
+                           print("url \(url)")
+                           print("error : \(error)")
+                           showAlertMessage(titleStr: Bundle.main.displayName!, messageStr: "Có lỗi phát sinh")
+                           
+                       }
+                       
+                       
+                       //print("userModel:\(userModel)")
+                       
+                   }
+               }
+        
+        
+       
     }
 }
